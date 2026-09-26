@@ -3,88 +3,62 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-# C extensions
-*.so
-
 # Distribution / packaging
 .Python
-env/
 build/
 develop-eggs/
 dist/
 downloads/
 eggs/
 .eggs/
-lib/
-lib64/
-parts/
 sdist/
-var/
+wheels/
 *.egg-info/
 .installed.cfg
 *.egg
-
-# PyInstaller
-#  Usually these files are written by a python script from a template
-#  before PyInstaller builds the exe, so as to inject date/other infos into it.
-*.manifest
-*.spec
-
-# Installer logs
-pip-log.txt
-pip-delete-this-directory.txt
+MANIFEST
 
 # Unit test / coverage reports
-htmlcov/
-.tox/
+.pytest_cache/
 .coverage
 .coverage.*
-.cache
-nosetests.xml
 coverage.xml
-*,cover
+htmlcov/
 .hypothesis/
 
-# Translations
-*.mo
-*.pot
-
-# Django stuff:
-*.log
-local_settings.py
-
-# Flask stuff:
-instance/
-.webassets-cache
-
-# Scrapy stuff:
-.scrapy
+# Type checkers / linters
+.mypy_cache/
+.ruff_cache/
+.pytype/
 
 # Sphinx documentation
 docs/_build/
 
-# PyBuilder
-target/
-
-# IPython Notebook
-.ipynb_checkpoints
-
-# pyenv
-.python-version
-
-# celery beat schedule file
-celerybeat-schedule
-
-# dotenv
+# Environments
 .env
-
-# virtualenv
 .venv/
 venv/
 ENV/
 
-# Spyder project settings
-.spyderproject
+# Research material collected for the spec. Atari's manuals are copyrighted
+# and not relicensable - keep them local, do not publish them.
+# history/README.md is tracked; the collected documents are not.
+/history/web/
+/history/manuals/
+/history/references/
 
-# Rope project settings
+# uv
+.uv/
+
+# Release scratch. `dist/` and `.venv*` are build outputs; the `tmp_*` pattern
+# catches the throwaway files the tools in `tools/` write when generating a
+# transcript, which is how one of them nearly got committed.
+/dist/
+/.venv*/
+/tmp_*
+/check.pilot
+
+# Editors
+.spyderproject
 .ropeproject
+.idea/

@@ -1,0 +1,17 @@
+R:Demonstrate numeric accept, arithmetic, and conditional expressions
+R:Numeric variables are single letters - there are only 26 (SPEC 6.1)
+R:Division truncates and modulo is a backslash, not a percent (SPEC 6.2)
+T:ENTER TWO NUMBERS AND I WILL REPORT THEIR SUM AND MEAN.
+T:FIRST NUMBER:
+A:#X
+T:SECOND NUMBER:
+A:#Y
+C:#S=#X+#Y
+C:#Q=#S/2
+C:#R=#S\2
+T:SUM IS #S.
+T:HALF OF THE SUM IS #Q.
+T:REMAINDER OF THE SUM DIVIDED BY TWO IS #R.
+T(#S>100):THAT IS A BIG SUM.
+T(#S<=100):THAT IS A SMALL SUM.
+E:

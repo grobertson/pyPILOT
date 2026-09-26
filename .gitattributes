@@ -1,0 +1,17 @@
+# Normalise line endings in the repository.
+* text=auto eol=lf
+
+# PILOT programs are line-oriented; keep them LF everywhere so the
+# accept buffer never sees a stray CR on a Linux/macOS checkout.
+*.pilot text eol=lf
+
+# Windows-only editor and workspace files.
+*.bat text eol=crlf
+*.code-workspace text eol=lf
+
+# Binary assets.
+*.png binary
+*.jpg binary
+*.gif binary
+*.ico binary
+*.pdf binary

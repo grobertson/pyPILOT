@@ -1,0 +1,105 @@
+name: CI
+
+on:
+  push:
+    branches: [master, main]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  UV_FROZEN: "1"
+  UV_NO_PROGRESS: "1"
+
+jobs:
+  test:
+    name: test (py${{ matrix.python-version }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        python-version: ["3.12", "3.13"]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+          cache-dependency-glob: "uv.lock"
+
+      - name: Set up Python
+        run: uv python install ${{ matrix.python-version }}
+
+      - name: Install project
+        run: uv sync --all-extras --dev
+
+      - name: Lint
+        run: uv run ruff check .
+
+      - name: Format check
+        run: uv run ruff format --check .
+
+      - name: Type check
+        run: uv run mypy
+
+      - name: Test
+        run: uv run pytest --cov=pypilot --cov-report=term-missing --cov-report=xml
+
+      - name: Verify the zero-runtime-dependency claim
+        # §12 requires zero third-party runtime dependencies, because the
+        # interpreter has to run on a classroom Raspberry Pi. Nothing in the
+        # test suite can catch an accidental `dependencies = [...]` because the
+        # dev environment already has everything, so check the built metadata.
+        run: |
+          uv run python -c "
+          import tomllib, pathlib
+          data = tomllib.loads(pathlib.Path('pyproject.toml').read_text('utf-8'))
+          deps = data['project'].get('dependencies', [])
+          assert not deps, f'runtime dependencies must be empty, found {deps}'
+          print('no runtime dependencies')
+          "
+
+      - name: Build
+        run: uv build
+
+      - name: Check the wheel installs and runs in a clean environment
+        # Building is not the same as being installable, and `uv sync` has
+        # already installed the project from source - so a broken wheel would
+        # sail through every other step here.
+        run: |
+          uv venv .venv-wheel --python ${{ matrix.python-version }}
+          uv pip install --python .venv-wheel dist/*.whl
+          .venv-wheel/bin/pypilot --version || .venv-wheel/Scripts/pypilot.exe --version
+          echo "T:HELLO FROM THE INSTALLED WHEEL" > check.pilot
+          .venv-wheel/bin/pypilot check.pilot || .venv-wheel/Scripts/pypilot.exe check.pilot
+          rm -rf .venv-wheel check.pilot
+
+  docs:
+    name: docs
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+          cache-dependency-glob: "uv.lock"
+
+      - name: Build docs
+        # -W makes a warning an error. The local gate does the same, so this
+        # must not drift: a doc build that warns on Linux and passes locally
+        # would mean one of the two is lying.
+        run: uv run --group docs sphinx-build -W -b html docs docs/_build/html
+
+      - name: Upload docs
+        uses: actions/upload-artifact@v4
+        with:
+          name: docs
+          path: docs/_build/html
