@@ -55,7 +55,7 @@ jobs:
         # Neither is visible to pytest, and a publish bug found on a tag push
         # is a bad time to find it.
         run: |
-          uv run --with pyyaml python tools/check_workflows.py
+          uv run python tools/check_workflows.py
           uv run python tools/check_embedded_python.py
 
       - name: Test
@@ -78,16 +78,36 @@ jobs:
       - name: Build
         run: uv build
 
+      - name: Check the install step is portable
+        # The step below broke on Windows twice: `dist/*.whl` was not
+        # glob-expanded, and `||` is a bash construct PowerShell rejects. This
+        # asserts the properties that make the fixed version work, and installs
+        # the wheel for real. Needs the Build step, hence the position.
+        run: uv run python tools/check_wheel_install_step.py
+
       - name: Check the wheel installs and runs in a clean environment
         # Building is not the same as being installable, and `uv sync` has
         # already installed the project from source - so a broken wheel would
         # sail through every other step here.
+        #
+        # `shell: bash` is the important part. The default shell is PowerShell on
+        # Windows, and two things break there: `dist/*.whl` is passed to `uv`
+        # literally rather than glob-expanded, and `||` is a bash construct that
+        # PowerShell rejects outright. Git Bash ships on every Windows runner,
+        # so asking for bash makes one script work on all three platforms.
+        shell: bash
         run: |
           uv venv .venv-wheel --python ${{ matrix.python-version }}
+          # Glob here, not before: `uv pip install` needs one concrete filename,
+          # and the shell is what expands the pattern.
           uv pip install --python .venv-wheel dist/*.whl
-          .venv-wheel/bin/pypilot --version || .venv-wheel/Scripts/pypilot.exe --version
-          echo "T:HELLO FROM THE INSTALLED WHEEL" > check.pilot
-          .venv-wheel/bin/pypilot check.pilot || .venv-wheel/Scripts/pypilot.exe check.pilot
+          # `uv run` would re-resolve against the project, defeating the point of
+          # a clean venv. Invoke the script directly instead.
+          if [ -x .venv-wheel/bin/pypilot ]; then PYPILOT=.venv-wheel/bin/pypilot;
+          else PYPILOT=.venv-wheel/Scripts/pypilot.exe; fi
+          "$PYPILOT" --version
+          printf 'T:HELLO FROM THE INSTALLED WHEEL\n' > check.pilot
+          "$PYPILOT" check.pilot
           rm -rf .venv-wheel check.pilot
 
   docs:
