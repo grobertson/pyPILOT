@@ -32,6 +32,25 @@ with nothing but CPython. 895 tests, 95% branch coverage, mypy strict, and a
 3-OS × 2-Python CI matrix that installs the built wheel and runs a program from
 it.
 
+## Install
+
+```console
+$ pip install repilot
+$ pypilot examples/summary.pilot
+```
+
+The **distribution** is `repilot`; the **importable package** is `pypilot`:
+
+```python
+from pypilot import parse, PilotState
+```
+
+That is deliberate rather than an oversight. `pypilot` is taken on PyPI by an
+unrelated long-standing package, so the distribution needed a different name,
+and renaming the import path as well would have broken every import in the
+docs and tests for no benefit. PyPI normalises names, so `rePILOT` in the web
+UI is installed as `repilot`.
+
 The language specification and the implementation roadmap live in
 [`SPEC.md`](SPEC.md); the release notes in [`CHANGELOG.md`](CHANGELOG.md). The
 language reference is in [`docs/language.rst`](docs/language.rst), and the API in

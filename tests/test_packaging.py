@@ -1,6 +1,12 @@
 """Tests for the distribution metadata and what a release must never contain.
 
-Two kinds of thing live here, and the second is the important one.
+Three kinds of thing live here, and the second is the important one.
+
+**The two names.** The PyPI *distribution* is ``rePILOT``; the importable
+*package* is still ``pypilot``. ``pypilot`` is taken on PyPI by an unrelated
+package, so the distribution had to be renamed, and renaming the import path
+too would have broken every import in the docs and tests for no benefit. Two
+consequences are easy to break and are pinned here.
 
 **Metadata.** The version, the classifiers, the console script, and the promise
 of *zero third-party runtime dependencies* — the interpreter has to run on a
@@ -35,6 +41,11 @@ ROOT = Path(__file__).parent.parent
 #: only; `.venv` and friends are build noise.
 FORBIDDEN_IN_DIST = ("history/", ".venv", "dist/", ".git/", "__pycache__")
 
+#: The PyPI distribution name. **Not** `pypilot`: that name is taken on PyPI by
+#: somebody else. `importlib.metadata` normalises names, so lookups must use
+#: the lower-case form.
+DIST_NAME = "rePILOT"
+
 
 @pytest.fixture(scope="module")
 def metadata() -> dict[str, Any]:
@@ -66,7 +77,54 @@ def test_the_version_is_not_hardcoded_in_the_package() -> None:
 
     declared = tomllib.loads((ROOT / "pyproject.toml").read_text(encoding="utf-8"))
     assert declared["project"]["version"] == __version__
-    assert importlib.metadata.version("pypilot") == __version__
+    # The *distribution* is `rePILOT`; `importlib.metadata` normalises the
+    # name, so it must be asked for the normalised spelling.
+    assert importlib.metadata.version(DIST_NAME.lower()) == __version__
+
+
+def test_the_distribution_is_named_repilot(metadata: dict[str, Any]) -> None:
+    """The distribution is ``rePILOT``, because ``pypilot`` is taken on PyPI.
+
+    The importable package is *still* ``pypilot`` - renaming it would break
+    every import in the docs and tests for no benefit - so this asserts the two
+    names are deliberately different, which is the thing a future tidy-up
+    would otherwise "fix" by accident.
+    """
+    assert metadata["name"] == DIST_NAME
+    assert (ROOT / "src" / "pypilot" / "__init__.py").exists(), (
+        "the importable package keeps its own name; only the distribution changed"
+    )
+
+
+def test_the_package_reads_its_version_from_the_distribution(metadata: dict[str, Any]) -> None:
+    """`pypilot.__version__` must look up the *distribution* name.
+
+    This is a regression guard for a genuinely nasty one. Renaming the
+    distribution to `rePILOT` left `__init__.py` asking for `"pypilot"`, and
+    the very first `import pypilot` in the entire test suite died with
+    `PackageNotFoundError` - every test in the project failed at collection
+    because of a one-word packaging change.
+
+    The two names are now asserted equal here so a future rename breaks one
+    obvious test instead of all of them.
+    """
+    import importlib
+
+    package = importlib.import_module("pypilot")
+    assert metadata["name"].lower() == package._DISTRIBUTION, (
+        "__init__ asks importlib.metadata for the wrong distribution name; "
+        "a rename will break every import in the suite at once"
+    )
+
+
+def test_the_repository_urls_point_at_the_current_repo(metadata: dict[str, Any]) -> None:
+    """Every `project.urls` entry must name the repository that actually exists.
+
+    A stale URL is the kind of thing nobody notices for a year.
+    """
+    for name, url in metadata["urls"].items():
+        assert "grobertson" in url, f"{name} points somewhere unexpected: {url}"
+        assert url.startswith("https://github.com/grobertson/"), f"{name}: {url}"
 
 
 def test_there_are_no_runtime_dependencies(metadata: dict[str, Any]) -> None:

@@ -1,28 +1,44 @@
 # Releasing
 
-pyPILOT is published to PyPI with **trusted publishing** — no API token lives
+rePILOT is published to PyPI with **trusted publishing** — no API token lives
 in this repository, in its secrets, or in any build log. GitHub mints a
 short-lived OIDC token for the job and PyPI exchanges it for an upload token.
 
+> **Two names, on purpose.** The PyPI *distribution* is `rePILOT`; the
+> importable *package* is still `pypilot`. The distribution had to be renamed
+> because `pypilot` is taken on PyPI by an unrelated long-standing package, and
+> renaming the import path too would have broken every import in the docs and
+> tests for no benefit. So: `pip install repilot`, then
+> `from pypilot import ...`.
+
 ## One-time setup
 
-At **https://pypi.org/manage/account/publishing/**, add a GitHub Actions
-publisher:
+On the project's **Publishing** page — **https://pypi.org/manage/project/repilot/settings/publishing/**
+— add a GitHub Actions publisher:
 
 | Field | Value |
 |---|---|
-| PyPI project name | `pypilot` |
+| PyPI project name | `rePILOT` (shown as `repilot` in the URL) |
 | Owner | `grobertson` |
-| Repository name | `pyPILOT` |
+| Repository name | `RePILOT` |
 | Workflow name | `publish.yml` |
 | Environment name | `pypi` |
+
+Three of those are matched **exactly**, and a mismatch fails at upload time
+rather than at setup time:
+
+- the **workflow filename** must be exactly `publish.yml` (this file);
+- the **repository name** is matched against what GitHub reports, so it is
+  `RePILOT` and not `rePILOT`, `repilot` or `pyPILOT`;
+- the **environment name** must match the `environment:` block in the workflow,
+  or is left blank on both sides.
+
+The publisher only becomes active once the project has an owner and at least
+one release; add the publisher *after* the project exists.
 
 Then create a matching GitHub environment called `pypi` under
 **Settings → Environments**. Leave **Required reviewers** enabled if you want
 publishing to be a deliberate act rather than a side effect of tagging.
-
-The workflow filename must be exactly **`publish.yml`** — PyPI matches on it,
-and a rename silently breaks the publisher.
 
 ## Cutting a release
 
@@ -76,12 +92,12 @@ copyrighted manuals.
 ## Verifying a release
 
 ```console
-uv pip install --python .venv-check pypilot==1.1.0
+uv pip install --python .venv-check repilot==1.1.0
 .venv-check/bin/pypilot --version
 ```
 
 Or check the attestations, which tie the artifact to this repository and commit:
-https://pypi.org/project/pypilot/#attestations
+https://pypi.org/project/repilot/#attestations
 
 ## Before any bulk `git add -A`
 

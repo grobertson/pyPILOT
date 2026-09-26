@@ -5,10 +5,17 @@ name: Publish
 # below builds from the tagged commit rather than from whatever the branch
 # happens to be pointing at.
 #
-# Setup required once, at https://pypi.org/manage/account/publishing/ :
-#   add a GitHub Actions publisher for `grobertson/pyPILOT`
-#   -> workflow filename  publish.yml
-#   -> environment name   pypi        (or leave blank if not using one)
+# Setup required once, at https://pypi.org/manage/project/repilot/settings/publishing/ :
+#   add a GitHub Actions publisher for `grobertson/RePILOT`
+#   -> owner             grobertson
+#   -> repository name   RePILOT
+#   -> workflow filename  publish.yml     (this file)
+#   -> environment name   pypi            (or leave blank if not using one)
+#
+# PyPI normalises project names, so the project is `rePILOT` in the UI and
+# `repilot` in the URL, but the *filename* must be `publish.yml` exactly -
+# PyPI matches the workflow filename literally, and the repository name is
+# matched case-sensitively against what GitHub reports.
 #
 # This uses **trusted publishing**, so there is no API token in this repo, in
 # its secrets, or in any log. GitHub mints a short-lived OIDC token and PyPI
@@ -135,7 +142,7 @@ jobs:
     # environment is configured, this is a no-op and the job simply runs.
     environment:
       name: pypi
-      url: https://pypi.org/project/pypilot/
+      url: https://pypi.org/project/repilot/
 
     steps:
       - name: Download the verified distributions
