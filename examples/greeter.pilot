@@ -1,0 +1,14 @@
+R:Ask the learner their name and greet them
+T:WHAT IS YOUR NAME?
+A:$NAME
+T:HELLO, $NAME.
+
+R:Then try a match against their answer
+R:Input is upper-cased by the accept buffer, so the match is too (SPEC 7.2.2)
+T:ARE YOU A STUDENT? (YES OR NO)
+A:$ANSWER
+M:YES,Y
+TN:NO,N
+T:WELCOME TO THE COURSE.
+T:NO PROBLEM - COME BACK ANY TIME.
+E:

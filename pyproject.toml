@@ -1,0 +1,181 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+# The distribution name. NOT `pypilot` - that name is taken on PyPI by
+# somebody else, and it is also the name of a long-standing unrelated package.
+# PyPI names are case-insensitive and normalised (`-`/`_`/`.` collapse), so
+# `rePILOT` publishes as `repilot` and must be *installed* that way.
+#
+# The importable package stays `pypilot`: renaming it would break every
+# `from pypilot...` in the docs, the tests and the console script for no gain,
+# and the distribution name is the only thing PyPI ever sees.
+name = "rePILOT"
+version = "1.0.0"
+description = "An implementation of the ATARI PILOT (Programmed Instruction Learning Or Teaching) language."
+readme = "README.md"
+requires-python = ">=3.12"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "F. G. Robertson", email = "me@grandrobertson.com" }]
+keywords = ["pilot", "education", "cai", "interpreter", "language", "atari", "vintage"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
+    "Intended Audience :: Education",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Education",
+    "Topic :: Software Development :: Interpreters",
+    "Typing :: Typed",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/grobertson/RePILOT"
+Repository = "https://github.com/grobertson/RePILOT"
+Issues = "https://github.com/grobertson/RePILOT/issues"
+Changelog = "https://github.com/grobertson/RePILOT/blob/main/CHANGELOG.md"
+
+[project.scripts]
+pypilot = "pypilot.cli:main"
+
+[project.optional-dependencies]
+# Convenience aggregate mirroring the `dev` uv dependency-group for `pip install -e .[dev]`
+dev = ["pytest>=8.0", "pytest-cov>=6.0", "ruff>=0.8", "mypy>=1.13", "pyyaml>=6.0"]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+    "pytest-cov>=6.0",
+    "ruff>=0.8",
+    "mypy>=1.13",
+    { include-group = "docs" },
+]
+
+# PyYAML is here for `tools/check_workflows.py`, not for the package. The
+# interpreter itself still has zero runtime dependencies - the checker is a
+# maintainer tool, and PyPI would refuse a workflow file that is not valid YAML.
+docs = ["sphinx>=8.0", "pyyaml>=6.0"]
+
+[tool.uv]
+package = true
+
+[tool.hatch.build.targets.sdist]
+# The sdist is the artifact a contributor clones-and-builds from, so it carries
+# the tests and the examples - not just the package.
+include = [
+    "src/pypilot",
+    "tests",
+    "examples",
+    "tools",
+    "SPEC.md",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE",
+    "pyproject.toml",
+    "uv.lock",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/pypilot"]
+
+# `history/` holds copies of copyrighted Atari manuals, kept locally and
+# gitignored, plus a tracked `README.md` of provenance. None of it belongs in a
+# distribution. `exclude` is applied in addition to `include` rather than
+# instead of it, so adding a broad path to `include` later cannot quietly pull
+# the manuals back in.
+[tool.hatch.build]
+exclude = [
+    "/history",
+    "/history/**",
+    # Scratch virtualenvs and bytecode, for the same reason: a contributor who
+    # leaves a `.venv-wheel` behind must not publish it.
+    "/.venv*",
+    "**/__pycache__",
+]
+
+# ---------------------------------------------------------------------------
+# pytest
+# ---------------------------------------------------------------------------
+[tool.pytest.ini_options]
+minversion = "8.0"
+testpaths = ["tests"]
+addopts = ["-ra", "--strict-markers", "--strict-config"]
+filterwarnings = ["error"]
+markers = [
+    "slow: builds a distribution or otherwise takes seconds rather than milliseconds",
+]
+
+# ---------------------------------------------------------------------------
+# ruff (lint + format)
+# ---------------------------------------------------------------------------
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = [
+    "F",    # pyflakes
+    "E",    # pycodestyle errors
+    "W",    # pycodestyle warnings
+    "I",    # isort
+    "N",    # pep8-naming
+    "UP",   # pyupgrade
+    "B",    # flake8-bugbear
+    "A",    # flake8-builtins
+    "C4",   # flake8-comprehensions
+    "SIM",  # flake8-simplify
+    "RUF",  # ruff-specific
+]
+ignore = [
+    "E501",  # line length is handled by the formatter
+]
+
+[tool.ruff.lint.per-file-ignores]
+# Tests exercise untyped corner cases on purpose.
+"tests/*" = ["S101"]  # asserts are the point of tests
+# Sphinx's conf.py and the Pygments lexer follow third-party API shapes
+# (module-level variables, mutable class attributes) that lint rightly dislikes.
+"docs/*" = ["A001", "E402", "RUF012"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["pypilot"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "numpy"
+
+# ---------------------------------------------------------------------------
+# mypy
+# ---------------------------------------------------------------------------
+[tool.mypy]
+python_version = "3.12"
+files = ["src", "tests"]
+strict = true
+warn_unreachable = true
+enable_error_code = ["ignore-without-code", "redundant-expr", "truthy-bool"]
+
+[[tool.mypy.overrides]]
+# Tests exercise untyped corner cases on purpose.
+module = "tests.*"
+disallow_untyped_defs = false
+
+# ---------------------------------------------------------------------------
+# coverage
+# ---------------------------------------------------------------------------
+[tool.coverage.run]
+branch = true
+source = ["pypilot"]
+
+[tool.coverage.report]
+show_missing = true
+exclude_lines = [
+    "pragma: no cover",
+    "if TYPE_CHECKING:",
+    "raise NotImplementedError",
+]

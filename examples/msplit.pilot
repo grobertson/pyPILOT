@@ -1,0 +1,15 @@
+R:MS: splits the accept buffer into $LEFT, $MATCH and $RIGHT
+R:The expected output is the worked example from Atari spec 6.1.4.
+R:Three cursor-right characters skip past ' WHAT', so the match is the
+R:embedded blank and $LEFT is just 'AT'.
+A:=WHAT WILL HAPPEN?
+MS:_
+T:LEFT IS  $LEFT
+T:MATCH IS $MATCH
+T:RIGHT IS $RIGHT
+R:
+R:An undefined string variable prints its own name (spec 6.1):
+T:UNDEFINED MEANS $UNSET
+R:A null one prints nothing at all, which is a different state (spec 6.1):
+C:$NULLED=
+T:NULL IS $NULLED.

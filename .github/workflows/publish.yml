@@ -1,0 +1,167 @@
+name: Publish
+
+# Publishing to PyPI is gated on a **tag**, never on a pull request or a push
+# to a branch. A tag is the immutable reference for a release, so everything
+# below builds from the tagged commit rather than from whatever the branch
+# happens to be pointing at.
+#
+# Setup required once, at https://pypi.org/manage/project/repilot/settings/publishing/ :
+#   add a GitHub Actions publisher for `grobertson/RePILOT`
+#   -> owner             grobertson
+#   -> repository name   RePILOT
+#   -> workflow filename  publish.yml     (this file)
+#   -> environment name   pypi            (or leave blank if not using one)
+#
+# PyPI normalises project names, so the project is `rePILOT` in the UI and
+# `repilot` in the URL, but the *filename* must be `publish.yml` exactly -
+# PyPI matches the workflow filename literally, and the repository name is
+# matched case-sensitively against what GitHub reports.
+#
+# This uses **trusted publishing**, so there is no API token in this repo, in
+# its secrets, or in any log. GitHub mints a short-lived OIDC token and PyPI
+# exchanges it for an upload token. That is strictly better than a long-lived
+# secret: there is nothing to leak, rotate, or accidentally commit.
+
+on:
+  push:
+    tags: ["v*"]
+  # Allow a dry run from the Actions tab without creating a real tag.
+  workflow_dispatch:
+
+concurrency:
+  # One publish at a time, and never cancel a publish halfway - a cancelled
+  # upload can leave a half-published version on PyPI.
+  group: pypi-publish
+  cancel-in-progress: false
+
+permissions:
+  contents: read    # checkout
+  id-token: write    # mint the OIDC token PyPI exchanges for an upload token
+
+jobs:
+  verify:
+    name: verify the tag
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+          cache-dependency-glob: "uv.lock"
+
+      - name: Set up Python
+        run: uv python install 3.12
+
+      - name: Install project
+        run: uv sync --all-extras --dev
+
+      - name: The tag must match the declared version
+        # Otherwise `git tag v1.0.1` over a tree that still says 1.0.0 would
+        # upload 1.0.0 again, and PyPI would reject it as a duplicate - or worse,
+        # accept it and leave the tag lying about what was published.
+        run: |
+          tag="${GITHUB_REF_NAME#v}"
+          declared="$(uv run python -c "
+          import tomllib, pathlib
+          print(tomllib.loads(pathlib.Path('pyproject.toml').read_text('utf-8'))['project']['version'])
+          ")"
+          if [ "$tag" != "$declared" ]; then
+            echo "::error::tag $GITHUB_REF_NAME does not match pyproject version $declared"
+            exit 1
+          fi
+          echo "tag $GITHUB_REF_NAME matches pyproject version $declared"
+
+      - name: Lint
+        run: uv run ruff check .
+
+      - name: Format check
+        run: uv run ruff format --check .
+
+      - name: Type check
+        run: uv run mypy
+
+      - name: Test
+        run: uv run pytest -q
+
+      - name: Build
+        run: uv build
+
+      - name: Check the distributions are well formed
+        # A bad long-description or a missing README is rejected by PyPI *after*
+        # the upload starts, which is a confusing way to find out.
+        run: uvx twine check --strict dist/*
+
+      - name: Check nothing forbidden was packaged
+        # `history/` holds copies of Atari manuals that are somebody else's
+        # copyright. They are excluded by pyproject, but "excluded in the
+        # metadata" is not the same as "absent from the archive".
+        run: |
+          uv run python - <<'PY'
+          import tarfile, zipfile, glob, sys
+
+          FORBIDDEN = ("history", ".venv", "dist/", ".git/", "__pycache__")
+
+          def check(path, names):
+              for needle in FORBIDDEN:
+                  hits = [n for n in names if needle in n]
+                  if hits:
+                      print(f"::error::{path} contains {needle}: {hits[:3]}")
+                      return False
+              return True
+
+          ok = True
+          for archive in glob.glob("dist/*.tar.gz"):
+              with tarfile.open(archive) as tar:
+                  ok &= check(archive, [f"/{n}" for n in tar.getnames()])
+          for archive in glob.glob("dist/*.whl"):
+              with zipfile.ZipFile(archive) as wheel:
+                  ok &= check(archive, [f"/{n}" for n in wheel.namelist()])
+          sys.exit(0 if ok else 1)
+          PY
+
+      - name: Upload the distributions for publishing
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist/*
+          # Not needed for a one-shot publish, but it means a re-run of a failed
+          # job does not silently build a *different* set of files than the one
+          # the previous attempt uploaded.
+          if-no-files-found: error
+          retention-days: 7
+
+  publish:
+    name: publish to PyPI
+    needs: verify
+    runs-on: ubuntu-latest
+
+    # Creating the `pypi` environment on PyPI's side enables an approval gate
+    # here, so publishing a release becomes a deliberate act. If no such
+    # environment is configured, this is a no-op and the job simply runs.
+    environment:
+      name: pypi
+      url: https://pypi.org/project/repilot/
+
+    steps:
+      - name: Download the verified distributions
+        uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist/
+
+      - name: Publish
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          # PEP 740 attestations, signed with the same OIDC token. A downstream
+          # consumer can then verify the artifact really came from this repo at
+          # this commit, which is a stronger claim than a matching filename.
+          attestations: true
+          # Show the sha256 in the run log, so it can be compared against the
+          # files in the PyPI UI without downloading them.
+          print-hash: true
+          # The action verifies twine's own exit status; a `skip-existing`
+          # here would turn a re-publish of an existing version into a success,
+          # which is exactly the sort of quiet success a release should not have.
+          verbose: true

@@ -1,0 +1,15 @@
+R:Demonstrate recursive module use
+R:Modules are ATARI PILOT's name for subroutines (SPEC 8.3)
+R:J: is conditional like any other statement (spec 6.1.7), so the recursion
+R:stops when the condition fails and falls through to the E: below.
+C:#D=0
+U:*COUNT
+T:COMPLETED AT DEPTH #D.
+E:
+
+*COUNT
+C:#D=#D+1
+T(#D<3):GOING DEEPER...
+T(#D>=3):BOTTOM REACHED.
+J(#D<3):*COUNT
+E:
