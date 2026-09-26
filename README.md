@@ -76,7 +76,13 @@ building a distribution and being able to install it are different claims.
 
 The packaging tests build a real sdist and wheel and look inside them, so that
 a change to `pyproject.toml` cannot quietly start shipping the copyrighted
-manuals kept in `history/`.
+manuals kept in `history/`. `tools/scan_secrets.py` greps everything Git would
+stage for API tokens and the like; run it before any bulk `git add -A`.
+
+## Releasing
+
+See [`RELEASING.md`](RELEASING.md). Publishing is gated on a tag and uses
+**trusted publishing**, so there is no PyPI token in the repository.
 
 Run a program. `examples/summary.pilot` demonstrates the whole language:
 

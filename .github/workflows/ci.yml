@@ -48,6 +48,16 @@ jobs:
       - name: Type check
         run: uv run mypy
 
+      - name: Check the workflows themselves
+        # A workflow that is syntactically valid YAML can still be wrong in the
+        # ways that matter: a tag trigger that never matches, a missing
+        # `id-token: write`, a publish job that does not depend on the build.
+        # Neither is visible to pytest, and a publish bug found on a tag push
+        # is a bad time to find it.
+        run: |
+          uv run --with pyyaml python tools/check_workflows.py
+          uv run python tools/check_embedded_python.py
+
       - name: Test
         run: uv run pytest --cov=pypilot --cov-report=term-missing --cov-report=xml
 
