@@ -3,10 +3,14 @@
 An implementation of the PILOT (Programmed Inquiry, Learning, or Teaching)
 programming language.
 
+# My Deepest Condolences
+
+I just learned (10/5/26) that the author of Atari PILOT Harry Stewart -- whose documents and notes were invaluable to the accuracy of this recreation -- passed away in 2025 at the age of 89. Harry was a devoted husband, father, and grandfather according to all reports, and a hobby musician to boot. Rest in peace, Harry -- You helped me understand the basic concepts of programming (input, output, matching, conditionals, modified execution flow) very very early (Six!)  I only wish he might have seen this resurrection and gotten a chuckle out of it. I certainly hope other "ATARI Kids" of the 80s like me have a chuckle as well.
+
 ## What is PILOT?
 
 PILOT is a very simple interpreted language created by John Amsden Starkweather
-in the late 1960s and formalised as a machine-independent specification in 1973
+in the late 1960s and formalized as a machine-independent specification in 1973
 ("PILOT-73"). A predecessor to Logo, it was designed for computer-aided
 instruction: single-letter commands, text typed straight into the program, and
 a learner answering questions into an accept buffer.
