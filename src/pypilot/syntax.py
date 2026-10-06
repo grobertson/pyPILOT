@@ -68,21 +68,13 @@ class CommandName:
         {"MS", "JM", "PA", "PCS", "VNEW", "DUMP", "READ", "WRITE", "CLOSE", "LOAD", "SAVE", "TRACE"}
     )
 
-    # Device-dependent commands: real ATARI PILOT, parsed but refused (spec 10.4).
+    # Device-dependent commands: real ATARI PILOT, dispatched to an injected host.
     ATARI_DEVICE: Final[frozenset[str]] = frozenset({"GR", "SO"})
 
     # Commands that parse but are refused (spec 10.7).
     REFUSED: Final[frozenset[str]] = frozenset({"CALL", "TAPE", "TSYNC", "DOS"})
 
-    # The `GR:` sub-commands of spec 6.1.12, used only to *name* one in a
-    # refusal message.
-    #
-    # A refusal that says merely "GR: is not implemented" leaves a learner
-    # wondering whether they mistyped it or asked for something impossible. The
-    # Atari manual lists fifteen sub-commands, so naming the one that was
-    # actually requested turns a dead end into a diagnosis. This is a message
-    # table, not a parser: the operand is never interpreted, because nothing
-    # about it can be honoured.
+    # Rev E's detailed descriptions of the graphics operand language.
     GR_SUBCOMMANDS: Final[tuple[str, ...]] = (
         "CLEAR",
         "PEN",
@@ -90,19 +82,15 @@ class CommandName:
         "DRAWTO",
         "FILLTO",
         "TURNTO",
+        "GO",
         "DRAW",
         "FILL",
         "TURN",
-        "CHAR",
-        "COLOR",
-        "MODE",
-        "SETCLR",
-        "CLR",
-        "TEXT",
+        "QUIT",
     )
 
-    # The `SO:` operands of spec 6.1.13, for the same reason as `GR_SUBCOMMANDS`.
-    SO_SUBCOMMANDS: Final[tuple[str, ...]] = ("ON", "OFF", "PLAY", "STOP")
+    # SO: takes note sources, not an ON/OFF/PLAY/STOP sub-command.
+    SO_SUBCOMMANDS: Final[tuple[str, ...]] = ()
 
     # Immediate-mode-only commands; invalid in a run-mode program (spec 10.8).
     IMMEDIATE_ONLY: Final[frozenset[str]] = frozenset({"AUTO", "REN"})
@@ -174,7 +162,7 @@ class CommandName:
     def is_refused(cls, name: str) -> bool:
         """Is ``name`` one that parses but raises ``PilotUnsupportedError``?"""
         upper = name.upper()
-        return upper in cls.ATARI_DEVICE or upper in cls.REFUSED
+        return upper in cls.REFUSED
 
     @classmethod
     def is_immediate_only(cls, name: str) -> bool:

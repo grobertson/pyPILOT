@@ -8,6 +8,21 @@ with a twist that matters here: **the language is pinned to ATARI PILOT**, so a
 "patch" that changes a semantic rule is not a patch. Anything touching
 `SPEC.md` §6–§9 is a minor bump at minimum.
 
+## 1.1.0 — 2026-10-06
+
+### Added
+
+- Optional Pygame CE interactive devices: Atari turtle graphics, four-voice
+  sound, and keyboard-backed joystick/paddle senses. The base install remains
+  dependency-free.
+
+## 1.0.1 — 2026-10-06
+
+### Fixed
+
+- Corrected the project links and publishing workflow identity to the canonical
+  GitHub repository, `grobertson/pyPILOT`.
+
 ## 1.0.0 — 2026-09-26
 
 First stable release. Every run-mode command in the Atari vocabulary is

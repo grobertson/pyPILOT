@@ -544,13 +544,13 @@ def test_an_unrecognised_line_is_left_alone_to_fail_properly() -> None:
 # ---------------------------------------------------------------------------
 
 
-def test_a_refusal_names_the_gr_subcommand(tmp_path: Path, capsys: Any) -> None:
-    """ "GR: is not implemented" leaves a learner guessing; "its sub-command
-    DRAWTO" says the program was understood."""
+def test_a_headless_repl_reports_the_missing_interactive_host(tmp_path: Path, capsys: Any) -> None:
+    """A direct Repl stays headless and gives a clear opt-in host error."""
     _, _ = session(["GR:DRAWTO 30,2", "QUIT"], tmp_path)
     err = capsys.readouterr().err
-    assert "DRAWTO" in err
-    assert "10.4" in err
+    assert "GR:" in err
+    assert "interactive host" in err
+    assert "[interactive]" in err
 
 
 def test_an_unknown_gr_subcommand_is_not_guessed(tmp_path: Path, capsys: Any) -> None:
@@ -561,9 +561,8 @@ def test_an_unknown_gr_subcommand_is_not_guessed(tmp_path: Path, capsys: Any) ->
     assert repl.running is False, "a refusal is not a reason to leave"
 
 
-@pytest.mark.parametrize("operand", ["1,100,2", "", "PLAY"])
-def test_so_operands_are_named_only_when_known(operand: str) -> None:
+@pytest.mark.parametrize("operand", ["1,100,2", "", "PLAY", "ON"])
+def test_so_operands_are_not_subcommands(operand: str) -> None:
     from pypilot.syntax import CommandName
 
-    found = CommandName.subcommand("SO", operand)
-    assert found == (operand.upper() if operand.upper() in CommandName.SO_SUBCOMMANDS else None)
+    assert CommandName.subcommand("SO", operand) is None

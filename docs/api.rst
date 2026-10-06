@@ -94,6 +94,27 @@ State
 
 .. autofunction:: pypilot.state.normalise_accept
 
+Interactive devices
+-------------------
+
+.. autoclass:: pypilot.interactive.GraphicsState
+   :members:
+
+.. autoclass:: pypilot.interactive.KeyboardController
+   :members:
+
+.. autoclass:: pypilot.interactive.InteractiveDevice
+   :members:
+
+.. autoclass:: pypilot.graphics.GraphicsEngine
+   :members:
+
+.. autoclass:: pypilot.graphics.GraphicsHost
+   :members:
+
+.. autoclass:: pypilot.pygame_backend.PygameInteractiveDevice
+   :members:
+
 Expressions
 -----------
 

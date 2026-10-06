@@ -26,6 +26,7 @@ from typing import Final
 
 from pypilot.errors import PilotRuntimeError
 from pypilot.expressions import evaluate as evaluate_expression
+from pypilot.interactive import GraphicsState
 from pypilot.values import (
     INT16_MAX,
     INT16_MIN,
@@ -161,6 +162,12 @@ class PilotState:
 
     random_seed: int | None = None
     """When set, every ``?`` draw is reproducible (spec 6.3)."""
+
+    controller_reader: Callable[[str, str], int] | None = field(default=None, repr=False)
+    """Optional host reader for Atari joystick, paddle, and trigger senses."""
+
+    graphics: GraphicsState = field(default_factory=GraphicsState, repr=False)
+    """Graphics cursor and pen state shared with the host renderer."""
 
     _random: random.Random = field(default_factory=random.Random, repr=False)
 
@@ -317,18 +324,17 @@ class PilotState:
     # -- numeric expressions ------------------------------------------------
 
     def get_special(self, name: str) -> int:
-        """Read a special variable ``%F``/``%M``/``%X``/``%Y``/``%A`` (spec 6.6).
+        """Read a special variable ``%F``/``%M``/``%X``/``%Y``/``%A``/``%Z`` (spec 6.6).
 
         ``%M`` is real: it is the match ordinal, which is why ``J(%M=2):``
-        can branch on *which* alternative matched. The graphics variables read 0
-        while ``GR:`` is unimplemented (spec 10.4), and ``%F`` reports a host
-        figure rather than a 6502 one (spec 10.5).
+        can branch on *which* alternative matched. Graphics values come from
+        the shared graphics state and read 0 before graphics mode starts.
+        ``%F`` reports a host figure rather than a 6502 one (spec 10.5).
         """
         if name == "M":
             return self.match.ordinal
-        if name in {"X", "Y", "A"}:
-            # Graphics cursor state; zero while GR: is unimplemented.
-            return 0
+        if name in {"X", "Y", "A", "Z"}:
+            return self.graphics.special(name)
         if name == "F":
             return host_kilobytes()
         return 0
@@ -336,12 +342,13 @@ class PilotState:
     def get_controller(self, prefix: str, index: str) -> int:
         """Read a controller sense value (spec 5.1.4).
 
-        There is no Atari hardware behind this, so every sense reports 0, which
-        reads as "no input" and keeps a controller-probing lesson running
-        (spec 10.5). The prefix and index are accepted so the shape of the
-        construct is preserved for when a host device is wired up.
+        With no host reader every sense reports 0, preserving neutral behavior
+        for headless runs (spec 10.5). An interactive backend may supply live
+        values without changing expression evaluation.
         """
-        return 0
+        if self.controller_reader is None:
+            return 0
+        return self.controller_reader(prefix, index)
 
     def evaluate(self, text: str) -> Numeric:
         """Evaluate a numeric expression against this state (spec 6.2).
@@ -432,6 +439,7 @@ class PilotState:
         self.clear_accept()
         self.match = MatchResult()
         self.call_stack.clear()
+        self.graphics = GraphicsState()
 
     def clear_call_stack(self) -> None:
         """Empty the Use stack, leaving everything else alone (spec 6.1.21).

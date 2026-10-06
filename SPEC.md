@@ -1,7 +1,7 @@
 # pyPILOT Completion Specification
 
-**Status:** Complete — the 1.0.0 implementation was finished on 2026-09-26; first PyPI publication is pending (see `RELEASING.md`).
-**Target:** the `rePILOT` 1.0.0 distribution (imported as `pypilot`), a faithful implementation of **ATARI PILOT** as
+**Status:** The 1.0.0 base implementation was published on 2026-09-26. The 1.1.0 interactive-device release is prepared on `feature/interactive-devices`; release procedure is documented in `RELEASING.md`.
+**Target:** the `rePILOT` distribution (imported as `pypilot`), a faithful implementation of **ATARI PILOT** as
 specified in the *Atari PILOT External Specification*, Revision E
 (27-Oct-1980).
 
@@ -62,16 +62,13 @@ beginner accessibility. Concretely, this means:
   has `PCS:` for direct cursor positioning.
 - 26 single-letter numeric variables, not long names (§6.1).
 
-**Excluded from 1.0 — but specified, not omitted.** ATARI PILOT's turtle
-graphics (`GR:` and its 15 subcommands) and sound (`SO:`) are *real Atari
-PILOT*, and a program written for a real Atari disk may use them. Per §10.4
-they are **specified in the command table and raise
-`PilotUnsupportedError`**, so such a program fails with a clear diagnostic
-naming the statement rather than an obscure parse error. They are not silently
-dropped, and they are not faked.
-
-A terminal emulator with turtle graphics is a possible future extension; the
-language surface is designed so it can be added without breaking 1.0 programs.
+**Excluded from the 1.0 base install; available as an optional interactive
+extension.** ATARI PILOT's turtle graphics (`GR:`), sound (`SO:`), and hardware
+controller senses are real Atari PILOT. They are implemented through an
+optional host backend (`pygame-ce`), not through mandatory package dependencies.
+The CLI loads that backend lazily; embedders may inject another host or remain
+headless. A run that requests these devices without a host fails clearly rather
+than silently dropping the command. See §10.4–§10.5.
 
 Also out of scope:
 
@@ -90,7 +87,7 @@ noted.
 
 ---
 
-## 2. Project state (2026-10-05)
+## 2. Project state (2026-10-06)
 
 The repository is a three-commit scaffold from April 2020 that never ran.
 
@@ -100,7 +97,7 @@ The repository is a three-commit scaffold from April 2020 that never ran.
 | `lang/core.py` | `PilotCore` with 10 `NotImplementedError` stubs, all declared **without `self`** | Moved to `src/pypilot/core.py`; methods are properly bound |
 | `lang/helpers.py` | `Os`/`Shell` statics, all `NotImplementedError` | `src/pypilot/helpers.py`; `Os.load`/`Os.save` **implemented** |
 | `lang/__init__.py` | `from .core import hmm` — **import error** | Removed |
-| `tests/` | nose-style stubs importing a nonexistent `sample` module | Real pytest suite, **903 collected tests, 95% branch coverage** |
+| `tests/` | nose-style stubs importing a nonexistent `sample` module | Real pytest suite, **953 passing tests** on the interactive-device feature branch |
 | `setup.py`, `requirements.txt`, `Makefile`, `MANIFEST.in` | setuptools + `nose` + `sphinx` | **Deleted** — replaced by `pyproject.toml` + `uv.lock` |
 | `docs/conf.py` | 2012 `sphinx-quickstart` boilerplate, `project = 'sample'` | Modern Sphinx config, zero-warning build |
 | `docs/` | Empty `index.rst` | `index.rst`, `language.rst`, `api.rst`; warning-free Sphinx build |
@@ -469,23 +466,25 @@ implementation.
 | `%X` | Graphics x-coordinate (`GR:`) |
 | `%Y` | Graphics y-coordinate (`GR:`) |
 | `%A` | Graphics angle/heading (`GR:`) |
+| `%Z` | Graphics color at the cursor: 0 background, 1 red, 2 yellow, 3 blue |
 
 `%M` is **not** a matched-string value — it is the *field number* that matched.
 For the matched text, use `MS:`, which produces `$LEFT`, `$MATCH`, and `$RIGHT`
 (§7.5). The Core PILOT `%MATCH`/`%LEFT`/`%RIGHT` triple has **no** Atari
 equivalent as special variables.
 
-`%X`/`%Y`/`%A` are graphics state; with `GR:` unimplemented (§10.4) they read
-as 0.
+`%X`/`%Y`/`%A`/`%Z` read the active graphics state. They read 0 when no
+interactive graphics mode is active. `%X` and `%Y` are rounded to integers;
+`%Z` reads 0 outside the visible graphics area (§10.4).
 
 ### 6.7 Controller sense [5.1.4]
 
 `%J<n>` joystick, `%P<n>` paddle, `%T<n>` trigger, `%H`/`%V`/`%L` lightpen
 horizontal/vertical/light. Recognised anywhere a numeric constant is allowed.
 
-With no Atari hardware, these MUST resolve to a neutral value (0 = no input)
-rather than raising, so that a lesson probing a controller still runs. Recorded
-in §10.5.
+With no interactive host, or for an unmapped device index, these MUST resolve
+to a neutral value (0 = no input) rather than raising. The optional keyboard
+controller map is specified in §10.5.
 
 ---
 
@@ -855,17 +854,21 @@ The full Atari command set [App. B]. **Core** commands have one-letter names;
 | `DOS` | Shell to DOS — **unsupported** | §10.7 |
 
 #### Atari extensions — device-dependent, specified but unimplemented
+#### Atari extensions — optional interactive devices
 
-These are real ATARI PILOT. They **MUST parse** and raise
-`PilotUnsupportedError` with a message naming the subcommand, so a program
-taken from a real Atari disk fails clearly instead of at a random parse error.
+These are device-dependent ATARI PILOT commands backed by the optional
+interactive host. The default installation remains headless and does not
+require the optional `pygame-ce` dependency.
 
 | Command | Purpose |
 |---|---|
-| `GR` | Turtle graphics — `CLEAR GOTO DRAWTO FILLTO TURNTO TURN GO DRAW FILL PEN QUIT` (15 subcommands) |
-| `SO` | Sound |
+| `GR` | Turtle graphics — `CLEAR PEN GOTO DRAWTO FILLTO TURNTO GO DRAW FILL TURN QUIT` (11 documented subcommands) |
+| `SO` | Up to four Atari note sources, refreshed after each statement |
 
-**Gated:** §10.4.
+Programs requesting these commands without an interactive host MUST fail
+clearly with `PilotUnsupportedError`; they MUST NOT silently skip the command.
+The CLI lazily loads the Pygame CE backend when one of these devices is first
+needed. Embedders may inject another implementation.
 
 ### 9.2 `R:` — Remark
 
@@ -1086,26 +1089,61 @@ assignment, and `CS:`/`CN:` cursor control are **Common PILOT**, not ATARI PILOT
 (§1.1). They remain outside the 1.0 scope; a future release could consider
 them. `PCS:` is Atari's actual cursor command and is specified in §9.5.
 
-### 10.4 `GR:` and `SO:` — specified and refused
+### 10.4 `GR:` and `SO:` — optional host-backed devices
 
-`GR:` (15 turtle-graphics subcommands) and `SO:` are real ATARI PILOT. They
-**MUST parse**, and **MUST** raise `PilotUnsupportedError` naming the
-subcommand.
+`GR:` and `SO:` are implemented through an optional interactive host. The
+default package has no required runtime dependencies; the CLI lazily loads the
+Pygame CE backend supplied by the `interactive` extra. An embedding application
+may inject a different host. A headless `Interpreter` with no host raises an
+actionable `PilotUnsupportedError` when a `GR:` or `SO:` statement executes.
 
-They must not silently succeed, and they must not be a generic parse error: a
-learner running a 1981 cartridge program should learn that turtle graphics
-*exists* and is unavailable, not that their program has a syntax error at line
-40. A terminal turtle is a possible future extension; the language surface
-leaves room.
+Rev E's detailed graphics descriptions, cross-checked against the Student PILOT
+Reference Guide, establish eleven `GR:` subcommands: `CLEAR`, `PEN`, `GOTO`,
+`DRAWTO`, `FILLTO`, `TURNTO`, `GO`, `DRAW`, `FILL`, `TURN`, and `QUIT`. An older
+runtime diagnostic table had fifteen unrelated names and omitted `GO`/`QUIT`;
+that table was incorrect. `GR:` has its own semicolon/repeat operand grammar,
+specified in the interactive-device draft and implemented by the graphics
+engine. `%X`, `%Y`, `%A`, and `%Z` expose the active graphics state.
+Host-safety limits cap repeat nesting at 16 and one `GR:` statement at
+1,000,000 executed subcommands; exceeding either limit raises a source-aware
+`PilotRuntimeError`.
+
+`SO:` takes zero through four numeric constants or numeric variables, not an
+`ON`/`OFF`/`PLAY`/`STOP` subcommand. An empty operand silences all voices. The
+optional backend synthesizes up to four notes and refreshes variable-backed
+voices after each PILOT statement. Atari memory-pointer sound sources remain
+unsupported because rePILOT has no Atari memory model (§10.5).
+
+The Pygame CE distribution is named `pygame-ce` and imported as `pygame`; it
+MUST be an optional extra and MUST NOT be installed alongside the original
+`pygame` distribution.
+
+For CLI file runs, a window opened by graphics or controller input stays
+visible after program completion until the user closes it. `A:` uses console
+input until such a window is already open, then accepts input in the blue text
+area. Closing during a run cancels execution and returns process status 130.
+Library interpreters and REPL-run programs close injected hosts at the end of each run.
 
 ### 10.5 Hardware-dependent constructs
 
 | Construct | Behaviour |
 |---|---|
-| Controller sense `%J`/`%P`/`%T`/`%H`/`%V`/`%L` | Resolve to 0 (no input), not an error, so a controller-probing lesson still runs. |
+| Controller sense `%J`/`%P`/`%T` | The optional CLI host emulates two joysticks, two paddles, and their mapped triggers using keyboard input (§10.5.1). Headless runs and unmapped indices resolve to 0. |
+| Lightpen sense `%H`/`%V`/`%L` | Resolve to 0; no lightpen is emulated. |
 | Memory pointers `*«addr»` / `@B«addr»` | Raise `PilotUnsupportedError` — there is no Atari memory model to expose, and faking one would be worse than refusing. |
 | `%F` free memory | Reports host-available memory, clearly documented as not a 6502 figure. |
 | `?` random | Seedable per run for testability (§6.3). |
+
+### 10.5.1 Keyboard controller map
+
+When the Pygame CE host is enabled and focused, arrow keys emulate `%J0` and
+W/A/S/D emulate `%J1`. Direction values use Atari's bit combinations: up 1,
+down 2, left 4, right 8, and diagonals 5/9/6/10. Space and left Ctrl drive
+`%T8`/`%T9`; Enter and right Ctrl drive `%T0`/`%T1`. Q/E adjust `%P0`, and
+U/O adjust `%P1`, from 3 through 227 at a fixed rate. The paddles start at 115
+and retain their values when no key is held. Focus loss releases held keys.
+Other device indices and all lightpen values remain neutral (0). The mapping is
+injectable and does not change PILOT syntax.
 
 ### 10.6 Core PILOT commands that do not exist here
 
@@ -1148,7 +1186,7 @@ valid at the REPL.
 
 ---
 
-## 11. Implementation history (all stages complete)
+## 11. Implementation history
 
 Every stage ends with a green test suite and a runnable program. **No stage may
 merge with a red test.**
@@ -1499,9 +1537,27 @@ performed by CI on every matrix entry, and was run by hand here: the wheel
 installs, reports `pypilot 1.0.0`, runs a program, exits 0, and pulls in
 **zero** third-party packages.
 
+### Stage 11 — Optional interactive devices *(complete, 1.1.0)*
+
+**Delivered** `graphics.py`, `interactive.py`, and the optional Pygame CE host
+in `pygame_backend.py`. `GR:` executes the eleven documented Rev E subcommands;
+`SO:` drives up to four synthesized voices; keyboard input provides two virtual
+joysticks, triggers, and two paddles. `%X`/`%Y`/`%A`/`%Z` report active graphics
+state. The CLI and REPL create the host lazily, while direct `Interpreter` and
+`Repl` use remains headless unless a host is injected.
+
+The Pygame CE dependency is an `interactive` extra. The default dependency list
+remains empty. The obsolete refusal inventory was corrected against the
+checked-in Rev E and Student Guide: `GO` and `QUIT` are supported, and the
+former 15-name table was not the authoritative command list.
+
+Graphics/input/audio semantics are tested with an injected recording host. A
+separate SDL dummy-driver smoke test initializes the real display and mixer,
+plots and senses a color, and starts four voices.
+
 ---
 
-## 12. Definition of done (1.0 acceptance)
+## 12. Definition of done (1.0 base and interactive extension)
 
 ### Language conformance
 
@@ -1557,11 +1613,28 @@ Every item is a test that exists, or a test that exists to prove a thing is
 - [x] `@A`/`@M`/`@P` shorthand jumps are rejected (§10.6).
 - [x] `L:` is a label, not a Link command (§10.6).
 
-**Refusals**
+**Interactive devices**
 
-- [x] `GR:`/`SO:` parse and raise `PilotUnsupportedError` naming the
-      subcommand (§10.4). Verified by `test_a_refusal_names_the_gr_subcommand`,
-      which pins that an unrecognised sub-command is *not* guessed at.
+- [x] `GR:` implements all eleven verified Rev E commands, its repeat grammar,
+  and `%X`/`%Y`/`%A`/`%Z` (`test_graphics_repeat_draws_closed_square_and_updates_specials`).
+- [x] Deep repeat nesting and excessive sub-command execution fail with
+  source-aware errors (`test_graphics_repeat_nesting_is_bounded`,
+  `test_graphics_operation_count_is_bounded`).
+- [x] The CLI uses a native Pygame CE window with black graphics and a blue
+  lower text area; the SDL dummy smoke test covers drawing, color sense, and
+  audio initialization (`test_pygame_backend_smoke_with_sdl_dummy_devices`).
+- [x] Keyboard input implements Atari joystick directions/diagonals, paddle
+  ranges, triggers, and focus release (`test_keyboard_controller_maps_joystick_directions_and_diagonals`,
+  `test_keyboard_controller_paddles_move_clamp_and_retain_position`).
+- [x] `SO:` has four variable-backed voices, updates after statements, and an
+  empty operand silences (`test_runtime_refreshes_sound_sources_after_each_statement`).
+- [x] Closing the interactive window cancels the CLI run with status 130
+  (`test_cli_returns_130_when_interactive_host_is_cancelled`).
+- [x] The base install remains lazy and dependency-free; Pygame CE is opt-in
+  (`test_pygame_backend_stays_lazy_until_interactive_use`).
+
+**Hardware refusals**
+
 - [x] `CALL:`/`TAPE:`/`TSYNC:`/`DOS:` parse and raise
       `PilotUnsupportedError` (§10.7).
 - [x] Core-PILOT-only commands (`F` family, `P:`, `W:`, `H` modifier) are
@@ -1576,7 +1649,8 @@ Every item is a test that exists, or a test that exists to prove a thing is
       clean environment and `pypilot --version` works. Verified by hand and now
       by CI on every matrix entry.
 - [x] Zero third-party runtime dependencies. `uv pip list` in a clean venv
-      containing only the wheel shows one package: `pypilot`.
+  containing only the base wheel shows only rePILOT; Pygame CE is in the
+  optional `interactive` extra (`test_pygame_ce_is_only_in_the_interactive_extra`).
 - [x] Full CI matrix green on Linux, Windows, and macOS. The workflow runs
       pytest, ruff, ruff-format, mypy, a zero-dependency metadata check, a clean
       wheel install, `uv build`, and a `-W` docs build on 3 OSes × 2 Pythons.
@@ -1591,7 +1665,8 @@ Every item is a test that exists, or a test that exists to prove a thing is
 - [x] A runtime error reports the program line number and echoes the source
       line.
 - [x] `--trace` prints each statement as it executes.
-- [x] Exit codes: 0 success, 1 program/runtime error, 2 usage error.
+- [x] Exit codes: 0 success, 1 program/runtime error, 2 usage error, 130 user
+  cancellation from the interactive window.
 
 ### Documentation
 
@@ -1762,23 +1837,35 @@ J:*COUNT
 E:
 ```
 
-### 13.6 `examples/graphics.pilot` — a refused command
+### 13.6 `examples/graphics.pilot` — turtle graphics
 
-Exercises the §10.4 refusal path. It MUST parse cleanly and fail at **run**
-time with a message naming the subcommand — not at parse time.
+Exercises `CLEAR`, Cartesian positioning, turtle movement, iteration, and the
+graphics special variables. Running it from the CLI requires the optional
+interactive extra; tests use an injected recording host.
 
 ```pilot
-R:Turtle graphics is real ATARI PILOT, but unimplemented here
+R:Draw a square with the ATARI PILOT turtle graphics command.
 GR:CLEAR
-T:THIS LINE IS NEVER REACHED.
+GR:GOTO 0,0;TURNTO 0;4(DRAW 15;TURN 90)
+T:SQUARE COMPLETE AT (%X,%Y)
 E:
 ```
 
-### 13.7 `examples/summary.pilot` — the runnable demonstration
+### 13.7 `examples/controls.pilot` — keyboard controllers
 
-The only example that runs to completion at Stage 4, and the one the README
-shows. It uses just `T`, `R` and `C`, and demonstrates four rules that are easy
-to get wrong: truncating division, backslash modulo, absent operator
+Polls the two virtual joysticks and paddle values and exits when `%T8` (Space)
+is pressed. The CLI's optional Pygame host maps arrows to `%J0`, WASD to `%J1`,
+and Q/E and U/O to paddles `%P0`/`%P1`.
+
+### 13.8 `examples/sound.pilot` — four-voice sound
+
+Selects four variable-backed notes with `SO:`, changes one voice while the
+program runs, then silences all voices with an empty `SO:` operand.
+
+### 13.9 `examples/summary.pilot` — the language overview
+
+The language overview example, which the README shows. It uses `T`, `R`, and
+`C` to demonstrate truncating division, backslash modulo, absent operator
 precedence, and undefined-name substitution.
 
 ```pilot
@@ -1819,7 +1906,7 @@ AN UNDEFINED STRING PRINTS ITS OWN NAME:
 | Silent acceptance of Core PILOT syntax | High | §10.6 requires those commands be **syntax errors**. Accepting-and-ignoring would let a wrong-dialect program appear to run — the worst failure for a teaching language. |
 | Subtle numeric differences (truncation, wrap, `\` vs `%`) | High | Each is a named acceptance test in §12, with worked values from the Primer. |
 | The accept-buffer normalisation is easy to under-implement | Medium | Specified as an explicit ordered list (§7.2.2) and pinned by the `msplit.pilot` expected output. |
-| Scope creep toward Common PILOT or graphics | Medium | §1.1 and §10.3. `GR:`/`SO:` are specified-but-refused, which is a stable 1.0 boundary. |
+| Scope creep toward Common PILOT or physical Atari hardware | Medium | §1.1 and §10.3. Graphics, sound, and keyboard controller emulation are explicitly bounded optional devices; physical hardware and arbitrary memory access remain out of scope. |
 | The parser grows without bound | Medium | Operands stay unparsed (§5.1); each handler parses only what it needs. |
 | Recursion blows the Python stack | Low | `PilotMaxUses` raises a PILOT-level error. |
 | `uv.lock` drift | Low | `UV_FROZEN=1` in CI; `cache-dependency-glob`. |

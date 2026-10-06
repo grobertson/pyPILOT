@@ -60,7 +60,7 @@ command set, and usefully distinguishes the three tiers:
 
 - **Core PILOT** (single-letter commands) — `T A M J C E U R Y N`
 - **Executive** — `AUTO RUN LIST REN NEW VNEW DUMP LOAD SAVE DOS`
-- **Atari extensions** — `GR:` (15 turtle-graphics sub-commands), `SO:`, `PA:`,
+- **Atari extensions** — `GR:` (11 detailed turtle-graphics commands in Rev E), `SO:`, `PA:`,
   `JM:`, `MS:`, `PCS:`, `TRACE`, `READ`/`WRITE`/`CLOSE`, `TAPE`/`TSYNC`,
   `CALL`
 

@@ -9,9 +9,8 @@ Every runnable Core statement - ``A`` ``C`` ``E``
 ``JM``, the utility commands ``PA`` ``PCS`` ``VNEW`` ``DUMP`` ``TRACE``, and the
 I/O commands ``READ`` ``WRITE`` ``CLOSE`` ``LOAD`` ``SAVE``.
 
-The device-dependent Atari commands ``GR:``/``SO:`` are parsed and refused by
-:mod:`pypilot.syntax` with a clear
-:class:`~pypilot.errors.PilotUnsupportedError` (spec 10.4). Immediate-mode
+The device-dependent Atari commands ``GR:``/``SO:`` are backed by an injected
+interactive host; they remain headless when no host is provided. Immediate-mode
 commands are handled by :mod:`pypilot.repl`.
 
 ``Y`` and ``N`` have no handlers because they are not commands: spec 6.1.1
@@ -27,11 +26,13 @@ bound here, and ``tests/test_advanced.py`` asserts it.
 from __future__ import annotations
 
 import re
+from collections.abc import Callable
 from typing import TYPE_CHECKING, ClassVar
 
-from pypilot.errors import PilotRuntimeError
+from pypilot.errors import PilotRuntimeError, PilotUnsupportedError
 from pypilot.match import find_match, split_fields, split_jump_labels
 from pypilot.syntax import Statement
+from pypilot.values import Numeric
 
 #: A numeric accept never errors: any numeric constant in the text is taken, and
 #: wholly non-numeric text yields 0, with no message (spec 6.1.2).
@@ -91,6 +92,49 @@ class PilotCore:
         """
         text = self._interpreter.state.expand(statement.params)
         self._interpreter.emit_line(text)
+
+    def _gr(self, statement: Statement) -> None:
+        """``GR`` - execute the Atari graphics operand language (spec 6.1.12)."""
+        self._interpreter.execute_graphics(statement)
+
+    def _so(self, statement: Statement) -> None:
+        """``SO`` - select up to four Atari sound sources (spec 6.1.13)."""
+        state = self._interpreter.state
+        operand = statement.params.strip()
+        if not operand:
+            self._interpreter.set_sound_sources((), statement=statement)
+            return
+
+        fields = [field for field in re.split(r"[\x20,]+", operand) if field]
+        if len(fields) > 4:
+            raise self._error("SO: accepts at most four sound sources", statement)
+
+        sources: list[Callable[[], int]] = []
+        for field in fields:
+            if field.startswith("#") and state.is_numeric_name(field[1:]):
+                name = field[1:]
+
+                def read_numeric_source(value_name: str = name) -> int:
+                    return state.get_number(value_name).value
+
+                sources.append(read_numeric_source)
+            elif field.startswith(("*", "@")):
+                raise PilotUnsupportedError(
+                    "SO: memory-pointer sound sources need an Atari memory model (spec 10.5)",
+                    line=statement.line_number,
+                    source=statement.source,
+                )
+            elif re.fullmatch(r"[+-]?\d+", field):
+                value = Numeric(int(field)).value
+
+                def read_constant_source(sound_value: int = value) -> int:
+                    return sound_value
+
+                sources.append(read_constant_source)
+            else:
+                raise self._error(f"SO: invalid sound source {field!r}", statement)
+
+        self._interpreter.set_sound_sources(tuple(sources), statement=statement)
 
     def _r(self, statement: Statement) -> None:
         """``R`` - Remark. The operand is discarded (spec 9.2).
@@ -557,17 +601,14 @@ class PilotCore:
     #: abbreviations for ``TY``/``TN``, so the parser folds them into ``T`` with
     #: a match condition and they never reach dispatch.
     #:
-    #: Everything else that parses is here, including the Atari extensions.
-    #: The device-dependent ``GR:`` and ``SO:`` are **not**: those are refused
-    #: with a :class:`~pypilot.errors.PilotUnsupportedError` before dispatch
-    #: (spec 10.4), because they are real Atari PILOT that this host cannot
-    #: honour rather than something this host supports.
+    #: Everything else that parses is here, including host-backed ``GR:``/``SO:``.
     DISPATCH: ClassVar[dict[str, str]] = {
         "A": "_a",
         "C": "_c",
         "CLOSE": "_close",
         "DUMP": "_dump",
         "E": "_e",
+        "GR": "_gr",
         "J": "_j",
         "JM": "_jm",
         "LOAD": "_load",
@@ -578,6 +619,7 @@ class PilotCore:
         "R": "_r",
         "READ": "_read",
         "SAVE": "_save",
+        "SO": "_so",
         "T": "_t",
         "TRACE": "_trace",
         "U": "_u",

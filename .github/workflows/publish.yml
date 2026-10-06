@@ -6,9 +6,9 @@ name: Publish
 # happens to be pointing at.
 #
 # Setup required once, at https://pypi.org/manage/project/repilot/settings/publishing/ :
-#   add a GitHub Actions publisher for `groberts/pypilot`
-#   -> owner             groberts
-#   -> repository name   pypilot
+#   add a GitHub Actions publisher for `grobertson/pyPILOT`
+#   -> owner             grobertson
+#   -> repository name   pyPILOT
 #   -> workflow filename  publish.yml     (this file)
 #   -> environment name   pypi            (or leave blank if not using one)
 #
@@ -24,7 +24,7 @@ name: Publish
 on:
   push:
     tags: ["v*"]
-  # Allow a dry run from the Actions tab without creating a real tag.
+  # Manual dispatch runs the same checks and can publish; it is not a dry run.
   workflow_dispatch:
 
 concurrency:
@@ -63,8 +63,8 @@ jobs:
         # PyPI matches the OIDC repository claim exactly; failing here is a
         # clearer message than a 403 after the build.
         run: |
-          if [ "$GITHUB_REPOSITORY" != "groberts/pypilot" ]; then
-            echo "::error::running in $GITHUB_REPOSITORY, but the trusted publisher is groberts/pypilot"
+          if [ "$GITHUB_REPOSITORY" != "grobertson/pyPILOT" ]; then
+            echo "::error::running in $GITHUB_REPOSITORY, but the trusted publisher is grobertson/pyPILOT"
             exit 1
           fi
 
@@ -77,9 +77,8 @@ jobs:
           fi
 
       - name: The tag must match the declared version
-        # Otherwise `git tag v1.0.1` over a tree that still says 1.0.0 would
-        # upload 1.0.0 again, and PyPI would reject it as a duplicate - or worse,
-        # accept it and leave the tag lying about what was published.
+        # Otherwise a tag over a tree with a different version could upload
+        # the wrong version or leave the tag lying about what was published.
         run: |
           tag="${GITHUB_REF_NAME#v}"
           declared="$(uv run python -c "

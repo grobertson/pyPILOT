@@ -260,18 +260,26 @@ def _read_sigil(text: str, position: int, sigil: str) -> tuple[_Token, int]:
     special = match.group(0)
     position = match.end()
 
-    device_index = 0
-    digits_match = _NUMBER_RE.match(text, position)
-    if digits_match is not None:
-        device_index = int(digits_match.group(0))
-        position = digits_match.end()
-
-    if special in CONTROLLER_PREFIXES:
-        return _Token(TokenKind.CONTROLLER, f"{special}:{device_index}", start), position
+    prefix = special[:1]
+    index = special[1:]
+    if prefix in CONTROLLER_PREFIXES and (not index or index.isdigit()):
+        if not index and text[position : position + 1] == "#":
+            variable, end = _read_controller_variable(text, position)
+            index = f"#{variable}"
+            position = end
+        return _Token(TokenKind.CONTROLLER, f"{prefix}:{index or '0'}", start), position
     # Every other %-name - %F, %M, %X, %Y, %A, and anything unrecognised -
     # reads through the special-variable path. An unknown name resolving to 0
     # keeps a lesson that probes something exotic running (spec 10.5).
     return _Token(TokenKind.SPECIAL, special, start), position
+
+
+def _read_controller_variable(text: str, position: int) -> tuple[str, int]:
+    """Read a numeric-variable selector such as the ``#I`` in ``%J#I``."""
+    match = _NAME_RE.match(text, position + 1)
+    if match is None or len(match.group(0)) != 1 or not match.group(0).isalpha():
+        raise ExpressionError("a controller selector after '#' must be #A-#Z")
+    return match.group(0), match.end()
 
 
 def _read_pointer(text: str, position: int) -> tuple[_Token, int]:
@@ -316,6 +324,8 @@ class _Reader:
             return wrap16(self.get_special(token.text))
         if token.kind is TokenKind.CONTROLLER:
             prefix, _, index = token.text.partition(":")
+            if index.startswith("#"):
+                index = str(self.get_number(index[1:]))
             return wrap16(self.get_controller(prefix, index))
         raise ExpressionError(f"memory pointers are not supported: {token.text!r} (spec 10.5)")
 

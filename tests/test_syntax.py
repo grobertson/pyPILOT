@@ -526,7 +526,9 @@ def test_immediate_only_commands_parse(name: str) -> None:
 def test_command_name_predicates() -> None:
     assert CommandName.is_command("gr")
     assert not CommandName.is_command("ZZ")
-    assert CommandName.is_refused("GR")
+    assert not CommandName.is_refused("GR")
+    assert not CommandName.is_refused("SO")
+    assert CommandName.is_refused("DOS")
     assert not CommandName.is_refused("T")
     assert CommandName.is_immediate_only("AUTO")
     assert not CommandName.is_immediate_only("RUN")

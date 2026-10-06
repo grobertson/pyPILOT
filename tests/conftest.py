@@ -14,6 +14,71 @@ from pypilot.state import PilotState
 from pypilot.syntax import Program, parse
 
 
+class FakeInteractive:
+    """Recording host for graphics, controller, and audio integration tests."""
+
+    def __init__(self) -> None:
+        self.cancelled = False
+        self.operations: list[tuple[object, ...]] = []
+        self.audio_updates: list[tuple[int, ...]] = []
+        self.controller_values: dict[tuple[str, str], int] = {}
+        self.text = BufferOutput()
+
+    def start_graphics(self) -> None:
+        self.operations.append(("start",))
+
+    def clear_graphics(self) -> None:
+        self.operations.append(("clear",))
+
+    def plot(self, x: float, y: float, color: str) -> None:
+        self.operations.append(("plot", x, y, color))
+
+    def draw_line(
+        self, start_x: float, start_y: float, end_x: float, end_y: float, color: str
+    ) -> None:
+        self.operations.append(("line", start_x, start_y, end_x, end_y, color))
+
+    def fill_line(
+        self, start_x: float, start_y: float, end_x: float, end_y: float, color: str
+    ) -> None:
+        self.operations.append(("fill", start_x, start_y, end_x, end_y, color))
+
+    def color_at(self, _x: float, _y: float) -> int:
+        return 0
+
+    def quit_graphics(self) -> None:
+        self.operations.append(("quit",))
+
+    def read_controller(self, prefix: str, index: str) -> int:
+        return self.controller_values.get((prefix, index), 0)
+
+    def set_audio_values(self, values: tuple[int, ...]) -> None:
+        self.audio_updates.append(values)
+
+    def pump_events(self) -> None:
+        pass
+
+    def read_line(self) -> str:
+        return ""
+
+    def write(self, text: str) -> None:
+        self.text.write(text)
+
+    def newline(self) -> None:
+        self.text.newline()
+
+    def flush(self) -> None:
+        self.text.flush()
+
+    def close(self) -> None:
+        self.operations.append(("close",))
+
+
+@pytest.fixture
+def interactive_host() -> FakeInteractive:
+    return FakeInteractive()
+
+
 @pytest.fixture
 def version() -> str:
     """The package version string."""

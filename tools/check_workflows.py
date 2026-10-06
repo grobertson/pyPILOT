@@ -60,7 +60,9 @@ def check_publish(data: dict) -> list[str]:
     if not tags:
         problems.append("publish.yml has no tag trigger, so it would never fire")
     elif not any(t.startswith("v") for t in tags):
-        problems.append(f"publish.yml tag trigger {tags} will not match a v1.0.0 tag")
+        problems.append(
+            f"publish.yml tag trigger {tags} will not match a version tag such as v1.1.0"
+        )
 
     permissions = data.get("permissions", {})
     if permissions.get("id-token") != "write":

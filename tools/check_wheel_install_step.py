@@ -19,10 +19,13 @@ from __future__ import annotations
 
 import glob
 import re
-import shutil
 import subprocess
 import sys
+import tomllib
+import zipfile
+from email.parser import BytesParser
 from pathlib import Path
+from tempfile import TemporaryDirectory
 
 ROOT = Path(__file__).resolve().parents[1]
 WORKFLOWS = ROOT / ".github" / "workflows"
@@ -40,64 +43,84 @@ def main() -> int:
     if re.search(r"\.venv-wheel/\S+\s*\|\|", step):
         failures.append("the step still uses `||`, which PowerShell rejects")
 
-    # 2. The wheel must be glob-expanded by the shell, not passed literally.
-    #    Prove Python's glob agrees with what bash would hand `uv`.
+    # 2. Select the wheel for this checkout, not a stale artifact from a prior build.
     wheels = sorted(glob.glob(str(ROOT / "dist" / "*.whl")))
-    if len(wheels) != 1:
-        failures.append(f"expected exactly one wheel in dist/, found {len(wheels)}")
+    project = tomllib.loads((ROOT / "pyproject.toml").read_text(encoding="utf-8"))["project"]
+    expected_name = project["name"].casefold()
+    expected_version = project["version"]
+    matching_wheels: list[str] = []
+    for wheel in wheels:
+        try:
+            with zipfile.ZipFile(wheel) as archive:
+                metadata_path = next(
+                    path for path in archive.namelist() if path.endswith(".dist-info/METADATA")
+                )
+                metadata = BytesParser().parsebytes(archive.read(metadata_path))
+        except (OSError, StopIteration, zipfile.BadZipFile) as exc:
+            failures.append(f"could not read wheel metadata from {Path(wheel).name}: {exc}")
+            continue
+        if (
+            metadata.get("Name", "").casefold() == expected_name
+            and metadata.get("Version") == expected_version
+        ):
+            matching_wheels.append(wheel)
+
+    wheel_path: str | None = None
+    if len(matching_wheels) != 1:
+        failures.append(
+            f"expected exactly one {project['name']} {expected_version} wheel in dist/, "
+            f"found {len(matching_wheels)}"
+        )
     else:
-        print(f"glob resolves to: {Path(wheels[0]).name}")
+        wheel_path = matching_wheels[0]
+        print(f"selected wheel: {Path(wheel_path).name}")
 
     # 3. The executable-name choice must cover both layouts without `||`.
     if "[ -x .venv-wheel/bin/pypilot ]" not in step:
         failures.append("the step does not choose between the posix and windows layouts")
 
-    # 4. And the real thing: install the wheel here and run it.
-    venv = ROOT / ".venv-wheelcheck"
-    shutil.rmtree(venv, ignore_errors=True)
-    try:
-        subprocess.run(
-            ["uv", "venv", str(venv), "--python", "3.12"],
-            cwd=ROOT,
-            check=True,
-            capture_output=True,
-            text=True,
-        )
-        subprocess.run(
-            ["uv", "pip", "install", "--python", str(venv), wheels[0]],
-            cwd=ROOT,
-            check=True,
-            capture_output=True,
-            text=True,
-        )
-        if sys.platform == "win32":
-            exe = venv / "Scripts" / "pypilot.exe"
-        else:
-            exe = venv / "bin" / "pypilot"
-        if not exe.exists():
-            failures.append(f"the console script is not where the step looks: {exe}")
-        else:
-            version = subprocess.run(
-                [str(exe), "--version"], check=True, capture_output=True, text=True
-            )
-            print(f"installed wheel reports: {version.stdout.strip()}")
-
-            program = ROOT / "check_wheel.pilot"
-            program.write_text("T:HELLO FROM THE INSTALLED WHEEL\n", encoding="utf-8")
+    # 4. And the real thing: install the matching wheel here and run it.
+    if wheel_path is not None:
+        with TemporaryDirectory(prefix="pypilot-wheelcheck-") as temp:
+            venv = Path(temp) / ".venv"
             try:
-                run_out = subprocess.run(
-                    [str(exe), str(program)], check=True, capture_output=True, text=True
+                subprocess.run(
+                    ["uv", "venv", str(venv), "--python", "3.12"],
+                    cwd=ROOT,
+                    check=True,
+                    capture_output=True,
+                    text=True,
                 )
-                if "HELLO FROM THE INSTALLED WHEEL" not in run_out.stdout:
-                    failures.append("the installed wheel ran but printed nothing")
+                subprocess.run(
+                    ["uv", "pip", "install", "--python", str(venv), wheel_path],
+                    cwd=ROOT,
+                    check=True,
+                    capture_output=True,
+                    text=True,
+                )
+                if sys.platform == "win32":
+                    exe = venv / "Scripts" / "pypilot.exe"
                 else:
-                    print("installed wheel ran a program successfully")
-            finally:
-                program.unlink(missing_ok=True)
-    except subprocess.CalledProcessError as exc:
-        failures.append(f"a command failed: {exc.stderr or exc.stdout}")
-    finally:
-        shutil.rmtree(venv, ignore_errors=True)
+                    exe = venv / "bin" / "pypilot"
+                if not exe.exists():
+                    failures.append(f"the console script is not where the step looks: {exe}")
+                else:
+                    version = subprocess.run(
+                        [str(exe), "--version"], check=True, capture_output=True, text=True
+                    )
+                    print(f"installed wheel reports: {version.stdout.strip()}")
+
+                    program = Path(temp) / "check.pilot"
+                    program.write_text("T:HELLO FROM THE INSTALLED WHEEL\n", encoding="utf-8")
+                    run_out = subprocess.run(
+                        [str(exe), str(program)], check=True, capture_output=True, text=True
+                    )
+                    if "HELLO FROM THE INSTALLED WHEEL" not in run_out.stdout:
+                        failures.append("the installed wheel ran but printed nothing")
+                    else:
+                        print("installed wheel ran a program successfully")
+            except subprocess.CalledProcessError as exc:
+                failures.append(f"a command failed: {exc.stderr or exc.stdout}")
 
     if failures:
         print("\nFAILED:")

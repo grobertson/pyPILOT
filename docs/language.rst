@@ -215,15 +215,27 @@ Atari extensions
     and every variable, which is why ``VNEW:`` is how a program starts clean.
 
 ``GR:``
-    Turtle graphics — 15 subcommands. **Specified but refused**; raises a
-    clear error naming the subcommand because this host has no graphics device.
+    Atari turtle graphics. The CLI opens a Pygame CE window on first use with
+    a black graphics area and blue lower text strip. Install the optional
+    ``interactive`` extra to enable graphics, keyboard controllers, and sound.
 
 ``SO:``
-    Sound. **Specified but refused**, as with ``GR:``.
+    Select up to four Atari note sources; an empty operand stops all voices.
+    Variable-backed voices update as the PILOT program runs.
 
 ``CALL:``, ``TAPE:``, ``TSYNC:``, ``DOS:``
     Hardware, cassette, and host-shell commands. Parse, then are refused. See
     ``SPEC.md`` §10.7.
+
+Interactive support is optional and does not add a dependency to the base
+installation:
+
+.. code-block:: console
+
+    pip install repilot[interactive]
+
+When a CLI program opens the Pygame window, it remains visible after the program
+finishes until the user closes it. Closing it during execution cancels the run.
 
 .. _devices:
 

@@ -11,9 +11,8 @@ per-statement handlers in ``core.py``. This module owns:
 * the device table, and the host hooks ``PA:`` and ``PCS:`` call (spec 9.5, 9.6)
 
 Every supported Core statement is implemented, along with ``MS``/``JM``,
-the utility commands and the I/O commands. ``GR:``/``SO:`` and
-``CALL:``/``TAPE:``/``TSYNC:``/``DOS:`` are refused rather than silently
-ignored.
+the utility commands, I/O commands, and the optional interactive ``GR:``/``SO:``
+devices. ``CALL:``/``TAPE:``/``TSYNC:``/``DOS:`` remain refused.
 """
 
 from __future__ import annotations
@@ -27,6 +26,8 @@ from typing import Final
 from pypilot.core import PilotCore
 from pypilot.devices import DeviceTable
 from pypilot.errors import PilotRuntimeError, PilotUnsupportedError
+from pypilot.graphics import GraphicsEngine
+from pypilot.interactive import InteractiveCancelledError, InteractiveDevice
 from pypilot.io import BufferOutput, ConsoleOutput, InputDevice, NullInput, OutputDevice
 from pypilot.state import PilotState
 from pypilot.syntax import CommandName, Condition, Program, Statement, parse
@@ -74,29 +75,10 @@ class TraceEvent:
 
 
 def _refusal_message(command: str, statement: Statement) -> str:
-    """Explain why a real-but-unimplemented command cannot be honoured.
-
-    The distinction that matters is **refused**, not *pending*. ``GR:`` is real
-    ATARI PILOT with fifteen documented sub-commands; this host has no turtle
-    graphics, and a program using it would need a screen this interpreter does
-    not have. Saying "not implemented yet" would promise something that will
-    never arrive.
-
-    For ``GR:`` and ``SO:`` the message **names the sub-command that was
-    actually requested**. A bare "GR: is refused" leaves a learner wondering
-    whether they mistyped it; naming ``DRAWTO`` tells them the program was
-    understood and the hardware is what is missing.
-    """
-    section = "10.4" if command in CommandName.ATARI_DEVICE else "10.7"
-    detail = ""
-    if command in CommandName.ATARI_DEVICE:
-        found = CommandName.subcommand(command, statement.params)
-        if found is not None:
-            kind = "sub-command" if command == "GR" else "operand"
-            detail = f", specifically its {kind} {found}"
+    """Explain why an intentionally unsupported hardware/OS command is refused."""
     return (
-        f"{command}: is real ATARI PILOT{detail}, but this host cannot honour it "
-        f"(see SPEC.md section {section}); it is refused rather than ignored, "
+        f"{command}: is real ATARI PILOT, but this host cannot honour it "
+        "(see SPEC.md section 10.7); it is refused rather than ignored, "
         "so a program relying on it fails loudly here"
     )
 
@@ -116,9 +98,27 @@ class Interpreter:
         tick: Callable[[int], None] | None = None,
         position: Callable[[int, int], None] | None = None,
         device_root: str | Path | None = None,
+        interactive: InteractiveDevice | None = None,
+        keep_interactive_open: bool = False,
     ) -> None:
         self.program = program
         self.state = state if state is not None else PilotState()
+        self.interactive = interactive
+        self.keep_interactive_open = keep_interactive_open
+        if interactive is not None and self.state.controller_reader is None:
+            self.state.controller_reader = interactive.read_controller
+        self.graphics = (
+            GraphicsEngine(
+                self.state.graphics,
+                interactive,
+                evaluate=lambda expression: self.state.evaluate(expression).value,
+                get_number=lambda name: self.state.get_number(name).value,
+            )
+            if interactive is not None
+            else None
+        )
+        self._sound_sources: tuple[Callable[[], int], ...] = ()
+        self.cancelled = False
         self.output = output if output is not None else ConsoleOutput()
         self.input = source if source is not None else NullInput()
         self.core = PilotCore(self)
@@ -152,11 +152,19 @@ class Interpreter:
         """
         try:
             self._run_loop()
+        except InteractiveCancelledError:
+            self.cancelled = True
         finally:
             self.close_devices()
+            if self.interactive is not None:
+                try:
+                    self.interactive.set_audio_values(())
+                finally:
+                    if not self.keep_interactive_open:
+                        self.interactive.close()
 
     def _run_loop(self) -> None:
-        while 0 <= self.program_counter < len(self.program):
+        while 0 <= self.program_counter < len(self.program) and not self.cancelled:
             self.steps += 1
             if self.steps > self.max_steps:
                 raise PilotRuntimeError(
@@ -168,16 +176,18 @@ class Interpreter:
             statement = self.program.statements[self.program_counter]
             self.program_counter += 1
 
-            if statement.command == "":
-                # A label-only or comment-only line; nothing to do.
-                continue
+            try:
+                if statement.command == "":
+                    continue
 
-            if not self._condition_holds(statement):
-                self._emit(statement, executed=False)
-                continue
+                if not self._condition_holds(statement):
+                    self._emit(statement, executed=False)
+                    continue
 
-            if not self._dispatch(statement):
-                return
+                if not self._dispatch(statement):
+                    return
+            finally:
+                self._after_statement(statement)
 
     def _dispatch(self, statement: Statement) -> bool:
         """Run one statement. Returns ``False`` when the program should stop."""
@@ -203,6 +213,43 @@ class Interpreter:
         self._emit(statement, executed=True)
         result = handler(statement)
         return result is not False
+
+    def execute_graphics(self, statement: Statement) -> None:
+        """Execute GR only when a host interactive device was injected."""
+        if self.graphics is None:
+            raise PilotUnsupportedError(
+                "GR: needs an interactive host; install rePILOT with the [interactive] extra "
+                "or inject an interactive device",
+                line=statement.line_number,
+                source=statement.source,
+            )
+        self.graphics.execute(statement.params, line=statement.line_number, source=statement.source)
+
+    def set_sound_sources(
+        self, sources: tuple[Callable[[], int], ...], *, statement: Statement
+    ) -> None:
+        """Install SO sources, or refuse when no interactive host is available."""
+        if self.interactive is None:
+            raise PilotUnsupportedError(
+                "SO: needs an interactive host; install rePILOT with the [interactive] extra "
+                "or inject an interactive device",
+                line=statement.line_number,
+                source=statement.source,
+            )
+        self._sound_sources = sources
+
+    def _after_statement(self, statement: Statement) -> None:
+        if self.interactive is None:
+            return
+        try:
+            self.interactive.pump_events()
+            values = tuple(source() % 32 for source in self._sound_sources)
+            self.interactive.set_audio_values(values)
+        except PilotRuntimeError as exc:
+            if exc.line is not None:
+                raise
+            raise type(exc)(str(exc), line=statement.line_number, source=statement.source) from exc
+        self.cancelled = self.interactive.cancelled
 
     # -- conditions ---------------------------------------------------------
 
@@ -282,6 +329,13 @@ class Interpreter:
         """
         if self._tick is not None:
             self._tick(units)
+            return
+        if self.interactive is not None:
+            deadline = time.monotonic() + units / 60.0
+            while time.monotonic() < deadline:
+                self.interactive.pump_events()
+                time.sleep(min(1 / 60, deadline - time.monotonic()))
+            self.interactive.pump_events()
             return
         if units > 0:
             time.sleep(units / 60.0)

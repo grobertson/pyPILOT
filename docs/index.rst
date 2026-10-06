@@ -18,6 +18,13 @@ commands, inline text, and a learner typing answers into an accept buffer.
    language
    api
 
+Interactive devices
+-------------------
+
+The implementation specification for optional Atari turtle graphics,
+keyboard controllers, and sound is available as a
+:download:`design and acceptance document <turtle-graphics-draft-spec.md>`.
+
 Indices and tables
 ==================
 

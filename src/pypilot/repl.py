@@ -44,6 +44,7 @@ from typing import ClassVar, Final
 from pypilot.devices import DeviceTable
 from pypilot.errors import PilotError
 from pypilot.helpers import Shell, parse_line_range
+from pypilot.interactive import InteractiveDevice
 from pypilot.io import ConsoleOutput, InputDevice, NullInput, OutputDevice
 from pypilot.runtime import Interpreter, TraceEvent
 from pypilot.state import PilotState
@@ -107,6 +108,7 @@ class Repl:
         output: OutputDevice | None = None,
         source: InputDevice | None = None,
         program_source: InputDevice | None = None,
+        interactive: InteractiveDevice | None = None,
         trace: Callable[[TraceEvent], None] | None = None,
         device_root: str | None = None,
     ) -> None:
@@ -114,6 +116,7 @@ class Repl:
         self.output = output if output is not None else ConsoleOutput()
         self.source = source if source is not None else NullInput()
         self.program_source = program_source
+        self.interactive = interactive
         self.state = PilotState()
         self.devices = DeviceTable(
             state=self.state, output=self.output, source=self.source, root=device_root
@@ -364,9 +367,16 @@ class Repl:
         interpreter = Interpreter(
             program,
             state=self.state,
-            output=self.output,
-            source=self.program_source if self.program_source is not None else self.source,
+            output=self.interactive if self.interactive is not None else self.output,
+            source=(
+                self.interactive
+                if self.interactive is not None
+                else self.program_source
+                if self.program_source is not None
+                else self.source
+            ),
             trace=self._emit,
+            interactive=self.interactive,
         )
         interpreter.tracing = self.tracing
         try:

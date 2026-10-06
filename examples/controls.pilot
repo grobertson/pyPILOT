@@ -1,0 +1,8 @@
+R:Poll virtual joysticks and exit when joystick 0 trigger is pressed.
+*WAIT
+C:#A=%J0
+T:JOYSTICKS %J0 / %J1; PADDLES %P0 / %P1
+PA:1
+J(%T8=0):*WAIT
+T:SPACE TRIGGER PRESSED.
+E:

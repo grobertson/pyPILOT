@@ -268,6 +268,39 @@ def test_controller_sense_reads_as_zero() -> None:
     assert evaluate(f"{'%'}P3").value == 0
 
 
+def test_controller_sense_passes_prefix_and_constant_index() -> None:
+    seen: list[tuple[str, str]] = []
+
+    def read_controller(prefix: str, index: str) -> int:
+        seen.append((prefix, index))
+        return 9
+
+    value = evaluate(
+        "%J1",
+        get_controller=read_controller,
+    )
+
+    assert value.value == 9
+    assert seen == [("J", "1")]
+
+
+def test_controller_sense_evaluates_numeric_variable_index() -> None:
+    seen: list[tuple[str, str]] = []
+
+    def read_controller(prefix: str, index: str) -> int:
+        seen.append((prefix, index))
+        return 227
+
+    value = evaluate(
+        "%P#A",
+        get_number=lambda name: 3 if name == "A" else 0,
+        get_controller=read_controller,
+    )
+
+    assert value.value == 227
+    assert seen == [("P", "3")]
+
+
 def test_unknown_percent_name_reads_as_zero() -> None:
     assert evaluate(f"{'%'}Q").value == 0
 

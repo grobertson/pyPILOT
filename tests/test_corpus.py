@@ -30,6 +30,8 @@ EXAMPLE_NAMES = [
     "msplit.pilot",
     "recurse.pilot",
     "graphics.pilot",
+    "controls.pilot",
+    "sound.pilot",
 ]
 
 
@@ -154,8 +156,8 @@ def test_recurse_uses_numeric_variables_and_a_module() -> None:
     assert any(s.condition and s.condition.expression for s in program.statements)
 
 
-def test_graphics_exercises_a_refused_command() -> None:
-    """Spec 10.4 - `GR:` must parse; the refusal happens at run time."""
+def test_graphics_exercises_a_supported_device_command() -> None:
+    """`GR:` parses as a supported device command with its graphics operand intact."""
     program = parse(load("graphics.pilot"))
     gr = [s for s in program.statements if s.command == "GR"]
     assert gr, "graphics.pilot should contain a GR: statement"
@@ -163,7 +165,9 @@ def test_graphics_exercises_a_refused_command() -> None:
 
 
 #: Commands the examples are allowed to use. Anything else would be spec drift.
-ALLOWED_COMMANDS = frozenset({"T", "A", "M", "C", "R", "E", "J", "U", "N", "MS", "JM", "GR"})
+ALLOWED_COMMANDS = frozenset(
+    {"T", "A", "M", "C", "R", "E", "J", "U", "N", "MS", "JM", "PA", "GR", "SO"}
+)
 
 
 def test_no_example_uses_a_core_pilot_only_command() -> None:

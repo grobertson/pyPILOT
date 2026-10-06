@@ -1,6 +1,5 @@
-R:Turtle graphics is real ATARI PILOT, but unimplemented in pyPILOT (SPEC 10.4)
-R:This program MUST parse cleanly and fail at RUN time with a message
-R:naming the subcommand - not at parse time.
+R:Draw a square with the ATARI PILOT turtle graphics command.
 GR:CLEAR
-T:THIS LINE IS NEVER REACHED.
+GR:GOTO 0,0;TURNTO 0;4(DRAW 15;TURN 90)
+T:SQUARE COMPLETE AT (%X,%Y)
 E:

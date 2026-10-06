@@ -160,6 +160,42 @@ def test_specials_read_as_zero_when_unset(state: PilotState) -> None:
     assert state.evaluate("%X").value == 0
     assert state.evaluate("%Y").value == 0
     assert state.evaluate("%A").value == 0
+    assert state.evaluate("%Z").value == 0
+
+
+def test_graphics_specials_read_live_cursor_and_screen_color() -> None:
+    """Graphics specials read from the state shared with the renderer."""
+    from pypilot.interactive import GraphicsState
+
+    state = PilotState(
+        graphics=GraphicsState(
+            active=True,
+            x=3.6,
+            y=-2.6,
+            angle=90,
+            color_reader=lambda _x, _y: 3,
+        )
+    )
+
+    assert state.evaluate("%X").value == 4
+    assert state.evaluate("%Y").value == -3
+    assert state.evaluate("%A").value == 90
+    assert state.evaluate("%Z").value == 3
+
+
+def test_run_reset_clears_graphics_state_but_keeps_controller_reader() -> None:
+    from pypilot.interactive import GraphicsState
+
+    state = PilotState(
+        controller_reader=lambda _prefix, _index: 8,
+        graphics=GraphicsState(active=True, x=12.0, y=7.0, angle=180),
+    )
+
+    state.reset()
+
+    assert state.evaluate("%X").value == 0
+    assert state.evaluate("%A").value == 0
+    assert state.evaluate("%J0").value == 8
 
 
 def test_special_f_is_reported(state: PilotState) -> None:
@@ -172,6 +208,16 @@ def test_controller_sense_reads_as_no_input(state: PilotState) -> None:
     assert state.evaluate("%J0").value == 0
     assert state.evaluate("%P0").value == 0
     assert state.evaluate("%T0").value == 0
+
+
+def test_controller_senses_use_an_injected_host_reader() -> None:
+    """Interactive host values flow through the existing expression path."""
+    values = {("J", "0"): 9, ("P", "1"): 227, ("T", "8"): 1}
+    state = PilotState(controller_reader=lambda prefix, index: values.get((prefix, index), 0))
+
+    assert state.evaluate("%J0").value == 9
+    assert state.evaluate("%P1").value == 227
+    assert state.evaluate("%T8").value == 1
 
 
 def test_random_comes_from_the_states_generator() -> None:

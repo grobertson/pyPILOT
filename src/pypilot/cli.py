@@ -4,12 +4,9 @@
 its structure without running it, and ``pypilot`` with no arguments enters the
 **interactive REPL** (spec 6.2).
 
-Every supported run-mode statement is implemented, so a program built from
-them runs end to end. The commands that are *refused* - ``GR:`` and ``SO:``
-and the hardware set (`CALL:`, `TAPE:`, `TSYNC:`, `DOS:`) - parse and raise a
-:class:`~pypilot.errors.PilotUnsupportedError` naming SPEC.md §10.4, because
-they are real Atari PILOT this host cannot honour rather than something
-unwritten.
+Every supported run-mode statement is implemented. ``GR:``/``SO:`` use the
+optional interactive host; the hardware and host-shell commands
+(`CALL:`, `TAPE:`, `TSYNC:`, `DOS:`) remain refused.
 """
 
 from __future__ import annotations
@@ -17,11 +14,14 @@ from __future__ import annotations
 import argparse
 import sys
 from collections.abc import Sequence
+from pathlib import Path
 
 from pypilot import __version__
 from pypilot.errors import PilotError
 from pypilot.helpers import Os, Shell
-from pypilot.io import ConsoleInput, ConsoleOutput, NullInput
+from pypilot.interactive import InteractiveDevice
+from pypilot.io import ConsoleInput, ConsoleOutput
+from pypilot.pygame_backend import PygameInteractiveDevice
 from pypilot.repl import Repl
 from pypilot.runtime import Interpreter, TraceEvent
 from pypilot.state import PilotState
@@ -96,34 +96,54 @@ def check_program(path: str, *, show_statements: bool = False) -> tuple[int, str
     return 0, "\n".join(lines) + "\n"
 
 
-def run_program(path: str, *, trace: bool = False) -> int:
+def run_program(
+    path: str,
+    *,
+    trace: bool = False,
+    interactive_device: InteractiveDevice | None = None,
+) -> int:
     """Parse and run the program at ``path``, returning an exit code.
 
-    Exit codes follow spec 12: 0 on success, 1 on a program or runtime error.
-    Trace output goes to stderr so it never mixes with the program's own.
+    Exit codes follow spec 12: 0 on success, 1 on a program or runtime error,
+    and 130 when the user closes the interactive window. A completed program's
+    window remains open until the user closes it. Trace output goes to stderr.
     """
     program = parse(decode_source(Os.load(path)))
-    output = ConsoleOutput()
+    console = ConsoleOutput()
+    device = interactive_device or PygameInteractiveDevice(
+        fallback_output=console,
+        fallback_input=ConsoleInput(),
+        title=f"{Path(path).name} - rePILOT Interactive",
+    )
     events: list[TraceEvent] = []
 
     interpreter = Interpreter(
         program,
         state=PilotState(),
-        output=output,
-        source=NullInput(),
+        output=device,
+        source=device,
         trace=events.append if trace else None,
+        interactive=device,
+        keep_interactive_open=isinstance(device, PygameInteractiveDevice),
     )
     interpreter.tracing = trace
     try:
         interpreter.run()
+        if isinstance(device, PygameInteractiveDevice) and not interpreter.cancelled:
+            device.wait_until_closed()
     except NotImplementedError as exc:
         # A statement belonging to a later stage: say which stage.
         raise PilotError(str(exc)) from exc
     finally:
-        output.flush()
+        console.flush()
+        if isinstance(device, PygameInteractiveDevice):
+            device.close()
         if trace:
             _print_trace(events)
 
+    if interpreter.cancelled:
+        print(f"{path}: cancelled by closing the interactive window", file=sys.stderr)
+        return 130
     return 0
 
 
@@ -164,10 +184,17 @@ def repl(
                 area.append(entry)
         shell = area
 
+    console = ConsoleOutput()
+    interactive_device = PygameInteractiveDevice(
+        fallback_output=console,
+        fallback_input=ConsoleInput(),
+        title="rePILOT Immediate Mode",
+    )
     session = Repl(
         shell,
-        output=ConsoleOutput(),
+        output=console,
         source=ConsoleInput(),
+        interactive=interactive_device,
         trace=_trace_reporter if trace else None,
         device_root=device_root,
     )

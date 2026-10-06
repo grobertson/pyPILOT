@@ -29,6 +29,8 @@ EXPECTED = [
     "msplit.pilot",
     "recurse.pilot",
     "graphics.pilot",
+    "controls.pilot",
+    "sound.pilot",
     "summary.pilot",
 ]
 
@@ -181,10 +183,11 @@ def test_msplit_example_covers_the_undefined_variable_rule() -> None:
     assert "UNDEFINED MEANS $UNSET" in read("msplit.pilot")
 
 
-def test_graphics_example_exercises_the_refusal_path() -> None:
-    """``GR:`` must parse and fail at run time, not parse time (spec 10.4)."""
+def test_graphics_example_exercises_the_graphics_language() -> None:
+    """The graphics example contains a real repeated turtle drawing."""
     source = read("graphics.pilot")
     assert "GR:CLEAR" in source
+    assert "4(DRAW 15;TURN 90)" in source
     assert source.index("GR:CLEAR") < source.index("E:")
 
 
@@ -202,19 +205,54 @@ def test_every_runnable_example_actually_runs(name: str) -> None:
         assert fragment in output, f"{name} did not produce {fragment!r}"
 
 
-def test_graphics_example_is_refused_when_run() -> None:
-    """The one example that must *not* run, and must say why (spec 10.4)."""
-    from pypilot.errors import PilotUnsupportedError
-    from pypilot.io import BufferOutput, StringInput
+def test_graphics_example_runs_with_an_injected_host(interactive_host) -> None:  # type: ignore[no-untyped-def]
+    """The graphics corpus runs without opening a real window in unit tests."""
     from pypilot.runtime import Interpreter
     from pypilot.syntax import parse
 
-    out = BufferOutput()
-    interpreter = Interpreter(parse(read("graphics.pilot")), output=out, source=StringInput([]))
-    with pytest.raises(PilotUnsupportedError) as caught:
-        interpreter.run()
-    assert "CLEAR" in str(caught.value), "the refusal must name the sub-command"
-    assert "10.4" in str(caught.value)
+    interpreter = Interpreter(
+        parse(read("graphics.pilot")),
+        output=interactive_host,
+        source=interactive_host,
+        interactive=interactive_host,
+    )
+    interpreter.run()
+
+    assert any(operation[0] == "line" for operation in interactive_host.operations)
+    assert "SQUARE COMPLETE AT (0,0)" in interactive_host.text.text
+
+
+def test_controller_example_reads_virtual_joystick_and_trigger(interactive_host) -> None:  # type: ignore[no-untyped-def]
+    from pypilot.runtime import Interpreter
+    from pypilot.syntax import parse
+
+    interactive_host.controller_values[("T", "8")] = 1
+    interpreter = Interpreter(
+        parse((EXAMPLES / "controls.pilot").read_text(encoding="utf-8")),
+        output=interactive_host,
+        source=interactive_host,
+        interactive=interactive_host,
+    )
+    interpreter.run()
+
+    assert "SPACE TRIGGER PRESSED." in interactive_host.text.text
+
+
+def test_sound_example_changes_and_stops_four_voices(interactive_host) -> None:  # type: ignore[no-untyped-def]
+    from pypilot.runtime import Interpreter
+    from pypilot.syntax import parse
+
+    interpreter = Interpreter(
+        parse((EXAMPLES / "sound.pilot").read_text(encoding="utf-8")),
+        output=interactive_host,
+        source=interactive_host,
+        interactive=interactive_host,
+    )
+    interpreter.run()
+
+    assert (13, 17, 20, 24) in interactive_host.audio_updates
+    assert (14, 17, 20, 24) in interactive_host.audio_updates
+    assert interactive_host.audio_updates[-1] == ()
 
 
 @pytest.mark.parametrize("name", EXPECTED)

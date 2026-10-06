@@ -4,11 +4,15 @@ from __future__ import annotations
 
 import io
 from pathlib import Path
+from typing import Any
 
 import pytest
 
 from pypilot import __version__
 from pypilot.cli import build_parser, check_program, main
+from pypilot.cli import run_program as run_cli_program
+from pypilot.errors import PilotUnsupportedError
+from pypilot.pygame_backend import PygameInteractiveDevice
 
 EXAMPLES = Path(__file__).parent.parent / "examples"
 
@@ -90,12 +94,12 @@ def test_check_list_names_every_statement(capsys: pytest.CaptureFixture[str]) ->
     assert "JM:*NORTH,*SOUTH" in out
 
 
-def test_check_marks_refused_commands(capsys: pytest.CaptureFixture[str]) -> None:
-    """Spec 10.4 - `GR:` is real ATARI PILOT, refused only at run time."""
+def test_check_lists_graphics_as_a_supported_command(capsys: pytest.CaptureFixture[str]) -> None:
+    """GR is parsed as a supported command, not marked as refused."""
     assert main(["--check", "--list", str(EXAMPLES / "graphics.pilot")]) == 0
     out = capsys.readouterr().out
     assert "GR:CLEAR" in out
-    assert "refused at run time" in out
+    assert "refused at run time" not in out
 
 
 def test_check_reports_a_syntax_error_with_line_and_source(
@@ -160,23 +164,26 @@ def test_running_a_program_with_a_runtime_error_exits_one(
     assert "C:#XY=1" in err
 
 
-def test_running_a_refused_command_says_why_it_cannot_be_honoured(
-    tmp_path: Path, capsys: pytest.CaptureFixture[str]
+def test_running_graphics_uses_an_injected_interactive_host(
+    tmp_path: Path, interactive_host: Any
 ) -> None:
-    """Spec 10.4 - `GR:` is real ATARI PILOT, refused with a clear message.
-
-    This replaced a test that asserted an *unimplemented* statement named its
-    stage. Every run-mode command is implemented as of Stage 7, so there is no
-    longer a pending handler to point at - and the one that had been used, `J:`,
-    was a poor choice anyway, since an unconditioned `J:` to itself loops
-    forever. The refusal path is the behaviour worth pinning now.
-    """
     program = tmp_path / "draw.pilot"
-    program.write_text("T:BEFORE\nGR:CLEAR\n", encoding="utf-8")
-    assert main([str(program)]) == 1
-    err = capsys.readouterr().err
-    assert "GR:" in err
-    assert "10.4" in err, "the message must point at the spec section"
+    program.write_text("T:BEFORE\nGR:CLEAR;GOTO 0,0;DRAW 10\n", encoding="utf-8")
+
+    assert run_cli_program(str(program), interactive_device=interactive_host) == 0
+    assert any(operation[0] == "line" for operation in interactive_host.operations)
+    assert "BEFORE\n" in interactive_host.text.text
+
+
+def test_cli_returns_130_when_interactive_host_is_cancelled(
+    tmp_path: Path, interactive_host: Any, capsys: pytest.CaptureFixture[str]
+) -> None:
+    program = tmp_path / "cancel.pilot"
+    program.write_text("T:START\n", encoding="utf-8")
+    interactive_host.cancelled = True
+
+    assert run_cli_program(str(program), interactive_device=interactive_host) == 130
+    assert "cancelled" in capsys.readouterr().err
 
 
 def test_a_runaway_jump_loop_is_reported_rather_than_hanging(
@@ -195,34 +202,21 @@ def test_a_runaway_jump_loop_is_reported_rather_than_hanging(
     assert "J:" in err
 
 
-def test_running_a_program_with_a_refused_command(
-    tmp_path: Path, capsys: pytest.CaptureFixture[str]
+def test_missing_pygame_extra_is_reported_without_a_traceback(
+    tmp_path: Path, capsys: pytest.CaptureFixture[str], monkeypatch: pytest.MonkeyPatch
 ) -> None:
-    """Spec 10.4 - `GR:` is real ATARI PILOT, refused with a clear message.
+    """The CLI explains how to enable interactive support if Pygame CE is absent."""
 
-    The message must **name the sub-command**. "GR: is not implemented" leaves
-    a learner wondering whether they mistyped it; naming `CLEAR` says the
-    program was understood and the hardware is what is missing.
-    """
+    def missing_backend(self: PygameInteractiveDevice) -> None:
+        raise PilotUnsupportedError("interactive features require pygame-ce; install [interactive]")
+
+    monkeypatch.setattr(PygameInteractiveDevice, "_load", missing_backend)
     program = tmp_path / "draw.pilot"
     program.write_text("GR:CLEAR\n", encoding="utf-8")
     assert main([str(program)]) == 1
     err = capsys.readouterr().err
-    assert "CLEAR" in err, "the refusal must name the sub-command that was asked for"
-    assert "10.4" in err
-    assert "refused" in err, "refused, not pending - nothing is ever going to arrive"
-
-
-def test_a_refusal_says_refused_rather_than_not_implemented_yet(
-    tmp_path: Path, capsys: pytest.CaptureFixture[str]
-) -> None:
-    """`GR:` will never be implemented here, so promising otherwise is a lie."""
-    program = tmp_path / "draw.pilot"
-    program.write_text("GR:DRAW\n", encoding="utf-8")
-    assert main([str(program)]) == 1
-    err = capsys.readouterr().err
-    assert "DRAW" in err
-    assert "not implemented yet" not in err
+    assert "pygame-ce" in err
+    assert "[interactive]" in err
 
 
 def test_trace_goes_to_stderr_not_stdout(

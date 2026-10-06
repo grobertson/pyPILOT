@@ -298,9 +298,9 @@ def test_a_skipped_statement_does_not_advance_variables(run) -> None:  # type: i
 # ---------------------------------------------------------------------------
 
 
-def test_a_refused_command_raises_clearly(run) -> None:  # type: ignore[no-untyped-def]
-    """Spec 10.4 - `GR:` is real ATARI PILOT, so it must not look like a typo."""
-    with pytest.raises(PilotUnsupportedError, match=r"10\.4"):
+def test_graphics_without_an_interactive_host_fails_clearly(run) -> None:  # type: ignore[no-untyped-def]
+    """Library interpreters stay headless unless a graphics host is injected."""
+    with pytest.raises(PilotUnsupportedError, match="interactive host"):
         run("GR:CLEAR")
 
 

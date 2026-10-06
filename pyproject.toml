@@ -12,7 +12,7 @@ build-backend = "hatchling.build"
 # `from pypilot...` in the docs, the tests and the console script for no gain,
 # and the distribution name is the only thing PyPI ever sees.
 name = "rePILOT"
-version = "1.0.0"
+version = "1.1.0"
 description = "An implementation of the ATARI PILOT (Programmed Instruction Learning Or Teaching) language."
 readme = "README.md"
 requires-python = ">=3.12"
@@ -36,10 +36,10 @@ classifiers = [
 dependencies = []
 
 [project.urls]
-Homepage = "https://github.com/groberts/pypilot"
-Repository = "https://github.com/groberts/pypilot"
-Issues = "https://github.com/groberts/pypilot/issues"
-Changelog = "https://github.com/groberts/pypilot/blob/main/CHANGELOG.md"
+Homepage = "https://github.com/grobertson/pyPILOT"
+Repository = "https://github.com/grobertson/pyPILOT"
+Issues = "https://github.com/grobertson/pyPILOT/issues"
+Changelog = "https://github.com/grobertson/pyPILOT/blob/master/CHANGELOG.md"
 
 [project.scripts]
 pypilot = "pypilot.cli:main"
@@ -47,6 +47,7 @@ pypilot = "pypilot.cli:main"
 [project.optional-dependencies]
 # Convenience aggregate mirroring the `dev` uv dependency-group for `pip install -e .[dev]`
 dev = ["pytest>=8.0", "pytest-cov>=6.0", "ruff>=0.8", "mypy>=1.13", "pyyaml>=6.0"]
+interactive = ["pygame-ce>=2.5.5"]
 
 [dependency-groups]
 dev = [

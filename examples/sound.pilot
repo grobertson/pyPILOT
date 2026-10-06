@@ -1,0 +1,12 @@
+R:Play four notes, change one voice, then stop all sound.
+C:#A=13
+C:#B=17
+C:#C=20
+C:#D=24
+SO:#A,#B,#C,#D
+PA:30
+C:#A=14
+PA:30
+SO:
+T:FOUR VOICES STOPPED.
+E:

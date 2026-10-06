@@ -41,8 +41,8 @@ def metadata() -> dict[str, Any]:
 # ---------------------------------------------------------------------------
 
 
-def test_the_version_is_one_zero(metadata: dict[str, Any]) -> None:
-    assert metadata["version"] == "1.0.0"
+def test_the_version_is_one_one_zero(metadata: dict[str, Any]) -> None:
+    assert metadata["version"] == "1.1.0"
 
 
 def test_the_version_is_not_hardcoded_in_the_package() -> None:
@@ -104,7 +104,7 @@ def test_the_repository_urls_point_at_the_current_repo(metadata: dict[str, Any])
     A stale URL is the kind of thing nobody notices for a year.
     """
     for name, url in metadata["urls"].items():
-        assert url.startswith("https://github.com/groberts/pypilot"), f"{name}: {url}"
+        assert url.startswith("https://github.com/grobertson/pyPILOT"), f"{name}: {url}"
 
 
 def test_there_are_no_runtime_dependencies(metadata: dict[str, Any]) -> None:
@@ -114,6 +114,11 @@ def test_there_are_no_runtime_dependencies(metadata: dict[str, Any]) -> None:
     CPython, so this is a design constraint rather than a packaging preference.
     """
     assert metadata.get("dependencies", []) == []
+
+
+def test_pygame_ce_is_only_in_the_interactive_extra(metadata: dict[str, Any]) -> None:
+    assert metadata.get("dependencies", []) == []
+    assert metadata["optional-dependencies"]["interactive"] == ["pygame-ce>=2.5.5"]
 
 
 def test_the_author_email_is_not_malformed(metadata: dict[str, Any]) -> None:

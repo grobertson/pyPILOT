@@ -22,8 +22,7 @@ from pypilot.syntax import parse
 #: Every command in the dispatch table.
 #:
 #: ``Y``/``N`` are absent by design: they fold to ``T`` with a match condition
-#: (spec 6.1.1), so they must never reach dispatch. ``GR``/``SO`` are absent
-#: because they are *refused* before dispatch (spec 10.4), not pending.
+#: (spec 6.1.1), so they must never reach dispatch.
 CORE_LETTERS = ["A", "C", "E", "J", "M", "R", "T", "U"]
 
 #: The two-letter commands that dispatch under their own name: ``MS:``
@@ -37,8 +36,13 @@ UTILITY_COMMANDS = ["DUMP", "PA", "PCS", "TRACE", "VNEW"]
 #: The device and I/O commands of spec 9.6.
 IO_COMMANDS = ["CLOSE", "LOAD", "READ", "SAVE", "WRITE"]
 
+#: Device commands backed by the optional interactive host.
+DEVICE_COMMANDS = ["GR", "SO"]
+
 #: Everything in the dispatch table.
-DISPATCHED = sorted(CORE_LETTERS + TWO_LETTER_COMMANDS + UTILITY_COMMANDS + IO_COMMANDS)
+DISPATCHED = sorted(
+    CORE_LETTERS + TWO_LETTER_COMMANDS + UTILITY_COMMANDS + IO_COMMANDS + DEVICE_COMMANDS
+)
 
 #: Handlers that arrived in Stage 4.
 STAGE4 = {"C", "R", "T"}
@@ -53,7 +57,7 @@ STAGE6 = {"E", "J", "JM", "U"}
 STAGE7 = {"CLOSE", "DUMP", "LOAD", "PA", "PCS", "READ", "SAVE", "TRACE", "VNEW", "WRITE"}
 
 #: Every implemented handler.
-IMPLEMENTED = STAGE4 | STAGE5 | STAGE6 | STAGE7
+IMPLEMENTED = STAGE4 | STAGE5 | STAGE6 | STAGE7 | set(DEVICE_COMMANDS)
 
 
 @pytest.fixture
@@ -80,8 +84,7 @@ def test_every_core_handler_is_implemented() -> None:
     assertions. Inverting it makes the same idea bite forever: if a future
     change ever stubs a Core handler again, this fails.
 
-    Device commands are still genuinely pending, and they are checked in
-    ``test_a_refused_command_raises_clearly`` and the Stage 7 work.
+    Device commands are covered separately because they need an injected host.
     """
     for letter in CORE_LETTERS:
         handler = getattr(PilotCore, PilotCore.DISPATCH[letter])
@@ -126,14 +129,11 @@ def test_y_and_n_are_not_dispatchable_commands() -> None:
     assert "N" not in PilotCore.DISPATCH
 
 
-def test_unimplemented_two_letter_commands_are_absent_from_core_dispatch() -> None:
-    """Every command that parses and can run must be in the dispatch table.
-
-    As of Stage 7 that is everything except the device-dependent ``GR:``/``SO:``,
-    which are *refused* before dispatch (spec 10.4) rather than pending - they
-    are real Atari PILOT this host cannot honour, not something unwritten.
-    """
+def test_device_commands_dispatch_and_hardware_commands_remain_refused() -> None:
+    """GR/SO need an injected host; hardware/OS escape commands stay refused."""
     for name in TWO_LETTER_COMMANDS + UTILITY_COMMANDS + IO_COMMANDS:
         assert name in PilotCore.DISPATCH, f"{name}: is implemented"
-    for name in ("GR", "SO", "CALL", "TAPE", "TSYNC", "DOS"):
-        assert name not in PilotCore.DISPATCH, f"{name}: is refused, not dispatched"
+    for name in DEVICE_COMMANDS:
+        assert name in PilotCore.DISPATCH
+    for name in ("CALL", "TAPE", "TSYNC", "DOS"):
+        assert name not in PilotCore.DISPATCH, f"{name}: remains refused, not dispatched"

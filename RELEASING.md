@@ -1,118 +1,140 @@
 # Releasing
 
-rePILOT is published to PyPI with **trusted publishing** — no API token lives
-in this repository, in its secrets, or in any build log. GitHub mints a
-short-lived OIDC token for the job and PyPI exchanges it for an upload token.
+The `rePILOT` distribution is published to PyPI as `repilot`. The importable
+Python package remains `pypilot`, so users install with `pip install repilot`
+and import with `from pypilot import ...`.
 
-> **Two names, on purpose.** The PyPI *distribution* is `rePILOT`; the
-> importable *package* is still `pypilot`. The distribution had to be renamed
-> because `pypilot` is taken on PyPI by an unrelated long-standing package, and
-> renaming the import path too would have broken every import in the docs and
-> tests for no benefit. So: `pip install repilot`, then
-> `from pypilot import ...`.
+The first stable release, `1.0.0`, was published on 2026-09-26. PyPI releases
+are immutable, so every release needs a new version declared in `pyproject.toml`.
 
-## One-time setup
+## Publishing setup
 
-On the project's **Publishing** page — **https://pypi.org/manage/project/repilot/settings/publishing/**
-— add a GitHub Actions publisher:
+Publishing uses **PyPI trusted publishing**. GitHub Actions gets a short-lived
+OIDC token; no PyPI API token should be stored in this repository or its GitHub
+secrets.
+
+The canonical repository is `grobertson/pyPILOT` (the configured `origin`). On
+the PyPI project's Publishing page, configure this GitHub Actions publisher:
 
 | Field | Value |
 |---|---|
-| PyPI project name | `rePILOT` (shown as `repilot` in the URL) |
-| Owner | `groberts` |
-| Repository name | `pypilot` |
-| Workflow name | `publish.yml` |
-| Environment name | `pypi` |
+| PyPI project | `repilot` |
+| GitHub owner | `grobertson` |
+| GitHub repository | `pyPILOT` |
+| Workflow filename | `publish.yml` |
+| GitHub environment | `pypi` |
 
-Three of those are matched **exactly**, and a mismatch fails at upload time
-rather than at setup time:
+Remove the obsolete `groberts/pypilot` publisher if present. All publisher
+fields must match exactly; a mismatch makes trusted publishing fail. Create the
+GitHub `pypi` environment under **Settings → Environments**. Configure required
+reviewers there if publishing should require approval.
 
-- the **workflow filename** must be exactly `publish.yml` (this file);
-- the **owner** and **repository name** must match GitHub exactly:
-  `groberts/pypilot`;
-- the **environment name** must match the `environment:` block in the workflow,
-  or is left blank on both sides.
+## Release procedure
 
-The publisher only becomes active once the project has an owner and at least
-one release; add the publisher *after* the project exists.
+Release manually means preparing and pushing a version tag. The tag starts the
+GitHub Actions workflow, which verifies and publishes the distributions. Do not
+upload from a developer machine with Twine; this project uses trusted
+publishing.
 
-Then create a matching GitHub environment called `pypi` under
-**Settings → Environments**. Leave **Required reviewers** enabled if you want
-publishing to be a deliberate act rather than a side effect of tagging.
-
-## Cutting a release
-
-The first release is `1.0.0`; `repilot` does not exist on PyPI until it is
-published. For later releases, use the version declared in `pyproject.toml`,
-and release from an up-to-date `master`.
-
-### How the PyPI version stays in sync
-
-- **Every push and pull request:** the `pypi-sync` job in `ci.yml` runs
-  `tools/check_pypi_sync.py`. It fails only if PyPI is *ahead* of
-  `pyproject.toml`; an unreleased or already-published version passes.
-- **Every tag:** `publish.yml` refuses to upload unless the repository is
-  `groberts/pypilot`, the tag is on `master`/`main`, the tag equals the
-  `pyproject.toml` version, and that version is **not** already on PyPI.
+1. Confirm the PyPI trusted publisher and GitHub `pypi` environment match the
+   setup above. Start from an up-to-date `master` and require CI to pass before
+   tagging.
+2. Choose a new version. Update `project.version` in `pyproject.toml`, add a
+   dated entry to `CHANGELOG.md`, then run `uv lock` to refresh the local
+   package entry in `uv.lock`. `pyproject.toml` is the version source of truth;
+   `pypilot.__version__` reads the installed distribution metadata.
+3. Run the local release checks:
 
 ```console
-# 1. Set the version. pyproject.toml is the single source of truth;
-#    pypilot.__version__ reads it, so never edit the version by hand.
-#    (SPEC.md §11 records the version for each stage.)
-
-# 2. Run the full gate. All of it, because `publish.yml` runs all of it again.
+uv lock --check
+uv sync --all-extras --dev
+uv run python tools/check_pypi_sync.py --require-unpublished
 uv run pytest -q
 uv run ruff check .
 uv run ruff format --check .
 uv run mypy
+uv run python tools/check_workflows.py
+uv run python tools/check_embedded_python.py
 uv run --group docs sphinx-build -W -b html docs docs/_build/html
 uv build
-uv tool run twine check --strict dist/*
-
-# 3. Commit, then tag. The tag MUST match the declared version, or the
-#    workflow refuses to publish.
-git add -A
-git commit -m "Release X.Y.Z"
-git tag -a vX.Y.Z -m "X.Y.Z"
-git push origin master
-git push origin vX.Y.Z
+uv run python tools/check_wheel_install_step.py
 ```
 
-The tag push is what triggers the publish. The workflow then:
+`check_wheel_install_step.py` selects the wheel whose metadata matches
+`pyproject.toml`, installs it into a temporary environment, and runs the CLI.
+It distinguishes the current wheel from stale files left in `dist/`. The full CI
+matrix repeats the clean-wheel smoke test on Linux, Windows, and macOS with
+Python 3.12 and 3.13; require CI to pass before tagging.
 
-1. checks the tag matches `pyproject.toml`
-2. runs ruff, mypy and pytest
-3. builds and runs `twine check --strict`
-4. uploads, with PEP 740 attestations
+Check the freshly built artifacts with Twine. On PowerShell, pass the two
+versioned artifact paths explicitly because native commands do not reliably
+expand `dist/*`:
 
-The tag check prevents publishing a version that does not match its tag.
-
-## If a publish fails
-
-- **The version is already on PyPI.** PyPI is immutable; you cannot replace a
-  file. Bump the version and cut a new tag.
-- **A tag fired but the version mismatched.** Fix `pyproject.toml`, commit, and
-  move the tag: `git tag -f vX.Y.Z && git push -f origin vX.Y.Z`. Force-pushing
-  a tag is acceptable here *only* because the release did not happen.
-- **The publisher was not configured yet.** The job fails at the upload step
-  with a 403 from PyPI. Add the publisher, then re-run the failed job from the
-  Actions tab — the artifact is still within its 7-day retention.
-
-## Verifying a release
-
-```console
-uv pip install --python .venv-check repilot==X.Y.Z
-.venv-check/bin/pypilot --version
+```powershell
+uv tool run twine check --strict dist/repilot-X.Y.Z.tar.gz dist/repilot-X.Y.Z-py3-none-any.whl
 ```
 
-Or check the attestations, which tie the artifact to this repository and commit:
-https://pypi.org/project/repilot/#attestations
+Replace `X.Y.Z` with the selected version. CI additionally inspects the
+archives for accidentally packaged build artifacts.
 
-## Before any bulk `git add -A`
+4. Review the exact files to include. Stage only those files, inspect the
+   staged diff, and run the secret scan:
 
 ```console
+git status --short
+git add pyproject.toml uv.lock CHANGELOG.md
+# Add any other intentional release, workflow, test, or documentation changes explicitly.
+git diff --cached --check
+git diff --cached
 uv run python tools/scan_secrets.py
 ```
 
-It greps everything Git would stage for PyPI tokens, GitHub PATs, AWS keys,
-private key blocks and similar, and fails the operation.
+5. Commit and push the commit to the default branch, then create and push a tag
+   whose version exactly matches `pyproject.toml`:
+
+```console
+git commit -m "Release X.Y.Z"
+git push origin master
+git tag -a vX.Y.Z -m "X.Y.Z"
+git push origin vX.Y.Z
+```
+
+Replace every `X.Y.Z` with the chosen version. The tagged commit must be
+reachable from `master` or `main`. Pushing the tag starts `publish.yml`; monitor
+the run in GitHub Actions and approve the `pypi` environment if it requires
+review. The workflow checks repository identity, default-branch ancestry,
+tag/version match, and that the version is not already on PyPI; it then runs
+Ruff, mypy, pytest, builds the distributions, checks them with Twine, verifies
+the archives contain no build artifacts, and publishes with PEP 740
+attestations.
+
+`workflow_dispatch` is **not a dry run**: it can reach the real publish job if
+the checks pass. Use a disposable test project for workflow experiments rather
+than dispatching this workflow as a release rehearsal.
+
+### Version synchronization
+
+The `pypi-sync` CI job runs `tools/check_pypi_sync.py` on pushes and pull
+requests. It fails when PyPI is ahead of `pyproject.toml`; an unpublished local
+version is allowed. The release workflow uses `--require-unpublished` so it
+refuses a duplicate release.
+
+## Failures and verification
+
+- **Version already exists on PyPI:** published files cannot be replaced. Bump
+  the version and create a new release.
+- **Tag/version mismatch:** correct `pyproject.toml`, commit the correction,
+  then recreate the tag only if publication did not succeed. Never move a tag
+  for a version already published.
+- **Trusted-publisher 403:** verify the PyPI publisher's owner, repository,
+  workflow filename, and environment against the actual GitHub repository and
+  `.github/workflows/publish.yml`, then rerun the failed workflow if its
+  verified artifact is still retained.
+
+After a successful run, verify the version at
+https://pypi.org/project/repilot/ and check its attestations at
+https://pypi.org/project/repilot/#attestations. A quick installed CLI check is:
+
+```console
+uv tool run --from repilot==X.Y.Z pypilot --version
+```
