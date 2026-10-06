@@ -28,7 +28,7 @@ and *not* Common PILOT, despite superficial similarity. See
 > you asked for, rather than being silently ignored.
 
 Zero third-party runtime dependencies, so it runs on a classroom Raspberry Pi
-with nothing but CPython. 896 tests, 95% branch coverage, mypy strict, and a
+with nothing but CPython. 903 tests, 95% branch coverage, mypy strict, and a
 3-OS × 2-Python CI matrix that installs the built wheel and runs a program from
 it.
 

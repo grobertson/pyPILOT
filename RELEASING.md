@@ -19,8 +19,8 @@ On the project's **Publishing** page — **https://pypi.org/manage/project/repil
 | Field | Value |
 |---|---|
 | PyPI project name | `rePILOT` (shown as `repilot` in the URL) |
-| Owner | `grobertson` |
-| Repository name | `RePILOT` |
+| Owner | `groberts` |
+| Repository name | `pypilot` |
 | Workflow name | `publish.yml` |
 | Environment name | `pypi` |
 
@@ -28,8 +28,8 @@ Three of those are matched **exactly**, and a mismatch fails at upload time
 rather than at setup time:
 
 - the **workflow filename** must be exactly `publish.yml` (this file);
-- the **repository name** is matched against what GitHub reports, so it is
-  `RePILOT` and not `rePILOT`, `repilot` or `pyPILOT`;
+- the **owner** and **repository name** must match GitHub exactly:
+  `groberts/pypilot`;
 - the **environment name** must match the `environment:` block in the workflow,
   or is left blank on both sides.
 
@@ -42,9 +42,18 @@ publishing to be a deliberate act rather than a side effect of tagging.
 
 ## Cutting a release
 
-Version `1.0.0` is already released. Replace `X.Y.Z` below with the new version
-declared in `pyproject.toml`, and release from an up-to-date `master` after the
-release changes have been merged.
+The first release is `1.0.0`; `repilot` does not exist on PyPI until it is
+published. For later releases, use the version declared in `pyproject.toml`,
+and release from an up-to-date `master`.
+
+### How the PyPI version stays in sync
+
+- **Every push and pull request:** the `pypi-sync` job in `ci.yml` runs
+  `tools/check_pypi_sync.py`. It fails only if PyPI is *ahead* of
+  `pyproject.toml`; an unreleased or already-published version passes.
+- **Every tag:** `publish.yml` refuses to upload unless the repository is
+  `groberts/pypilot`, the tag is on `master`/`main`, the tag equals the
+  `pyproject.toml` version, and that version is **not** already on PyPI.
 
 ```console
 # 1. Set the version. pyproject.toml is the single source of truth;

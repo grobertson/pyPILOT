@@ -36,10 +36,10 @@ classifiers = [
 dependencies = []
 
 [project.urls]
-Homepage = "https://github.com/grobertson/RePILOT"
-Repository = "https://github.com/grobertson/RePILOT"
-Issues = "https://github.com/grobertson/RePILOT/issues"
-Changelog = "https://github.com/grobertson/RePILOT/blob/main/CHANGELOG.md"
+Homepage = "https://github.com/groberts/pypilot"
+Repository = "https://github.com/groberts/pypilot"
+Issues = "https://github.com/groberts/pypilot/issues"
+Changelog = "https://github.com/groberts/pypilot/blob/main/CHANGELOG.md"
 
 [project.scripts]
 pypilot = "pypilot.cli:main"

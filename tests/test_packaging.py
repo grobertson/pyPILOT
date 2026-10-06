@@ -104,8 +104,7 @@ def test_the_repository_urls_point_at_the_current_repo(metadata: dict[str, Any])
     A stale URL is the kind of thing nobody notices for a year.
     """
     for name, url in metadata["urls"].items():
-        assert "grobertson" in url, f"{name} points somewhere unexpected: {url}"
-        assert url.startswith("https://github.com/grobertson/"), f"{name}: {url}"
+        assert url.startswith("https://github.com/groberts/pypilot"), f"{name}: {url}"
 
 
 def test_there_are_no_runtime_dependencies(metadata: dict[str, Any]) -> None:

@@ -110,6 +110,20 @@ jobs:
           "$PYPILOT" check.pilot
           rm -rf .venv-wheel check.pilot
 
+  pypi-sync:
+    name: PyPI version sync
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v6
+
+      - name: Compare pyproject.toml with PyPI
+        # Fails only if PyPI is ahead of this tree; an unreleased or already
+        # published version passes. Publishing itself stays in publish.yml.
+        run: uv run --no-project python tools/check_pypi_sync.py
+
   docs:
     name: docs
     runs-on: ubuntu-latest

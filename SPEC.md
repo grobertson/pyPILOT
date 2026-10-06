@@ -1,6 +1,6 @@
 # pyPILOT Completion Specification
 
-**Status:** Complete — pyPILOT 1.0.0 was released on 2026-09-26.
+**Status:** Complete — the 1.0.0 implementation was finished on 2026-09-26; first PyPI publication is pending (see `RELEASING.md`).
 **Target:** the `rePILOT` 1.0.0 distribution (imported as `pypilot`), a faithful implementation of **ATARI PILOT** as
 specified in the *Atari PILOT External Specification*, Revision E
 (27-Oct-1980).
@@ -100,7 +100,7 @@ The repository is a three-commit scaffold from April 2020 that never ran.
 | `lang/core.py` | `PilotCore` with 10 `NotImplementedError` stubs, all declared **without `self`** | Moved to `src/pypilot/core.py`; methods are properly bound |
 | `lang/helpers.py` | `Os`/`Shell` statics, all `NotImplementedError` | `src/pypilot/helpers.py`; `Os.load`/`Os.save` **implemented** |
 | `lang/__init__.py` | `from .core import hmm` — **import error** | Removed |
-| `tests/` | nose-style stubs importing a nonexistent `sample` module | Real pytest suite, **898 collected tests, 95% branch coverage** |
+| `tests/` | nose-style stubs importing a nonexistent `sample` module | Real pytest suite, **903 collected tests, 95% branch coverage** |
 | `setup.py`, `requirements.txt`, `Makefile`, `MANIFEST.in` | setuptools + `nose` + `sphinx` | **Deleted** — replaced by `pyproject.toml` + `uv.lock` |
 | `docs/conf.py` | 2012 `sphinx-quickstart` boilerplate, `project = 'sample'` | Modern Sphinx config, zero-warning build |
 | `docs/` | Empty `index.rst` | `index.rst`, `language.rst`, `api.rst`; warning-free Sphinx build |

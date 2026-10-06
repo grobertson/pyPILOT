@@ -46,6 +46,8 @@ def check_ci(data: dict) -> list[str]:
         command = str(step.get("run", ""))
         if "sphinx-build" in command and "-W" not in command:
             problems.append("ci.yml builds docs without -W, so a warning would pass")
+    if "pypi-sync" not in jobs:
+        problems.append("ci.yml has no `pypi-sync` job comparing the version with PyPI")
     return problems
 
 
@@ -76,7 +78,9 @@ def check_publish(data: dict) -> list[str]:
         problems.append("the publish job must depend on verify, or a red build can still release")
 
     if "environment" not in jobs["publish"]:
-        print("  note: no `environment:` on the publish job, so there is no approval gate")
+        problems.append("the publish job needs `environment: pypi` to match the trusted publisher")
+    elif jobs["publish"]["environment"].get("name") != "pypi":
+        problems.append("the publish environment must be named `pypi`")
 
     steps = jobs["publish"].get("steps", [])
     action = " ".join(str(s.get("uses", "")) for s in steps)
@@ -88,6 +92,10 @@ def check_publish(data: dict) -> list[str]:
     verify_steps = jobs["verify"].get("steps", [])
     if not any("tag must match" in str(s.get("name", "")) for s in verify_steps):
         problems.append("publish.yml does not check that the tag matches the declared version")
+    if not any(
+        "check_pypi_sync.py --require-unpublished" in str(s.get("run", "")) for s in verify_steps
+    ):
+        problems.append("publish.yml does not check the version is unpublished on PyPI")
     return problems
 
 

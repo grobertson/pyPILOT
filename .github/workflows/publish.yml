@@ -6,16 +6,15 @@ name: Publish
 # happens to be pointing at.
 #
 # Setup required once, at https://pypi.org/manage/project/repilot/settings/publishing/ :
-#   add a GitHub Actions publisher for `grobertson/RePILOT`
-#   -> owner             grobertson
-#   -> repository name   RePILOT
+#   add a GitHub Actions publisher for `groberts/pypilot`
+#   -> owner             groberts
+#   -> repository name   pypilot
 #   -> workflow filename  publish.yml     (this file)
 #   -> environment name   pypi            (or leave blank if not using one)
 #
 # PyPI normalises project names, so the project is `rePILOT` in the UI and
-# `repilot` in the URL, but the *filename* must be `publish.yml` exactly -
-# PyPI matches the workflow filename literally, and the repository name is
-# matched case-sensitively against what GitHub reports.
+# `repilot` in the URL. The owner, repository, workflow filename, and
+# environment must match the trusted publisher configuration exactly.
 #
 # This uses **trusted publishing**, so there is no API token in this repo, in
 # its secrets, or in any log. GitHub mints a short-lived OIDC token and PyPI
@@ -44,6 +43,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          # Full history, so the tagged commit can be checked against the default branch.
+          fetch-depth: 0
 
       - name: Install uv
         uses: astral-sh/setup-uv@v6
@@ -56,6 +58,23 @@ jobs:
 
       - name: Install project
         run: uv sync --all-extras --dev
+
+      - name: The repository must match the PyPI trusted publisher
+        # PyPI matches the OIDC repository claim exactly; failing here is a
+        # clearer message than a 403 after the build.
+        run: |
+          if [ "$GITHUB_REPOSITORY" != "groberts/pypilot" ]; then
+            echo "::error::running in $GITHUB_REPOSITORY, but the trusted publisher is groberts/pypilot"
+            exit 1
+          fi
+
+      - name: The tag must be on the default branch
+        # Keeps PyPI aligned with the mainline rather than a side branch.
+        run: |
+          if ! git branch -r --contains "$GITHUB_SHA" | grep -Eq 'origin/(master|main)$'; then
+            echo "::error::$GITHUB_REF_NAME is not on master or main"
+            exit 1
+          fi
 
       - name: The tag must match the declared version
         # Otherwise `git tag v1.0.1` over a tree that still says 1.0.0 would
@@ -72,6 +91,9 @@ jobs:
             exit 1
           fi
           echo "tag $GITHUB_REF_NAME matches pyproject version $declared"
+
+      - name: The version must not already be on PyPI
+        run: uv run python tools/check_pypi_sync.py --require-unpublished
 
       - name: Lint
         run: uv run ruff check .
