@@ -1,0 +1,32 @@
+MES a lll
+SENSING THE POSITION OF THE PADDLE
+Up to 4 pairs of paddle controllers may be connected to the computer at once;
+making a total of 16 paddle sensing variables: 8 for the paddles’ positions, and 8 for |
+the paddles’ triggers.
+
+8 paddle-sensing variables:
+%PO, %P1, %P2, %P3, %P4, %P5, %P6, %P7 j
+8 paddle/trigger-sensing variables:
+%T0, %T1, %T2, %T3, %T4, %T5, %T6, %T7 |
+The value of %PO through %P7 depends upon the position of the paddle:
+ca)
+Figure D-4_ Paddle Positions
+The paddle postions range from 0 to 227 in a full clockwise rotation. d
+Below are two diagrams representing two paddles’ positions:
+PADDLE #1 PADDLE #2 i
+ies
+BS
+. i
+\ \
+\ \
+1 1
+1 1 }
+f U
+/ 7
+7
+? &£
+Zz 0 227 ¥
+0 227
+% Po Ti % PI : r
+Figure D-5 Sample Paddle Positions
+188 Appendix D }

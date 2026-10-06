@@ -1,0 +1,41 @@
+—__—__—— ®
+Enter:
+SAVE C: and press
+where: C specifies the cassette or program recorder.
+Example:
+
+SAVE C: ]
+To save only a portion of a program, the program lines to be saved must be
+specified .
+SAVE C: x,y
+where: x is the first program line to be saved
+y is the last program line to be saved
+This allows you to save sections and modules out of an entire program.
+Example:
+SAVE C: 5,200 saves line 5 through 200
+7. Upon pressing the key, you will hear two beeps. After the beeps,
+depress the and buttons at the same time. Then press the
+key again. At first, you will hear a high-pitched tone as blank leader is being
+saved. Then, as the program is being saved, you will hear a series of raspy tones
+coming from the television.
+8. When the READY message and the cursor appear on the screen, the program is a )
+successfully saved. Write down the counter number that marks the end of the
+program.
+This exercise takes you through the steps of saving a program onto cassette tape. |
+1. Turn on the computer with the program recorder connected.
+2. Insert a new cassette tape. Rewind it to the beginning and set the tape counter |
+to 000.
+3. Type:
+10 R: PRACTICE PROGRAM ]
+20T:
+30 T: THIS PROGRAM LETS YOU PRACTICE
+40 T: SAVING AND LOADING A PROGRAM
+50 T: ON A CASSETTE TAPE.
+60 E:
+4. Type:
+SAVE C: Gann. I
+5. Press and at the same time.
+6. Press GETEN. I
+7. When the READY message and the cursor appear on the screen, the program
+has been saved on the cassette tape. Write down the tape counter number. 1
+160 Appendix B |

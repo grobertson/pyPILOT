@@ -1,0 +1,32 @@
+Ce ———— i ~
+THE SCREEN The black keys shown on the diagram below control the typewriter-like functions
+EDITING KEYS of the keyboard.
+SGe8eGBG888888882S
+Wouscocvoo000escesS @&
+aoacoccosoocesses
+es0000000e8e08
+Figure C-1_ The ATARI Keyboard: Screen Editing Keys
+THE RETURN KEY i
+The key has three functions:
+1. It moves the cursor to the left margin and down one line of the screen. ]
+2. It marks the end of an input line.
+3. It activates the computer to respond. a
+The function of the key depends upon what the computer is doing at the |
+time the key is pressed.
+THE SHIFT KEY I
+The key, when pressed simultaneously with another key, accesses the
+character or function displayed on the top half of a key. The key is located on
+both ends of the bottom row of the keyboard.
+THE CAPS/LOWER KEY i
+The key accesses either lowercase or uppercase alphabetic letters. If
+the key is pressed prior to typing any letters, the letters are lowercase. If the key is 7
+pressed while holding down the key, uppercase letters are displayed instead.
+THE TAB KEY I
+The key operates like the key on a regular typewriter to set or -
+clear automatic stopping positions of the cursor. I
+TAB Set
+To set a tab position, move the cursor to the desired stopping position and press
+the key while holding down the key. Up to 38 tabs may be set across the
+screen. ‘
+168 Appendix C ,
+; pS ae

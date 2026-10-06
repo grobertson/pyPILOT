@@ -1,0 +1,18 @@
+—_________
+CURSOR DOWN eo ;
+Pressing the key while holding down the key moves the cursor down : ‘ft
+one line. Solar
+avis
+MOVE THE CURSOR D Tee i
+o ae
+Figure C-7 Using the Cursor Down Key ae A
+If the cursor reaches the bottom of the screen, it wraps around to the top in the : see a2
+same column. = :
+ee |
+Figure C-8 Cursor Down Wraparound E
+CURSOR RIGHT q
+Pressing the key while holding down the key moves the cursor one
+space to the right. :
+MM
+q m
+172 Appendix C ;

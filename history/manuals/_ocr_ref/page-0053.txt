@@ -1,0 +1,16 @@
+s Figure 3-16 shows the variables after VNEW has been typed.
+READY
+VNEH
+READY
+T: SNaAME
+SNAME
+Tr:8a
+e
+T:S$COmMIcS
+SCOMICS
+T:SHERO
+SHERO
+w
+Figure 3-16
+Executive Commands—VNEW 45
+j

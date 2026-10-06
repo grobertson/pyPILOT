@@ -1,0 +1,46 @@
+eK. oe
+the resulting merged program looks like this: |
+10 R: NAME PROGRAM
+20T:
+30 T: WHAT IS YOR NAME? \ |
+40 A: $NAME
+50T: HELLO, $NAME. HOW ARE YOU TODAY? \
+60A:
+70 M: GOOD, FINE,GREAT, HEALTHY, EXCELLENT
+80 TY : GREAT!
+90 TN: THAT’S TOO BAD!
+100 R: ADDRESS PROGRAM |
+110 T: WHAT IS YOUR STREET ADDRESS? \
+120 A: $STREET
+130 T: IN WHAT CITY AND STATE DO YOU RESIDE? \
+140 A: $CITYSTATE |
+150 T: WHAT IS YOUR ZIP CODE? \
+160 A: $ZIP
+170 T: THANK YOU FOR THE INFORMATION.
+180 E:
+Notice that line 100 in the first program is replaced with line 100 from the second
+program. |
+The two programs have become one in memory. If desired, another program may
+be merged with this one. Merging can be disastrous if the two programs merged
+cannot function correctly. For instance, if the program in memory looks like this, & |
+1 R: ADDITION PROGRAM
+5 T: ENTER A NUMBER: \
+25A: #A |
+50 T: ENTER ANOTHER NUMBER: \
+75 A: #B
+100 C: #C=#A+#B
+125 T: #A+#B=#C :
+150 E:
+and you load the TEST program from the diskette, |
+10 R: TEST PROGRAM
+20T:
+30 T: THIS PROGRAM TESTS \
+40T: YOUR ABILITY TO j
+50T: SAVEAND LOAD A PROGRAM \
+60 T: ONA DISKETTE.
+70 E: i
+the resulting merged program looks like this:
+1 T: ADDITION PROGRAM
+5 T: ENTER A NUMBER: \ I
+10 R: TEST PROGRAM
+154 Appendix B i

@@ -1,0 +1,28 @@
+Me a
+SECTION 6 A variable is anything that is subject to change. PILOT has two types of variables:
+SUMMARY string and numeric.
+String variables store strings. A string is a series of letters, numbers, symbols, words,
+phrases, or a combination thereof. A string variable name is any combination of let-
+ters or numbers, preceded by a dollar sign ‘$’.
+The TYPE and ACCEPT commands work together to let you input values to string
+variables. The TYPE message tells the user what type of value to input. The ACCEPT
+command followed by a string variable name saves the input in memory. Variables
+are defined when a value is entered with the ACCEPT command or assigned by the
+COMPUTE command. The COMPUTE command assigns strings, numbers, or
+variable names to variables.
+The format for the COMPUTE command is:
+C: variable name = value
+Singular strings can be made plural through string concatenation. Concatenation
+means to join two strings together. By joining a variable whose value is ‘S’ to the |
+end of a variable with a singular value, the singular variable becomes plural.
+C: $ROSE= ROSE
+C: $S=S |
+C: $ROSES = $ROSE$S
+Values of the variables can be displayed by issuing the DUMP command in im-
+mediate mode. The variable’s values will be displayed in this format:
+string variable name ='value’
+The VNEW command issued in immediate or programmed mode, allows you to
+clear, or “undefine’’ all string variables within a program. The format for the VNEW
+command is:
+VNEW: $
+78 Variables j

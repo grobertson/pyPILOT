@@ -1,0 +1,51 @@
+S The SO: and PA: commands can be used together to make music. The table in Figure
+5-8 shows the PAUSE values for various musical notes.
+PAUSE VALUES FOR MUSICAL NOTES
+PA:16 — Sixteenth Note
+PA:32 Eighth Note
+PA:64 Quarter Note
+PA:128 Half Note
+PA:256 Whole Note
+Figure 5-8
+The program shown in Figure 5-9 uses SO: and PA: to play the the song “Mary Had a
+Little Lamb.”
+10 R:MARY HAD @ LITTLE Lams 390 50:15,13,8
+2@ R: ARRANGED IN 4 VOICES 400 Pa:32
+3@ R:FOR COMPUTER 410 50:17,13,8
+40 C:T=e 42@ Pa:32
+Se@ *CcoDA 430 50:17,13,8
+60 CimTontT+s 440 Pa:32
+70 50:17,13,8 450 50:17,13,8
+80 Pa:24 460 PAa:32
+9@ 50:15,13,8 47@ $0:15,12,8
+100 Pa:s6 4680 Pa:32
+= 110 50:13,8 490 50:15,12,8
+12@ Pa:32 See Pa:32
+130 50:15,13,8 510 50:17,13,8
+140 Pa:32 520 PAa:32
+150 50:17,13,8 S3@ 50:15,12,8
+160 Pa:32 540 Pa:32
+170 50:17,13,8 SS5@ 50:13,6,5,1
+180 Pa:32 560 PA:192
+190 50:17,13,8 57@ 50:0
+200 PAa:64 S60 JCHT<2>:*CODA
+21@ 50:15,12,8 590 E:
+220 Pa:32
+230 50:15,12,8 READY
+240 Pa:32 s
+25@ $0:15,12,8
+260 PA:64
+27@ $0:17,13,8
+280 Pa: 32
+290 50:20,17,13,8
+300 Pa: 32
+310 50:20,17,13,8
+320 Pa:64
+330 5P:17,13,8
+340 Pa:24
+350 50:15,13,8
+360 Pa:s
+370 50:13,8
+380 Pa:32 .
+Figure 5-9
+Sound and Pause—PA: 91

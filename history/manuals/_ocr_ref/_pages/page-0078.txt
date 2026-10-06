@@ -1,0 +1,25 @@
+GR:TURN
+2
+a
+The command GR: TURN N tells the turtle to turn N degrees clockwise (+N) or
+counterclockwise (-N) from the direction he is currently facing. Since the turtle is invisible
+on the screen, you cannot see him turn, but you can see the direction of his new heading =
+by executing a GO, DRAW, or FILL command after the TURN. Figure 4-17 shows a pro-
+gram that makes a 13-pointed star with a 166-degree turn at each point.
+10 R:13-POINTED STAR
+20 C:mc=e
+3@ GR:CLEAR
+4@ GR:GOTO -10,-s
+S@ GR: TURNTO 14
+6@ *LOOP
+7@ GR: DRAW Se
+80 GR: TURN 166
+90 CisC=mC+41
+10@ JCHC<14) :*LOOP
+4110 E:
+: E™
+Ey
+READY
+Ea
+Figure 4-17
+70 Graphics—GR:TURNTO

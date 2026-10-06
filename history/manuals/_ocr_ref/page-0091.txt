@@ -1,0 +1,4 @@
+|
+fi
+Figure 4-28
+Graphics—GR:QUIT 83

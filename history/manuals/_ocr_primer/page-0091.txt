@@ -1,0 +1,25 @@
+a -—«<‘(;‘;d Cee |
+READY
+Figure 6-7 Growing Strings: Program List and Run
+Issue a DUMP command again: |
+READY
+DUMP
+SNAME='*'
+$STAR='"*'
+READY
+: . ©@&
+® Look at the value of $NAME now! Line 30 concatenated the value of $STAR onto |
+the end of the value of $NAME. In effect, this added a ‘*’ onto the end of an empty
+string, making the value of $NAME a ‘*’.
+Notice that there are no spaces between the two variable names $NAME$STAR. il
+Add this line to the end of the program:
+50 J: *GROW
+LIST and RUN the program:
+10 C:SNAME-=
+20 C:$STAR=*
+30 *GROW C:SNAME=SNAMESSTAR
+40. T: $NAME
+se. J:*™GROW
+READY
+RUN |
+74 Variables r

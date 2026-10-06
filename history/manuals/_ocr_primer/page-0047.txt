@@ -1,0 +1,42 @@
+ee llc ll
+Program RUN
+MY NAME IS FRED. me
+You Enter input GopzitLa {
+WHAT ARE YOU?
+You enter input Tam GLAD TO MEET you!
+HAVE A NICE Day!
+: apy
+Figure 3-7 TYPE and ACCEPT Commands: Program Run
+Now that you know how to use two interactive commands, you can write
+question-and-answer programs and run them for your friends!
+® Continuing Text With the Backslash Character: PILOT uses a special character |
+that keeps the cursor from dropping to the next line. This character is the
+backslash, \, produced by pressing the key and the \ + key. When the com-
+puter encounters a backslash at the end of a TYPE command, the cursor stops and
+waits ON THE PRESENT LINE instead of doing a carriage return. Any following text a |
+will be displayed from that point. The program below uses the backslash:
+10 T: THIS IS A VERY AUSPICIOUS OCCASION, \
+20 T: MY FRIENDS. IT HAS COME TO MY ATTENTION \ |
+30 T: THAT THERE WILL BE NO MORE FREE \
+40 T: CAKE AND ICE CREAM!! \
+A RUN of this program produces this result: |
+THIS IS A VERY AUSPICIOUS OCCASION, MY
+FRIENDS. IT HAS COME TO MY ATTENTION THAT
+THERE WILL BE NO MORE FREE CAKE AND ICE j
+CREAM!!
+READY
+: I
+The backslash is especially useful when using a TYPE statement to prompt.input
+from a subsequent ACCEPT command. By placing a backslash at the end of the
+TYPE message and prior to an ACCEPT command, the TYPE message and the AC-
+CEPT input will appear on the same display line.
+Type NEW and press before entering the following program:
+10 T: MY NAME IF FRED. 4
+20 T: WHAT IS YOUR NAME? \
+30A: j
+40 T: 1AM A COMPUTER. q
+50 T: WHAT ARE YOU? \
+70 T: |AMGLAD TO MEET YOU! \ 7
+80 T: HAVE A NICE DAY! q
+Writing A
+30 Pilot Program q

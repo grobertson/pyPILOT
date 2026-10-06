@@ -1,0 +1,39 @@
+@ B-1 Cassette Tape 150
+B-2 Diskette 150
+| B-3 DOS Utility Program 155
+B-4 Sample Directory 156
+I C-1 The ATARI Keyboard: Screen Editing Keys 168
+C-2 Using the Inverse Video Key 169
+C3 The ATARI Keyboard: The Cursor
+
+| Control Keys 170
+C-4 Moving the Cursor Over a Character 170
+C5 Using the Cursor Up Key 171
+C-6 Cursor Up Wraparound 171
+i C-7 Using the Cursor Down Key 172
+C-8 Cursor Down Wraparound 172
+C-9 Using the Cursor Right Key 173
+| C-10 Cursor Right Wraparound 173
+C-11 Using the Cursor Left Key 174
+C-12 Cursor Left Wraparound 174
+
+| C-13. Backspacing the Cursor Using the DELETE
+BACK S Key 177
+C-14 — Single-Character Deletion 177
+| C-15  Multiple-Character Deletion 178
+C-16 Character Deletion Completed 178
+C17 _ Line Deletion: Positioning the Cursor 179
+| @ C-18 Line Deletion Completed 179
+C-19 Character Insertion: Positioning the Cursor 180
+C-20 Character Insertion: Creating a Space 180
+I C-21 Character Insertion Completed 181
+C-22 Line Insertion: Positioning the Cursor 181
+C-23 Line Insertion: Creating a Space 182
+C-24 Line Insertion Completed 182
+| C-25 Character Spiral Program Run 184
+D-1 Joystick Positions 185
+| D-2 Sample Joystick Sensing 186
+D-3 Sample Joystick Trigger Sensing 187
+D-4 Paddle Positions 188
+| D-5 Sample Paddle Positions 188
+| Hfustrations xv

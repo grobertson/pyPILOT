@@ -1,0 +1,70 @@
+i ee
+Line 28 assigns the string variable $FLOWERS the value of the ‘concatenation’ of
+$S to the end of $FLOWER. In line 30, the variable name $FLOWER is changed to
+$FLOWERS.
+
+@ In line 28, notice that there are no spaces between the two variable names
+$FLOWERSS. Also, notice that there are no spaces on either side of the equals sign
+in lines 24 and 25. @ |
+LIST the program:
+
+16 T: WHAT IS YOUR FAVORITE FLOWER?
+
+20A:SFLOWER
+
+24C:$5=5
+
+28 C: SFLOWERS=SFLOWERSS
+
+36 T: WOULD YOU LIKE @ DOZEN SFLOWERSS?
+
+40a:
+Now, RUN the program:
+
+WHAT I5 YOUR FAVORITE FLOWER?
+
+ROSE
+
+WOULD YOU LIKE A DOZEN ROSES?
+
+TES
+
+READY
+
+;
+Perfect! 4
+THE ACCEPT COMMAND WITHOUT INPUT
+The A: = form of the ACCEPT command accepts the value of a variable instead of
+input from the keyboard.
+The format of ACCEPT without input is:
+
+A: =variable name |
+
+where: variable name is the name of the variable whose value is placed in the
+
+accept buffer.
+
+Examples: l
+
+A: = $FRIEND places the value of $FRIEND into the accept buffer
+
+A: = $VAR places the value of $VAR into the accept buffer ]
+
+A: = $K places the value of $K into the accept buffer
+Enter the program below: |
+
+10 C: $NAME =
+
+20 C: $STAR = *
+
+30 *GROW C: $NAME = $NAME$STAR
+
+40, T: $NAME
+
+50, A: =$NAME
+
+60, Ms: 3 2 2 KK
+
+70, JN: *GROW i
+
+76 Variables i

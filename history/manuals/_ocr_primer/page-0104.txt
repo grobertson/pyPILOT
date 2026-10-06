@@ -1,0 +1,36 @@
+ed OO
+| NUMERIC VARIABLES
+Variables change. A numeric variable has a changeable value. A numeric variable is
+| a variable whose changeable value is always a number.
+Numeric variables have names. They are represented by the number sign (#) fol-
+| lowed by a single letter ranging from A to Z:
+#) #X #O #K #A
+#X=#Y-#Z #X,#Y, and #Z are numeric variables.
+| #A=4+6 #A is a numeric variable; 4 and 6 are constants.
+Numeric variables have names. They are represented by the number sign, #,
+followed by a single letter ranging from A to Z:
+| #) #X #O #K #A
+@ An important fact to remember is that because there are only 26 letters in the
+| alphabet, there are only 26 available numeric variable names.
+i ASSIGNING VALUE TO NUMERIC VARIABLES
+The same rules that govern string variables also apply for defining numeric
+variables. One difference is that numeric variables are automatically assigned a
+| € value of 0 instead of ‘‘undefined.”’
+Numeric variables can acquire an input value from the ACCEPT command.
+| A: # numeric variable name
+Examples:
+A: #N
+| A: #X
+Numeric variables can also be assigned value with the COMPUTE command
+| described below.
+THE COMPUTE COMMAND, C:
+i The COMPUTE command (C:) evaluates a numeric expression and assigns its value
+to a numeric variable.
+iJ The format for COMPUTE is:
+C: numeric variable = numeric expression
+J Examples:
+C: #X=5%4
+C: #A=-X/4
+| C: #B=10
+I é All numeric calculations must be done with the COMPUTE command.
+| Using Numbers 87

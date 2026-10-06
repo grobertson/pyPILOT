@@ -1,0 +1,40 @@
+;
+ee
+| 207:
+25 A: #A
+30 T: THIS PROGRAM TESTS \
+i 40T: YOUR ABILITY TO
+50T: SAVE AND LOAD A PROGRAM \
+60 T: ON A DISKETTE
+7OE:
+| 75A: #B
+100 C: #C=#A+#B
+125T: #A+#B=#C
+} 150: E:
+This program will not work, as you can plainly see.
+| ® To avoid merging two programs by mistake always type NEW to clear memory
+before loading a new program. Mf
+| The DOS Utility
+Every diskette you use in your ATARI 810 Disk Drive is supplied with a DOS, which
+stands for Disk Operating System. DOS allows you to manage and manipulate pro-
+| gram files.
+To leave the PILOT language and enter the DOS utility, enter the DOS command in
+the immediate mode:
+| € Type: DOS
+i When in DOS, the screen displays:
+DISK OPERATING SYSTEM II VERSION 2.05
+COPYRIGHT 1986 ATARI
+| a DISK DIRECTORY I. FORMAT DISK
+B. RUN CARTRIDGE J. DUPLICATE DISK
+Cc. COPY FILE K. BINARY SAVE
+D. DELETE FILECS) L. BINARY LOAD
+E. RENAME FILE M. RUN AT ADDRESS
+fF. LOCK FILE N. CREATE MEM. Sav
+G. UNLOCK FILE O. DUPLICATE FILE
+| H. WRITE DOS FILES
+See ITEM OF GIAUECI For MENU
+; Figure B-3 DOS Utility Program
+| We will discuss how to use the disk directory and return to PILOT under the DOS
+ss utility.
+i
+q Appendix B 155

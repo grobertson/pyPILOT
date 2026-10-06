@@ -1,0 +1,45 @@
+| ee
+| Write-Protecting a Cassette Tape
+To protect your programs on a cassette tape from being accidentally overwritten,
+you Can write-protect your tape. Every cassette tape has two write-protect notches
+| (shown in Figure B-1), one for each side of the tape. To write-protect one side of the
+tape, punch out the write-protect tab that is on the left when the side to be write pro-
+tected is facing up. Many prerecorded tapes are already write-protected for you.
+| If you decide to reuse a write-protected tape, place a piece of cellophane tape over
+the write-protect opening.
+| Loading a Program From a Cassette Tape
+1. Make sure all cables and connectors are securely in place. Turn on the com-
+puter.
+| 2. Insert the cassette tape containing the program you wish to load.
+3. Rewind the cassette tape to the beginning by pressing the GEMNEY key. Set the
+tape counter to 000.
+| 4. Fast forward the cassette tape to a position before the beginning of the program
+by pressing the key. Press the key when the tape counter is
+close to the number marking the beginning of the program.
+4 5. To load the program, type:
+LOAD C:
+where: C specifies the cassette, or program recorder
+| e Examples:
+LOAD C: loads a program from cassette tape into memory
+4 6. Upon pressing the GSU key, you will hear one beep. Press on the pro-
+gram recorder.
+7. After about 5 seconds you will hear tones indicating that your program is being
+e loaded. If the program recorder must search the tape for more than 9 seconds
+to find your program, it will give up looking.
+8. When the screen displays the READY message, your program is successfully
+| loaded.
+9. LIST and RUN the program.
+@ For additional help, read the first pages of the ATARI 410™ Program Recorder
+Operator’s Manual. @
+The following exercise takes you through the steps of loading the PRACTICE pro-
+t gram previously saved on tape.
+1, Turn on the computer with the program recorder connected.
+2. Insert the cassette containing the PRACTICE program.
+| 3. Rewind the tape to the beginning. The tape counter should be set to 000.
+4. Type:
+LOAD C:
+5. After you hear one beep, press (ENB, then Press Gagrnp.
+& 6. The computer makes tones as it loads the PRACTICE program. When a READY
+message appears on the screen, the program is loaded.
+7. LIST and RUN the program.
+Appendix B 161

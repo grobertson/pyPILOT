@@ -5,16 +5,14 @@ This module turns PILOT source text into a
 
 * optional leading line numbers, range 0-9999 (4.1)
 * labels of any length, which may share a line with a command (4.2)
-* command names of one or two letters, matched exactly (4.2)
+* known command names of one to five letters, matched case-insensitively (4.2)
 * conditions: ``Y``, ``N``, ``(expression)``, or a combination (4.2)
 * ``[`` ... EOL comments (4.2)
 * comma/blank field delimiting (4.3)
 * command continuation after ``T``, ``Y``, ``N``, ``R`` only (4.4)
 
-Deliberately **not** implemented here, because the spec defers them to later
-stages: text-expression expansion, arithmetic evaluation, and the
-accept-buffer rules. Those all need the operand text, which this module
-preserves verbatim.
+Operand semantics are handled by the runtime and command handlers. This parser
+preserves operand text verbatim because its meaning depends on the command.
 """
 
 from __future__ import annotations

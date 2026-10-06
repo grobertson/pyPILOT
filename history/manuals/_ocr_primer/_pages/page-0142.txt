@@ -1,0 +1,29 @@
+Soo
+| FILLTO fills blank space to the right of the turtle until a graphic line or figure is
+reached. At that point, the fill color stops. If there is nothing to block the fill color,
+FILLTO fills out beyond the right edge of the screen, wrapping around and filling in
+| space from the left side.
+To test the FILLTO subcommand, LIST the example “box’’ program from
+DRAWTO. Draw a line from the lower left corner of the box (point — 20,0) to the
+| upper right corner of the box (20,20) and fill the space to the right with yellow. This
+can be done with three subcommands. Add the following statements to the end of
+the program:
+| 50 GR: GOTO - 20,0
+60 GR: PEN YELLOW
+70 GR: FILLTO 19,20
+i RUN the program. The screen should display:
+READY
+i
+| Figure 10-10 Filling With FILLTO
+i Look closely at the box. The right side of the box is partly covered with the yellow
+fill.
+SUBCOMMANDS USING TURTLE GEOMETRY
+4 The TURNTO Subcommand
+The TURNTO subcommand sets the angle THETA to a value in degrees. This, in effect,
+| points the turtle in the specified THETA angle.
+The format for the TURNTO subcommand is:
+I GR: TURNTO degree angle
+Example:
+GR: TURNTO 90
+4 GR: TURNTO 180
+f Welcome to Graphics 125

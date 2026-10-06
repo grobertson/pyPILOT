@@ -1,0 +1,22 @@
+oS,
+j SECTION 4 1. The MATCH command searches______————_from the ee
+QUIZ command for a matching pattern. The pattern(s) to be matched are specified
+| ine es 2 eee command:
+2. Your keyboard input is called a Mite EEE OL st aor bemate ener tot S54
+| 3. Identify the string(s) below:
+(a) HOWARD MEEDLY (e) aandb
+(b) AUGUST 31, 1999 (f) band d
+] (c) 12345 (g) All the above
+(d) 12:45
+4. Aseries of strings in the MATCH command must be separated by___
+i 5. Depending upon the success of a match, the conditional commands perform a
+desired operation. If the match is successful, and the Y conditional command is
+i performed, what happens to the N conditional command (if itis present)?
+6. Depending upon a yes or no match, the TY: and TN: commands ph) Sele ad
+dl 7. A program can be terminated before the last line of a program depending upon
+the success of a match and the presence of an END IF NO command. TRUE or
+4 € FALSE?
+8. The underscore character at the end of a MATCH string represents a___
+J —_______________ in the string.
+: Decision-Making
+1 Programs 51

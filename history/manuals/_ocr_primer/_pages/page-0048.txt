@@ -1,0 +1,64 @@
+<< si(“‘“‘“ SS cc
+| Below is the same program you entered earlier, except that backslash characters
+have been added to the end of lines 20, 50, and 70. RUN the program and look at
+what happens:
+| MY NAME IS FRED.
+WHAT IS YOUR NAME? CLEOPATRA
+IAMACOMPUTER.
+WHAT ARE YOU? A DROID
+
+| ITAMGLAD TOMEET YOU! HAVE A NICE DAY!
+READY
+
+i : 5
+See how easy it is to put both TYPE and ACCEPT input and output on the same line
+by adding just one character? For practice, make up some question-and-answer
+
+| programs for yourself using the backslash.
+™® Always type a space before the backslash character, to prevent the words
+preceding and following the backslash from running together like this: WHAT IS
+
+| YOUR NAME? CLEOPATRA. &@
+THE REMARK COMMAND, R:
+
+| The REMARK command lets you insert remarks into your program to make it easier
+to understand. Remarks are usually titles or little notes explaining what the program
+does and how it works. The computer ignores REMARK commands, so they can be
+
+| & placed anywhere in a program.
+
+The format for the REMARK command is:
+
+| R: anything
+Look at the REMARK commands in the following program:
+
+TO Re 9 2 2 2 ROR Kk
+| 20R: * *
+
+30 R: * THE NOTHING PROGRAM *
+j 40 R: * *
+
+SOR 9 9 eo Kk
+
+60 T: This program does NOTHING
+
+70 R: That’s for sure! This is the END of the program!
+
+i © Upper- and lowercase letters: PILOT displays both upper- and lowercase letters.
+To type lowercase letters, press the key once. Any alphabetic characters
+typed after the key has been pressed will be displayed in lowercase. To
+type uppercase letters, hold down the key while pressing the key.
+
+| Alphabetic characters typed after the and keys are pressed WILL
+ALL BE UPPERCASE. ®@
+
+| Upon program execution, the screen looks like:
+
+This program does NOTHING
+READY
+| Y)
+The remarks don’t show up because they are ignored by the computer during pro-
+gram execution. REMARK commands are only displayed when the program is
+| LiSTed.
+Writing A
+Z Pilot Program 31

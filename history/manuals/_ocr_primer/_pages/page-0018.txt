@@ -1,0 +1,29 @@
+oe  -.—_,—
+|
+GETTING TO WHAT IS A COMPUTER, ANYWAY?
+KNOW YOUR ; re :
+| COMPUTER A computer is a toal that can do many special things for you. A computer doesn’t
+have a personality and it doesn’t think; it can only do what it is told to do.
+Basically, a computer is a machine with a memory with the capability of making
+| comparisons. Yau can tell it to remember or store information in its memory. After-
+wards, you can ask it to tell you what it has stored in its memory. The computer can
+perform calculations, sort the information stored in its memory, and engage in a
+| dialogue with you, all at lightning speed.
+When you sit down in front of your computer, you become closely associated with
+1 the system. Here is what the system looks like:
+1@ (om I
+[
+« | :
+I — ia iy
+< a
+™ iS >}
+| Nov, fateh
+Figure 1-1 ATARI® Personai Computer System
+| What you say to the computer is called input. The computer’s response is called
+output. Giving instructions to the computer is called computer programming. The
+art of computer programming is to make sure that:
+| * The computer understands your input
+* The output makes sense to you
+J Above all, remember one thing: it is you who makes the system work. Without you
+to tell it what to do, the computer is just another machine,
+I Introduction 1

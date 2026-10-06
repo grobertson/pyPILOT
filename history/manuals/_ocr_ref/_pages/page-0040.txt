@@ -1,0 +1,16 @@
+ee
+
+Automatic Line Numbering =
+Use the AUTO command when you want to type a program into the computer memory.
+AUTO automatically numbers your program lines for you.
+While you are in the AUTO mode, the computer will make everything you type part of
+your program. No Immediate mode commands can be entered until you exit from the
+AUTO mode by pressing the key.
+When you type AUTO your screen turns yellow as in Figure 3-1. When you leave the
+AUTO mode, your screen turns blue.
+
+Figure 3-1
+
+Remember that the computer enters the line numbers, which you cannot see until you
+exit from the AUTO mode and LIST the program.
+32 Executive Commands—AUTO

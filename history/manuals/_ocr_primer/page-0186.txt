@@ -1,0 +1,34 @@
+a
+BL:
+" , KR
+= ;
+|
+4 TAB Clear
+ae To clear a tab position, move the cursor to a TAB set position. Hold down the
+= key (located directly below the key) while pressing the key.
+| TAB
+4 The key by itself moves the cursor over to the next tab position. If the next tab
+= position is on the following line, the cursor drops down to the first tab position of
+7 the following line.
+‘ THE CTRL KEY
+Pe The CONTROL key (labeled on the keyboard), functions as a second type of
+; key. The key accesses the graphics character set and the cursor control
+. functions. Holding down the §@g key while pressing an alphabetic key causes a
+{ graphics character from the graphic character set to appear on the screen. If
+y is pressed with a cursor control key, it moves the cursor.
+r
+. THE INVERSE VIDEO KEY
+i The @§ key displays any following characters in inverse video (shown as a blue
+} character within a white square). To return to the normal display, press the €§ key
+— again.
+: i POUL SO FUN ELE Ca aTARI COMPUTER]
+'
+q
+i Figure C-2 Using the Inverse Video Key
+P THE CLEAR KEY
+The key is used to clear the screen. ‘Clearing the screen’’ means to erase
+all characters from the screen (but not from memory) and position the cursor in the
+upper-left corner (the “home” position).
+To clear the screen, hold down the key or the key while pressing the
+key.
+3 Appendix C 169

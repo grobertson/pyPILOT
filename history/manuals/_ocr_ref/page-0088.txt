@@ -1,0 +1,29 @@
+GR:PEN ERASE
+—
+You can also tell the turtle to draw in the black background color by using the command
+PEN ERASE. This command lets you “erase” anything you have already drawn by
+redrawing it in the black background color. Figure 4-26 shows how the PEN ERASE com-
+mand is used repeatedly to draw a star, erase it, and redraw it in a different place. This
+gives the effect that the star is moving.
+1@ R: SHOOTING STAR
+2@ *BEGIN
+3e@ C:nc=e
+40 GR:CLEAR
+se T: SHOOTING STARS
+6@ GR:GOTO -75,48
+7@ GR: TURNTO 120
+8e@ *LOOP
+9@ GR: PEN YELLOW
+100 U:*STAR
+11@ GR: PEN ERASE
+12@ U:*STAR
+13@ GR:GOS
+140 C:mC=mc+i
+15@ JCuC<32):*LOOP
+160 Pa:120
+irs stvese==
+19@ GR:SCORAW 10; TURN 144) SHOOTING STARS ES
+200 E:
+READY
+Figure 4-26
+80 Graphics—GR:PEN ERASE

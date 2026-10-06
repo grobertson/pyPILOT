@@ -1,0 +1,27 @@
+WHICH Hay (DD oR Ear)? D
+
+WHICH Hay REEL oR Fe: .
+
+WHICH Way Chi OR BLEARI? R
+
+WHICH Way CDOS orGLEaRD? @
+
+Figure 4-15
+The directional angle, N, in the GR: TURNTO N command may be either a number, a
+numeric variable, or a numeric expression. The program in Figure 4-16 uses TURNTO
+with the numeric variable, #T, to create a starburst pattern with lines coming out from the
+origin every 5 degrees.
+> 10 R: STARBURST
+20 C:sT=e
+25 GR:CLEAR
+3e@ *LOoP
+4@ GR:GOTO 0,0
+S@ GR: TURNTO ut
+SO GR:GO 3 ;DRAN 25
+70 CisT=aT+s
+80 JCHT< 360): "LOOP
+90 E:
+READY
+Ey
+Figure 4-16
+Graphics—GR:TURNTO 69

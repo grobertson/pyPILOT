@@ -1,0 +1,13 @@
+ee
+GR: 4CDRAW 26; TURN 96)
+GR: FILL 40
+| Ll
+Figure 2-10 Fill With Yellow
+Q To return to text mode, type: GR: QUIT and press GS. WOOSH! Now you’ re
+back to text mode with the blue screen and the cursor waiting at the upper left corner.
+1
+GR:FILL 40
+j GR: QUITE
+| Figure 2-11 Return to Text Mode From Graphics Mode
+Getting Started
+| with Pilot 15

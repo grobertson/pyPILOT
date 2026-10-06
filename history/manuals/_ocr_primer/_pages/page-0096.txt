@@ -1,0 +1,28 @@
+(a  .
+| SECTION 6 1. PILOT uses two types of variables. Theyare_ =
+QU IZ Lge 2 ae sae
+| 2. —___________ is an example of a string variable name.
+(a) #DATE
+(b) %ANT
+| (c) #Z
+(d) $x
+3. A string variable can have a number as a value. TRUE or FALSE?
+I 4; The COMPUTE command: (G:yassignss 1 swimmer st dit NN oe ee
+(a) Strings into variables
+j (b) Names to variables
+(c) aandb
+5. Avvariable is defined when it is assigned a value by the COMPUTE command or
+| At peal eed Wee ne ee RR BOR DRS Se a, cet Nea
+6. The executive command that displays the values of string variables is the
+| i ene Se command;
+7° ING Ay = fOtm-of the ACGER ncOmInmAanG asia) seta, wabenue eit Neer es a sehe
+instead of input from the keyboard.
+I e 8. Concatenation is the joining together of two strings, end to end. To make the
+value of string variable $ANIMAL plural, fill in the missing program statements:
+1 10 T: WHAT IS YOUR FAVORITE ANIMAL?
+20 A: $ANIMAL
+30C:
+| 40C:
+50 T: DO YOU SEE MANY $ANIMAL$S IN THE ZOO?
+| 60 A:
+1 Variables 79

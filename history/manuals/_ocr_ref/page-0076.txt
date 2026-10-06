@@ -1,0 +1,41 @@
+GR:TURNTO
+
+Turn to N Degrees e
+The command GR:TURNTO N tells the turtle to turn in place until he is heading toward
+the angle N degrees. The top of the screen is 0 degree. Positive angles (+) are measured
+clockwise from 0 degree; negative angles (-) are measured counterclockwise.
+Since the turtle is invisible on the screen, you cannot see him turn, but you can see the
+direction of his new heading by executing a GO, DRAW, or FILL command after the
+TURNTO. Figure 4-15 shows a program that uses TURNTO to let you make a design on
+the screen with right angles and 10-unit lines.
+1@ Ri SKETCHING PROGRAM 310 J:*LINE
+2@ T: THIS PROGRAM LETS You DRAW A 320 *LEFT GR: TURNTO -90
+3@ T:DESIGN ON THE GRAPHICS 330 *LINE GR: DRAW 10
+SCREEN 34@ J: *COMMAND
+40 T:USING THE COMMANDS:
+Se T: READY
+6e ee *
+7@ T:
+80 T:IGHT
+9e T:Mert
+1ee T:@Lear
+410 T:
+12@ T:PRESS RETURN TO BEGIN...
+13@ a:
+14@ “BEGIN
+15@ GR:CLEAR
+16@ T: STARTING X LOCATION? \
+170 arex
+18@ T: STARTING Y LOCATION? \
+190 a:ny
+2@@ GR:GOTO #x,nY
+218 “COMMAND
+220 T:WHICH Way (DOGG or Gears? \
+330 Se: hp hootnsSescnt ,mLert,
+“BEGIN
+260 “UP GR: TURNTO ®@
+27@ J:*LINE
+280 “DOWN GR: TURNTO 180
+290 J:*LINE
+3@@ “RIGHT GR: TURNTO 90
+68 Graphics—GR:TURNTO

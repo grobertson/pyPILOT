@@ -1,0 +1,28 @@
+ee
+|
+CONCEPTS Connecting Your ATARI Computer System
+Inserting PILOT
+} INTRODUCED Turning On PILOT in Your ATARI Computer Without a Disk Drive
+Turning On PILOT in Your ATARI Computer With an ATARI 810 Disk Drive
+Turning Off Your ATARI Computer System
+i CONNECTING You may connect other machines to your computer besides the television set.
+YOUR ATARI These machines are called devices. Some of the devices that can be connected to
+your computer are the ATARI 810™ Disk Drive (Figure A-1), the ATARI 410™ Program
+COMPUTER Recorder (Figure A-2), and the ATARI 820™, 822™, and 825™ printers (Figure A-3).
+SYSTEM When attached to the computer, these devices assist in remembering programs.
+i pn
+10 Ga)
+| Figure A-1_ The ATARI 810 Disk Drive
+|
+| i
+mi |
+TanEnE
+i Figure A-2_ The ATARI 410 Program Recorder
+reneieonr is i ——L
+— a 4
+J | oa |
+B is!
+—_—
+d wane | |
+| € Figure A-3_ The ATARI 820, 822, and 825 Printers
+i Appendix A 143

@@ -1,0 +1,19 @@
+S.C
+| 11. The TYPE command is often used in conjunction with the ACCEPT command.
+Why? :
+| 12. Match the following:
+Insert a line Enter line number and press the key
+Replace a line Assign a statement a new line number
+| Delete a line Use the same line number on a new or different
+line
+| 13. The computer ignores REMARK commands. REM commands are useful
+because they. allow’ you to cca ek eS ee es ee
+14. The ____ command lets you terminate a program
+| before the last line of a program.
+15. Typing a line number and pressing the @S@Bkey_
+line.
+| 16... To:insert-a new: line: you ust <0 sasens sr mien cree ae
+17, The REN command will renumber a program by any increment. TRUE or
+| FALSE?
+| Writing A
+i Pilot Program 39

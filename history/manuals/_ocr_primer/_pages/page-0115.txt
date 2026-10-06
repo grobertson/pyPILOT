@@ -1,0 +1,26 @@
+Here is a diagram of what a program with five nested modules could look like:
+Module #1
+Module #2
+Module #3
+‘Module #4 |
+Figure 8-3 Nested Modules i) |
+It is a good idea to debug programs like this with the TRACE: ON and TRACE: OFF
+commands.
+CONDITIONAL THE USE IF YES AND USE IF NO COMMANDS UY:;, UN:
+MODULES In Section 4 you learned that the TYPE, JUMP, and END commands can be called |
+conditionally, depending upon the success of a match between an ACCEPT and
+MATCH string. Modules can be called conditionally also by changing the USE com-
+mand to a USE IF YES or USE IF NO command. |
+These commands have the format:
+UY: module label
+UN: module label |
+Depending upon a match or no match between the ACCEPT and MATCH string,
+one of these commands will be executed. If both are present, one will be bypassed. J
+Here is part of a program that uses the UY: and UN: commands:
+10T: DO YOU WANT TO PLAY A GAME? j
+20A:
+30 M: Y,YES
+40 UY: *GAME
+50 UN: * WORDS
+60 E: 2
+98 Modules I

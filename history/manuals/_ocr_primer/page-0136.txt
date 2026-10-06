@@ -1,0 +1,33 @@
+oe
+| END CIRCLE AT THETA = 360° BEGIN CIRCLE AT THETA=0°
+Figure 10-4 The 0- and 360-Degree Angle
+| The turtle can turn to the left or right in 360 different angles. The turtle pointing
+directly to the right (a quarter turn of the circle), is facing 90 degrees from the 0
+degree angle. The turtle facing the bottom of the screen (a half turn of the circle), is
+| pointing 180 degrees from the 0 degree angle. Turning the turtle to the right until it
+points directly to the left side of the screen faces the turtle towards the 270 degree
+angle. Of course, these aren’t the only directions that the turtle can face: it can be
+| € positioned to face toward any angle between 0 and 360 degrees.
+The turtle can also be turned to the left; however, calculating its direction is a little
+more complicated. To determine its angle, you must count counterclockwise from
+0 to 360 degrees, and then add a negative sign to the degree value. T hus, if the turtle
+is facing the lower left corner, you calculate its angle by counting counter
+clockwise from 0. The degree value is 135. Add a negative sign to the front of 135,
+and the degree angle is — 135.
+5 315° 335° o° 22° 45°
+—45° — 22° 360° = 338° Gre bo hd
+Le Ly uy a a
+~ \ / gt
+292° 67°
+5 —67° ©. -7 —292°
+270° a 90°
+i 90° © > —270°
+q 247° «~~ 3 112°
+—112° — 247°
+a ei
+/
+“ L \ ™
+bat 202° 180° 157° 1357
+| sone bad =—157° — 180° — 202° — 225°
+Figure 10-5 Calculating Directional Angles
+A Welcome to Graphics 119

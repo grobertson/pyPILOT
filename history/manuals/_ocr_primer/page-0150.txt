@@ -1,0 +1,42 @@
+ee.
+a HOME, SWEET HOME PROGRAM
+The following program draws a simple picture:
+10 R: PICTURE
+i 20 GR: CLEAR
+30 GR: GOTO - 25, -10
+40 GR: PEN BLUE
+a 50 U: * BOX
+60 GR: TURNTO 30; GO 25
+70 GR: PEN RED
+80 U: * TRIANGLE
+j 90 GR: GOTO 0,25
+100 GR: PEN YELLOW
+110 U: *MOON
+120 GR: GOTO — 40,25
+A 130 U: *STAR
+140 GR: GOTO - 10,35
+150 U: *STAR
+160 GR: GOTO 35,20
+170 U: *STAR
+299 E:
+400 * BOX
+il 410 GR: TURNTO 90
+420 GR: 3(DRAW 25; TURN 90)
+430 GR: FILL 25
+440 E:
+i & 500 * TRIANGLE
+510 GR: TURNTO 150
+520 GR: 2(DRAW 25; TURN 120); FILL 24
+530 E:
+{ 600 * MOON
+610 GR: TURNTO 70
+620 GR: 38 (DRAW 1; TURN 5)
+i 630 GR: TURNTO 50
+640 GR: 5(TURN — 20; FILL 5)
+650 E:
+700 *STAR
+q 710 GR: 5(DRAW 10; TURN 144)
+720 E:
+i RUN the program. Does your picture look like this?:
+: Figure 10-21 Home, Sweet Home Program Run
+: Welcome to Graphics 133

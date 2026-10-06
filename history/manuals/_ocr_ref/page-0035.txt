@@ -1,0 +1,31 @@
+= 100 “TRIANGLE
+11@ GR: 3CDRAW 30; TURN 120)
+12@E:
+READY
+cs
+Figure 2-25
+If you type U: 4% LABEL in Immediate mode, you can check out a module without run-
+ing the entire program. For example, Figure 2-26 is the result of typing
+U: % TRIANGLE.
+READY
+S
+Figure 2-26
+Figure 2-27 shows the %#* TRIANGLE module within a larger program. When the com-
+puter sees U: % TRIANGLE, it jumps to the statement labeled % TRIANGLE and uses
+that module. At the end of the module, the computer continues with the command
+following U: #* TRIANGLE.
+1@ R:WHEEL OF TRIANGLES
+20 C:nT=0
+3@ GR: CLEAR
+40 “AGAIN C:mT=nT+1
+S@ U:*TRIANGLE
+60 GR: TURN 36
+7@ JCHT<10) :*AGAIN
+80 E:
+100 *TRIANGLE
+11@ GR: 3CDRAW 30; TURN 120)
+120 E:
+READY
+a
+Figure 2-27
+Use—U: 27

@@ -1,0 +1,47 @@
+ei
+t Example: Sensing the Paddle Position
+225 }(% PO > 200): * DOWN
+250 * [
+q (Branches to * DOWN if paddle #1 is turned nearly all the way clockwise.)
+To see how %PO through %P7 work, type in this program:
+| 10 R: PADDLE SENSING
+20T: *START
+30 T: PADDLE #1 POSITION = %PO
+40 PA: 60
+| 50J: *START
+RUN the program, turning the paddle clockwise and counterclockwise.
+4 SENSING THE PADDLE TRIGGER
+The paddle triggers, like the joystick triggers, have two values consisting of:
+O if trigger is up
+| 1 if trigger is depressed
+To create a Paddle Trigger Sensing Program, use the Paddle Sensing Program and
+replace lines 10 and 30 with the following:
+| e 10 R: PADDLE TRIGGER SENSING
+30T: PADDLE #1 TRIGGER = %TO
+The following program does a “paddle sketch,”’ using the graphics screen and the
+paddle controller sensing values. Type it in and give it a RUN:
+10 R: ** *ATARI PADDLE-SKETCH * * *
+20 R:
+' 30 T: Plug the paddle controllers into controller jack #1.
+40 T: Use the paddle on the right.
+50T:
+; 60 T: To draw: turn the paddle.
+70 T: To pause: press the trigger.
+80 T: To resume: press it again.
+90 T: To stop: press BREAK.
+3 100 T:
+110 T: (press RETURN to continue)\
+120A:
+130 R: BEGIN PROGRAM
+a 200 *LOOP
+210, U(%TO): * PAUSE
+220, PA: 15
+230, GR: DRAW 1
+240,R: change direction
+250, GR: TURNTO (36 * %PO/ 22)
+| 260,J: *LOOP
+| 300 * PAUSE
+310, PA: 10
+320 , E(% TO); Cresume on trigger
+330,J: *PAUSE
+Appendix D 189

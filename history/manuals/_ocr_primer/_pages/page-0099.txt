@@ -1,0 +1,44 @@
+SS
+If there is a match, MS: divides the input into three pre-named string variables: |
+$LEFT, $MATCH, and $RIGHT:
+$LEFT is the value of everything to the left of the matched item
+$MATCH is the value of the matched item
+$RIGHT is the value of everything to the right of the matched item |
+This example program demonstrates how the MATCH STRING command divides
+input into three variables:
+10 T: ENTER A STRING: \
+20A:
+30 MS: AND
+40 T: THE LEFT VARIABLE IS: $LEFT
+50 T: THE MATCH VARIABLE IS: $MATCH
+60 T: THE RIGHT VARIABLE IS: $RIGHT
+The string that will produce a match is AND. The input string | LIKE CATS AND
+DOGS produces this output:
+ENTER A STRING: ILIKE CATS AND DOGS
+THE LEFT VARIABLE I5: ILIKE CATS
+THE MATCH VARIABLE IS: AND
+THE RIGHT VARIABLE I5: DOGS
+READY
+; @|
+@ Remember, that a string variable’s value replaces its variable name in a TYPE
+statement (if defined).
+If a match is unsuccessful, the three strings ($LEFT, $MATCH, and $RIGHT) retain
+any value they had prior to the MATCH STRING command.
+The $LEFT or $RIGHT variables may have a null, or no value, depending upon |
+where in the input string the match occurred as shown below: (A null value means
+that its value is nothing; this is different than undefined.)
+ENTER A STRING: AND ]
+THE LEFT VARIABLE IS:
+THE MATCH VARIABLE IS: AND
+THE RIGHT VARIABLE I5:
+READY |
+a
+The ability to separate a single string into three separate strings makes MATCH |
+STRING a very powerful command. You can use it to rearrange your string input,
+discard portions of your input, and so on.
+SENSING A MATCH i
+When the ACCEPT and MATCH strings are evaluated for a successful or unsuc-
+cessful match, the condition is remembered as true or false in the computer's
+memory. You can display the MATCH SENSING variable to find out if the match is
+true or not. i
+82 Variables i

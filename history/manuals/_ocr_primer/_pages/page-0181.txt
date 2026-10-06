@@ -1,0 +1,52 @@
+a: 9
+9380 T:
+9390 T: TO RESAVE A PROGRAM WHICH HAS
+9400 T: GROWN MUCH LARGER, SAVE IT
+9410 T: ASA NEW PROGRAM.
+9420 T: TO ERASE A PROGRAM, JUST
+9430 T: JUST REPLACE ITS NAME WITH:
+9440T: (EMPTY)
+9450 T: DON’T CHANGE THE BEGIN/END
+9460 T: NUMBERS.
+9470 U: *RETURN
+9480 EY:
+9490 T:
+9500 T: WHEN FILLING AN (EMPTY) SPACE
+9510 T: WITH A PROGRAM, KEEP IN MIND
+9520 T: THAT, IN GENERAL:
+9530 T; EVERY 20 PROGRAM LINES
+9540 T: OCCUPY 12 COUNTS.
+9550 U: *RETURN
+9560 EY: ]
+9570T:
+9580 E:
+9590 *RETURN
+9600 T: |
+9610T: (PRESS RETURN TO CONTINUE)\
+9620 A:
+9630 U: *CLEAR
+9640 T: MORE? \
+9650 A:
+9660 M: N
+9670 U: *CLEAR |
+9680 E:
+9690 *CLEAR
+9700T: ¥ [ESC SHIFT CLEAR]
+9710 E: ]
+2. Insert a blank cassette tape into the program recorder. Rewind completely and
+set the tape counter to 000. i
+3. Advance the tape to about 010 on the tape counter. Remember this number.
+4. Save the directory program by typing:
+SAVE: C |
+5. On another tape, save the directory program again, repeating steps 1-4. This
+way you have the original, unchanged program to save onto other tapes.
+6. LIST lines 200-250 of the directory to display the first lines to be filled with pro- j
+gram names.
+7. Enter the directory program name as the first entry in the directory.
+Example: f
+200 T: CASSETTE GUIDE 010 071
+(010 is the starting point of the directory. 071 is the ending point.) J
+8. Since you have changed the directory you must re-SAVE it. Rewind and posi-
+tion the tape at 010. ReSAVE the program by typing: =
+SAVE: C
+164 Appendix B J

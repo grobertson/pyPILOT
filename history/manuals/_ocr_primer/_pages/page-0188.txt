@@ -1,0 +1,15 @@
+CURSOR UP
+tal
+Pressing the key while holding down the key moves the cursor up one
+| line.
+g
+AND
+:
+u
+AND
+| MOVE THE CURSOR u
+4 Figure C-5 Using the Cursor Up Key
+If the cursor reaches the top of the screen, it “wraps around” to the bottom in the
+q & same column.
+Figure C-6 Cursor Up Wraparound
+; Appendix C 171

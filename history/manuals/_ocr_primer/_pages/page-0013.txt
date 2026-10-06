@@ -1,0 +1,39 @@
+The ATARI Printers 165 e@ |
+Printing a Program 166 |
+C SCREEN EDITING 167
+Concepts Introduced 167 |
+The Screen Editor 167
+The Screen Editing Keys 168 :
+The RETURN Key 168
+The SHIFT Key 168
+The CAPS/LOWER Key 168 |
+The TAB Key 168 |
+TAB Set 168
+TAB Clear 169 |
+TAB 169 |
+The CTRL Key 169
+The Inverse Video Key 169
+The CLEAR Key 169 |
+The Cursor Control Keys 170
+Cursor Up 171
+Cursor Down 172 |
+Cursor Right 172
+Cursor Left 174
+Editing the Current Display Line 175 r ) |
+Backspacing 175
+Deleting 177
+Character Deletion 177 |
+Line Deletion 178
+Inserting 180
+Character Insertion 180
+Line Insertion 181 |
+Deferred Cursor Movements 182 |
+D CONTROLLERS 185
+Concepts Introduced 185
+Sensing 185
+Sensing the Position of the Joystick 185
+Sensing the Joystick’s Trigger 187
+Sensing the Position of the Paddle 188
+Sensing the Paddle Trigger 189
+E PILOT I/O ERROR CODES 191
+xii Appendices

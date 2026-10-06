@@ -1,0 +1,40 @@
+a ee
+ATARI PILOT uses a system called TURTLE GRAPHICS to draw the preceding |
+graphics. Turtle Graphics can be explored further in Section 10, Welcome to
+Graphics.
+
+SECTION 2 If your ATARI computer is turned on correctly with the ATARI PILOT cartridge {
+
+SUMMARY plugged in, the screen should display:
+
+ATARI PILOT CC) COPYRIGHT ATARI 1980 |
+READY
+a
+If your screen doesn’t look like this, then follow the start-up procedure for your |
+system in Appendix A.
+The cursor marks your place on the screen. The cursor moves as you enter input. |
+The READY message means that the computer is finished responding and is waiting
+for further input.
+To end a line of input, press the key. |
+To clear the screen, hold down the key and press the key.
+To correct typing or spelling mistakes you can either retype the entire line, or
+backspace the cursor to the mistake with the key and retype the line
+from there. a2 |
+A command is an instruction to the computer to carry out a specified task. PILOT
+commands are called by a command label usually one or two letters in length,
+followed by a colon and an action statement. j
+The TYPE command (T:) prints a message on the screen. The message is displayed
+on the line below the command. Here is an example:
+T: MY COMPUTER DOES NOT HAVE EARS > q
+MY COMPUTER DOES NOT HAVE EARS
+a
+The SOUND command (SO:) generates up to four voices of musical tones. Each j
+voice generates numbered tones ranging from 1 to 31. A tone of 0 means silence or
+a rest. An example of the SOUND command is:
+SO: 1,5,8,11 3
+The GRAPHICS command (GR:) generates lines, figures, or colors in graphics
+mode. The command to open the graphics screen is GR: followed by an action
+statement (i.e., DRAW 10, FILL 40). The command to clear the graphics screen is 4
+GR: CLEAR. To exit graphics mode and return to standard text mode, type: GR: QUIT.
+Getting Started
+16 with Pilot i

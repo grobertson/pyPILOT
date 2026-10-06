@@ -1,0 +1,42 @@
+=
+q THE GRAPHICS Type: GR:CLEAR and press to display the graphics screen. (The cursor re-
+SCREEN mains in the same position.) As you see, it is quite different from the blue text
+screen we've been using so far. Four lines of text can be displayed at a time in the
+I text window at the bottom of the screen.
+PILOT supports two drawing systems simultaneously when in graphics mode. They
+| are the:
+* Cartesian coordinates (an absolute reference system)
+¢ ‘Turtle’ geometry (a relative polar reference system in which the origin is
+| always carried with the moving point — the turtle)
+i CARTESIAN COORDINATES
+Think of your graphics screen as having an invisible grid laid over it. The grid is
+made up of 12,800 units: 160 units across and 80 units high. Actually, the complete
+graphics screen extends far beyond the borders of the visible computer screen: up
+| to 32767 units in two directions and to — 32768 units in the other two directions.
+1,47
+I —79,47 o4 79,47
+60,27
+1é .
+6,6
+I -798 © - 79,6
+e
+| 41,-25
+a
+meh reat | §,—31 79,—31
+j —79,—47 v 79,—47
+6,—47
+| Figure 10-2 Cartesian Coordinates
+The screen is also divided into four quadrants, divided by the X (horizontal) axis
+and the Y (vertical) axis. The X and Y axes intersect in a point at the center of the
+i screen. This point, called the center point or origin has the coordinates 0,0. Every
+point within each quadrant can be located and identified by a pair of coordinates in
+the form (X,Y). A coordinate defines a point’s position relative to the origin. The first
+number is the X coordinate: the distance along the X axis from the point to the
+origin. (The value of X increases to the right of the origin, and decreases to the left.)
+The second number is the Y coordinate: the distance along the Y axis from the
+point to the origin. (The value of Y increases upward from the origin and decreases
+| downward away from the origin.) This is labeled in the diagram.
+For example, point A (— 60,27) in the diagram is 60 units to the left of the origin,
+and 27 units upward from the origin. Point B (41, — 25) is 41 units to the right of the
+q origin and 25 units below the origin.
+A Welcome to Graphics 117

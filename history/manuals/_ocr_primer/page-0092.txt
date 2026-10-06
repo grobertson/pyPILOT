@@ -1,0 +1,34 @@
+—— eee
+.
+*** READY KH
+a
+I Figure 6-8 Growing Strings: With a Second DUMP Command
+Look at how $NAME keeps growing!
+Press the key, and issue the DUMP command again:
+| DUMP
+SIMAME = * 9969696963696 9696 9696969690 3690309036 ©
+SSTAR='*!
+READY
+a
+$NAME seems to have grown somewhat!
+I Generating Plural Strings
+Concatenating strings allows you to generate plurals; to change a singular string into
+i a plural string. Clear memory with the NEW command and type in this program:
+10 T:;WHAT IS YOUR FAVORITE FLOWER?
+20 A:$FLOWER
+| 30 T:WOULD YOU LIKE A DOZEN $FLOWER?
+40 A:
+j RUN the program:
+WHAT IS YOUR FAVORITE FLOWER?
+ROSE
+WOULD YOU LIKE A DOZEN ROSE?
+| YES
+READY
+a
+q A DOZEN ROSE doesn’t sound right, and it certainly is not proper English. We
+need to change the input string ROSE to ROSES before it is displayed at line 30. To
+do this we must add two lines and change line 30. Type in:
+| 24C: $S=S
+28 C: $FLOWERS = $FLOWER$S
+é 30T: WOULD YOU LIKE A DOZEN $FLOWERS?
+| Variables 75

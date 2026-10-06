@@ -1,0 +1,18 @@
+,_—+¥!_—————— 7
+
+CURSOR LEFT
+Pressing the key while holding down the key moves the cursor to the
+
+left one space. :
+Figure C-11 Using the Cursor Left Key I
+
+If the cursor reaches the left side of the screen, it wraps around to the right side of :
+the same row. :
+
+oes sid
+
+Figure C-12 Cursor Left Wraparound ee og
+
+ea
+
+174 Appendix C 3 iol

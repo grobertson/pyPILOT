@@ -1,0 +1,26 @@
+es 6 ee
+Figure 3-2 AUTO Mode
+To leave AUTO mode, enter a blank line and press the key.
+In AUTO mode you do not type line numbers. Anything entered is treated as a pro-
+gram statement, and therefore executive commands may not be entered while in
+AUTO mode. Of course, if the computer doesn’t understand your input it still
+responds with the * ** WHAT'S THAT? * ** message. a
+Let’s enter a program in AUTO mode. Type in NEW, press the key, and
+enter:
+AUTO ]
+T:HAIL!
+T:HAIL!
+T:THE GANG'S ALL HERE! j
+®@ Note that you do not type line numbers when in AUTO Mode. @
+Although your input looks like three immediate mode statements, they are actually {
+deferred statements. This is evident because nothing happens when you press the
+key.
+Once you’ve entered the entire program, you must exit AUTO Mode before you I
+can issue a RUN, LIST, or NEW command. If you try, the computer responds with
+an *** IMMEDIATE ONLY * * * message. This means that executive commands
+can be executed only in immediate or programmed mode, e.g., when the screen is I
+blue.
+To exit AUTO Mode, press the key or enter a blank line. i
+Writing A a
+24 = Pilot Program a
+a

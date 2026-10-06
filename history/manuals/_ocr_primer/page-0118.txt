@@ -1,0 +1,39 @@
+|
+| SECTION 8 A module is a group of repeatedly used statements clustered together. They are
+SUMMARY building blocks which can make programs shorter and easier to understand.
+
+Modules are powerful tools because they are reusable.
+
+| Every module must have a /abel, a task ,and an end. When the module is needed,
+the main program branches to the module. When the module has been executed,
+
+| the module branches back to the main program.
+
+The USE command, located in the main program, calls the module into action. The
+format for the USE command is:
+| U: module label
+Examples:
+| U: *MINI
+10 U: *COMPUTE
+100 U: *K555
+
+| Every module must end with an END command. The format for the END command is:
+Ee
+
+| The END command, when executed within a module, ends only the module and
+NOT the program. END transfers program execution to the statement following the
+
+€ calling USE command in the main program.
+
+i Modules can be nested within one another, allowing a module to call another
+module. Up to eight modules can be nested in one PILOT program.
+
+i The USE command can be used conditionally to call modules, depending upon the
+success of an ACCEPT and MATCH string match. The formats for the USE IF YES
+and USE IF NO commands are:
+
+| UY: statement label
+
+UN: statement label
+| The conditional command rules apply for the USE IF YES and USE IF NO commands.
+| Modules 101

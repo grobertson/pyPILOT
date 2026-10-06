@@ -1,0 +1,29 @@
+= To delete line 20 from the program, type the line number and press the key.
+Merely deleting the line from the screen display does not delete it from the program.
+In addition to the special function keys described above, there are cursor control, insert,
+and delete keys that allow immediate editing capabilities. These keys are used in conjunc-
+tion with the Gq7¥ or GWE keys as follows:
+Cis & Moves cursor up one physical line without changing the program
+or display.
+Moves cursor one space to the right without disturbing the program
+or display.
+CTRL | Moves cursor down one physical line without changing the pro-
+gram or display.
+Moves cursor one space to the left without disturbing the program
+or display.
+Like the other keys on the ATARI keyboard, holding the cursor control keys for more
+than ¥/ second causes the keys to repeat.
+= Insert key: Press the and keys simultaneously
+to insert a line. To insert a single character, press the and
+keys simultaneously.
+Inserts one physical line.
+Inserts one character space.
+Delete key: Press the EQIER and GHGSGETEES keys simultaneously to
+delete a line. To delete a single character, press GUJ3
+GISELE simultaneously.
+Deletes one physical line.
+Deletes one character or space.
+Note: You should not use screen editing features other than Backspace/Delete in AUTO
+mode. Instead, return to the Immediate mode and LIST your program to use screen
+editing.
+Appendix A 105

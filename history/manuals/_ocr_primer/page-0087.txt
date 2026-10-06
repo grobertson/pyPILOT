@@ -1,0 +1,29 @@
+So ee
+1. UNDEFINED VARIABLE ——» 2. INPUT STRING VALUE CS
+‘CHINA’ FOR
+: = 30 A;SFARAWAY >
+Figure 6-5 Defining a Variable With Input
+USING TYPE AND ACCEPT COMMANDS WITH STRING VARIABLES
+String variables are defined by the interaction of TYPE and ACCEPT commands.
+The ACCEPT command, A:, followed by a string variable name defines the string
+variable and saves the input as its value in memory. |
+10 T: WHAT IS YOUR NAME?
+20 A: $NAME
+30 T: WHERE DO YOU LIVE?
+40 A: $ADDRESS
+This is what happens when the above program is executed: »
+$NAME defined with
+input value “CHRIS” WHAT IS YOUR NAME? |
+HHERE DO YOU LIVE?
+BERKELEY
+SADDRESS defined with Seapy
+input value “BERKELEY” a
+Figure 6-6 String Variables: Program Run |
+The TYPE command can also use string variables. If the string variable has been
+previously defined before the TYPE command, the string variable name in the TYPE |
+statement is replaced with the value of the string variable. If it has not been defined,
+the string variable name is not replaced in the TYPE message. Type:
+10 T: WHAT IS YOUR NAME?
+20 A: $NAME
+30 T: YOU, $NAME, ARE A VERY $FUNNY PERSON! r }
+70 Variables |

@@ -1,0 +1,34 @@
+e _  Srvrrerc aT.
+A MANY SOU NDS
+4
+CONCEPTS Definition List
+INTRODUCED The SOUND Command, SO:
+| Immediate Mode Sounds
+Program Mode Sounds
+The PAUSE Command, PA:
+Random Music
+A Special Song
+Section 9 Summary
+Section 9 Quiz
+Advanced Programming With Sound
+The PAUSE Command: Increments of 1/60ths
+PILOT has a special command that lets you create sound and musical tones. It is
+called the SOUND command. In Section 2 you were briefly introduced to the
+SOUND command when you learned to play a C scale and a chromatic scale. This
+section will show you how to program the SOUND command so that you can write
+q & music.
+DEFINITION Below is a list of definitions you will need to make sounds:
+q LIST TONE A tone is a musical note from low C (one and a half octaves below middle
+C) to high F# (one and a half octaves above middle C). Each of these tones has a
+corresponding number from 0 to 31.
+' CHORD Three or more tones played at the same time.
+VOICE A voice represents one tone in a musical chord. The SOUND command
+can be used to play up to four voices at the same time.
+] MIDDLE C So called because in music this note is in the middle of the music staff.
+g é = ‘ MIDDLE C
+(MIDDLE OF STAFF)
+j Figure 9-1 Position of Middle C
+e HALF STEP The smallest interval between two tones.
+EB WHOLE STEP An interval of two half steps between two tones.
+Many Voices,
+| Many Sounds 105

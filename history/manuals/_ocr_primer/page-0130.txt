@@ -1,0 +1,15 @@
+__ —t—t~—i‘(‘é‘“=SCS
+| ANSWERS
+1. tones
+| 2. four
+3. =(e)
+4. space, comma
+| 5. half step interval of two half steps
+whole step half steps played sequentially
+} octave interval of a tone
+chromatic scale 8 notes is a major scale
+6. Delay program execution for a specified length of time.
+| 7. FALSE (PAUSE follows the SOUND command.)
+8. Random number operator, ?.
+E Many Voices,
+i Many Sounds 113

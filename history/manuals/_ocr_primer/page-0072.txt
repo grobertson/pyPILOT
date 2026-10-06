@@ -1,0 +1,37 @@
+eC —____
+j
+CONCEPTS The Statement Label
+GE DUCED The JUMP Command, J:
+] INTRODU The JUMP IF YES and JUMP IF NO Commands, JY:, JN:
+The TRACE Command
+Section 5 Summary
+Section 5 Quiz
+i Advanced Branching Techniques
+The JUMP Command in Immediate Mode, J:
+The JUMP ON MATCH Command, JM:
+| Mini-Quiz
+So far, all of the programs that you have entered were obeyed in line number order
+and proceeded from lower line numbers to higher line numbers. The term for this
+is sequential program execution. PILOT allows you to break the normal sequence of
+execution by using something called a label.
+qj é THE A statement label is a way of naming a PILOT statement line. The line number is not
+STATEMENT actually a name. Line numbers do help locate PILOT lines in relation to each other.
+LABEL A label does more: it tells the computer “I’m special!’” The computer remembers
+a the statement label's location and its location within the program by the line
+numbers.
+The format for the statement label is:
+4 line number */abel name
+where: label name is any combination of letters and numbers beginning with an
+d asterisk and a letter. Embedded spaces are not allowed.
+Examples:
+10 * LABEL
+4 50 *START
+i THE JUMP The JUMP command tells the computer to break sequential program execution and
+COMMAN Dak jump to a labeled statement line.
+The format for the JUMP command is:
+4 J: statement label
+Examples:
+§ 100 J: * LABEL
+a 250 J: *START
+| 300 J: * DOAGAIN
+| Branching 55

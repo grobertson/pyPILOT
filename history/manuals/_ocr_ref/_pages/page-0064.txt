@@ -1,0 +1,9 @@
+GR:
+a
+Graphics 2
+The GR: (GRAPHICS) command tells the computer you are going into the Graphics mode
+to draw a picture. Figure 4-1 shows you what the basic Graphics screen looks like.
+Figure 4-1
+The black background is for drawing, and the blue strip at the bottom of the screen (the
+text window) is for displaying messages or writing commands. z
+56 Graphics—GR:

@@ -1,0 +1,10 @@
+MOVE THE CURSOR TO THE RIGHT
+1
+4
+A Figure C-9 Using the Cursor Right Key
+2 If the cursor reaches the right side of the screen, it wraps around to the left side in
+4 the same row.
+I
+F
+Figure C-10 Cursor Right Wraparound
+Appendix C 173

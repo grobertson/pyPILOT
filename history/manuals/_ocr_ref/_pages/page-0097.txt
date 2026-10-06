@@ -1,0 +1,58 @@
+The units in the PA:N command may either be a number or a numeric variable. Each unit
+is equal to 1/60th of a second. Thus PA:60 will pause for 1 second; PA:30 will pause for
+Y2 second; PA:300 will pause for 5 seconds, and so on.
+The PA: command is often used in combination with the SOUND command to tell the
+computer how long to sound one or more voices. For example, the program in Figure
+5-7 uses SO: and PA: to add a random three-chord polka to the Polka Dots program of
+Figure 4-25.
+10 R:DOTS POLKA
+2@ “BEGIN
+3@ C:mN=e
+40 GR:CLEAR
+Se T:
+60 T: DOTS POLKA
+7@ *POLKA
+8@ C:#x=?\150-75
+9@ C:#VY=7\62-31
+100 C:mC=?\3+1
+11@ GRCHC=1): PEN YELLOW
+12@ SOCHC=19:13,17,20
+13@ GRCNC=2): PEW RED
+140 50C#C=2):13,18,22
+150 GRCHC=3): PEN BLUE
+160 SOCHC=3):15,20,24
+170 GR:GOTO 8x ,HY
+180 U:*DOT
+19@ U:*UMPAH
+200 C:8N=HN+4
+210 JCBN<S@):*POLKA
+22@ U:*FINALE
+230 J:*BEGIN
+240 E:
+see *DOT
+310 GR: TURNTO 90
+32@ GR: 10CDRAW 1; TURN 18)
+33@ GR: 1OCFILL 13 TURN 18)
+340 E:
+400 *UMPAaH
+410 C:HR=HN\3
+420 Pacur=e):20
+430 50:0,0,0
+440 Pacuk=6):5
+4se E:
+S@@ *FINALE
+S10 50:13,17,20
+520 Pa:6e
+S30 50:13,16,22
+540 Pa;6e
+S50 50:15,20,24
+568 Pa:6e
+570 50:13,17,20,25
+58e Pa:126
+590 50:0,0,0
+600 Pa:4ée
+610 E:
+READY
+&
+Figure 5-7
+90 Sound and Pause—PA

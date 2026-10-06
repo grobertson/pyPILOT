@@ -1,0 +1,44 @@
+> =... ——_—_]
+i
+CONCEPTS Maximum Number Size
+j INTRODUCED — Modulo
+Numeric Types
+Constants
+Numeric Variables
+Assigning Value to Numeric Variables
+| The COMPUTE Command, C:
+The Random Number
+Arithmetic Operators
+Operator Precedence
+Relational Operators
+Section 7 Summary
+Section 7 Quiz
+
+| To come this far, you have mastered many new concepts in your quest to learn
+PILOT. The next concept is one you are already familiar with: numbers!
+
+1 e The world of PILOT graphics and sound revolves around numbers. There are a few
+key rules and ideas to understand in order to use numbers; these are the topic of
+this section.
+
+I MAXIMUM The largest positive number PILOT understands is 32767. The smallest
+
+NUMBER SIZE negative number PILOT understands is — 32768. PILOT handles arithmetic in
+strange ways if you go beyond the + 32767 and — 32768 limits. For example, the
+equation:
+
+32767 + 1 will return — 32768 instead of 32768.
+
+q PILOT arithmetic uses only integers in the -32768 to 32767 range. Fractional
+numbers are not allowed. The remainder from the division of two integers is
+represented by a special arithmetic operator, called modulo.
+
+4 MODULO The symbol for modulo is the backslash character, \, located on the \ . + key.
+Modulo represents the remainder of one integer divided by another.
+
+a The modulo of one number by another number is the remainder of the division of
+the two numbers.
+
+| a number\another number = remainder of (a number/ (another number))
+
+| Using Numbers 85

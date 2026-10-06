@@ -1,0 +1,59 @@
+—— |
+A SPECIAL SONG The following program plays a tune to show you what can be done with the
+SOUND command. Type it in and give it a RUN.
+1 *START
+5C: #T=#T+1 {
+10 SO: 17,13,8
+20 PA: 24
+30 SO: 15,13,8
+40 PA: 8 j
+50 SO: 13,8
+60 PA: 32
+70 SO: 15,13,8 |
+80 PA: 32
+90 SO: 17,13,8
+100 PA: 32
+110 SO: 17,13,8 1
+120 PA: 32
+130 SO: 17,13,8
+140 PA: 64
+150 SO: 15,12,8 {
+160 PA: 32
+170 SO: 15,12,8
+180 PA: 32
+190 SO: 15,12,8 |
+200 PA: 64
+210 SO: 17,13,8
+220 PA: 32 a |
+230 SO: 20,17,13,8
+240 PA: 32
+250 SO: 20,17,13,8
+260 PA: 64 |
+270 SO: 17,13,8
+280 PA: 24
+290 SO: 15,13,8
+300 PA: 8 1
+310 SO: 13,8
+320 PA: 32
+330 SO: 15,13,8
+340 PA: 32
+350 SO: 17,13,8
+360 PA: 32
+370 SO: 17,13,8 4
+380 PA: 32
+390 SO: 17,13,8
+400 PA: 32
+410 SO: 15,12,8 1
+420 PA: 32
+430 SO: 15,12,8
+440 PA: 32
+450 SO: 17,13,8
+460 PA: 32
+470 SO: 15,12,8
+480 PA: 32 i
+490 SO: 13,8,5,1
+500 PA: 192
+510 SO: 0
+520 J(#T <2): *START E
+Many Voices,
+110 Many Sounds I

@@ -1,0 +1,35 @@
+ee OR ____—____9
+I
+WHAT IS PILOT? PILOT stands for Programmed Inquiry, Learning Or Teaching. PILOT is a simple,
+flexible language that is easy to learn in a short period of time. It is an excellent tool
+j to introduce children and beginners to computers and computer programming.
+PILOT was created as a text-oriented language for beginners who do not have an
+extensive mathematical background. With the basic knowledge of computers that
+can be acquired through PILOT’s simple programming constructs, PILOT can pro-
+vide a solid base for future computer learning.
+4 PURPOSE OF This manual is designed to:
+THIS MANUAL * Teach you how to use the PILOT language on the
+ATARI® Personal Computer System
+| * Provide an introduction to simple graphics and sound
+through the medium of ATARI PILOT
+| e& Our goal is to enable you to design educational programs that respond ap-
+propriately to a variety of inputs. This means tutorials, programs using interactive
+dialogues, and games that genuinely respond to you. We want you to learn PILOT
+| and be able to use it successfully to meet your own goals.
+If you are a teacher or parent, this manual will enable you to design interactive cur-
+riculum materials that provide personalized, self-paced instruction for your
+| students or children.
+HOW TO USE This manual is specifically designed for the beginner who may
+THIS MANUAL know little or nothing about computer programming. It begins with simple con-
+cepts which grow as you proceed through the book. Sections 1 through 10 provide
+the fundamentals of ATARI PILOT; therefore, all beginning readers should start
+4 with the Introduction and proceed sequentially through Section 10. Readers who
+are advanced programmers or are familiar with the PILOT language may want to
+read the Introduction and each Section Summary before skipping ahead to the ad-
+I vanced sections.
+Each section teaches a new concept. The sections begin with a checklist of the ma-
+jor topics that will be covered in Concepts Introduced. At the end of each section is
+a Summary that briefly reviews the contents of the section, followed by a Quiz to
+test your understanding of the new concepts. Following the Quiz is a section ex-
+plaining the more difficult concepts for the advanced programmer.
+4 Preface iii

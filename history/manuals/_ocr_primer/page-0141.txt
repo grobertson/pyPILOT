@@ -1,0 +1,29 @@
+ee ES
+RUN the program. You should see this on the screen:
+READY
+|
+Figure 10-9 Drawing a Box
+@ Multiple commands can follow a GR: command if they are separated by a
+semicolon. @
+The box is drawn counterclockwise, starting at the lower left corner. Notice that
+DRAWTO begins each line from where the previous line ended.
+To begin a line from a location other than the end of the previous line (the current >
+turtle position) use the GOTO subcommand to relocate the turtle. Then draw the
+line to the desired point:
+GR: GOTO A,B |
+GR: DRAWTO x, Y
+where: A,B is the desired starting point |
+X,Y is the desired ending point
+Experiment on your own to see how GOTO can really change things. |
+The FILLTO Subcommand
+The FILLTO subcommand draws a line to the specified point, while filling in the
+blank regions to the right of the line with the current pen color. }
+The format for the FILLTO subcommand is:
+GR: FILLTO X,Y |
+where: X,Y are the coordinates of the destination point.
+Examples: |
+GR: FILLTO 40,-10
+GR: FILLTO 20,#C
+Both the line and the fill space are drawn in the current pen color. If the pen is UP, I
+then no line or fill space is drawn. =
+124 Welcome to Graphics I

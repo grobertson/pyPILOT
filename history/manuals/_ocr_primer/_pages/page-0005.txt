@@ -1,0 +1,21 @@
+CAST OF The four colors below will appear throughout this manual to highlight special
+COLORS words of advice. Each color is related to a specific kind of message.
+
+® Provides helpful hints on how to do things. Often offers |
+
+little reminders.
+
+® Usually introduces a new topic or explains a difficult
+
+concept. &
+
+® Lets you know about things you should do to avoid
+
+problems.
+
+@ Will appear throughout the manual, to explain the
+
+meaning of the special symbols we use such as quotes (“’’),
+
+brackets (£ 3), and others. |
+iv Preface i

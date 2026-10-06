@@ -1,0 +1,14 @@
+GR:DRAWTO
+ge ce
+D to the Point X.Y e
+raw TO OInT A,
+a =
+GR: DRAWTO -20,20
+a
+2
+GR: DRAWTO 30,30
+GR* DRAWTO 0,0
+GR: PEN UP
+The command GR:DRAWTO X,Y tells the turtle to put the pen down and draw a straight
+line to the point with coordinates X and Y. The line is drawn in the pen’s current color,
+64 Graphics—GR:DRAWTO

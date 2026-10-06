@@ -1,0 +1,46 @@
+More Commands 26 *
+The TYPE Command, T: 26
+The ACCEPT Command, A: 26 |
+The REMARK Command, R: 31
+The END Command, E: 32
+Correcting and Changing Your Programs 32 |
+Erase a Line 32
+Insert a Line 33
+Replace a Line 34 |
+Line Renumbering 35
+The RENUMBER Command, REN 35
+Fancy Renumbering With REN 36 |
+Section 3 Summary 37
+Section 3 Quiz 38 |
+at EE SOS BES NS WO PO Me OEY 2 hr
+4 DECISION-MAKING PROGRAMS 41
+aa eae Ca eC
+Concepts Introduced 41 {
+Matching for Clues 42
+The Function of the ACCEPT Command, A: 42 |
+The MATCH Command, M: 42
+Conditional Commands 44
+The TYPE IF YES and TYPE IF NO Commands, P
+TY, EN: 44 + L
+Putting It All Together 47
+The END IF YES and END IF NO Commands,
+EY? EN: 48 |
+Section 4 Summary 50
+Section 4 Quiz 51
+Advanced Decision-Making Techniques 53) 4
+Separating MATCH Strings With Vertical Bars 53
+5 BRANCHING 55 i
+plies ae ec icy Re Re ae sea eM RA cre
+Concepts Introduced 55 i
+The Statement Label 55
+The JUMP Command, J: 55
+The JUMP IF YES and JUMP IF NO Commands, t
+WYN 57
+The TRACE Command 59
+Section 5 Summary 61 i
+Section 5 Quiz 62
+Advanced Branching Techniques 63
+The JUMP Command in Immediate Mode, }: 63 |
+The JUMP ON MATCH Command, JM: 63
+Mini-Quiz 65 -
+vi Contents 1

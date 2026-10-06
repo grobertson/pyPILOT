@@ -1,0 +1,26 @@
+Ss sae
+ANSWERS |
+1. Deferred
+2. Acommand preceded by a line number. |
+3. Executive commands; immediate mode.
+4. Execute the program currently in the computer's memory.
+5. FALSE. LIST displays the current program on the screen. |
+6. LIST 20,60
+7. FALSE. NEW erases the program from memory, not the screen.
+8. Assign line numbers
+9. (c) Gold
+10. (b) Press the key.
+11. The TYPE command precedes the ACCEPT command to tell the user what
+type of data to enter.
+12. Insert a line Enter line number and press the @ISUE09 key
+Replace a ine Assign a statement a new line number
+Delete a line = the same line number on a new or different
+ine.
+13. Document your programs or add titles and notes to explain the program.
+14. END (E:) * |
+15. Erases
+16. Pick a line number in the correct sequential position, type the line number,
+the program statement, and press the key. |
+17. TRUE
+Writing A A
+40 Pilot Program f

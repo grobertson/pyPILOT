@@ -1,0 +1,43 @@
+REN will also let you begin renumbering at any number and increase each statement by
+any amount you want. For example, REN 100,5 will renumber your program statements ES
+starting at 100 and increase each line by 5's.
+Figure 3-11 shows the program in Figure 3-10 renumbered, starting at 100, increasing by
+5's.
+
+REW 100.5
+
+READY
+
+LiIsT
+
+100 R: SILLY RIDOLE PROGRAM
+
+1e@S T:
+
+11@ T:WHY GRE ALL BIRDS IN DEBT?
+
+418 T:
+
+12@ a:
+
+12S T:
+
+13@ mM: BILLS
+
+i3S TH: NOPE.
+
+146 TN: BIRDS ARE IN DEBT
+
+145 TM: BECAUSE THEY ALL HAVE BILLS.
+
+iS@ TY: THAT'S RIGHT!
+
+41Ss E:
+
+READY
+
+a
+
+Figure 3-11
+
+40 Executive Commands—REN

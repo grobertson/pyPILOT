@@ -1,0 +1,22 @@
+—__ @
+SECTION 5 1. A special statement is distinguished from other statements by assigning it a |
+QUIZ
+2. The special character identifying a label name isthe
+(a) -
+(b) *
+(c) %
+(d) $ |
+3. The JUMP command breaks sequential program execution and jumps to a
+specified .
+4. If there are two statements with the same label, the JUMP command, J:, jumps |
+to the label with the line number.
+5. A jump to a nonexistent label is ignored by PILOT. TRUE or FALSE?
+6. The |NisvagdaINercam mandgemes anette ie the i ee
+depending upon the success of a match.
+7. The TRACE command displays the path of program execution after the pro-
+gram is terminated. TRUE or FALSE?
+8. The TRAGE: command’ ts tisetulitop semen cee ee ]
+9. The TRACE command can be used in both immediate and program mode.
+TRUE or FALSE?
+62 Branching |
+¥

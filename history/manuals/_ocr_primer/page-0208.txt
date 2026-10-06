@@ -1,0 +1,35 @@
+0
+APPENDIX E
+; SS ee ee ee
+7 PILOT I/O
+ERROR CODES
+Se
+E
+130 Anonexistent device was specified.
+131 AREAD command followed a WRITE command with the same device specified.
+i 135 AWRITE command followed a READ command with the same device specified.
+136 End of file condition.
+IE 138 Device timeout; device doesn’t respond. (See Note)
+139 Device NAK. (See Note)
+. 140 Serial bus framing error. (See Note)
+iF 141 Screen cursor out of range (READ from or WRITE to ‘S’).
+142 Serial bus data frame overrun. (See Note)
+E 144 Device DONE error. (See Note)
+ad 145 Disk read after write compare error, (See Note )
+146 Function not implemented for device (e.g., OUT: K)
+fe x “i 147 Insufficient RAM for operating the graphics screen.
+: 160 Disk drive number error.
+f 161 Too many concurrent disk files being accessed.
+162 Disk is full (no free sectors).
+163 Fatal system data I/O error.
+ie 164 File number mismatch. (See Note )
+165 Disk file naming error.
+= 167 Disk file locked.
+E 169 Disk directory full (64 files).
+170 Disk file not found in directory.
+f Note: These errors indicate problems over which the user has no direct control;
+’ they are due to hardware problems and should seldom be seen.
+i
+ti
+5
+i Appendix E 191

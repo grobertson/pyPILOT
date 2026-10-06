@@ -1,0 +1,47 @@
+= The command GR:GOTO X,Y tells the turtle to pick up the pen, move to the point with
+coordinates X and Y, and put the pen down there. The pen leaves a dot on the screen at
+the point (X,Y). Figure 4-9 is a short program that makes “The Big Dipper” using GOTO
+commands.
+10 R: THE BIG DIPPER
+15 GR:CLEAR
+2@ GR:GOTO 40,40
+3@ GR:GOTO 20,35
+4@ GR:GOTO 5,25
+S@ GR:GOTO -ie,10
+6@ GR:GOTO -10,-5
+7@ GR:GOTO -3e.-10
+80 GR: GOTO -40°5
+98 T: THE BIG DIPPER
+100 E:
+READY
+THE BIG DIPPER
+READY
+a
+Figure 4-9
+= The X and Y coordinates in the GOTO command may either be numbers, numeric
+variables, or numeric expressions. The program in Figure 4-10 uses numeric variables #X
+and #Y as coordinates. These variables are given random values so the dots appear at
+random on the screen. (The color of the dots is also chosen at random.)
+1@ R:WIGHT SKY
+20 GR:CLEAR
+ze T: NIGHT SKY
+40 C:ms=e
+S@ *MORE
+6@ C:#K=?7\158-79
+70 C:8¥=?\47
+8@ Crec=7\T+1
+9@ GRCHC=1): PEN RED
+100 GRCHC=2) : PEN BLUE
+11@ GRCHC=3):PEN YELLOW
+12@ GR:GOTO x nY
+13@ Cims=us+1
+140 JC#5<100): “MORE
+15@ E:
+NIGHT SKY
+
+is
+
+.
+
+Figure 4-10
+Graphics—GR:GOTO 63

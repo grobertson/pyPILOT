@@ -1,0 +1,88 @@
+The program in Figure 2-27 uses the %# TRIANGLE module ten times to draw a wheel B
+of triangles. The final result of this program is shown in Figure 2-28 below.
+
+READY
+
+Ey
+
+Figure 2-28
+
+Figure 2-29 shows a program that uses several modules ( #%* BOX, * TRIANGLE.
+% MOON, and %* STAR) to make a picture.
+
+10 R: PICTURE
+
+2@ GR: CLEAR
+
+3@ GR:GOTO -25,-10
+
+40 GR: PEN BLUE
+
+S@ U:*BOXx
+
+6@ GR: TURNTO 30;G0 25
+
+7@ GR: PEN RED
+
+80 U:*TRIANGLE
+
+90 GR:GOTO 0,25
+
+10@ GR: PEN YELLOW
+
+11@ U:*MOON
+
+12@ GR:GOTO -40,25
+
+130 U:*STAR
+
+14@ GR:GOTO -10,35
+
+150 U:*STAR
+
+16@ GR:GOTO 35,20
+
+170 U:*STAR
+
+299 E:
+
+400 *BOx
+
+41@ GR: TURNTO 90
+
+42@ GR: 3(DRAW 25; TURN 90>
+
+43@ GR:FILL 25
+
+440 E:
+
+S@@ *TRIANGLE
+
+51@ GR: TURNTO 150
+
+S2@ GR: 2(DRAW 25; TURN 120) ;FILL 24
+
+S30 E:
+
+608 *MOON
+
+61@ GR: TURNTO 70
+
+620 GR:36CDRAW 1; TURNS?
+
+63@ GR: TURNTO SO
+
+640 GR: SCTURN -20; FILL 5S)
+
+650 E:
+
+700 *STAR
+
+71@ GR:SCDRAW 10; TURN 144)
+
+720 E:
+
+READY
+
+&
+28 Use—U:

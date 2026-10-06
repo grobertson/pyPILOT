@@ -1,0 +1,40 @@
+Fe
+| THE TYPE COMMAND, T:
+The TYPE command lets you type messages on the screen. The format for the TYPE
+j command is:
+T: message
+| Whatever you enter following the colon will be your message. Here are some
+examples:
+T: HELLO
+T: MY NAME IS GODZILLA
+T: BYE!
+@ Remember, to type a colon (:), hold down the key and press the :/; key at
+I the same time.
+Clear the screen and type in: T: GREETINGS! and press GSM. Your screen
+should look like:
+| T:GREETINGS!
+GREETINGS!
+a
+q The computer typed your message back! This is another example of an interaction
+between you and the computer; you tell it to type a message and it responds by
+typing the message. Whatever you enter following the T: the computer displays on
+| é& the following line. If nothing is entered following the T: the computer prints a blank
+line. Again, the cursor waits on the line below the computer's message.
+| Ready for another one?
+Type: T: MY NAME IS BARRY and press (enter your own name instead of
+Barry).
+y Does your screen display this message:
+T: HELLO
+HELLO
+T:MY NAME IS BARRY
+MY NAME IS BARRY
+a
+| Putting information on the screen is as easy as can be. Go ahead and make up
+some of your own!
+1 THE SOUND COMMAND, SO:
+Let's try something different. Did you know that your computer is a musical instru-
+ment? The SOUND command lets you create different musical tones (or notes) that
+you hear through your television speaker. So, turn up the volume on your televi-
+I sion set.
+Getting Started
+| with Pilot 9 ~

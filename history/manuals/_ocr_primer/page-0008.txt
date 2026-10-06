@@ -1,0 +1,46 @@
+eee
+| @ 6 VARIABLES 67
+ee
+Concepts Introduced 67
+What Is a Variable? 67
+| String Variables 69
+What Is a String Variable? 69
+Defining String Variables 69
+I Using TYPE and ACCEPT Commands
+With String Variables 70
+What Are the Values of Your String Variables? 72
+| The DUMP Command 72
+The COMPUTE Command, C: 72
+String Concatenation 73
+Growing Strings 73
+| Generating Plural Strings 75
+The ACCEPT Command Without Input 76
+The COMPUTE IF YES
+| and COMPUTE IF NO Commands, CY:, CN: 77
+Clearing Your Variables 77
+Section 6 Summary 78
+| Section 6 Quiz 79
+Advanced Programming With Variables 81
+Assigning Variables Into Other Variables 81
+| @ String Indirection 81
+The MATCH STRING Command, MS: 81
+Sensing a Match 82
+| Mini-Quiz 83
+eee
+| 7 USING NUMBERS 85
+—
+Concepts Introduced 85
+Maximum Number Size 85
+| Modulo 85
+Numeric Types 86
+Constants 86
+| Numeric Variables 87
+Assigning Value to Numeric Variables 87
+The COMPUTE Command, C: 87
+| The Random Number 89
+Arithmetic Operators 89
+Operator Precedence 89
+| Relational Operators 89
+Section 7 Summary 91
+i Section 7 Quiz 93
+i Contents — vii

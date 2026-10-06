@@ -1,0 +1,12 @@
+GR:DRAW
+s
+ES
+Draw N Units
+yr >
+GR: DRAW 35
+:
+GR: TURN 90
+GR: DRAW 20
+|
+GR: DRAW 50
+74 Graphics—GR:DRAW |

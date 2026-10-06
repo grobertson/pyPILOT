@@ -27,9 +27,8 @@ PATTERNS: list[tuple[str, re.Pattern[str]]] = [
     ("OpenAI-style key", re.compile(r"\bsk-[A-Za-z0-9]{32,}")),
 ]
 
-#: Paths never worth scanning: the manuals are somebody else's copyright and the
-#: local venvs are build noise.
-SKIP_DIRS = {".git", ".venv", "dist", "__pycache__", "docs", "history", "tools"}
+#: Directories intentionally omitted from this credential-shape check.
+SKIP_DIRS = {".git", ".venv", "dist", "__pycache__", "docs", "tools"}
 
 
 def tracked_files() -> list[Path]:

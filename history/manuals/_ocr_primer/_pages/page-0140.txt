@@ -1,0 +1,31 @@
+a
+| In the above program, the random number operator ?, followed by the modulo
+operator \, forces a positive number. The dots would be distributed where both #X
+and #Y are always positive: the upper right quadrant. Lines 40 through 80 adjust the
+| values of #X and #Y so that some are positive and some are negative, preventing all
+the dots from appearing in the upper right quadrant.
+| When you RUN the program, the screen slowly fills up with yellow dots.
+READY
+i
+ie Figure 10-8 Filling the Screen With Dots Using GOTO
+The DRAWTO Subcommand s
+| The DRAWTO subcommand moves the turtle from the current cursor position to the
+specified point while drawing a line. The point is defined by an (X,Y) coordinate
+pair.
+| The format for the DRAWTO subcommand is:
+GR: DRAWTO X,Y
+where: X is the X-axis coordinate
+Y is the Y-axis coordinate
+Examples:
+| GR: DRAWTO 15,35
+GR: DRAWTO #J,#K/2
+| The line is drawn in the color of the current pen color. If the pen is UP, then no line
+is drawn.
+The following program draws a box using the PEN and DRAWTO subcommands.
+| Clear memory and type:
+10 GR: PEN RED; DRAWTO 20,0
+20 GR: PEN BLUE; DRAWTO 20,20
+30 GR: PEN RED; DRAWTO 0,20
+e 40 GR: PEN BLUE; DRAWTO 0,0
+a Welcome to Graphics 123
+d

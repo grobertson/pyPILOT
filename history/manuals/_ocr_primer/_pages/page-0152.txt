@@ -1,0 +1,57 @@
+ee ee
+a Subcommands that use turtle geometry are:
+DRAW
+FILL
+i GO
+TURN
+TURNTO
+
+| There are three subcommands that don’t use Cartesian or turtle geometry: CLEAR,
+PEN, and QUIT. GR: CLEAR clears the graphics screen, and GR: QUIT returns the
+computer to text mode.
+
+{ ATARI PILOT has an imaginary pen that draws on the screen. This pen has three
+colors: red, yellow, and blue. GRAPHICS automatically uses yellow unless you
+change the pen color with the PEN command. The following is an example chang-
+
+j ing the pen color to red.
+
+Example:
+
+| GR: PEN RED
+The PEN can also erase colors and lines; simply choose the ERASE color and redraw
+over the area you want erased.
+
+i GR: PEN ERASE
+If you want to move the pen across the screen without drawing any lines, specify UP:
+
+q & GR: PEN UP
+This is different from ERASE because it doesn’t erase anything.
+
+| The GOTO subcommand moves the turtle to a specified Cartesian coordinate (X,Y)
+without drawing a line. The format for the GOTO subcommanid is:
+
+5 GR: GOTO x,y
+Examples:
+
+GR: GOTO 5,10
+
+| GR: GOTO - 40,40
+The DRAWTO subcommand draws a line to a specified Cartesian coordinate (X,Y).
+
+| The format for DRAWTO is:
+
+GR: DRAWTO X,Y
+Examples:
+| GR: DRAWTO 15, 65
+GR: DRAWTO #A, #B
+
+i The FILLTO subcommand draws a line to a specified Cartesian coordinate (X,Y)
+while filling the blank regions to the right of the line with the current pen color. The
+format for FILLTO is:
+
+| GR: FILLTO X,Y
+
+i Welcome to Graphics 135
+
+4s

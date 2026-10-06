@@ -1,0 +1,27 @@
+—e- ae
+480 * DOWN '
+485 R: LESC, CNTRL, DOWN ARROW y
+490T: ) \
+510 * LEFT 4
+515 R: LESC, CNTRL, LFT ARROW1
+520T: <— \ ‘
+530 E: |
+540 *UP 4
+545 R: CLESC, CNTRL, UP ARROW] :
+S507 to \ F
+570 *CHAR ;
+580T: $CH \ -
+585 R: CESC, CNTRL, LFT ARROW] :
+590T:<— \
+600 E: 1
+THIS PROGRAM WILL DRAW A SPIRAL i"
+USING ANY CHARACTER YOU CHOOSE. §
+WHAT CHARACTER WOULD YOU LIKE
+TO USE? 7 4
+saan
+" i
+zi ae Ona
+pe:
+Figure C-25 Character Spiral Program RUN 3
+184 Appendix C ‘a
+” iz

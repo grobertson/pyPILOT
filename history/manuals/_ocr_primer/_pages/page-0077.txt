@@ -1,0 +1,49 @@
+————
+This is what you see as you execute THE COLOR WHEEL program:
+A> 1D R 5 6969699 EEE IEEE IEE
+-->2@R:* THECOLORWHEEL *
+A> SOR | IEEE EEE IEEE
+—-> 46 T: THIS PROGRAM TESTS HOW |
+THIS PROGRAM TESTS HOW
+--> 56 T: MANY COLORS YOU KNOW
+MANY COLORS YOU KNOW
+--> 68T:
+--> 7@T:ENTERACOLOR: \
+ENTER ACOLOR: --> 80a:
+RED
+--> 98*DOAGAIN
+--> 106, T:
+-->116, T: ENTER ANOTHER COLOR: \
+ENTER ANOTHER COLOR: --> 126, a:
+VIOLET
+-->130, J:*DOAGAIN
+--> 98 *DOAGAIN
+=> 1007 T: |
+-->116, T: ENTER ANOTHERCOLOR: \
+ENTER ANOTHER COLOR: --> 126. a:
+120, a:
+a
+The output at the bottom results from pressing the key to stop the program. ® |
+But, we could TRACE the program forever if we wanted to.
+@ When tracing long programs, the program trace will often scroll off the screen.
+To prevent this you can freeze and unfreeze the screen to stop the screen display.
+To freeze the screen, hold down the key and press the 1 key. The screen
+will instantly freeze and will not change until you unfreeze it. To unfreeze the
+screen, do the same thing: hold down the key and press the 1 key; the pro-
+gram trace will continue.
+Once out of program execution (ie. program end, or pressing the key), to
+stop any further program trace, type: TRACE: OFF and press (@SQ009. |
+The TRACE command may also be inserted into a program by assigning line
+numbers to the TRACE: ON and TRACE: OFF commands. TRACE commands in a
+program allow you to trace the entire program or any portion of the program. |
+10 Ri KR OR OR OK ROK KKK
+20 R: * THE COLOR WHEEL *
+3O R: 2 2 2 OR RK KOK KOK KK |
+40 T: THIS PROGRAM TESTS HOW
+50 T: MANY COLORS YOU KNOW
+60T:
+70 T: ENTER A COLOR: \ |
+80 A:
+85 TRACE: ON
+90 * DOAGAIN |
+60 Branching |

@@ -1,0 +1,13 @@
+U:
+. |
+Use ¢
+hk F -ciaieer Yas ees
+4 ae aan i ey
+oN
+a a . ree
+Eon Pee” C {
+The U: command tells the computer to USE a module. A module is a program (sub-
+program) within a program.
+Every module must begin with a %* LABEL and must end with an E:. Figure 2-25 shows
+a module that draws a triangle.
+26 Use—U:

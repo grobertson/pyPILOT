@@ -1,0 +1,33 @@
+> se
+i
+CONCEPTS The GRAPHICS Command, GR:
+INTRODUCED The Graphics Screen
+| Cartesian Coordinates
+Turtle Geometry
+GRAPHICS Subcommands
+The PEN Subcommand
+Subcommands Using Cartesian Coordinates
+The GOTO Subcommand
+The DRAWTO Subcommand
+| The FILLTO Subcommand
+Subcommands Using Turtle Geometry
+The TURNTO Subcommand
+The TURN Subcommand
+| The DRAW Subcommand
+The GO Subcommand
+The FILL Subcommand
+Repeating GRAPHICS Commands
+q € Home, Sweet Home Program
+Section 10 Summary
+Section 10 Quiz
+Advanced Programming With GRAPHICS
+GRAPHICS Variables
+%X
+%Y
+| %A
+%Z
+Mini-Quiz
+| Congratulations! You’ve made it to ATARI PILOT graphics, one of the most en-
+joyable and flexible features of your computer and the PILOT programming
+I language. This section enables you to enter the world of figures, pictures, and color.
+| Welcome to Graphics 115

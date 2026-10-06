@@ -1,0 +1,42 @@
+Remarks can also be placed on the same statement lines as commands by using the |
+[ character instead of the REM command. The E character must follow the com-
+mand and precede the remark:
+command E remark 1
+Examples:
+10 A: #N LE ACCEPT A NUMBER |
+50 T: $NAME EL DISPLAY A NAME
+THE END COMMAND, E: |
+The end of a program isn’t necessarily the last line of a program. PILOT programs
+can be terminated at any point with the END command. '
+The format for the END command is: E:
+Note: PILOT assumes that the last line is the end of a program unless an END com- |
+mand is present elsewhere.
+CORRECTING ERASE ALINE
+AND j ; ;
+CHANGING To erase a line from a program, type in the line number and press the key.
+This deletes the line from the program, in memory, although the line remains on + |
+YOUR the screen until the program is LISTed again.
+PROGRAMS
+Enter this example program:
+10 T: ROSES ARE RED, {
+20 T: VIOLETS ARE BLUE,
+30 T: SUGAR IS SWEET,
+40 T: AND SO ARE YOU! |
+RUN the program. It should look like this:
+ROSES ARE RED,
+VIOLETS ARE BLUE,
+SUGAR IS SWEET,
+AND 50 ARE You!
+READY {
+Lt]
+Let’s erase line 30. Type: 30 and press (S09. LIST the program again.
+368 {
+LIst
+16 T:ROSES ARE RED,
+26 T: VIOLETS ARE BLUE,
+40 T: AND SO ARE YOU!
+READY
+a
+Line 30 is erased from the program. Type: LIST 30 and press (]500y9. j
+Writing A
+32. Pilot Program j

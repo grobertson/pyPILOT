@@ -1,0 +1,65 @@
+1@ R:E-Z GEOGRAPHY Jee *DaHDaH
+2@ T:WELCOME TO E-z GEoGRaPHY 310 C:ac=e
+3e T: 32@ “LOOP
+40 T:I AM GOING TO ASK YouaA 33@ 50:13,17,20,25
+QUESTION 340 Pa:is
+S@ T: ABOUT UNITED STaTes 350 50:0,0,0,0
+GEOGRAPHY 360 C:mciné+i
+60 T: 370 JCHC<S): *LOOP
+29 T:@RE YOU READY? \ 380 E:
+8e a:
+90 T:GooD READY
+100@ T: a
+110 Pa:6e
+12@ T:WHICH OF THE FIFTY STATES Is
+13@ T:LOCATED FARTHEST TO THE
+ry WELCOME TO E-Z GEOGRAPHY
+15@ a:SSTATE I AM GOING TO 45K YOU & QUESTION ABOUT
+16@ M: ALasKa E HY.
+17@ TY:EXTRAORDINARY! YOUGOT IT! ET ee ee
+1806 UY:*DaHDAH ARE YOU READY? SURE
+190 JY: *THATSALL GOOD.
+si8 areaee Spaces ¢ 6° N WHICH OF THE FIFTY STATES IS LOCATED
+22@ T:alasKa FARTHEST TO THE EAST?
+230 TiALASKA EXTENDS 50 FAR WEST naxree
+THa NOPE, THE QNSWERIS.. . ALASKA,
+IeTERMAT SOME THE ALASKA EXTENDS 50 FAR WEST THAT IT
+SOT: DATE LINE INTO THE EAST. Sere THE ee nT SONAL DATE LINE
+260 T:
+27@ *THATSALL T: THAT'S ALL FOR NOH. SEE YOU AROUND
+280 T: THAT'S ALL FOR NOW. SEE You anne
+AROUND. 2
+290 E:
+Figure 5-4
+You may use either numbers or numeric variables to tell the computer which tones to play
+in a SO: command. Values greater than 31 are reduced to numbers between 0 and 31.
+Figure 5-5 shows how the SO: command can be used with a numeric variable to make
+sound effects for the shooting star program of Figure 4-26.
+4 GR:aQuIT
+1@ R: SHOOTING STAR WITH SOUND
+EFFECTS
+2@ *BEGIN
+3e c:sc=e
+40 GR:CLEAR
+Se T: SHOOTING STARS
+6@ GR:GOTO -75,40
+78 GR: TURNTO 120
+80 C:#S=?7\20+1
+9@ “LOOP
+100 C:#P=31-nc
+11@ SO:8P
+12@ GR: PEN YELLOW
+13@ U:*STAR
+140 GR: PEN ERASE
+150 U:*STAR
+16@ GR:GO5
+417@ C:mc=mc+s SHOOTING STARS
+180 JCHC<32):*LOOP
+190 Pa:240
+200 J:*BEGIN
+210 *STAR
+22@ GR:SCORAW HS; TURN 144)
+230 E:
+READY
+es Figure 5-5
+88 Sound and Pause—SO:

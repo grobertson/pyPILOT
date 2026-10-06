@@ -1,0 +1,37 @@
+S
+This reference guide is designed for your use if you are learning PILOT at home or in
+school, or if you already know PILOT and need a handy guide to the language. It gives
+brief explanations of all the main PILOT commands and examples of their use.
+Throughout this guide there are illustrations to enhance your understanding and enjoy-
+ment of PILOT. You are the pilot character; you give PILOT commands to the computer.
+Anytime you are in Graphics mode, the turtle character is ready to obey your commands.
+Each PILOT command is highlighted in large bold letters at the top of a page so you can
+easily find any command to which you wish to refer. This reference guide is divided into
+the following sections: PILOT Information, Core PILOT, Executive Commands,
+Graphics, Sound and Pause, and Conditionals.
+In the first section, you will find terms to know and general information about the PILOT
+language. You should be familiar with the contents of this section in order to use this
+guide.
+The second section reviews the Core PILOT commands. You put these commands
+together as a set of numbered statements to form a program. You can also execute them
+= one at a time in Immediate mode, just as you would use a pocket calculator.
+The third section reviews Executive commands. These commands allow you to do various
+things with programs as a whole. You give executive commands directly from the
+keyboard; usually they are not part of a program.
+The fourth section covers turtle Graphics commands, which you use to draw designs or
+pictures on the screen. When PILOT is in graphics mode, an invisible turtle, holding an
+invisible pen, moves around the screen following your commands, drawing lines, and fill-
+ing in spaces.
+The fifth section has to do with the SOUND and PAUSE commands. SOUND is most fre-
+quently used when you want to make music, but can also help you create sound for a
+special effect. PAUSE lets you create a dramatic effect in a program, but it is used most
+often when creating music; for example, when you need to indicate how long a tone is to
+be played. .
+The last section discusses Conditional commands. Any PILOT command can be made ’
+conditional; that is, it will only be carried out if certain conditions are met. This section
+reviews the various kinds of conditions you can set up in your programs.
+This is just a reference guide. If you need further explanation of any PILOT command, or
+if you wish to learn PILOT from a book, you should refer to the PILOT Primer: An In- {
+q structional Manual for the PILOT Programming Language.
+Introduction ix
+}

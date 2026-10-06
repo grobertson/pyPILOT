@@ -1,0 +1,51 @@
+7-1 Division Problem 86 ©
+7-2. The Modulo of 7\3 86 |
+7-3 FOREVER Program Run 91
+8-1 Program With Several Modules 95
+8-2 Module Structure 96
+8-3 Nested Modules 98 }
+9-1 Position of Middle C 105
+9-2 Relation of Piano Keyboard to Musical Scale 106 |
+9-3 Musical Scales 107
+9-4 PAUSE Values for Moderato |
+(Andante) Tempo 108 |
+9-5 PAUSE Values for Different Tempos 109
+9-6 PAUSE Values in 60ths of a Second 114
+10-1 The GRAPHICS Screen 116 }
+10-2. Cartesian Coordinates 117
+10-3. The GRAPHICS Turtle 118 |
+10-4 The 0- and 360-Degree Angle 119 |
+10-5 Calculating Directional Angles 119
+10-6 GR: DRAWTO 20,20 121
+10-7. The Four Quadrants of the |
+GRAPHICS Screen 122
+10-8 — Filling the Screen With Dots Using GOTO 123
+10-9 Drawing a Box 124 @
+10-10 Filling With FILLLTO 125
+10-11 Turning the Turtle Toward 90 Degrees 126
+10-12 Turning the Turtle Toward — 45 Degrees 126 |
+10-13 Turning the Turtle 45 Degrees to the Right 127
+10-14 Turning the Turtle 60 Degrees to the Left 127
+10-15 TURN Subcommand: Program Run 128
+10-16 DRAW Subcommand: Program Run 129 |
+10-17 GO Subcommand: Program Run 130
+10-18 Using the FILL Subcommand 131
+10-19 Drawing a Box With Repeating |
+GRAPHICS Commands 132
+10-20 Drawing a Star With Repeating
+GRAPHICS Commands 132 |
+10-21 Home, Sweet Home Program Run 133
+A-1 The ATARI 810 Disk Drive 143
+A-2 The ATARI 410 Program Recorder 143 {
+A-3 The ATARI 820, 822, and 825 Printers 143
+A-4 The ATARI 400/800 Computer With
+Program Recorder 144 j
+A-5 The ATARI 400/800 Computer With
+. Disk Drive 145
+A-6 — The ATARI 400/800 Computer With Program i
+Recorder and Printer 145
+A-7 The ATARI 400/800 Computer With ©
+Disk Drive and Printer 146
+A-8 The ATARI 400/800 Computer With Disk i
+Drive, Printer, and Program Recorder 146
+xiv iffustrations P

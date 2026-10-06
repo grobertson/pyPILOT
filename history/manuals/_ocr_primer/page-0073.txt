@@ -1,0 +1,46 @@
+PI oT
+© If two or more statements have the same statement label, the JUMP command
+jumps to the statement label with the lowest line number:
+10 *FILL 5 |
+50 J FILL |
+100 *FILL F
+Make sure that each JUMP command has a label to jump to. It is an error to jump to |
+a nonexistent label. If you try, the program will stop and display a * * * WHERE?
+* ** Message.
+Following is an example program that demonstrates the JUMP command. The pro- :
+gram asks you to input colors:
+10 R: 8 8 RK RR RRR RK KK
+20 R: * THE COLOR WHEEL *
+BO R: 2 2 2 2 2 oO KR KK KK
+40 T: THIS PROGRAM TESTS HOW
+50 T: MANY COLORS YOU KNOW
+60T:
+70 T: ENTER A COLOR: \
+80 A:
+90 * DOAGAIN a
+100, qe
+110, T: ENTER ANOTHER COLOR: \
+120, A:
+130, J: * DOAGAIN |
+140 E:
+@ Command indentation: A comma immediately following the line number allows
+you to indent a PILOT command any number of spaces. Labels, however, may not
+follow a comma.
+This program is intentionally missing some commands that would allow the pro-
+gram to stop by itself. These “missing’’ commands are omitted because you have
+not been introduced to them yet. (They will be discussed shortly.) Therefore, this
+program goes into what programmers often call an indefinite loop. In other words,
+it will not stop until you press the key to stop it. |
+An example RUN of the program looks like this:
+THIS PROGRAM TESTS
+HOW MANY COLORS YOU KNOW
+ENTER A COLOR: RED
+ENTER ANOTHERCOLOR: VIOLET
+ENTERANOTHERCOLOR: GREEN |
+ENTER ANOTHERCOLOR: PINK
+ENTER ANOTHER COLOR:
+120, a:
+336% READY #3
+a
+56 Branching j
+“'

@@ -1,0 +1,33 @@
+Aa
+pn EST a 4
+WHICH WORD DOESN'T BELONG: a
+cat DOG COMPUTER CHIMP B
+? COMPUTER Bis
+YES, THE OTHERS ARE ANIMALS.
+READY Back
+WHICH WORD DOESN'T BELONG: |
+cat DOG COMPUTER CHIMP
+? CHIMP
+@RE YOU SURE ABOUT THAT?
+READY
+:
+Figure 4-2, MATCH Command: Sample Runs I
+Notice that there are three different possible outputs, depending upon the input i
+string. am
+se
+What happens if you input DOG AND COMPUTER? Try it and see. ee
+Did your screen display: ‘i
+WHICH WORD DOESN'T BELONG: ;
+CAT DOG COMPUTER CHIMP p
+?DO0G AND COMPUTER 7
+YES, THE OTHERS BEGINWITHC'. aa
+YES, THE OTHERS ARE ANIMALS. a
+READY .
+tC)
+Because DOG AND COMPUTER produces a match in both MATCH statements, 4
+both TY: commands are executed. 4
+® Look closely at line 70: a
+76 M: COMP 4
+B
+Decision-Making
+46 Programs

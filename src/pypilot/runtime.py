@@ -10,10 +10,10 @@ per-statement handlers in ``core.py``. This module owns:
   (spec 9.5, 12)
 * the device table, and the host hooks ``PA:`` and ``PCS:`` call (spec 9.5, 9.6)
 
-Every Core statement is implemented as of Stage 7, along with ``MS``/``JM``,
-the utility commands and the I/O commands. The only commands that still raise
-are the device-dependent ``GR:``/``SO:``, which are refused with a message
-naming SPEC.md §10.4 rather than silently ignored.
+Every supported Core statement is implemented, along with ``MS``/``JM``,
+the utility commands and the I/O commands. ``GR:``/``SO:`` and
+``CALL:``/``TAPE:``/``TSYNC:``/``DOS:`` are refused rather than silently
+ignored.
 """
 
 from __future__ import annotations
@@ -44,10 +44,8 @@ __all__ = [
 #: would be the worst outcome for a teaching language: the learner would watch
 #: their program produce no output and blame PILOT.
 #:
-#: **Empty as of Stage 7.** Every run-mode command is implemented. It stays as a
-#: mapping rather than being deleted so that a Stage 8 addition has an obvious
-#: home, and so ``_dispatch`` can keep naming a stage for anything that lands
-#: in the table without a handler.
+#: Empty in the 1.0 implementation: every run-mode command is implemented or
+#: explicitly refused. Retained as a guard for any future vocabulary additions.
 PENDING_STAGES: Final[dict[str, str]] = {}
 
 #: How many statements a run may execute before the interpreter gives up.
@@ -195,10 +193,9 @@ class Interpreter:
         handler_name = PilotCore.DISPATCH.get(name)
         handler = getattr(self.core, handler_name, None) if handler_name else None
         if handler is None:
-            stage = PENDING_STAGES.get(name, "a later")
             raise PilotUnsupportedError(
-                f"{statement.command}: is real ATARI PILOT but is not implemented yet "
-                f"(see SPEC.md section 11); {name}: arrives in Stage {stage}",
+                f"{statement.command}: is recognized but has no runtime handler "
+                "in this implementation (see SPEC.md section 11)",
                 line=statement.line_number,
                 source=statement.source,
             )

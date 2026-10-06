@@ -1,0 +1,42 @@
+a APP ee OO 2 SS a e
+The ACCEPT command is used in conjunction with the TYPE command. The AC- |
+CEPT command, A:, allows input from the keyboard to be entered during program
+execution. The ACCEPT command delays program execution until input is re-
+ceived from the keyboard, ending with the key.
+To delete a line from a program, type the line number and press the key.
+This erases the line from the program in memory, but not from the screen display
+until the program is LISTed.
+To insert a line into a program, enter it using a new line number. The new number
+must fall between the line numbers where the line is to be inserted. The screen will
+not show the inserted line in its correct position until the program is LISTed. |
+There are two methods to replace a line. Delete the old line and insert a new line
+using the same line number. Or, simply assign the new line the old line number. ’
+The change will not be shown on the screen until the program is LISTed.
+SECTION 3 1. A program is made up of commands that are exe- j
+QUIZ cuted when issued a RUN command.
+2... Aiprogram statement (5 -sisce ate less ai hiatal 2k Se
+3. RUN, LIST, NEW, and AUTO are all examples of —. |
+commands. These commands are executed only in
+mode. a] |
+45 Fhe RUN:commanditells: the computer =e cube
+5. The LIST command displays the program in memory and then executes the
+program. TRUE or FALSE? |
+6. To LIST lines 20, 30, 40, 50, and 60 of a program, you would enter:___.
+7. The NEW command erases a program from the screen but not from memory. J
+TRUE or FALSE?
+8. The AUTO command lets the computer___———CSSséttc)
+program statements. 3
+9. In AUTO mode the color of the screen is: s cee
+(a) Blue )
+(b) Black
+(c) Gold
+(d) Red j
+(e) Green
+10. To exit AUTO mode, you ‘is ,
+(a) Press the key. a
+(b) Press the key.
+(c) Type: AUTO: QUIT i
+(d) Type: AUTO: CLEAR
+(e) Press the key. * |
+Writing A
+38 Pilot Program |

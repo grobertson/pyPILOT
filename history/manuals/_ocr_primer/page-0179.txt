@@ -1,0 +1,50 @@
+ee
+Merging Programs
+When loading a program from a cassette tape, you can merge, or combine, the pro-
+gram on tape with the current program in memory.
+For more information about merging programs, refer to “Merging Programs’’ under
+“Loading Programs From a Diskette.’’
+@ To avoid accidentally merging two programs, always type NEW before
+loading a program. @
+A Method To Manage Programs on Cassette Tapes
+This section describes how to save up to 30 programs on one cassette and create a
+program directory.
+This method centers on the program listed on the following pages. This program is
+designed to function as a directory within the cassette tape. It allows you to enter
+the program names saved on the tape and their corresponding counter numbers.
+Later, you can look up the program name and its counter number and advance the
+tape to its starting point.
+@ This program must be entered as the first program on each tape.
+Saving the Cassette Directory. To save the cassette directory, follow the steps
+below:
+1. Enter the directory program into the computer. (This program contains its own a ]
+“help system.”’ None of the lines should be removed. Lines 200-400 will even-
+tually be replaced with program names.)
+10 R: CASSETTE PROGRAM GUIDE |
+TSE [ESC SHIFT CLEAR]
+20T:
+25T: * & * CASSETTE PROGRAM GUIDE * * *
+30T: |
+3571;
+40 U: * HELP
+99 *START
+100 T: (PROGRAM NAME) (BEGIN) (END)
+110T:
+190 R: START ADDING PROGRAMS AT 200
+200 R: THERE ARE NOT YET ANY PROGRAMS. :
+210): *AAAABAAAABAAAABAAAABAAAAB
+220): *AAAABAAAABAAAABAAAABAAAAB
+230): *AAAABAAAABAAAABAAAABAAAAB
+240 J: *AAAABAAAABAAAABAAAABAAAAB 1
+250 J: *AAAABAAAABAAAABAAAABAAAAB
+260 J: *AAAABAAAABAAAABAAAABAAAAB
+270): *AAAABAAAABAAAABAAAABAAAAB
+280 J; *AAAABAAAABAAAABAAAABAAAAB I
+290 J: *AAAABAAAABAAAABAAAABAAAAB
+300 J: *AAAABAAAABAAAABAAAABAAAAB
+310 J: *AAAABAAAABAAAABAAAABAAAAB
+320): *AAAABAAAABAAAABAAAABAAAAB
+330 J: *AAAABAAAABAAAABAAAABAAAAB
+340 J: *AAAABAAAABAAAABAAAABAAAAB
+350 J: *AAAABAAAABAAAABAAAABAAAAB J
+162 Appendix B J

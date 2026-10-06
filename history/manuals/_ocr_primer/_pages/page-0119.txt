@@ -1,0 +1,27 @@
+oe. eo
+SECTION 8 1. A group of repeatedly used statements, separated from the main flow of a pro- |
+QUIZ gram is called a :
+2. Modules must have a:
+(a) Label, USE command, END command
+(b) Label, task, END command
+(c) Label, task, end |
+(d) USE command, task, END command
+3. A module label is like any other label name. TRUE or FALSE?
+4. The USE command must be in the first statement in a module. TRUE or FALSE?
+5. The USE command specifies the sof the module to
+be called.
+(a) Line number
+(b) Label
+6. The END command of a module has no effect on the main program. The E:
+ends only the module. TRUE or FALSE?
+72 i Whats arnested module? 22 tis eed aes tae | ee
+8. Up to___mu__ modules may be nested in one program.
+lapod
+4 @|
+(e)G
+(d) 8 |
+(e) 10
+9. Modules can be called conditionally with the CSCS
+SS ee COM mans |
+102 Modules f
+”

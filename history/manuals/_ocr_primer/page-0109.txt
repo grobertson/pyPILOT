@@ -1,0 +1,25 @@
+a ll
+PILOT evaluates numeric expressions from left to right. Parentheses placed around
+any segment of an expression change the order of precedence. Whatever is enclosed
+by the parentheses will be evaluated first, If parentheses are nested, the innermost
+set is evaluated first.
+Relational operators are used to compare two numbers or numeric expressions.
+
+When evaluated, a relation will either be true (producing a value of 1) or false (pro-
+ducing a value of 0). The relational operators are:
+= #A=#B #A is equal to #B
+<> #A<>#B_ #Ais not equalto B
+< #A<#B #A is less than #B
+> #A>#B #A is greater than #B
+<= #A<=#B  #Ais less than or equal to #B
+>= #A>=#B #Ais greater than or equal to #B
+Relational expressions can make a program statement conditional. A program
+statement is conditionally executed only if its relational expression evaluates to
+true.
+Examples:
+T (#A>#B): ENTER ANOTHER NUMBER:
+A(#N< >#R):
+J(#V>=0): *LOOP
+The relational expression, enclosed within parentheses, must follow the command a |
+label and precede the colon.
+92 Using Numbers J

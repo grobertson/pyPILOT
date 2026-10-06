@@ -1,0 +1,25 @@
+~~ Oe
+q GR: FILL 40
+q (This fills the square with yellow.)
+GR: DRAW 40
+GR: TURN 90
+GR:FILL 40
+| a
+| Figure 10-18 Using the FILL Subcommand
+™@ In each of the turtle geometry subcommands, if the line length specified is
+a negative, the turtle will move backward instead of forwards. @
+REPEATING GRAPHICS COMMANDS
+q You can repeat one or more GRAPHICS subcommands by enclosing them within
+parentheses, (). A numeric expression placed in front of the left parenthesis tells
+the computer how many times to repeat the GRAPHICS subcommands.
+5 The format for repeating GRAPHICS subcommands is:
+GR: numeric expression (subcommands)
+where: numeric expression represents the number of times to repeat the sub-
+commands
+subcommands are the subcommands to be repeated. If there are
+i more than one, they must be separated by semicolons
+Examples:
+GR: 180(DRAW 1; TURN 2)
+j GR: 10(DRAW 20; TURN — 36)
+GR: 360(DRAW 1; TURN 1)
+| Welcome to Graphics 131

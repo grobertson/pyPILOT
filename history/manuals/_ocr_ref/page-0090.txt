@@ -1,0 +1,12 @@
+GR:QUIT
+- Quitthe Graphics Mode —i‘éS
+‘ap
+
+br: a: )
+The command GR:QUIT lets you leave the Graphics mode and return to Text mode.
+Figure 4-27 shows you the screen before the GR:QUIT command, and Figure 4-28 shows
+you the screen after the GR:QUIT command.
+
+Figure 4-27 8
+
+82 Graphics—GR:QUIT

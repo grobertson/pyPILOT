@@ -1,0 +1,22 @@
+j _-e-:——
+Now, enter VERY and press the key. The line should now read:
+e
+j
+I
+2 Figure C-21_ Character Insertion Completed
+5 Line Insertion. The line insertion function inserts a line onto the screen at the cur-
+rent cursor position. To insert a line, move the cursor to where you want to insert
+: the line. Hold down the key and press the key once. All the lines below
+1 & j the cursor move down one line, leaving a blank line at the current cursor position.
+, @
+‘
+‘ @ Any information on the bottom line of the screen will disappear. Ml
+S
+| Enter the following lines:
+10 T: SCREEN EDITING IS EASY
+| 20 T: DON’T YOU AGREE?
+Let’s insert a line between lines 10 and 20. To insert a line, move the cursor up to
+1 line number 20. ;
+19 T:SCREEN EDITING I5 EASY
+Figure C-22 Line Insertion: Positioning the Cursor
+¥ Appendix C 181

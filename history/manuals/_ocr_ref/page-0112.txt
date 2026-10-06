@@ -1,0 +1,48 @@
+APPENDIX B
+eee
+PILOT I/O Error Codes e
+
+This appendix lists the ATARI 400/800 Computer Systems’ I/O error codes within the
+context in which they will be seen in ATARI PILOT. Not all of the system codes are
+presented here, because some of them cannot occur within the PILOT environment.
+
+130 A nonexistent device was specified.
+
+131 A READ command followed a WRITE command with the same device
+
+specified.
+135 A WRITE command followed a READ command with the same device
+specified.
+
+136 End-of-file condition.
+
+138 Device timeout; device doesn’t respond. (See Note) ,
+
+139 Device NAK. (See Note) |
+
+140 Serial bus framing error. (See Note) gS
+
+141 Screen cursor out of range (READ from or WRITE to ‘S’). |
+
+142 Serial bus data from overrun. (See Note)
+
+143 Serial bus data from checksum error. (See Note)
+
+144 Device DONE error. (See Note)
+
+145 Disk read after write compare error. (See Note)
+
+146 Function not implemented for device (e.g., OUT:K).
+
+147 Insufficient RAM for operating the graphics screen.
+
+160 Disk drive number error.
+
+161 Too many concurrent disk files being accessed.
+
+162 Disk is full (no free sectors).
+
+163 Fatal system data I/O error.
+
+164 File number mismatch. (See Note)
+106 Appendix B

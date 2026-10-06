@@ -1,0 +1,13 @@
+J 1@ T:WHAT'S YOUR NAME? \ WHAT'S YOUR NAME? BOBBY
+
+2@ a: $name HOH OLD ARE YOU? 13
+3@ T:HOW OLD ARE You? \ BOBBY IS 13 YEARS OLD.
+40 a:ua
+S@ T:SMAME IS wa YEARS OLD. READY
+READY -:
+a
+
+Figure 2-7
+
+Core Pilot—T: 11
+-

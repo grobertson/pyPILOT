@@ -1,0 +1,28 @@
+a
+| The MATCH SENSING variable % M contains the value of 1 if the match is true, and
+a value of 0 if the match is false.
+‘ Example:
+T: %M
+| 0 (0 means no match)
+T: %M
+1 (1 means a match)
+| The %M variable may be displayed in either immediate or programmed mode with
+the TYPE command. It is a very useful variable for debugging (finding mistakes) in
+your programs.
+i MINI-QUIZ
+| 1. The value of variables can be assigned into other variables with the
+command.
+(a) A:
+i (b) C:
+(c) A:=
+q & (d) M:
+2. The dollar sign ($) is both a string variable indicator and an indirection opera-
+tor. TRUE or FALSE?
+q 3. The MATCH STRING command acts exactly like the MATCH command, ex-
+cept that it divides the input string into three string variables. They are:
+| (a) $BEGIN, $MIDDLE, $END
+(b) $LEFT, $MATCH, $RIGHT
+q (c) $LEFT, $MIDDLE, $RIGHT
+(d) $FIRST, $SECOND, $THIRD
+| (e) $L, $M, $R
+| Variables 83

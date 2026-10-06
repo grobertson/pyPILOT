@@ -1,0 +1,41 @@
+= The GR:GO N command tells the turtle to pick up the pen, move N units in the direction
+he is facing, and put the pen down there. The turtle leaves a dot on the screen at the loca-
+tion where he ends up. The program in Figure 4-19 uses the GO command to draw a
+box with dotted lines.
+1@ R: DOTTED BOx
+2@ GR:CLEAR
+3@ GR:4C10CGO 3) ; TURN 90)
+40 E:
+READY
+a
+READY
+a
+
+Figure 4-19
+The number of units, N, in the GR:GO N command can be either a number, numeric
+variable, or a numeric expression. The program in Figure 4-20 tells the turtle to take a
+“random walk.” That is, he starts at the origin, turns a random number of degrees, goes a
+random number of units, turns at random again, moves at random again, and so on. At
+the end of this walk, all the places he stopped and turned are marked by dots on the
+screen.
+1@ R: RANDOM WALK
+20 *BEGIN
+3@ C:nc=e
+40 GR:CLEaR
+Se T: RANDOM WALK
+6@ GR: PEN YELLOW ;GOTO @,0;PEN RED
+7@ *LOOP
+8@ GR:GO 7\5
+9@ GR: TURN ?\360
+10@ C:sC=mc+i
+110 JCNC<(S08) :*LOOP
+120 T:
+13@ T:END OF WALK
+140 Pa:3900
+15@ J:*BEGIN
+READY RANDOM WALK
+ry END OF WALK
+
+Figure 4-20
+
+Graphics—GR:GO 73

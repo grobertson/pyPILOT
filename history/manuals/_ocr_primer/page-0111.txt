@@ -1,0 +1,20 @@
+ee lt—(‘_‘lOVMP?,
+ANSWERS
+1. Integer, -32768, + 32767
+2. Modulo, backslash, \
+3. 4. | The remainder of (11\7)=4
+4. Constants are numbers that never change their value.
+5. Numeric variables are numbers with changeable values.
+6. (b)
+7. Question mark, (?)
+8. The COMPUTE command evaluates numeric expressions and assigns the
+value to a numeric variable.
+9. TRUE
+10. - addition
+/ subtraction
++ multiplication
+* division
+11. Parentheses
+12. TRUE
+13. -{b)
+94 Using Numbers J

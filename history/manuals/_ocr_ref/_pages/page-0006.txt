@@ -1,0 +1,31 @@
+4 GRAPHICS 55
+GR: Graphics 56
+Turtle Graphics 57
+Where To Go — X and Y Coordinates 57
+What Direction and How Far To Go 58
+Initial Location, Heading, and Pen Color 58
+Shortcuts for Graphics Programming 59
+GR:CLEAR Clear the Graphics Screen 60
+GR:GOTO Go to the Point X,Y 62
+GR:DRAWTO Draw to the Point X,Y 64
+GR:FILLTO Fill to the Point X,Y 66
+GR:TURNTO Turn to N Degrees 68
+GR:TURN Turn N Degrees 70
+GR:GO Go N Units 72
+GR:DRAW Draw N Units 74
+GR:FILL Fill N Units 76
+GR:PEN Choose a Pen Color 78
+GR:PEN ERASE Set Pen Color to Erase 80
+ey GR:PEN UP Lift the Pen 81
+GR:QUIT Quit the Graphics Mode 82
+5 SOUND AND PAUSE 85
+SO: Sound 86
+PA: Pause N Units 89
+6 CONDITIONALS 93
+YorN String Match Conditions 95
+COMPARISON _ Numeric Conditions 98
+JM: Jump on Match 101
+APPENDICES
+A_ SPECIAL FUNCTION KEYS AND SCREEN EDITING 103
+B_ PILOT I/O ERROR CODES 106
+Table of Contents v

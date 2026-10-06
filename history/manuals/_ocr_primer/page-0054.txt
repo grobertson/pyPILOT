@@ -1,0 +1,46 @@
+SS
+| If you enter: REN 9000,500, the computer responds with:
+REN 9006,,500
+i 4% LINE tt 2 200%
+A LISTing now shows:
+REN 9606 ,500
+| 290% LINE tt 2 230%
+LEST
+9000 T: WHAT
+9500T:Aa
+104 T: SIMPLE
+166 T: PROGRAM
+READY
+| a
+Lines 104 and 106 were left over because their ‘‘new’’ line numbers would exceed
+I 9999. To correct this, just REN again with a lower starting number and increment.
+SECTION 3 An immediate command is a command that is obeyed when the key is
+SUMMARY pressed. Commands that are stored in memory, to be obeyed upon a RUN com-
+q mand, are called deferred commands.
+A program is a sequence of deferred instructions that direct the computer to per-
+form a desired operation. A program is made up of one or more program
+statements. A program statement is a command preceded by a line number. Line
+numbers keep the program statements in a specific order.
+| Executive commands, such as RUN, LIST, NEW, and AUTO, tell the computer what
+to do with a program. They are immediate commands.
+RUN is an executive command. It tells the computer to execute the PILOT program
+I currently in the computer’s memory.
+LIST displays the program currently in memory. It does not execute the program.
+| The whole program, or specified lines may be listed with this format:
+LIST lists entire program
+LIST line x lists line x of the program
+| LIST line x, line y lists lines x through y of the program.
+The NEW command erases the current program from the computer’s memory.
+Once a program is deleted with NEW, it can’t be retrieved.
+| The AUTO command puts the system into Automatic Line Numbering Mode,
+distinguished by a gold screen. In AUTO mode, program statements are input
+without line numbers. The line numbers are automatically assigned as the
+| statements are input. The line numbers are not displayed until the program is
+LISTed in immediate or program mode (blue screen). Executive commands may
+not be issued in AUTO mode. To return from AUTO mode to immediate mode,
+I press the key alone, entering a blank line.
+The TYPE command (T:) displays text messages. In successive TYPE commands, the
+a T: can be replaced by a single colon. The colon inherits the previous TYPE com-
+| mand label.
+Writing A
+é Pilot Program 37

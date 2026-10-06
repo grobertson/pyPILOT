@@ -1,0 +1,47 @@
+ee aa; =
+The program statements, listed in sequential order, are displayed on the screen.
+LIst
+16T:MY
+26 T: COMPUTER HAS
+36T:ANAME.
+46T:ITIS
+5@ T:FRED.
+READY
+a
+Once listed, you can check the program for mistakes, and then change, add, or
+delete lines from the program. The various ways to erase, replace, or insert lines
+from within a program will be discussed at the end of this section.
+The LIST command lists entire programs or portions of a program, depending upon
+how you enter the LIST command:
+LIST 10,50 displays the entire program
+LIST 10 displays line 10
+LIST 30 displays line 30 |
+LIST 20,40 displays lines 20 through 40
+LIST 10,20 displays lines 10 through 20
+@ When entering two line numbers, the first line number must be smaller than the
+second line number. If you list a line number not actually in the program, your
+ATARI computer responds with a blank line. &@
+Let's try some examples of the various forms of the LIST command using the pro- *
+gram example.
+First, clear the screen. |
+@ Toclear the screen, hold down the key while pressing the key. @
+Type: LIST 20 1
+LIST 20
+26 T: COMPUTER HAS
+READY |
+a
+Clear the screen. Type: LIST 10,30 |
+LIST 10,30
+1@T:MY
+26T: COMPUTER HAS
+30 T:A NAME. f
+READY
+a
+Clear the screen. Type: LIST 40,50 q
+LIST 40,50
+40T:ITIs
+50 T: FRED.
+READY y
+: i
+Writing A
+22 Pilot Program i

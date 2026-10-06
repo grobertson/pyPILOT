@@ -4,9 +4,9 @@
 its structure without running it, and ``pypilot`` with no arguments enters the
 **interactive REPL** (spec 6.2).
 
-Every run-mode statement is implemented as of Stage 8, so a program built from
-any of them runs end to end. The commands that are *refused* - ``GR:`` and
-``SO:`` and the hardware set - parse and then raise a
+Every supported run-mode statement is implemented, so a program built from
+them runs end to end. The commands that are *refused* - ``GR:`` and ``SO:``
+and the hardware set (`CALL:`, `TAPE:`, `TSYNC:`, `DOS:`) - parse and raise a
 :class:`~pypilot.errors.PilotUnsupportedError` naming SPEC.md §10.4, because
 they are real Atari PILOT this host cannot honour rather than something
 unwritten.

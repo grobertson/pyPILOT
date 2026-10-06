@@ -1,0 +1,22 @@
+<< -° — es ~~
+Hold down the key and press the key. Line 20 drops down one line. |
+16 T: SCREEN EDITING IS EASY
+5, T: DON'T YOU AGREE?
+Figure C-23 Line Insertion: Creating a Space 1
+Now there is room to enter a new program statement right between the other two:
+- F
+1@ T:SCREEN EDITING I5 EASY Ky
+1S T:ON MY ATARI COMPUTER. ee
+20 T:DON'T YOU AGREE? boa,
+ee
+&
+Bas:
+Figure C-24 Line Insertion Completed 4
+That was easy, wasn’t it? ; 4
+DEFERRED Cursor movements may be placed within program statements to be executed only 4
+CURSOR upon the RUN command. To program cursor movements, press the key prior
+to pressing the and cursor control keys. On the screen an insert arrow appears Bs
+MOVEMENT where you want the cursor movement. A program statement with a deferred clear F
+screen movement (Gj Gi9 Glas TZ) looks like this: x
+10 T: i
+182 Appendix C 4

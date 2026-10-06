@@ -1,0 +1,18 @@
+|
+eo
+Type in: |
+GR: 4(DRAW 20; TURN 90)
+This command repeats itself four times to draw a box. RUN the program and |
+watch.
+GR: 4CDRAW 20; TURN 90)
+Mis |
+Figure 10-19 Drawing a Box With Repeating GRAPHICS Commands *
+This next example draws a star by repeating the commands five times:
+10 R: STAR
+20 GR: 5(DRAW 25; TURN 144)
+30 E:
+A RUN of this simple program produces:
+READY
+I
+Figure 10-20 Drawing a Star With Repeating GRAPHICS Commands ]
+132 Welcome to Graphics ;

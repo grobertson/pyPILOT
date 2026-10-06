@@ -1,0 +1,44 @@
+Here is an example of a program: ,
+10 T: HELLO,
+20 T: 1AM HAVING FUN
+30 T: LEARNING TO
+40 T: TALK IN
+50 T: PILOT
+Each TYPE command is preceded by a line number. The TYPE messages are stored |
+in memory in sequential order from 10 to 50 to be displayed at a later time.
+Following is a new program using the TYPE command. Press the key at the ]
+end of each statement.
+10 T: MY
+20 T: COMPUTER HAS |
+30 T: ANAME.
+40 T: ITIS
+50 T: FRED.
+& Always press the §7379 key at the end of each line to send the line to the com-
+puter’s memory. &@
+What happened when you pressed at the end of line 50? ]
+Nothing? Well, that’s what is supposed to happen! Nothing! Unlike immediate
+commands, deferred commands are not obeyed when the key is pressed.
+To execute a program (a sequence of deferred commands) you must type:
+RUN
+Go ahead! Type RUN, press §]30E9 and watch your program go! |
+MY
+COMPUTER Has
+ANAME.
+ITiIs I
+FRED.
+READY A
+: l
+EXECUTIVE Executive commands are immediate commands that tell the computer what to do
+COMMANDS with your program. EXECUTIVE COMMANDS DO NOT HAVE LINE NUMBERS. I
+Here are four executive commands:
+RUN
+LIST I
+NEW
+AUTO
+THE RUN COMMAND i
+The RUN command tells the computer to execute, or perform, the program currently
+in the computer’s memory. When you’ re ready to execute a program, type: RUN
+and press @]Sqru9. a
+Writing A Py
+20 Pilot Program I
+a) Seo aD

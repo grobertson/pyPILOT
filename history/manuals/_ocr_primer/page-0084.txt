@@ -1,0 +1,38 @@
+=... ___
+i
+CONCEPTS
+INTRODUCED What Is a Variable?
+] String Variables
+What Is a String Variable?
+Defining String Variables
+Using TYPE and ACCEPT Commands With String Variables
+i What Are the Values of Your String Variables?
+The DUMP Command
+The COMPUTE Command, C:
+String Concatenation
+| Growing Strings
+Generating Plural Strings
+The ACCEPT Command Without Input
+] The COMPUTE IF YES and COMPUTE IF NO Commands, CY:, CN:
+Clearing Your Variables
+Section 6 Summary
+Section 6 Quiz
+4 € Advanced Programming With Variables
+Assigning Variables Into Other Variables
+String Indirection
+The MATCH STRING Command, MS:
+q Sensing a Match
+Mini-Quiz
+4 This section is about variables. Variables are an important part of PILOT program-
+ming. Beginners should read this section thoroughly. Advanced programmers
+already familiar with the concept of variables can read just the Section Summary
+| and the Advanced Programming With Variables section.
+WHAT IS A variable is anything that is subject to change, like the time, date, or weather. In
+A VARIABLE? computer programming, a variable is anything whose value is changeable. Below
+i are some examples:
+A=X*5 A and X are variables.
+Today’s date is a variable. (It changes every day.)
+a Body weight is a variable. (It changes all the time.)
+A century is NOT a variable. It is a fixed value of
+j one hundred years.
+A i Variables 67

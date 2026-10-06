@@ -1,0 +1,45 @@
+& OO
+| Run the program and let it stop by itself. Below is a ‘shortened’” RUN of the pro-
+gram:
+| THIS PROGRAM WILL RUN FOREVER AND
+FOREVER AND FOREVER AND FOREVER AND
+FOREVER AND FOREVER AND FOREVER AND
+FOREVER AND FOREVER AND FORE VER AND
+FOREVER AND FOREVER AND FOREVER AND
+| FOREVER AND FOREVER AND FOREVER AND
+FOREVER AND FOREVER AND FOREVER AND
+FOREVER AND FOREVER AND FOREVER AND
+FOREVER AND FOREVER AND FOREVER AND
+FOREVER AND FOREVER AND FORE VER AND
+FOREVER AND FOREVER AND FOREVER AND
+| FOREVER AND FOREVER AND FOREVER AND
+FOREVER AND FOREVER AND FOREVER AND
+FOREVER AND FOREVER AND FOREVER AnD
+FOREVER AND FOREVER AND EVER! WHEW!
+READY
+| a
+Figure 7-3 FOREVER Program Run
+| SECTION 7 PILOT uses integer numbers in the range of -32768 to + 32767.
+Fractional numbers are represented by a special operator called modulo. Modulo,
+represented by the backslash character (\) is the resultant remainder from a divi.
+| sion of two numbers.
+PILOT has two types of numbers: constants and variables. Constants don’t change
+value; numeric variables do. Numeric variable names are represented by a number
+sign, #, followed by a single letter from A through Z.
+#A #M #Z
+| Numeric variables can have only numeric values.
+PILOT generates random numbers with a question mark (?) in a numeric expres-
+q sion. The backslash character (\) limits the random number generated.
+2 generates a number between -32768 and 32767
+\3 generates 0, 1, or 2
+| A\5 generates 0, 1, 2, 3, or 4
+The COMPUTE command evaluates a numeric expression and assigns its value toa
+numeric variable. The format for COMPUTE is:
+a C: numeric variable = numeric expression
+C: #A=545
+PILOT uses four arithmetic operators. They are:
++ addition
+q - subtraction
+* multiplication
+é / division
+| Using Numbers 91

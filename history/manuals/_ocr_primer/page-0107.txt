@@ -1,0 +1,43 @@
+— Sy
+The number or numeric expression to the left of the relational operator is com-
+pared to the number or numeric expression to the right of the relational operator.
+
+A relational operator declares whether the comparison is true or false.
+5>4 is TRUE
+5>6 is FALSE
+0=0 is TRUE
+O0< =-37 is FALSE
+#C=0 is TRUE or FALSE depending upon
+the value of #C
+#A>#B is TRUE or FALSE depending upon
+the value of #A and #B
+Relational operators yield as follows:
+¢ A value of 1 if a declaration is true and a value of 0 if it is false — just like a
+match and no match.
+© The declaration 5>=2 is true and this yields a value of 1; the declaration |
+5 <3 is false and yields a value of 0.
+Relational operators can make program statements conditional by enclosing them
+in parentheses and placing them between the command label and the colon in any |
+statement, as follows:
+command label (relational expression) action of the instruction *
+Examples:
+T(#C>5): VERY GOOD JOB!
+A(#N< >#R): |
+J (#> =#B): * DOAGAIN
+@ The relational expression must be enclosed within parentheses. The relational |
+expression must be placed between the command label and the colon, :.
+If a statement contains a relational expression, it is executed only if the expression
+is true.
+The following example demonstrates the use of relational, or conditional, expressions.
+10 C: #T= 200 3
+20 T: THIS PROGRAM WILL RUN \
+30 * NOTAGAIN
+40, T: FOREVER AND \
+50, C: #T=#T-1
+60, J #T>0): *NOTAGAIN
+20), T: EVER! WHEW!!
+80, E: |
+The program counts down from 200 to 0. As long as the value of #T is greater than
+0, program execution jumps to the *NOTAGAIN label. Once #T=0, the condi-
+tional relational expression #T >0 is false and the JUMP command is not executed. J
+90 Using Numbers )

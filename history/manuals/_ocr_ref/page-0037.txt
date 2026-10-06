@@ -1,0 +1,7 @@
+Fa
+Figure 2-29
+Note: It is possible to have modules used within modules up to eight layers deep. For ex-
+ample, the %# TRIANGLE module could itself use a %* FILL module; the %* FILL
+module could use a %# PENCOLOR module, and so on.
+Use—U: 29
+;

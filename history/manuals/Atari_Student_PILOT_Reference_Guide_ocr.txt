@@ -1,0 +1,3611 @@
+
+===== PAGE 1 =====
+pTARE
+i NR
+oe
+f
+f
+F STUDENT PILOT
+E
+J re -— pam, ah
+. ay Ws ~ ae Se ee
+us "ia = ee
+i a5 yg aS (ss fh =
+J te C-aCGe
+j ~ = a
+f
+Ca
+ATARI® 400 or ATARI BOO"
+) AR. gece
+
+===== PAGE 2 =====
+_______ STUDENT PILOT
+a Reference Guide
+=
+=
+
+===== PAGE 3 =====
+'
+© A Warner Communications Company
+
+Every effort has been made to ensure that this manual accurately documents this product of the ATARI Computer Division. However,
+because of the ongoing improvement and update of the computer software and hardware, ATARI, INC cannot guarantee the accuracy of
+Printed material after the date of publication and cannot accept responsibility for errors or omissions
+Reproduction ts forbidden without the specific written permission of ATARI, INC., Sunnyvale, CA 94086, No right to reproduce this docu-
+ment, nor the subject matter thereof, is granted unless by written agreement with, or written permission from the Corporation.
+
+PROGRAM CONTENTS © 1980 ATARI, INC q
+PRINTED INU S.A : MANUAL CONTENTS © 1981 ATARI, INC ,.
+
+=
+
+===== PAGE 4 =====
+PILOT is a simple, easy-to-understand programming language. It stands for Programmed
+Inquiry, Learning Or Teaching, and was originally developed by Dr. John Starkweather at
+the University of California, San Francisco. PILOT was designed to enable teachers to
+write programs for their students. However, due to the pioneering work of Dr. Dean
+Brown at Stanford Research Institute’s Education Laboratory (1967-1974), PILOT proved
+to be a good language for teaching computer programming to children. PILOT was con-
+ceived as a tool to make writing conversational programs easy. It was originally designed
+for text output only. However, we have incorporated Turtle Graphics, a concept
+developed by Dr. Seymour Papert and the LOGO group at the Massachusetts Institute of
+Technology. The Turtle Graphics concept enables the user to draw pictures when pro-
+gramming in PILOT. These capabilities, along with the ability to generate sounds, make
+ATARI® PILOT a very versatile language.
+
+Preface iii
+
+===== PAGE 5 =====
+bce re A ln nat cel lh alli
+(
+PREFACE iii
+INTRODUCTION vii
+1 PILOT INFORMATION 1
+Terms 2
+Operating Modes 3
+Variables 4
+Arithmetic Operators 5
+Relational Operators 5
+Error Messages 6
+2 CORE PILOT 7
+7: Type 8
+A: Accept 12
+M: Match 14
+J: Jump 17 g
+OF Compute 19
+Random Numbers 21
+Es End 24
+U: Use 26
+R: Remark 30
+3 EXECUTIVE COMMANDS 31
+AUTO Automatic Line Numbering 32
+RUN Run a Program 34
+LIST List a Program 36
+REN Renumber a Program 39
+NEW New Program 41
+VNEW New Variables 43
+DUMP Dump String Variables 46
+LOAD Load a Program 48
+LOAD C: Loading From Cassette 48
+LOAD D: Loading From Diskette 49
+Merging Programs 49
+SAVE Save a Program 51
+SAVE C: Save to Cassette 51
+SAVE D: Save to Diskette 52
+SAVE P: Save to Printer 52 3
+DOS Disk Operating System 53
+iv Table of Contents
+
+===== PAGE 6 =====
+4 GRAPHICS 55
+GR: Graphics 56
+Turtle Graphics 57
+Where To Go — X and Y Coordinates 57
+What Direction and How Far To Go 58
+Initial Location, Heading, and Pen Color 58
+Shortcuts for Graphics Programming 59
+GR:CLEAR Clear the Graphics Screen 60
+GR:GOTO Go to the Point X,Y 62
+GR:DRAWTO Draw to the Point X,Y 64
+GR:FILLTO Fill to the Point X,Y 66
+GR:TURNTO Turn to N Degrees 68
+GR:TURN Turn N Degrees 70
+GR:GO Go N Units 72
+GR:DRAW Draw N Units 74
+GR:FILL Fill N Units 76
+GR:PEN Choose a Pen Color 78
+GR:PEN ERASE Set Pen Color to Erase 80
+ey GR:PEN UP Lift the Pen 81
+GR:QUIT Quit the Graphics Mode 82
+5 SOUND AND PAUSE 85
+SO: Sound 86
+PA: Pause N Units 89
+6 CONDITIONALS 93
+YorN String Match Conditions 95
+COMPARISON _ Numeric Conditions 98
+JM: Jump on Match 101
+APPENDICES
+A_ SPECIAL FUNCTION KEYS AND SCREEN EDITING 103
+B_ PILOT I/O ERROR CODES 106
+Table of Contents v
+
+===== PAGE 7 =====
+INTRODUCTION
+_______INTRODUCTION
+Be
+cay |
+f —
+r)
+| e
+y =O
+|
+a
+
+===== PAGE 8 =====
+S
+This reference guide is designed for your use if you are learning PILOT at home or in
+school, or if you already know PILOT and need a handy guide to the language. It gives
+brief explanations of all the main PILOT commands and examples of their use.
+Throughout this guide there are illustrations to enhance your understanding and enjoy-
+ment of PILOT. You are the pilot character; you give PILOT commands to the computer.
+Anytime you are in Graphics mode, the turtle character is ready to obey your commands.
+Each PILOT command is highlighted in large bold letters at the top of a page so you can
+easily find any command to which you wish to refer. This reference guide is divided into
+the following sections: PILOT Information, Core PILOT, Executive Commands,
+Graphics, Sound and Pause, and Conditionals.
+In the first section, you will find terms to know and general information about the PILOT
+language. You should be familiar with the contents of this section in order to use this
+guide.
+The second section reviews the Core PILOT commands. You put these commands
+together as a set of numbered statements to form a program. You can also execute them
+= one at a time in Immediate mode, just as you would use a pocket calculator.
+The third section reviews Executive commands. These commands allow you to do various
+things with programs as a whole. You give executive commands directly from the
+keyboard; usually they are not part of a program.
+The fourth section covers turtle Graphics commands, which you use to draw designs or
+pictures on the screen. When PILOT is in graphics mode, an invisible turtle, holding an
+invisible pen, moves around the screen following your commands, drawing lines, and fill-
+ing in spaces.
+The fifth section has to do with the SOUND and PAUSE commands. SOUND is most fre-
+quently used when you want to make music, but can also help you create sound for a
+special effect. PAUSE lets you create a dramatic effect in a program, but it is used most
+often when creating music; for example, when you need to indicate how long a tone is to
+be played. .
+The last section discusses Conditional commands. Any PILOT command can be made ’
+conditional; that is, it will only be carried out if certain conditions are met. This section
+reviews the various kinds of conditions you can set up in your programs.
+This is just a reference guide. If you need further explanation of any PILOT command, or
+if you wish to learn PILOT from a book, you should refer to the PILOT Primer: An In- {
+q structional Manual for the PILOT Programming Language.
+Introduction ix
+}
+
+===== PAGE 9 =====
+> ____1_ PILOTINFORMATION |
+> INPUT
+= OUTPUT
+
+7 Z) “§ _-VARIABLEs -
+STRING
+NUMERIC.
+
+a
+a
+
+===== PAGE 10 =====
+This section contains general information about PILOT. It includes explanations of terms
+often used in this guide, PILOT operating modes, variables, arithmetic and relational ,
+operators, and error messages.
+
+TERMS
+
+COMMANDS Commands tell the computer what to do. There are two kinds of
+commands: Program Commands and Executive Commands.
+Program Commands are the building blocks of the PILOT
+language. They are composed of one or two letters followed by a
+colon (:). When placed in a logical sequence, these commands
+make up a program.
+
+Executive Commands tell the computer what to do with a program
+as a whole. Executive commands are either a short word such as
+RUN or an abbreviation such as DOS.
+
+CONSTANT A constant is a value expressed as a number rather than
+
+represented by a variable name. For example, in the statement: s
+C:#X = 100
+#X is a variable, and 100 is a constant.
+
+CURSOR The white square that moves across the television screen showing
+your location on the screen as you type.
+
+EXPRESSION An expression is any combination of variables, constants, and
+arithmetic or relational operators used together to compute a
+value. For example, #A + #B\ 2 is an expression; so is
+#A<=#B.
+
+INPUT Any information put into the computer from the keyboard, cassette
+tape, disk, and so on.
+
+LABEL Code name or symbols given to a statement in a program to iden-
+tify that statement for reference by a J: or U: command. PILOT
+labels may be any combination up to 254 characters. Labels must
+start with an asterisk ( %* ) and a letter; for example, %# HERE or
+%* M35PDQ.
+
+MEMORY The part of the computer where information is stored. This infor-
+mation is both program statements and data (constants and &
+variables) that the program uses when it is run.
+
+2 Pilot Information
+
+ie a
+
+===== PAGE 11 =====
+= OUTPUT Information put out from the computer memory to external
+devices.
+
+PILOT PILOT stands for Programmed Inquiry, Learning Or Teaching.
+
+PROGRAM A set of statements in a logical sequence that tells the computer
+what to do. The computer follows the program statements in
+order, from beginning to end, unless a J: JUMP or U: USE com-
+mand breaks the sequence.
+
+SCREEN DISPLAY What you see on the television screen.
+
+STATEMENT A statement is one line of a program. All PILOT statements begin
+with line numbers (used for editing and sequencing). A PILOT
+statement may be labeled with a % LABEL between the line
+number and the command.
+
+STRING A group of characters—letters, numbers, punctuation, or ATARI
+Graphics (CTRL) characters. The following are all
+strings:
+
+ABCXYZZZ
+“Quotes Too”
+O02BAK9
+= JN\INININININ/
+5+2=
+Note that quotation marks are not used to identify a string. Any
+group of characters, including quotation marks, is a
+string in PILOT.
+A string is like a constant, in that it may be stored in a
+string variable.
+
+VARIABLE A variable is the name of a place in memory to store a string or
+numeric value that is used by a program. This value may (or may
+not) change as the program is executed. (See the following page
+for an explanation of the different types of PILOT variables.)
+
+OPERATING MODES
+
+PILOT has two kinds of modes: Programming Modes which determine how PILOT com-
+
+= mands are used by the computer; and Screen Modes which determine the layout of the
+display screen.
+Pilot Information 3
+
+===== PAGE 12 =====
+Programming Modes
+AUTO The mode in which the statements will automatically be numbered
+when writing a program.
+IMMEDIATE The Immediate mode is used when you want your commands to
+respond right away after pressing the key.
+RUN In Run mode, PILOT is executing (carrying out) the program cur-
+rently stored in memory.
+Screen Modes
+GRAPHICS The Graphics mode is used when you want to draw a picture of
+any kind.
+TEXT The Text mode displays only text (letters, numbers, punctuation)
+and graphics (CTRL) characters.
+VARIABLES
+PILOT has two main kinds of variables: string variables and numeric variables.
+String Variables can store strings of up to 254 characters. They are named with a $ sym-
+bol, followed by any combination of letters and numbers. For example, $NAME,
+$M29ABD, $FOOD9 are acceptable string variable names. String variables cannot be
+used in arithmetic expressions. A program can contain any number of string variables up
+to the limits of memory.
+Numeric Variables can store numbers from -32768 through 32767. They are named
+with a # symbol, followed by a single letter; #A, #B, #C, and so on up to #2Z are the
+acceptable numeric variable names. A program can have up to 26 numeric variables.
+They can be used in arithmetic and relational expressions.
+Note: PILOT has two other kinds of variables that are not discussed in this guide. Pointer
+variables, named with an @ symbol followed by a decimal memory location, are used to
+examine or change the contents of a specific memory location (equivalent to PEEK and
+POKE in the BASIC language). Special variables, named with a % symbol followed by a
+letter or a letter and a number, are used to sense the values of the various ATARI con-
+trollers (joysticks, paddles, and light pen) and to read other special values maintained by
+the PILOT system.
+The use of controllers and special graphics variables is explained in The PILOT Primer,
+An Instruction Manual for the PILOT PROGRAMMING LANGUAGE.
+4 Pilot Information
+
+===== PAGE 13 =====
+Information on the use of pointer variables and other special variables may be obtained by
+phoning ATARI, INC., Customer Support:
+(800) 538-8547 (Outside California)
+(800) 672-1430 (Within California)
+ARITHMETIC OPERATORS
+The ATARI PILOT language uses five arithmetic operators:
++ addition
+- subtraction (also denotes a negative numbers; e.g., -5)
+% multiplication
+/ division
+\ modulo (the remainder after a division)
+Note: PILOT only performs integer (whole numbers) arithmetic.
+
+J Parentheses () can be used to change the order in which arthmetic is performed. For ex-
+ample C:#A=5+6 % 2 puts the number 22 in variable #A; on the other hand,
+C:#A=5+(6 % 2) puts the number 17 in variable #A.
+
+RELATIONAL OPERATORS
+PILOT allows the result of the comparison between two variables or constants to be used
+as a condition for executing a command. The comparison is made with the use of the
+following relational operators:
+
+#A< #B #A is less than #B
+
+#A> #B #A is greater than #B
+
+#A = #B #A equals #B
+
+#A<=#B #A is less than or equal to #B
+
+#A>=#B #A is greater than or equal to #B
+
+#A <>#B #A is not equal to #B
+
+S (See Section 6, Conditionals.)
+
+Pilot Information 5
+
+===== PAGE 14 =====
+ERROR MESSAGES 3
+If you make an error, PILOT responds by showing the command or statement in error. It
+highlights the source of the error or the first character it does not understand. It also types
+out a message explaining the error.
+
+The are two kinds of errors: Syntax errors result from incorrectly typing in a command.
+
+Syntax errors are found by PILOT as you are typing commands or program statements in-
+
+to the computer.
+
+The second type of error is a Run-time error which results from mistakes in the logic of
+
+your program - for example, trying to jump to a statement that you have not labeled.
+
+Run-time errors are only found when you type RUN and PILOT tries to execute your
+
+program.
+
+The following are some common PILOT error messages:
+
+WHAT'S THAT? Indicates that PILOT could not understand your command or what
+you wanted it to do. This message is often the result of typing or
+spelling errors.
+
+1/O ERROR xxx In the course of performing an I/O operation the I/O subsystem
+detected an error and returned the status indicated. See Appendix
+B for a list of I/O error codes. 2
+
+NO ROOM Indicates that the requested operation could not be performed
+because there was not enough free memory.
+
+WHERE? Indicates that the %* LABEL named in a U: (USE) or J: (JUMP)
+command does not exist in the program storage area.
+
+U: TOO DEEP The program has exceeded eight levels of nested USE commands.
+
+DIVIDE BY 0 A COMPUTE command has just attempted to perform a division
+by zero.
+
+6 Pilot Information
+
+===== PAGE 15 =====
+2 CORE PILOT
+3, 2 Common
+. a’ Sa a
+dao IF
+D
+
+===== PAGE 16 =====
+T:
+e
+T @
+The T: (TYPE) command tells the computer to display what you type. You must type T:
+first, then your message. For instance, T: HELLO will cause the computer to respond
+HELLO as you see in Figure 2-1.
+o~
+TIHELLO
+HELLO
+a
+Figure 2-1
+The T: command will display anything you can type from the keyboard literally. That is,
+the T: command will not add 2 + 2; it will display it as 2 + 2 (see Figure 2-2).
+Figure 2-2
+8 Core Pilot—T: :
+
+===== PAGE 17 =====
+e Figures 2-3 and 2-4 are examples of programs using the T: command. Notice that Figure
+2-4 uses graphics characters that are created by holding down the key while typing
+the letters.
+40 T:THISIS THIS 15
+2@ T:@ VERY SHORT &@ VERY SHORT
+3@ T:PROGRAM PROGRAM
+|
+P|
+Figure 2-3
+1@ T: THIS PROGRAM MAKES & DESIGN THIS PROGRAM MAKES A DESIGN
+2@ T: USING GRAPHICS (CTRL? USING GRAPHICS CCTRL) CHARACTERS
+— i
+37:8 eae
+z Ba
+Figure 2-4
+The backslash (\ ) has a special meaning to the T: command. Rather than printing the
+= next output on a separate line, the backslash tells the computer to continue on the same
+line (see Figures 2-5 and 2-6).
+Core Pilot—T: 9
+. -
+
+===== PAGE 18 =====
+Note: The computer will automatically move to the next line when it runs out of room. ES
+1@ T:THISWILL \ THIS WILL ALL PRINT OM OWE LIWE.
+2@ T:@LL PRINT \
+3@ T:ON OWE LINE. READY
+RuN :
+| fess.
+Figure 2-5
+= ,
+2@ a: Gooo
+3@ T:GooD
+a READY
+Ey
+Figure 2-6
+When a T: command sees a string ($) or numeric (#) variable, it automatically replaces
+those variable names with their contents if they have been given a value (see Figure 2-7).
+10 Core Pilot—T:
+
+===== PAGE 19 =====
+J 1@ T:WHAT'S YOUR NAME? \ WHAT'S YOUR NAME? BOBBY
+
+2@ a: $name HOH OLD ARE YOU? 13
+3@ T:HOW OLD ARE You? \ BOBBY IS 13 YEARS OLD.
+40 a:ua
+S@ T:SMAME IS wa YEARS OLD. READY
+READY -:
+a
+
+Figure 2-7
+
+Core Pilot—T: 11
+-
+
+===== PAGE 20 =====
+A:
+s
+i, a ae &
+The A: (ACCEPT) command tells the program to wait for information to be typed from
+the keyboard. Figure 2-8 is an example of a simple use of the A: command.
+, =
+1@ T:WHAT COLOR ARE YOUR SHOES? WHAT COLOR ARE YOUR SHOES?
+2@ a: BROWN
+3@ T:I DON'T WEAR SHOES. I DON'T WEAR SHOES.
+40 T: COMPUTERS DON'T HAVE FEET. COMPUTERS DON'T HQVE FEET.
+REaDY READY
+mt a
+Figure 2-8
+The A: command also lets you give a value to a string ($) or numeric (#) variable as
+shown in Figures 2-9 and 2-10.
+1@ R: COPY CaT PROGRAM HI, I'MA COPY Car.
+2@ T:HI, I'M a COPY Cat TYPE SOMETHING, AND IWILL SHOW YOU.
+te TiTvbE SOMETHING, AND I WILL HELLO
+SHOW You. HELLO
+4@ “aGaIn YOU'RE @ COPY CaT
+se a:scopy YOU'RE a COPY CaT
+6e@ T:$coPY SO ARE you
+7@ J:*aGaIn SO ARE You
+THIS IS SILLY
+READY THIS IS SILLY
+a stop
+sToPp
+HOW DO I GET OUT OF THIS
+HOW DO I GET OUT OF THIS
+a
+Figure 2-9
+12 Core Pilot—A:
+SS Pie,
+
+===== PAGE 21 =====
+J 1@ R:AGE OLD PROGRAM HOW OLD ARE You?
+2@ T:HOW OLD ARE You? 68
+3@ a:ny JUST THINK, IN 92 YEARS,
+40 C:#L=100-nyY YOU'LL BE 108.
+S@ T: JUST THINK, IN BL YEARS,
+6@ T: YOU'LL BE 166. READY
+ae
+
+READY
+a
+
+Figure 2-10
+
+Core Pilot—A: 13
+-
+
+===== PAGE 22 =====
+M:
+r)
+Match €
+ZS ~
+A &
+—— ., ee ro i ‘
+TO et jr TU
+The M: command matches the answer entered by a user (during an A: command) with
+one or more answers expected by the program. Also, M: automatically creates a YES or
+NO condition —Yes (Y) there was a match, or NO (N) there was no match. Figure 2-11
+shows how this works.
+1@ R:WEATHER TO DO HOW'S THE WEATHER OUTSIDE?
+2@ T:HOW'S THE WEATHER OUTSIDE? Goop
+se a: GOTO THE PARK AND PLayY.
+4@ M:NICE,GOOD,HOT,GREAT
+S@ TY:GOTO THE PaRK aNd PLay. READY
+6@ TN:STAY HOME AND READ A BOOK. a
+7@ E:
+READY
+4
+14 Match—M:
+
+===== PAGE 23 =====
+e HOW'S THE WEATHER OUTSIDE?
+COLD AND RAINY
+STAY HOME AND READ 4 BOOK.
+READY
+EB
+Figure 2-11
+In Figure 2-11, if the answer matches nice, good, hot, or great, the program types “Go to
+the park and play” (line 50). If the answer does not match, the Program types “Stay
+home and read a book” (line 60).
+In the list of match choices, if you put a space followed by a single letter, the computer
+3 will match anything starting with that letter. For example, in Figure 2-12 below, the
+M:(space)Y will match any word that starts with the letter Y; this would include YES,
+YUP, YEAH, YOU BET, or even YUK!
+10 R:WAVES PPPPPPPAPPPPPPPOYG
+Se ts AAAAARRROA Pose igh SA ica den rw.
+$e sument eves \ RRRRRARRRRRA RES
+80 M: ¥,OK,0.K. ALRIGHT, SURE MORE WAVES? YOU BET
+9e@ JY: “WATER Np pp ppp pi pi pip pipe, ,
+soo'es RRRRRRARRARRRESY |
+READY MORE WAVES? YUK
+5 RARRRARA RAIA OSV
+ARRRRRARRAPEIESS |
+MORE WAVES? NO MORE
+READY
+Figure 2-12
+Note: The JY: command in line 80 of Figure 2-12 is a conditional JUMP command. See
+J: (JUMP) or Section 6, Conditionals, for an explanation.
+Match—M: 15
+
+===== PAGE 24 =====
+The computer will look to see if any of the choices in a match list are contained, exactly, =
+in any part of an answer. The program in Figure 2-13 below will match on SAL or SAM
+as any part of the answer. This means that all of the following will create a match: SAL-
+LY, SALT, SALAD, SALUTE, SALAMI, SAMMY, SAMUEL, and SAME.
+10 R:S5AQM'S & SALLY'S PROGRAM HI, WHAT'S YOUR NAME?
+2@ T:HI, WHAT'S YOUR NAME? GERTRUDE
+3e *“acain a: SNAME I ONLY TALK TO PEOPLE NAMED
+40 M:5AQM,SaL SAMOR SALLY...
+S@ TN:I ONLY TALK TO PEOPLE NAMED PLEASE TELL ME YOUR NAME AGAIN:
+6@ TN:SAMORSALLY... SALAD DRESSING
+Ze THIPLEASE TELL ME YOUR NAME MICE TO MEET YOU, SALAD DRESSING.
+60 JN: "AGAIN READY
+9@ TY: NICE TO MEET YOU, SNAME. ra
+10@ E:
+READY
+a
+Figure 2-13
+16 Match—M:
+
+===== PAGE 25 =====
+J:
+s
+eS ———s ian.
+OPW
+“<'z,
+> Pe, ey ea
+» ace) Mite? hie ’ 4
+> The J: (JUMP) command lets you jump from one spot in a program to another. The J: is
+ALWAYS followed by a %* LABEL indicating to which statement you want to jump. The
+destination of your J: command must also be labeled with the same % LABEL.
+Figure 2-14 shows how the J: command can be used to make a simple loop. The pro-
+gram keeps looping (repeating), filling the screen with ROUND ROBIN.
+1@ R: LOOPING PROGRAM ROUND ROBIN ROUND ROBIN ROUND ROBIN
+2@ “OVER ROUND ROBIN ROUND ROBIN ROUND ROBIN
+3@ T:ROUND ROBIN \ ROUND ROBIN ROUND ROBIN ROUND ROBIN
+40 J: “OVER ROUND ROBIN ROUND ROBIN ROUND ROBIN
+ROUND ROBIN ROUND ROBIN ROUND ROBIN
+REaDY ROUND ROBIN ROUND ROBIN ROUND ROBIN
+= ROUND ROBIN ROUND ROBIN ROUND ROBIN
+ROUND ROBIN ROUND ROBIN ROUND ROBIN
+ROUND ROBIN ROUND ROBIN ROUND ROBIN
+ROUND ROBIN ROUND ROBIN ROUND ROBIN
+ROUND ROBIN ROUND ROBIW ROUND ROBIN
+ROUND ROBIN ROUND ROBIN ROUND ROBIN
+eee READY HHH
+m
+= Figure 2-14
+dump—J: 17
+
+===== PAGE 26 =====
+Note: Figure 2-14 is an example of a never-ending loop. To stop it, press the [ BREAK |
+key.
+% LABELS can stand alone as in line 20 of Figure 2-14, or they can be placed in front
+of another command, as in lines 70 and 130 in Figure 2-15. This screen also shows you
+how the J: command is used conditionally following an M: command. That is, JY:
+(JUMP only if there is a match), or JN: (JUMP if there is no match).
+1@ R: RIDDLE PROGRAM DO YOU LIKE RIDDLES? SURE
+2@ T:D0 YOU LIKE RIDDLES? \ OK, HERE'S @ RIDDLE FOR You:
+3e@ a: WHAT'S BLACK AND WHITE AND RED ALL
+40 M: YES, YUP, YEAH, SURE,OK, OVER?
+o.K. aceicut @ NEWSPAPER WITH KETCHUP ALL OVER
+se Jk: *BYE NOPE , GUESS AGAIN:
+6@ T:0K, HERE'S & RIDDLE For vou: WHAT'S BLACK AND WHITE AND RED ALL
+7@ “AGAIN T: WHAT'S BLACK AND OVER?
+WHITE AND RED ALL OVER? @ BLUSHING ZEBRA
+6e@ a: NOPE, GUESS AGAIN:
+90 M: SUNBURNED PENGUIN WHAT'S BLACK AND WHITE AND RED ALL
+10@ TN: NOPE, GUESS AGAIN OVER?
+11e JM: *aGain & SUNBURNED PENGUIN
+12@ T: TERRIFIC; YOu GOT IT! TERRIFIC; YOU GOT IT!
+13@ “BYE T:SEE You AROUND. SEE YOU AROUND.
+140 E:
+READY
+READY cS
+a ES
+Figure 2-15 g
+bE
+18 Jump:—J:
+
+===== PAGE 27 =====
+C:
+s
+4 Comput
+Any time you want to do arithmetic in PILOT, you must use the C: (COMPUTE) com-
+mand with numeric variables. As an example, the program in Figure 2-16 lets you input
+two numbers, and then it computes their average (#A).
+1@ R: AVERAGE PROGRAM THIS PROGRAM COMPUTES THE AVERAGE
+2@ *DOAaGAaIN OF THO NUMBERS.
+3@ T: THIS PROGRAM COMPUTES THE
+AVERAGE FIRST NUMBER? 10
+a FEOF THO MUNBERS SECOND NUMBER? 20
+mi alae mene N THE AVERAGE OF 10 AND 2015 15.
+3
+8@ T: SECOND NUMBER? \ THIS PROGRAM COMPUTES THE AVERAGE
+98 arias OF THO NUMBERS.
+100 C:sa=ur+nss2
+41@ T: FIRST NUMBER? 2
+a TITHE AVERAGE OF BF AND #5 15 SECOND NUMBER? 5S
+130 tT: THE AVERAGE OF 2 AND 5153.
+148 J:*"DOAGAIN oe
+REaDY
+s
+Figure 2-16
+> Note: PILOT will evaluate arithmetic expresions from left to right unless you have
+used parentheses to show a different grouping.
+Compute—C: 19
+4
+
+===== PAGE 28 =====
+The C: command is often used to count things in a program. For example, you might g
+want to give a person three chances at answering a riddle. A numeric variable such as
+#G is used to keep track of the number of guesses made so far. A numeric condition is
+used to find out whether or not #G has reached the limit (three in this case). Figure 2-17
+below shows you how this looks in a program.
+1@ R: THREE GUESSES HERE'S A RIDDLE. |
+2@ C:sG=1 YOU GET 3 GUESSES:
+3@ TIHERE'S @ RIDDLE. ; WHAT KIND OF PERSON LOVES COCOAa?
+4@ T: YOU GET 3 GUESSES: @ COCOA LOVER
+S@ “AGAIN T: WHAT KIND OF PERSON NOPE, GUESS QGQIN.. .
+LOVES Cocoa? WHAT KIND OF PERSON LOVES COCOA?
+6e@ a: acocoatoco
+7@ M: COCONUT , COCOANUT , Cocoa NOPE, GUESS AGAIN...
+nuT WHAT KIND OF PERSON LOVES COCOA?
+8@ TY: VERY GOOD; YOU'RE SMART! @ COCOA MONSTER
+90 JY: "BYE SORRY. THAT'S 3 GUESSES.
+1006 JCBG=3): “NOMORE THE ANSWER TIS... ACOCOA NUT.**
+110 T:NOPE, GUESS AGAIN BYE BYE.
+12@ C:mG=nG+1
+13@ J:*aAGaIn READY
+140 *NOMORE T:SORRY, THAT'S 3 ia
+se T:7He answer xs i :
+160 PAa:90 ened f
+17@ T:**a cocoa NUT.** — |
+160 *BYE T:BYE BYE
+19@ E:
+aseev Figure 2-17
+a
+Note: The numeric conditional in the J: command in line 100 is explained in Section 6.
+You may also use the C: (COMPUTE) command to give a value to a string ($) variable
+within a program. For example, the program in Figure 2-18 keeps adding one more star
+( % ) to the value of the string variable $GROW until the value reaches 21 stars.
+10 R:GROWING STARS .
+2@ C:$GROW- Ciel
+3se@ C:$SsTaR=* ; “nem /
+40 C:sc=0 seen ese i
+S@ *LOOP vee se-ese
+6@ Cimc=uc+s epevevetors
+7@ C:$GROW=$GROWSSTAR seer
+8@ T:$GROW vee e-oe-oeo0 e808
+9@ JCHC<219: "LOOP ve-e 0-00-0008 008-08
+100 E: jepovenenenepenerens
+READY epepererenereneneneten
+e osseatsessentesboeiasssasess
+
+(es Sannmannenannnnen
+
+Figure 2-18 s
+20 Compute—C:
+
+===== PAGE 29 =====
+e RANDOM NUMBERS
+dy
+(
+/ Ga
+_ On
+>
+Besides the examples above, the C: (COMPUTE) command will let the computer select
+numbers at random. For example, if all the numbers allowed by PILOT were mixed up in
+a large fish bowl, the computer would reach into the bowl and choose one by chance.
+3 The random number is expressed as a ? for the value of a numeric variable in a C: com-
+mand. For example,
+C:#R=?.
+The program in Figure 2-19 generates random numbers and types them out.
+10 R: RANDOM NUMBERS 7246
+20 *“aGaIn 7745
+3@ C:BR=? 16999
+40 T:aR 31260
+S@ J:*aGaIn 26265
+31203
+REaDY 19340
+|
+sO291
+41243
+20631
+iS334
+22315
+5
+= Figure 2-19
+Compute—C: 21
+Y
+
+===== PAGE 30 =====
+You can tell the computer only to select random numbers from 0 through an upper limit. B
+Simply place a backslash (\ ) and the upper limit after the question mark (?). For exam-
+ple, C:#R =? \ 10 will choose a random number from 0 through 9. The COIN TOSS
+program in Figure 2-20 randomly generates only 0’s (HEADS) and 1’s (TAILS).
+-
+2@ *MORE HEADS
+3@ CrBR=7\2 TAILS
+40 TCHR=0): HEADS TAILS
+S@ TCHR=1): TAILS TAILS
+60 J: "MORE TAILS
+
+HEADS
+REaDY TAILS
+a HEADS
+
+HEADS
+
+TAILS
+
+TaAILs
+
+TAILS
+
+HEADS
+
+HEADS
+
+HEADS
+
+HEADS
+
+io
+A numeric variable can be used as the upper limit for selecting a random number. For ES
+example, the program in Figure 2-21 allows you to type in the maximum amount that a
+drunkard will turn at each step as he staggers for 200 paces.
+10 *DRUNKWALKER
+2@ GR: CLEAR
+3@ T:ENTER MAXIMUM TURN CO-360):\
+40 a:aR
+S@ T:> CCLEAR SCREEN}
+6@ T:DRUNKEN WALKER MAX. TURN =
+BR DEG.
+78 C:nc=0
+8@ “WALK
+90 GR:DRAWS
+100 Pa:s
+110 GR: TURN ?\HR
+12@ C:sC=nc+1
+13@ JCHC< 200) : *WALK
+140 E:
+ae
+a READY
+
+Ey
+Figure 2-21
+22 Compute—C:
+7
+
+===== PAGE 31 =====
+3 The GUESS MY NUMBER program in Figure 2-22 gives you a more complete example
+of how you can use the random number feature of PILOT.
+1@ R: GUESS MY NUMBER I'M THINKING OF 4 HUMBER
+2@ T:I'M THINKING OF @ NUMBER FROM 1-108.
+3@ T:FROM 1-100
+40 T: TRY TO GUESS WHAT IT Is.
+S@ T: TRY TO GUESS WHAT IT Is.
+a Ue 3s I WILL TELL YOU IF YOUR GUESS IS
+3 ‘OUR GUE [TOOTLOW ELS TOO] HIGH E
+se 1: GRUNER or MUA.
+9e T: QRE YOU READY TO PLaY? YESH
+100 T: ARE YOU READY TO PLay?
+41@ a:
+12@ M:Y,SURE,OK ,ALRIGHT
+130 JN: *BYE
+140 “BEGIN
+15@ T:3 CCLEAR THE SCREEN}
+160 C:BR=7\100+1
+17@ C:sc=e
+re ween I HAVE & NUMBER IN MIND.
+3
+
+200 “aGaIn F
+210 T:
+22@ T: YOUR GUESS? \
+23@ a:nG
+3s fcoecee3 tom
+AGAIN. . unas ener OK, I HAVE 4 NUMBER IM MIND.
+260 TCG>eR> : ERNIE, GUESS
+AGAIN... YOUR GUESS? S@
+270 JCHG<>BRd: "AGAIN G0 (A) ; Guess acarm...
+260 T:YOUGOTIT...INONLY aC
+GUESSES! YOUR GUESS? 65
+
+S 290 U:*BEEP GRO (EE); Guess acarmm...
+see T:
+310 T:DO YOU WANT TO PLAY AGAIN? \ YOUR GUESS? 95
+320 a: GE (ET); Guess acarmm...
+33@ M: Y,SURE ,OK,ALRIGHT
+340 JY: "BEGIN YOUR GUESS? 98
+see seve T:0K, SEE YOU AROUND. C0 (AE) ; Guess acaim...
+Fog SDEEP YOUR GUESS? 99
+380 C:aN=e YOUGOT IT... IN ONLY S GUESSES!
+390 C:#5=1e-nCc
+400 *BEEPAGAIN DO YOU WANT TO PLAY AGAIN? &
+41@ 50:13
+420 Pa:s
+43e@ s0:@e
+440 Ci: aN=BN+1
+450 JCUN<(8S): *BEEPAGAIN
+460 50:13,17,20,25
+47@ Pa:6e
+4680 50:06
+490 E:
+READY
+&
+
+Figure 2-22
+Compute—C: 23
+
+===== PAGE 32 =====
+i
+E:
+a
+End 3
+The E: command marks the END of something. In Figure 2-23 below, it marks the END
+of your program. ES
+10 R: SUDDEN ENDING ONCE UPON 4 TIME
+2@ T: ONCE UPON & TIME THERE WAS & COMPUTER
+3@ T: THERE WAS & COMPUTER NAMED HAL.
+40 T: NAMED HAL. HAL STARTED ACTING STRANGE.
+S@ T:HAL STARTING ACTING STRANGE. SO AN ASTRONAUT NAMED DAVE
+6@ 1:50 AN ASTRONAUT NAMED DAVE PULLED OUT HAL'S....
+7@ T:PULLED OUT HAL'S...
+se E: ne apy
+REaDY
+a
+Figure 2-23
+|
+24 End—E:
+
+===== PAGE 33 =====
+= The end of a program is not necessarily the last line of the program. In Figure 2-24, the
+E: command is used to mark the END of the program at line 70, and it is also used to
+mark the END of the %# TRUMPETS module at line 120.
+1@ R:FANFARE PROGRAM WELCOME TO PILOT
+2@ T:WELCOME TO PILOT THE END
+3@ U:*TRUMPETS
+40 Pa:i1¢e READY
+S@ U:*TRUMPETS =
+6@ T: THE END
+7@ E:
+80 *TRUMPETS
+9@ 50:1,5,9,13
+100 PAa:i26
+110 50:6,0,0,0
+12@ E:
+READY
+s
+Figure 2-24
+End—E: 25
+
+===== PAGE 34 =====
+U:
+. |
+Use ¢
+hk F -ciaieer Yas ees
+4 ae aan i ey
+oN
+a a . ree
+Eon Pee” C {
+The U: command tells the computer to USE a module. A module is a program (sub-
+program) within a program.
+Every module must begin with a %* LABEL and must end with an E:. Figure 2-25 shows
+a module that draws a triangle.
+26 Use—U:
+
+===== PAGE 35 =====
+= 100 “TRIANGLE
+11@ GR: 3CDRAW 30; TURN 120)
+12@E:
+READY
+cs
+Figure 2-25
+If you type U: 4% LABEL in Immediate mode, you can check out a module without run-
+ing the entire program. For example, Figure 2-26 is the result of typing
+U: % TRIANGLE.
+READY
+S
+Figure 2-26
+Figure 2-27 shows the %#* TRIANGLE module within a larger program. When the com-
+puter sees U: % TRIANGLE, it jumps to the statement labeled % TRIANGLE and uses
+that module. At the end of the module, the computer continues with the command
+following U: #* TRIANGLE.
+1@ R:WHEEL OF TRIANGLES
+20 C:nT=0
+3@ GR: CLEAR
+40 “AGAIN C:mT=nT+1
+S@ U:*TRIANGLE
+60 GR: TURN 36
+7@ JCHT<10) :*AGAIN
+80 E:
+100 *TRIANGLE
+11@ GR: 3CDRAW 30; TURN 120)
+120 E:
+READY
+a
+Figure 2-27
+Use—U: 27
+
+===== PAGE 36 =====
+The program in Figure 2-27 uses the %# TRIANGLE module ten times to draw a wheel B
+of triangles. The final result of this program is shown in Figure 2-28 below.
+
+READY
+
+Ey
+
+Figure 2-28
+
+Figure 2-29 shows a program that uses several modules ( #%* BOX, * TRIANGLE.
+% MOON, and %* STAR) to make a picture.
+
+10 R: PICTURE
+
+2@ GR: CLEAR
+
+3@ GR:GOTO -25,-10
+
+40 GR: PEN BLUE
+
+S@ U:*BOXx
+
+6@ GR: TURNTO 30;G0 25
+
+7@ GR: PEN RED
+
+80 U:*TRIANGLE
+
+90 GR:GOTO 0,25
+
+10@ GR: PEN YELLOW
+
+11@ U:*MOON
+
+12@ GR:GOTO -40,25
+
+130 U:*STAR
+
+14@ GR:GOTO -10,35
+
+150 U:*STAR
+
+16@ GR:GOTO 35,20
+
+170 U:*STAR
+
+299 E:
+
+400 *BOx
+
+41@ GR: TURNTO 90
+
+42@ GR: 3(DRAW 25; TURN 90>
+
+43@ GR:FILL 25
+
+440 E:
+
+S@@ *TRIANGLE
+
+51@ GR: TURNTO 150
+
+S2@ GR: 2(DRAW 25; TURN 120) ;FILL 24
+
+S30 E:
+
+608 *MOON
+
+61@ GR: TURNTO 70
+
+620 GR:36CDRAW 1; TURNS?
+
+63@ GR: TURNTO SO
+
+640 GR: SCTURN -20; FILL 5S)
+
+650 E:
+
+700 *STAR
+
+71@ GR:SCDRAW 10; TURN 144)
+
+720 E:
+
+READY
+
+&
+28 Use—U:
+
+===== PAGE 37 =====
+Fa
+Figure 2-29
+Note: It is possible to have modules used within modules up to eight layers deep. For ex-
+ample, the %# TRIANGLE module could itself use a %* FILL module; the %* FILL
+module could use a %# PENCOLOR module, and so on.
+Use—U: 29
+;
+
+===== PAGE 38 =====
+R:
+s
+Remark 8
+The R: (REMARK) command lets you say something about the program. However, any
+REMARKS made will be ignored by the computer when you RUN the program. The only
+time you see them is when you LIST the program onto the television screen. For exam-
+ple, Figure 2-30 is a program made up almost entirely of REMARKS.
+LO Rf PP one rete te ne te ne se ne ne ne ne re ce ene ere eee TEE
+20 R:* ”
+se R:* *
+40 R:* THENOTHINGPROGRAM *
+se R:* -
+60 R:* ”
+ZO Rf PPE NE 08 te ne te ne oe ne tee ne oe ne ene EE ETE
+8@ T:CTHIS IS ALSO @ REMARKI
+90 T: THIS PROGRAM DOES NOTHING.
+10@ R: THAT'S FOR SURE!
+110 R: THIS IS THE END OF THE
+PROGRAM.
+120 E:
+READY
+m
+Figure 2-30
+Note: Square brackets [ ] are used to indicate a remark on the same line as a command &
+as shown in line 80 above.
+When you type RUN and press @132009, Figure 2-31 is all you will see on the screen.
+THIS PROGRAM DOES NOTHING.
+READY
+Pa
+|
+Figure 2-31
+REMARKS are particularly helpful when you write longer programs because they will re-
+mind you how the program works long after you have written it.
+30 Remark—R:
+
+===== PAGE 39 =====
+> 3 EXECUTIVE COMMANDS
+, I
+|
+
+===== PAGE 40 =====
+ee
+
+Automatic Line Numbering =
+Use the AUTO command when you want to type a program into the computer memory.
+AUTO automatically numbers your program lines for you.
+While you are in the AUTO mode, the computer will make everything you type part of
+your program. No Immediate mode commands can be entered until you exit from the
+AUTO mode by pressing the key.
+When you type AUTO your screen turns yellow as in Figure 3-1. When you leave the
+AUTO mode, your screen turns blue.
+
+Figure 3-1
+
+Remember that the computer enters the line numbers, which you cannot see until you
+exit from the AUTO mode and LIST the program.
+32 Executive Commands—AUTO
+
+===== PAGE 41 =====
+a) Figure 3-2 shows a program entered in the AUTO mode.
+Figure 3-2
+
+READY
+
+LIsT
+
+1@ R: RIDDLE PROGRAM
+
+20 T:HI. WHAT'S YOUR NAME?
+
+3@ A: SNAME
+
+40 T:0K, SNAME, HERE'S @ QUESTION
+
+FoR you
+
+S@ *GUESSAGAIN
+
+6@ T:WHAT KIND OF OF INSECT LIVES ON
+
+THE MOON?
+
+7@ a:
+
+6@ M:LUNATIC, LUNE-a TIC, LOONATIC,
+
+LOON-— a-TIC
+
+390 TN:NOPE. GUESS AGAIN.
+
+100 JN: *GUESSAGAIN
+
+4110 TY: CONGRATULATIONS. You GOT IT!
+
+12@ T:SEE YOU AROUND.
+
+i3s@ E:
+
+a
+
+Figure 3-3
+You can tell the AUTO command where to start numbering and by how much to increase
+each new line number. For example, AUTO 100,20 tells the computer to begin number-
+ing at 100 and increase each line by 20 (if you leave off the second number, it will
+automatically increase by 10's).
+Executive Commands—AUTO 33
+
+===== PAGE 42 =====
+Run a Pr ¢
+™~
+462° <7
+*
+> if
+ae” <f
+The RUN command tells the computer to execute the program currently in memory.
+Figure 3-4 shows a listed program and Screen 3-5 shows the program after RUN is typed.
+34 Executive Commands—RUN .
+
+===== PAGE 43 =====
+: LIST
+1@ R: SPINNING RECTANGLE
+2@ GR:CLEAR
+3@ C:sc=e
+4@ GR:GOTO -15,-S;TURNTO -6e
+S@ *AGaAIn
+60 GR: 2CDRAW 25; TURN 90 ;DRAH 10;
+TURN 90>
+7@ GR: TURN 20;0RAW 7
+60 CimC=mCc+t
+90 JCHCC16) :*AGaIN
+100 E:
+READY
+ca
+Figure 3-4
+READY
+a
+Figure 3-5
+Executive Commands—RUN 35
+;
+
+===== PAGE 44 =====
+List a Pr é
+ol,
+~~
+ee ) ;
+/)
+me
+- Ff Ya\s ar :
+> mrt eraaacefoU=
+ae 7a ws” jE IS _
+H A0T ERED |
+we = 7 <] SU r NEU =
+ay
+36 Executive Commands —LIST
+
+===== PAGE 45 =====
+= LIST tells the computer to display the program currently stored in memory. Use this com-
+mand anytime you need to see the entire program, a few lines of the program, or just
+one line of the program. For example, Figure 3-6 shows the listing of an entire program.
+LIsT
+1@ R: DRAGON'S TAIL
+2@ GR:CLEaR
+3@ GR:GOTO ~80,-—36;TURNTO 90
+40 C:us=1
+S@ *aGaAIN
+6@ GR:S( DRAW BSS TURN -72)
+7@ GR: DRAW 9; TURN —-uS/3
+68@ Cimso-ms+s
+9@ JCBS<36) :*aGaIn
+100 E:
+READY
+8
+Figure 3-6
+The command LIST 40,80 tells the computer to start listing at line 40 and end at line 80,
+as you see in Figure 3-7.
+LIST 46,606
+40 C:ms-1
+S@ *“aGaIn
+60 GR: SCDRAW BS; TURN -72)
+7@ GR: DRAW 9; TURN -HS5/3
+8@ Ciuso=mse+s
+REaDY
+5
+= Figure 3-7
+Executive Commands—LIST 37
+,
+
+===== PAGE 46 =====
+The command LIST 50 tells the computer to LIST only line 50, as you see in Figure 3-8. #
+List se
+S@ “aGcaiIn
+READY
+a
+Figure 3-8
+Note: To get a printed listing of your program on paper, you must SAVE your program
+to the printer (see the SAVE command).
+38 Executive Commands—LIST
+
+===== PAGE 47 =====
+4 ber a Pr
+The REN command renumbers the program statements, beginning with the first line of the
+program. It renumbers the lines by 10’s, starting at 10, so you can add more lines of pro-
+gram if necessary. Figure 3-9 shows a program before renumbering.
+List
+1 R: SILLY RIDDLE PROGRAM
+2T3
+3S T:WHY Q@RE GLL BIRDS IN DEBT?
+47:
+iS a:
+16 T:
+17 M: BILLS
+26 TM: NOPE.
+29 TH: BIRDS ARE IN DEBT
+63 TN: BECAUSE THEY ALL HavVE BILLS.
+77 TY: THAT'S RIGHT!
+214 E:
+S READY
+Figure 3-9
+Figure 3-10 shows the same program renumbered by 10’s starting with 10.
+REN
+READY
+LIsT
+1@ R: SILLY RIDDLE PROGRAM
+2@ T:
+30 T:WHY Q@RE ALL BIRDS IN DEBT?
+40 T:
+S@ a:
+6e@ T:
+70 M: BILLS
+680 TN: NOPE.
+390 TN: BIRDS GRE IN DEBT
+100 TN: BECAUSE THEY ALL HAVE BILLS.
+4110 TY: THAT'S RIGHT!
+i2@ E:
+READY
+"
+: Figure 3-10
+Executive Commands—REN 39
+
+===== PAGE 48 =====
+REN will also let you begin renumbering at any number and increase each statement by
+any amount you want. For example, REN 100,5 will renumber your program statements ES
+starting at 100 and increase each line by 5's.
+Figure 3-11 shows the program in Figure 3-10 renumbered, starting at 100, increasing by
+5's.
+
+REW 100.5
+
+READY
+
+LiIsT
+
+100 R: SILLY RIDOLE PROGRAM
+
+1e@S T:
+
+11@ T:WHY GRE ALL BIRDS IN DEBT?
+
+418 T:
+
+12@ a:
+
+12S T:
+
+13@ mM: BILLS
+
+i3S TH: NOPE.
+
+146 TN: BIRDS ARE IN DEBT
+
+145 TM: BECAUSE THEY ALL HAVE BILLS.
+
+iS@ TY: THAT'S RIGHT!
+
+41Ss E:
+
+READY
+
+a
+
+Figure 3-11
+
+40 Executive Commands—REN
+
+===== PAGE 49 =====
+J New Pr
+a \ >
+wy YD
+.’ < ~
+: Lg : \ im py’
+fai tees, He Y,
+hi y es: J
+7 rn ag
+a he , ‘ Py past
+& ‘ g — gi he Ay ’
+——s fe /,
+mz ey ,
+me SX
+Executive Commands—NEW 41
+
+===== PAGE 50 =====
+The NEW command lets you erase the program in the computer memory. You must be &
+careful when you use this command. Make sure you do not want the program any more
+before typing NEW.
+Figure 3-12 shows the listing of a program before NEW is typed.
+
+List
+
+16 R: DISAPPEARING PROGRAM
+
+20 T: THIS PROGRAM IS ABOUT TO
+
+$@ 1T: BE CLEANED OuT oF
+
+40 T: THE COMPUTER'S MEMORY
+
+ee r : IF THERE IS QNYTHING VALUABLE
+
+76 T:HERE., IT SHOULD FIRST BE
+
+80 T: SAVED TO CASSETTE OR DISK
+
+90 T:BEFORE THE COMMAND, ''NEW'*
+
+100 T:IS TYPED.
+
+11@ €
+
+READY
+
+at
+
+Figure 3-12
+
+Figure 3-13 shows the attempted listing of a program after NEW is typed. =
+
+NEW
+
+READY
+
+LIsT
+
+READY
+
+8
+
+Figure 3-13
+
+42 Executive Commands—NEW
+
+===== PAGE 51 =====
+ee eet | ie
+4 New Variables
+The VNEW: command clears the numeric and/or string variables by using the command
+as follows:
+VNEW:$ (clears the string variables)
+VNEW:# (clears the numeric variables)
+VNEW: (clears both string and numeric variables)
+The VNEW: command does not erase the program from memory.
+Figure 3-14 shows a program with string and numeric variables.
+> on
+LIsT
+10 R: INFORMATION
+2@ T:WHAT IS YOUR NAME? \
+30 A: SNAME
+40 T: HOW OLD ARE YoU? \
+S@ a:na
+66 T:DO YOU READ COMIC BOOKS? \
+78 a:SCOMICS
+60 M: Y, SURE, OF COURSE, SOME, OCC
+3908 TY: WHO IS YOUR SUPER HERO? \
+9S TN: SORRY ABOUT THAT, PRESS RET
+URN
+100 A: SHERO
+4110 T: THANK you
+i2@ €
+READY
+a
+Figure 3-14
+Executive Commands—VNEW 43
+i
+
+===== PAGE 52 =====
+Figure 3-15 shows the variables with values assigned. ES
+WHAT IS YOUR NAME? SARAH
+HOW OLD ARE You? 12
+DO YOU READ COMIC BOOKS? SURE I DO
+WHO IS YOUR SUPER HERO? ASTRO WOMAN
+THANK You
+READY
+EI
+REaDY
+T: SNAME
+SARAH
+Tia
+12
+T:SCOmIcs
+SURE IDO
+T:SHERO
+ASTRO HOMAN
+ES
+
+Figure 3-15
+44 Executive Commands—VNEW
+
+===== PAGE 53 =====
+s Figure 3-16 shows the variables after VNEW has been typed.
+READY
+VNEH
+READY
+T: SNaAME
+SNAME
+Tr:8a
+e
+T:S$COmMIcS
+SCOMICS
+T:SHERO
+SHERO
+w
+Figure 3-16
+Executive Commands—VNEW 45
+j
+
+===== PAGE 54 =====
+en
+Dump String Variables e
+If you want to see the contents of all the string variables in the computer's memory, type
+DUMP and press the key. The DUMP command does not clear the memory,
+and therefore is helpful when you want to find errors in your program.
+The program in Figure 3-17 is a listing of a program.
+10 R:AMADLIB
+2@_T: PLEASE ANSWER THESE
+QUESTIONS:
+3@ T:!NAME AN UGLY COLOR: \
+40 a:S$COLOR
+S@ T:NAME A CITY: \
+60 A:SCITY
+7@ T:!NAME & FAMOUS MOVIE STARLET? \
+80 A:SSTARLET
+9@ T:WHAT'S YOUR GREATEST FEAR?
+100 A:SFEAR
+110 T:} CCLEAR SCREEN
+120 T: NEWS FLASH
+130 T:
+140 T:LAST WEEK, THE Famous
+ACTRESS
+150 T:$S5TARLET, TRAVELED To $CITY
+16@ T:WEARING DARK SUNGLASSES AND A
+170 T:S$COLOR HAT 50 THAT NO ONE g
+18@ T:KNOW THAT SHE WAS AFRAID OF
+190 T:SFEaR.
+200 T: THE END
+210 E:
+READY
+5
+Figure 3-17
+Figure 3-18 is a RUN of that program.
+PLEASE ANSWER THESE QUESTIONS:
+NAME AN UGLY COLOR: LIME GREEN
+MAME ACITY: SUNNYVALE
+NAME & FAMOUS MOVIE STARLET? MS.
+FORTUNE
+WHAT'S YOUR GREATEST FEaR?
+BEING KISSED BY A GIANT FROGE
+&
+46 Executive Commands —DUMP
+
+===== PAGE 55 =====
+= NEWS FLASH
+LAST WEEK, THE Famous ACTRESS,
+MS. FORTUNE, TRAVELED TO SUNNYVALE
+WEARING DARK SUNGLASSES AND a
+LIME GREEN HAT SO THAT NO ONE WOULD
+KNOW THAT SHE HAS AFRAID OF
+BEING KISSED BY 4 GIANT FROG.
+THE END
+
+READY
+a
+
+Figure 3-18
+
+Figure 3-19 is a DUMP of the variables in that program.
+DUMP
+SCITY=' SUNNYVALE’
+SCOLOR='LIME GREEN’
+SFEQR='BEING KISSED BY & GIANT FROG’
+= SSTARLET='MS. FORTUNE’
+
+5
+
+Figure 3-19
+
+Executive Commands—DUMP 47
+
+===== PAGE 56 =====
+Load a Pr 2
+ae =
+=) i. I
+) 1B _
+The LOAD command tells the computer to LOAD a program you have saved on cassette
+or diskette into the computer memory. Ee
+LOAD C:
+.
+Loading From Cassette
+In order to LOAD a program from cassette (indicated by C:), type LOAD C: and press
+the key.
+The computer will beep, signaling you to position the cassette tape and press the PLAY
+button on the cassette recorder. When you are ready, press Q]SU0 on the computer
+console to start the tape loading. If you tum up the volume control on your television set, &
+you will soon hear a series of beeps. This tells you that the cassette is loading properly.
+48 Executive Commands—LOAD, LOAD C:
+
+===== PAGE 57 =====
+LOAD D: FILENAME
+=
+
+4 Loading From Diskette
+If you are loading a program saved on a diskette, you must know the name of the pro-
+gram. For example, if the name of the program you want to LOAD is COLORS.PLT,
+you would type LOAD D:COLORS.PLT and press the key. The D: tells the
+computer you are loading from the disk drive. Again, if the volume control is turned up
+on the television set, you will begin hearing a series of fast beeps telling you that a pro-
+gram is being loaded.
+The LOAD command does NOT clear out memory before loading a program. This allows
+you to merge two programs —that is, load one program into memory on top of another
+one. When you merge two programs, the program loaded last will write over and replace
+any statements having the same line numbers as the first program.
+Note: Unless you want to merge two programs, you should always type NEW to clear
+memory before loading a program.
+
+S Figures 3-20 and 3-21 show two different programs, Program One and Program Two.
+S_R: PROGRAM ONE 350 C:#Y=?7\Se+5
+10 R:CITYSCAPE 36@ GR:GOTO Hx, ny
+2@ GR: CLEAR 37@ GR: SCDRAW 4; TURN 144)
+3@ U:*BUILDINGS 360 C:aN=HN+4
+40 U:*SKY 390 JCHN< 20): *MORE
+set: THE CITY AT NIGHT 400 E:
+100 *BUILDINGS READY
+11@ GR:GOTO 75,-31;CLEaR i
+12@ C:sD-=e
+13@ CimL=1
+140 *NEXTBUILD
+15@ C:8C=?\3+1 CRANDOM COLOR}
+16@ JCHC=8L):*NEXT BUILD
+17@ GRC8C=1): PEN RED
+18@ GRCHC=2):PEN YELLOW
+190 GRC#C=3):PEN BLUE
+200 C:#X=?\15+5 CRANDOM BLDG
+WIDTH)
+210 C:#Y=?\30+S5 CRANDOM BLDG
+HEIGHT]
+22@ GR: TURNTO © ;DRAW BY; TURNTO
+180360 nY
+230 GR: TURNTO -90;G0 sx; TURNTO 0;
+FILL ay
+240 C:BD=ND+nK
+250 C:#L=nc
+:o a ‘hal
+27@ JCHD<150) : *NEXTBUILD
+see “SKY THE CITY AT NIGHT
+310 GR: PEN YELLOW
+32@ C:un=e READY
+330 *MORE a
+34@ C:#K=?\158-79
+
+> Figure 3-20
+
+Executive Commands—LOAD D: 49
+
+===== PAGE 58 =====
+S_R: PROGRAM THO &
+
+308 *SKY
+
+31@ GR:GOTO 30,40
+
+32@ U:*MOON
+
+330 C:nS=0
+
+340 *MORESTARS
+
+35@ C:#K=?\158-79
+
+360 C:nvY=7\Se+S
+
+37@ C:mC=?7\5+4
+
+360 GRCHC=1):PEN RED
+
+39@ GRCHC=2):PEN BLUE
+
+40@ GRCHC=3): PEN YELLOW
+
+410 GR:GOTO 8x, 8Y
+
+420 Cias=Hs+1
+
+43@ JC#S<70): *MORESTARS
+
+440 E:
+
+45@ *MOON
+
+46@ GR: PEN YELLOW -
+
+47@ GR: TURNTO 7e gree
+
+480 GR: 38C DRAW 1; TURNS)
+
+49@ GR: TURNTO Se
+
+S@@ GR: SCTURN -20;FILL 5)
+
+51@ E:
+
+READY
+
+s
+Figure 3-21
+
+Figure 3-22 shows what happens if you LOAD Program Two on top of Program One.
+
+S PROGRAM THO 40@ GRCHC=3): PEN YELLOW
+
+1@ R:CITYSCAPE 410 GR: TOTO sk, nv
+
+2@ GR: CLEAR 420 C:mS=us+1
+
+3@ U:*BUILDINGS 43@ JC#S<70) : *MORESTARS
+
+40 U:*SKY 440 E:
+
+Se T: THE CITY AT NIGHT 45@ *MOON
+
+6e E: 46@ GR: PEN YELLOW
+
+100 *BUILDINGS 47@ GR: TURNTO 7e
+
+11@ GR:GOTO 75;-31;CLEAR 48@ GR: 36CDRAW 1; TURN 5S?
+
+12@ C:"D=e 49@ GR: TURNTO Se
+
+13@ C:#L=1 S@@ GR: SC TURN —20;FILL 5)
+
+140 *NEXTBUILD 51@ E:
+
+15@ C:#C=?\3+1 CRANDOM COLOR]
+
+160 JCHC=HL >: *NEXTBUILD READY
+
+17@ GRC#C=1): PEN RED 8
+
+16@ GRC#C=2):PEN YELLOW
+
+19@ GRCHC=3) : PEN BLUE
+
+200 C:#K=?\15+5 [RANDOM BLDG
+
+WIDTH}
+
+21@ C:#Y=?\30+5 CRANDOM BLDG
+
+HEIGHT}
+
+220 GR: TURNTO @;DROW BY; TURNTO
+
+180 ;G0 nY
+
+230 GR: TURNTO-90;GO0 "x; TURNTO @;
+
+FILL sy
+
+240 C:#D=uD+nx
+
+25@ C:#L=nc
+
+260 GR: TURNTO 180;G0 nY
+
+27@ JCHD<150) : *NEXTBUILD
+
+3ee *SKY
+
+31@ GR:GOTO 30,40
+
+32@ U:*MOON
+
+33@ Cins=e
+
+348 *MORESTARS
+
+3S@ C:#kX=7\156-79 THE CITY AT NIGHT
+
+360 C:sY=?\5e+5
+
+37@ CimC=?\5+4 READY
+
+38@ GRCHC=1):PEN RED ®
+
+390 GRCHC=2): PEN BLUE g
+Figure 3-22
+
+50 Executive Commands—LOAD D
+
+===== PAGE 59 =====
+D Save a Pr
+30T: 1S
+40T: FRED
+SAVE C:
+&. yy) ae wt
+"Dela aaa nets tg
+Secdineateetentiedh ieee
+The SAVE command lets you save all or any part of a program you have written. In
+order to SAVE a program, you must have either-a cassette or disk drive attached to your
+a computer. You can get a printout by saving your program to the printer.
+SAVE C:
+=
+Save to Cassett
+To SAVE a program to cassette, type SAVE C:. The computer will beep twice, which
+tells you to position the cassette type, and press the PLAY and RECORD buttons (at the
+same time). Then press the key on the computer console to begin saving your
+program. As this occurs, you will hear a high-pitched hum and a series of low beeps.
+When you SAVE to cassette in PILOT, you cannot give the program a name. You must
+make a note as to the location of the program on the tape by the numbers shown in the
+counter window on the recorder. Then when you want to LOAD the program back into
+memory, you must first move the tape until that number shows in the counter window.
+If you want to SAVE only part of your program, you need to type the line numbers you
+= want saved. For example, typing SAVE C:10,50 will SAVE lines 10 through 50 to the
+cassette.
+Executive Commands—SAVE, SAVE C: 51
+f
+
+===== PAGE 60 =====
+SAVE D:FILENAME
+ian nl a
+Save to Diskette <
+If you are saving to a diskette, you must give the program a name of up to seven
+characters. You can extend the program name by adding a period and three more
+characters. This is helpful if you have more than one version of a program. For example,
+if Version 3 of your COLOR program was in memory and you wanted to SAVE it on a
+diskette, you might type:
+SAVE D:COLORS.V03
+The disk drive will start humming, and if your television volume control is turned up
+slightly, you will hear the beeps telling you that the program is being saved.
+If you are saving only part of the program to diskette, you need to type in the lines you
+want saved after the program name. For example, typing SAVE D:MODULE1 10,50 will
+SAVE only lines 10 through 50 on the diskette under the program name, “MODULE1.”
+4
+SAVE P
+a eee
+save to Printer
+To get a listing of part or all of your program printed on paper instead of the television
+screen, you must SAVE your program to the printer. To get a listing of your whole pro-
+gram, turn on the printer, and type SAVE P:. If you only want a listing of lines 20
+through 50, type SAVE P:20,50.
+52 Executive Commands—SAVE D:, SAVE P:
+
+===== PAGE 61 =====
+. Disk Operating System
+
+When you want to work with your disk files for any reason, type DOS and press (50073.
+This will bring up the DOS Menu (Figure 3-23) to your television screen.
+
+o~
+
+DISK OPERATING SYSTEM II VERSION 2 -Os
+
+COPYRIGHT 1968 aTARI
+
+&. DISK DIRECTORY I. FORMAT DISK
+
+B. RUN CARTRIDGE J. DUPLICATE DISK
+
+Cc. COPY FILE K. BINARY SAVE
+
+O. DELETE FILECS) L. BINARYL oad
+
+E. RENAME FILE M. RUN AT ADDRESS
+
+F. LOCK FILE MN. CREATE MEM. Say
+
+G. UNLOCK FILE 0. DUPLICATE FILE
+
+HM. WRITE DOS FILES
+
+= SELECT ITEM OR CISD) For menu
+Figure 3-23
+Select the function you want to perform from the DOS Menu, type the letter for that func-
+tion, and press (7329. For example, if you want to see what files are in the Disk Direc-
+tory, you would type the letter A (see DOS Menu) and press twice. You will then
+see a listing of all the files in the directory (Figure 3-24). Our sample Disk Directory is
+listed on the following page; yours will have different filenames.
+Executive Commands—DOS 53
+:
+
+===== PAGE 62 =====
+pos svS e39 B
+pup SYS 042
+PILTDEM Tia e586
+VINCE PLT ees
+PILTDEM TiB O32
+PILTDEM 128 656
+PILTDEM 12B 046
+256 FREE SECTORS
+SELECT ITEM OR CISTI For menu
+oF
+Figure 3-24
+54 Executive Commands—DOS
+
+===== PAGE 63 =====
+_—_— ..
+)
+4 cd
+AAS
+>
+
+===== PAGE 64 =====
+GR:
+a
+Graphics 2
+The GR: (GRAPHICS) command tells the computer you are going into the Graphics mode
+to draw a picture. Figure 4-1 shows you what the basic Graphics screen looks like.
+Figure 4-1
+The black background is for drawing, and the blue strip at the bottom of the screen (the
+text window) is for displaying messages or writing commands. z
+56 Graphics—GR:
+
+===== PAGE 65 =====
+> TURTLE GRAPHICS
+The method by which you draw is called turtle graphics. Imagine that the screen is the
+playground of an invisible turtle who draws on the screen with a tiny pen. The
+GRAPHICS commands tell the turtle where to go and what to do with the pen.
+The GR: command does not draw anything by itself; it must be used with Graphics Sub-
+commands. For example, the PEN Subcommand tells the turtle either to lift the PEN or to
+draw in one of four colors. The Graphics Subcommands are explained in more detail on
+the pages to follow.
+Commanding the turtle to move is like giving someone directions to the nearest gas sta-
+tion: either you give directions where (go to Fourth and Main St.), or you give specific
+directions which way and how far (go 3 blocks to Fourth, take a right and go 4 blocks to
+Main St.).
+WHERE TO GO - X AND Y COORDINATES
+The Graphics screen is really an invisible grid of numbered lines which looks like a piece
+= of graph paper. The center of the screen is a point (called the origin) where the X and Y
+axes cross.
+The X axis goes horizontally from the left (-79) to right (+79). The Y axis goes vertically
+from the bottom of the screen (-47) to the top of the screen (+47). The bottom of the
+screen includes the text window.
+Every point on the screen is named by two numbers (X,Y). These two numbers are called
+the X and Y coordinates of the point. They tell the distance horizontally and vertically
+from the point to the origin. Figure 4-2 shows the screen layout with some labeled points.
+47
+40,40
+-79 +79
+| oameeetel
+3!
+= Figure 4-2
+Graphics—GR: 57 .
+
+===== PAGE 66 =====
+The Graphics Subcommands GOTO, DRAWTO, and FILLTO use coordinates to tell the ES
+turtle where to go.
+WHAT DIRECTION AND HOW FAR TO GO
+The turtle is always at the center of an invisible circle which moves with him wherever he
+goes. This circle is divided into 360 one-degree angles, with the 0-degree angle pointing
+up.
+The turtle is always pointing in some direction within this circle, and can turn to the right
+(+) or left (-) in 360 different angles. Figure 4-3 shows some different headings. The
+Graphics Subcommands TURNTO and TURN, change the turtle’s direction.
+
+Figure 4-3
+Each step the turtle takes, either forward or backward, is called a turtle unit. The units
+are the same size as the individual units making up the invisible grid; therefore, if the tur-
+tle moved from the origin to the right edge of the screen, he would move 80 turtle units.
+The Graphics Subcommands GO, DRAW, and FILL tell the turtle to move forward or
+backwards in whatever direction he is facing.
+INITIAL LOCATION, HEADING, AND PEN COLOR
+When you first enter the Graphics mode, the turtle is located at 0,0 (the origin). He is fac-
+ing O degree (straight up) and the PEN color is yellow.
+58 Graphics—GR:
+
+===== PAGE 67 =====
+J SHORTCUTS FOR GRAPHICS PROGRAMMING
+You can program more than one GRAPHICS subcommand in the same program state-
+ment. Each subcommand MUST be separated by a semicolon (;). For example:
+GR:GOTO 0,0; DRAW 10; TURN 45; PEN RED; DRAW 5
+If you want a series of subcommands repeated a specific number of times, enclose the
+series of subcommands in parentheses and precede the left parenthesis by the number of
+times you want that series repeated. For example, the program in Figure 4-4 shows the
+long way to draw a box. The program in Figure 4-5 shows a short way to to draw the
+same box.
+10 R:LONG WAY BOX
+2@ GR:ICLEAR
+25 GR:GOTO -15,-5
+3@ GR: DRAW 30
+4@ GR: TURN 90
+S@ GR:DRAW 30
+6@ GR: TURN 90
+7@ GR:DRAW se
+8@ GR: TURN 90
+90 GR:DRAW Ze
+100 GR: TURN 90
+> 110 E:
+bg os
+a
+Figure 4-4
+1@ R: SHORT WAY BOX
+2@ GR:CLEAR
+3@ GR:GOTO -15,-5
+40 GR: 4(DRAW 36; TURN 90)
+Se E:
+READY
+| a
+REaDY
+Fy
+s Figure 4-5
+Graphics—GR: 59
+
+===== PAGE 68 =====
+GR:CLEAR
+a
+—. $$$ eee
+Clear the Graphics Screen
++ 2
+4 A.
+GR: CLEAR
+GR:CLEAR erases what is on the screen. When you enter a new GR: command the pic-
+ture begins at the point you left off with the last drawing.
+Figures 4-6 through 4-8 show you how GR:CLEAR can be used in a program. The pro-
+gram draws a pentagon, pauses for you to look at it, then clears the screen and draws a
+star. The program continues to go back and forth between the pentagon and the star, giv-
+ing you a flashing effect.
+1@ R: THE PENTAGON AND THE STAR
+2@ GR:CLEAR
+3@ *LOoP
+40 U:*PENTAGON
+S@ Pa:s
+6@ GR:CLEAR
+7@ U:*STAR
+8@ Pa:s
+9@ GR:CLEAR
+10@ J:*LOOP
+110 *PENTAGON
+12@ GR:GOTO -15,¢
+13@ GR: TURNTO -is
+14@ GR:S5(DRAW 20; TURN 72)
+150 E:
+168 *STaR
+17@ GR:GOTO -15,¢
+180 GR: TURNTO 15
+19@ GR:SCDRAW 31; TURN 144)
+200 E:
+READY
+Z
+60 Graphics—GR:CLEAR
+
+===== PAGE 69 =====
+Figure 4-6
+Figure 4-7
+Figure 4-8
+Graphics—GR:CLEAR 61
+
+===== PAGE 70 =====
+__GRGOTO.
+Go to the Point X.Y S
+e
+GR: GOTO 30,30
+
+===== PAGE 71 =====
+= The command GR:GOTO X,Y tells the turtle to pick up the pen, move to the point with
+coordinates X and Y, and put the pen down there. The pen leaves a dot on the screen at
+the point (X,Y). Figure 4-9 is a short program that makes “The Big Dipper” using GOTO
+commands.
+10 R: THE BIG DIPPER
+15 GR:CLEAR
+2@ GR:GOTO 40,40
+3@ GR:GOTO 20,35
+4@ GR:GOTO 5,25
+S@ GR:GOTO -ie,10
+6@ GR:GOTO -10,-5
+7@ GR:GOTO -3e.-10
+80 GR: GOTO -40°5
+98 T: THE BIG DIPPER
+100 E:
+READY
+THE BIG DIPPER
+READY
+a
+Figure 4-9
+= The X and Y coordinates in the GOTO command may either be numbers, numeric
+variables, or numeric expressions. The program in Figure 4-10 uses numeric variables #X
+and #Y as coordinates. These variables are given random values so the dots appear at
+random on the screen. (The color of the dots is also chosen at random.)
+1@ R:WIGHT SKY
+20 GR:CLEAR
+ze T: NIGHT SKY
+40 C:ms=e
+S@ *MORE
+6@ C:#K=?7\158-79
+70 C:8¥=?\47
+8@ Crec=7\T+1
+9@ GRCHC=1): PEN RED
+100 GRCHC=2) : PEN BLUE
+11@ GRCHC=3):PEN YELLOW
+12@ GR:GOTO x nY
+13@ Cims=us+1
+140 JC#5<100): “MORE
+15@ E:
+NIGHT SKY
+
+is
+
+.
+
+Figure 4-10
+Graphics—GR:GOTO 63
+
+===== PAGE 72 =====
+GR:DRAWTO
+ge ce
+D to the Point X.Y e
+raw TO OInT A,
+a =
+GR: DRAWTO -20,20
+a
+2
+GR: DRAWTO 30,30
+GR* DRAWTO 0,0
+GR: PEN UP
+The command GR:DRAWTO X,Y tells the turtle to put the pen down and draw a straight
+line to the point with coordinates X and Y. The line is drawn in the pen’s current color,
+64 Graphics—GR:DRAWTO
+
+===== PAGE 73 =====
+a and the turtle ends up at point X,Y. For example, the program in Figure 4-11 uses
+DRAWTO to make the outline of a barn.
+10 R:BaRN
+2@ GR:CLEAR
+3@ GR:PEN RED
+4@ GR:GOTO -30,40
+S@ GR:DRAWTO 45,40
+6@ GR:DRANTO 60,25
+7@ GR:DRANTO 65,5
+8@ GR: DRANTO 65°5
+9@ GR: DRAWTO 65,-30
+108 GR:DRAWTO -ie,-3e
+11@ GR: DRAWTO -10°5
+12@ GR:DRAWTO -15,25
+13@ GR: DRAWTO -30540
+14@ GR: DRAW TO -45,25
+15@ GR:DRANTO -se,'s
+16@ GR: DRAWTO -Se,-3e
+17@ GR: DRANTO -10,-30
+180 GR:GOTO 65,5
+19@ GR:DRANTO -se,s
+20@ GR:GOTO -35,36
+210 GR:DRAWTO -25,30
+22@ GR: DRAWTO -25,15
+23@ GR: DRANTO -35,15
+24@ GR: DRANTO -35.30
+25@ GR:GOTO -40,-%e
+26@ GR: DRAWTO -40,-10
+27@ GR: DRAWTO -20,-10
+26@ GR: DRAWTO -20,-30
+290 E:
+READY
+a
+= Figure 4-11
+The X and Y coordinates in the GOTO command may either be numbers, numeric
+variables, or numeric expressions. The “Modern Art 1” program in Figure 4-12 uses
+numeric variables #X and #Y as coordinates. These variables are given random values
+so the lines are drawn at random. The colors of the lines are also chosen at random.
+10 R: MODERN ART I
+20 *BEGIN
+3@ GR:CLEAR
+40 T:
+se T: MODERN ART
+60 C:#L=?\200+7
+7@ C:ss=e
+80 *MORE
+90 C:#k=?\158-79
+108 C:8¥=?7\94-47
+110 C:mc=?7\4
+12@ GRCHC=6) : PEN UP
+13@ GRCBC=1) :PEN RED
+140 GRC#C=2) : PEN BLUE
+15@ GRCHC=3) :PEN YELLOW
+160 GR:DRANTO Bx ,nY
+170 CrmS=as+4
+160 JCHS<mL> :*MORE
+19@ Pa:1000
+200 J:*BEGIN
+READY
+s
+3 Figure 4-12
+Graphics—GR:DRAWTO 65
+;
+
+===== PAGE 74 =====
+.
+GR:FILLTO
+a
+
+a . eae s ae =
+
+Fill to the Point X,Y
+The command GR:FILLTO X,Y tells the turtle to draw a line to the point with coordinates
+X and Y. As he moves, the black background between the turtle and any figure or line
+directly to his right is filled with the current pen color. Figure 4-13 shows how FILLTO is
+used to fill parts of a barn in red.
+1@ R:RED BARN |
+2@ GR: CLEAR |
+3@ GR: PEN RED
+4@ GR:GOTO -30,40 |
+i A
+6@ GR:DRAWTO 60,25
+7@ GR:DRANTO 65-5
+8@ GR: DRAWTO 65,5
+9@ GR: DRAWTO 65,-se
+10@ GR: DRAHTO -ie,-se
+110 GR:FILLTO -10)5
+12@ GR:FILLTO -15,25
+13@ GR:FILLTO -30,40
+140 GR: DRAWTO -45,25
+15@ GR:DRAWTO -5e,5
+160 GR:DRAWTO -Se,-3e
+17@ GR: DRAWTO -10,-30
+18@ GR:GOTO 65,5 READY
+190 GR: PEN ERASE a
+200 GR: DRAWTO -10,5
+210 GR: PEN RED
+22@ GR: DRAWTO -Se.5
+23@ GR:GOTO -35,36
+24@ GR:DRAWTO -25,30
+25@ GR: DRAWTO -25,15
+260 GR: DRAWTO -35,15
+27@ GR: FILLTO -35,30
+260 GR:GOTO -20,-%0
+29@ GR:DRAWTO -20,-10
+3@@ GR: DRAWTO-40.-10
+310 GR:FILLTO -40,-30
+320 E:
+READY
+a
+
+Figure 4-13
+
+If there is nothing to block the color filling in before it reaches the right edge of the screen,
+the filling “wraps around,” and color continues to fill in from the left edge until a barrier is
+reached. When there is nothing blocking the fill anywhere in its path, the line being filled
+from becomes its own barrier. This is shown in Figure 4-14.
+66 Graphics—GR:FILLTO
+
+===== PAGE 75 =====
+e 1@ R: FILLING UP SPACE
+2@ GR:GOTO 30,45; TURNTO 180;PEN
+YELLOW
+3@ U:*PaRTBOX
+40 GR:GOTO -40,15;TURNTO 90;PEN
+YELLOW
+50 U:*PARTBOX
+6@ GR: GOTO -S@,-20;TURNTO 30;PEN
+YELLOW
+70 U:*TRIANGLE
+8@ GR:GOTO 15,@;TURNTO 90;PEN
+YELLOW
+90 U:*BOX
+1@@ GR:GOTO 50,5; TURNTO -30;PEN
+YELLOW
+120 U:*TRIANGLE
+20@ GR:GOTO -Se,-3e
+210 GR:PEN RED asap
+22@ GR:FILLTO Se,3e .
+23@ GR:PEN YELLOM;GOTO 51,31
+299 E:
+400 “Box
+410 GR: 4C(DRAW 10; TURN 90>
+42@ E:
+500 *PAaRTBOX
+51@ GR: 3(DRAW 20; TURN 90>
+52@ E:
+600 *TRIANGLE
+610 GR: 3(DRAW 15; TURN 120)
+620 E:
+READY
+a
+S Figure 4-14
+FILLTO, like GOTO and DRAWTO, may use either numbers, numeric variables, or
+numeric expressions as coordinates.
+Graphics—GR:FILLTO 67
+
+===== PAGE 76 =====
+GR:TURNTO
+
+Turn to N Degrees e
+The command GR:TURNTO N tells the turtle to turn in place until he is heading toward
+the angle N degrees. The top of the screen is 0 degree. Positive angles (+) are measured
+clockwise from 0 degree; negative angles (-) are measured counterclockwise.
+Since the turtle is invisible on the screen, you cannot see him turn, but you can see the
+direction of his new heading by executing a GO, DRAW, or FILL command after the
+TURNTO. Figure 4-15 shows a program that uses TURNTO to let you make a design on
+the screen with right angles and 10-unit lines.
+1@ Ri SKETCHING PROGRAM 310 J:*LINE
+2@ T: THIS PROGRAM LETS You DRAW A 320 *LEFT GR: TURNTO -90
+3@ T:DESIGN ON THE GRAPHICS 330 *LINE GR: DRAW 10
+SCREEN 34@ J: *COMMAND
+40 T:USING THE COMMANDS:
+Se T: READY
+6e ee *
+7@ T:
+80 T:IGHT
+9e T:Mert
+1ee T:@Lear
+410 T:
+12@ T:PRESS RETURN TO BEGIN...
+13@ a:
+14@ “BEGIN
+15@ GR:CLEAR
+16@ T: STARTING X LOCATION? \
+170 arex
+18@ T: STARTING Y LOCATION? \
+190 a:ny
+2@@ GR:GOTO #x,nY
+218 “COMMAND
+220 T:WHICH Way (DOGG or Gears? \
+330 Se: hp hootnsSescnt ,mLert,
+“BEGIN
+260 “UP GR: TURNTO ®@
+27@ J:*LINE
+280 “DOWN GR: TURNTO 180
+290 J:*LINE
+3@@ “RIGHT GR: TURNTO 90
+68 Graphics—GR:TURNTO
+
+===== PAGE 77 =====
+WHICH Hay (DD oR Ear)? D
+
+WHICH Hay REEL oR Fe: .
+
+WHICH Way Chi OR BLEARI? R
+
+WHICH Way CDOS orGLEaRD? @
+
+Figure 4-15
+The directional angle, N, in the GR: TURNTO N command may be either a number, a
+numeric variable, or a numeric expression. The program in Figure 4-16 uses TURNTO
+with the numeric variable, #T, to create a starburst pattern with lines coming out from the
+origin every 5 degrees.
+> 10 R: STARBURST
+20 C:sT=e
+25 GR:CLEAR
+3e@ *LOoP
+4@ GR:GOTO 0,0
+S@ GR: TURNTO ut
+SO GR:GO 3 ;DRAN 25
+70 CisT=aT+s
+80 JCHT< 360): "LOOP
+90 E:
+READY
+Ey
+Figure 4-16
+Graphics—GR:TURNTO 69
+
+===== PAGE 78 =====
+GR:TURN
+2
+a
+The command GR: TURN N tells the turtle to turn N degrees clockwise (+N) or
+counterclockwise (-N) from the direction he is currently facing. Since the turtle is invisible
+on the screen, you cannot see him turn, but you can see the direction of his new heading =
+by executing a GO, DRAW, or FILL command after the TURN. Figure 4-17 shows a pro-
+gram that makes a 13-pointed star with a 166-degree turn at each point.
+10 R:13-POINTED STAR
+20 C:mc=e
+3@ GR:CLEAR
+4@ GR:GOTO -10,-s
+S@ GR: TURNTO 14
+6@ *LOOP
+7@ GR: DRAW Se
+80 GR: TURN 166
+90 CisC=mC+41
+10@ JCHC<14) :*LOOP
+4110 E:
+: E™
+Ey
+READY
+Ea
+Figure 4-17
+70 Graphics—GR:TURNTO
+
+===== PAGE 79 =====
+= The directional angle N, in the TURN (N degrees) command can be either a number, a
+numeric variable, or a numeric expression. The program in Figure 4-18 draws first a
+triangle, then a square, then a pentagon, and so on, all on top of each other. The
+amount the turtle turns in line 90 is 360 degrees divided by the number of sides in the
+polygon he is currently drawing.
+10 R: EUCLID
+20 C:#s=3
+3@ GR:CLEAR
+40 “BEGIN
+S® C:"C=e
+6@ GR:GOTO 10,-30
+7@ GR: TURNTO -98
+8e *LOOP
+9@ GR: DRAW 20; TURN 360785
+10@ C:sc=nc+i
+110 JCuC<H5>:*LOOoP
+12@ Cimssus+4
+430 J€8S<(21): "BEGIN
+1408 E:
+READY
+s READY
+a
+Figure 4-18
+Graphics—GR:TURN 71
+j
+
+===== PAGE 80 =====
+GR:GO
+Ey
+ny). ee
+Go N Units $
+‘
+6R: GO 35
+v
+GR? TURN 4oO
+6R: GO 20
+Ces
+GR: TURN ISO
+72 Graphics—GR:GO
+
+===== PAGE 81 =====
+= The GR:GO N command tells the turtle to pick up the pen, move N units in the direction
+he is facing, and put the pen down there. The turtle leaves a dot on the screen at the loca-
+tion where he ends up. The program in Figure 4-19 uses the GO command to draw a
+box with dotted lines.
+1@ R: DOTTED BOx
+2@ GR:CLEAR
+3@ GR:4C10CGO 3) ; TURN 90)
+40 E:
+READY
+a
+READY
+a
+
+Figure 4-19
+The number of units, N, in the GR:GO N command can be either a number, numeric
+variable, or a numeric expression. The program in Figure 4-20 tells the turtle to take a
+“random walk.” That is, he starts at the origin, turns a random number of degrees, goes a
+random number of units, turns at random again, moves at random again, and so on. At
+the end of this walk, all the places he stopped and turned are marked by dots on the
+screen.
+1@ R: RANDOM WALK
+20 *BEGIN
+3@ C:nc=e
+40 GR:CLEaR
+Se T: RANDOM WALK
+6@ GR: PEN YELLOW ;GOTO @,0;PEN RED
+7@ *LOOP
+8@ GR:GO 7\5
+9@ GR: TURN ?\360
+10@ C:sC=mc+i
+110 JCNC<(S08) :*LOOP
+120 T:
+13@ T:END OF WALK
+140 Pa:3900
+15@ J:*BEGIN
+READY RANDOM WALK
+ry END OF WALK
+
+Figure 4-20
+
+Graphics—GR:GO 73
+
+===== PAGE 82 =====
+GR:DRAW
+s
+ES
+Draw N Units
+yr >
+GR: DRAW 35
+:
+GR: TURN 90
+GR: DRAW 20
+|
+GR: DRAW 50
+74 Graphics—GR:DRAW |
+
+===== PAGE 83 =====
+S The command GR:DRAW N tells the turtle to draw a line, N units long, moving in the
+direction he is currently facing. The line is drawn in the current pen color. The program in
+Figure 4-21 uses the DRAW and TURN commands to make a simple house.
+
+1@ R: SIMPLE HOUSE
+2@ GR: CLEAR
+3e T: HOUSE
+4@ GR:GOTO -15,10
+S@ GR: TURNTO 96
+6@ GR: DRAW 30; TURN 90
+7@ GR: DRAW 303 TURN 90
+8@ GR: DRAW 303; TURN 90
+20 GR: DRA ZO TURN 30
+10@ GR:DRAW 30; TURN 120
+11@ GR: DRAW 3e3;TURN 120
+12@ E:
+, ES
+a
+HOUSE
+READY
+a
+Figure 4-21
+The number of units, N, in the GR:DRAW N command can be either a number, a
+numeric variable, or a numeric expression. Figure 4-22 shows a program that draws
+= spirals at any angle you choose. Each time the turtle turns, the side of the spiral grows
+longer by the amount you type into the computer.
+1@ R:SQUTRAL
+2@ GR:CLEAR
+3@ “BEGIN
+40 T: saurraL
+Se T:
+6@ T: TURNING ANGLE €1-17997\
+78 a:na
+8@ T:SPEED OF GROWTH ¢1-1097 \
+90 a:ar
+10@ GR:CLEAR;GOTO ©,0;TURNTO @
+110 T: SQUTRAL
+120 T:
+125 T:ANGLE=sa GROWTH =r
+13@ C:us=0
+140 *MORE
+150 GR:DRAH mS ;TURN wa
+160 C:inSs=use+n SQuIrRat
+198 a
+200 M: Y,suRE OK ,ALRIGHT
+210 JY:*BEGIN
+22@ GR:aquIT
+230 E:
+READY
+a
+Figure 4-22
+Graphics—GR:DRAW 75
+
+===== PAGE 84 =====
+GR:FILL
+=
+Fill N Units e
+The GR:FILL N command tells the turtle to draw a line, N units long, moving in the
+direction he is currently facing. As he moves, the black background between the turtle and
+any figure or line directly to his right is filled in with the current pen color. Figure 4-23
+shows how FILL can be used to draw a solid triangle, square, or circle.
+1@ R:SOLIDS
+2@ GR: CLEAR
+3@ T: TRIANGLE SQUARE CIRCLE
+40 GR:GOTO -S0,0;TURNTO 150;PEN
+S@ U:*TRIANGLE
+6@ GR:GOTO -15,10;TURNTO 90;PEN
+BLUE
+70 U:*SQUuAaRE
+8@ GR:GOTO 40,10; TURNTO 90;PEN
+YELLOW
+90 U:*CIRCLE
+100 E:
+200 *TRIANGLE
+21@ GR: 2(DRAW 20; TURN 120)
+22@ GR: FILL 19
+23@ E: TRIGQNGLE SQUARE CIRCLE
+see *sauareE as aos &
+31@ GR: 3(DRAW 20; TURN 90> Hs
+32@ GR:FILL 20
+33e@ E:
+400 “CIRCLE
+410 GR: 16CDRAW 2; TURN 10)
+420 GR:18CFILL 23 TURN 10)
+READY
+zs
+Figure 4-23
+Note: To color in a polygon (such as a triangle, square, or circle) using the FILL com-
+mand, you must first DRAW the right half of the polygon and then FILL the left half.
+Sometimes, the filled side must be shorter than the drawn side so that the color will be
+completely contained within the figure. For example, in Figure 4-23, the two drawn sides
+of the triangle are 20 units long, whereas the filled side is only 19 units long.
+If there is nothing to block the color filling in before it reaches the right edge of the screen,
+the filling “wraps around,” and color continues to fill in from the left edge until a barrier is
+reached. When there is nothing blocking the fill anywhere in its path, the line from which
+the filling takes place becomes its own barrier. The “Sunset” program in Figure 4-24
+shows how FILL can be used to fill large areas of the screen with color.
+76 Graphics—GR:FILL
+
+===== PAGE 85 =====
+1@ R: SUNSET
+415 GR:CLEAR
+2@ U:*SUN
+3@ U:*REDCLOUDS
+40 U:*SKY
+45 U:*SUNBATH
+S@ E:
+100 *SUNBATH
+11@ GR:GOTO ©,-13,TURNTO 180;PEN
+YELLOW
+120 GR:FILL 26
+13@ E:
+200 *SKY
+21@ GR:GOTO @,10;TURNTO @;PEN
+BLUE
+22@ GR: FILL 37
+230 E:
+see *SUN READY
+31@ GR:GOTO @,10;TURNTO 90 a
+32@ GR: 36CDRAW 13 TURN 5S)
+33@ GR: 36CFILL 13 TURN 5)
+340 E:
+400 *REDCLOUDS
+410 GR: GOTO 0,10; TURNTO 90;PEN
+42@ GR: 36CFILL 1; TURNS)
+430 E:
+READY
+a
+Figure 4-24
+3 The number of units, N, in the GR:FILL N command can be either a number, a numeric
+variable, or a numeric expression.
+Graphics—GR:FILL 77
+’
+
+===== PAGE 86 =====
+Choose a Pen Color 2
+\,
+
+;
+y VAs
+
+B
+
+===== PAGE 87 =====
+3 The GR:PEN COLOR command tells the turtle to choose a pen color — yellow, red, or
+blue. For example, the program shown in Figure 4-25 draws polka dots in yellow, red,
+and blue in random positions on the screen.
+
+e ogee
+20 *BEGIN
+3@ C:mN=e
+4@ GR:CLEAR
+Se T: POLKa DOTS
+6@ *POLKA
+7@ C:#x=?\150-75
+80 C:#Y=?\62-31
+90 C:mC=?\3+4
+100 GRCHC=1): PEN YELLOW
+11@ GRC#C=2): PEN RED
+120 GRCHC=3):PEN BLUE
+13@ GR:GOTO #k,nY
+140 U:*DOT
+150 CiaN=um+s
+160 JCHN<5@>:*POLKA
+17@ Pa:i2e
+160 J:*BEGIN POLKA DOTS
+190 E:
+200 “DoT
+21@ GR: TURNTO 90
+22@ GR: 1@C DRAW 1; TURN 16)
+23@ GR:1@CFILL 1; TURN 18)
+240 E:
+READY
+a
+> Figure 4-25
+Graphics—GR:PEN 79
+
+===== PAGE 88 =====
+GR:PEN ERASE
+—
+You can also tell the turtle to draw in the black background color by using the command
+PEN ERASE. This command lets you “erase” anything you have already drawn by
+redrawing it in the black background color. Figure 4-26 shows how the PEN ERASE com-
+mand is used repeatedly to draw a star, erase it, and redraw it in a different place. This
+gives the effect that the star is moving.
+1@ R: SHOOTING STAR
+2@ *BEGIN
+3e@ C:nc=e
+40 GR:CLEAR
+se T: SHOOTING STARS
+6@ GR:GOTO -75,48
+7@ GR: TURNTO 120
+8e@ *LOOP
+9@ GR: PEN YELLOW
+100 U:*STAR
+11@ GR: PEN ERASE
+12@ U:*STAR
+13@ GR:GOS
+140 C:mC=mc+i
+15@ JCuC<32):*LOOP
+160 Pa:120
+irs stvese==
+19@ GR:SCORAW 10; TURN 144) SHOOTING STARS ES
+200 E:
+READY
+Figure 4-26
+80 Graphics—GR:PEN ERASE
+
+===== PAGE 89 =====
+GR:PEN UP
+5
+Lift the Pen
+The PEN UP command tells the turtle to pick up the pen off the screen. While the pen is
+up, all movement by the turtle will be invisible. To put the pen back “down,” you choose
+a pen color.
+Graphics—GR:PEN UP 81
+
+===== PAGE 90 =====
+GR:QUIT
+- Quitthe Graphics Mode —i‘éS
+‘ap
+
+br: a: )
+The command GR:QUIT lets you leave the Graphics mode and return to Text mode.
+Figure 4-27 shows you the screen before the GR:QUIT command, and Figure 4-28 shows
+you the screen after the GR:QUIT command.
+
+Figure 4-27 8
+
+82 Graphics—GR:QUIT
+
+===== PAGE 91 =====
+|
+fi
+Figure 4-28
+Graphics—GR:QUIT 83
+
+===== PAGE 92 =====
+: 5 SOUND AND PAUSE
+ &
+\
+=
+
+===== PAGE 93 =====
+:
+ie]
+Sound @
+The SO: command lets you create musical tones on your computer. You can program up
+to four tones to play at the same time. Each separate tone is then called a voice. When a
+group of people get together to sing, they divide into several voices: bass, baritone, alto,
+and soprano. When you program SO: commands, you can program several voices to
+play together. When different voices play a sound at the same time, it is called a chord.
+The tones you can play in PILOT range from 0 to 31. If you enter the command SO:13,
+you will hear a single tone equal to middle C on a piano. The command SO:1 produces
+a tone equal to the note C, one octave below middle C. The command $O:31 produces
+the note F sharp, one octave above middle C. SO:0 turns a tone OFF.
+Figure 5-1 shows a piano keyboard with the key numbers corresponding to the PILOT
+SOUND commands.
+7 123456789 2 GB 4156 17 18 19 20212223 24 25 262728 9 D3)
+° i i
+rE ak ice ie a4 A. E r* Boe Bar ‘ I. re B
+»> , ee em oe :
+"MIDDLE C"
+Figure 5-1
+Typing the commands in Figure 5-2 one at a time will produce a scale.
+WNEH
+READY
+so:is
+$0:15
+SO:17
+$0:18
+$0:2¢e
+$0:22
+$0:24
+$0:25
+$o0:8
+is
+Figure 5-2 2
+86 Sound and Pause—SO:
+
+===== PAGE 94 =====
+A scale is a series of notes played one after another. Think of a ladder on which you take
+= one step at a time to go up or down. A scale is similar, only with musical notes being
+played in a specific order. This particular scale covers the octave between middle C and C
+above middle C. An octave is a range of notes from one note to another note of the
+same name (higher or lower).
+The program in Figure 5-3 repeatedly moves up and down the scale shown on page 86.
+When this program is RUN, the computer moves through the SOUND commands so
+quickly that all the tones blur together, and this scale sounds like a siren. The PA: com-
+mands in this program increase the length of time the tones are sounded. Without them,
+this scale sounds like rumbling static. The PA: command is explained later in this section.
+10 R: SIREN
+20 *BEGIN
+3@ 50:13
+35 Para
+40 50:15
+45 Pari
+S@ 50:17
+SS Para
+60 50:18
+65 Pa:t
+7 50:20
+75 Para
+80 50:22
+85 Part
+90 50:24
+95 Para
+100 50:25
+y 105 Pari
+110 50:24
+115 Pari
+12@ 50:22
+125 Para
+130 50:20
+135 Pari
+14@ 50:18
+145 Pari
+150 50:17
+155 Pari
+16@ 50:15
+165 Pari
+170 50:13
+188 50:0
+190 J:*BEGIN
+READY
+r
+Figure 5-3
+The SO: command lets you create sound effects and tunes in your PILOT programs.
+J Figure 5-4 shows how you might use SOUND to reward correct answers in a simple
+; geography quiz program.
+Sound and Pause—SO: 87
+
+===== PAGE 95 =====
+1@ R:E-Z GEOGRAPHY Jee *DaHDaH
+2@ T:WELCOME TO E-z GEoGRaPHY 310 C:ac=e
+3e T: 32@ “LOOP
+40 T:I AM GOING TO ASK YouaA 33@ 50:13,17,20,25
+QUESTION 340 Pa:is
+S@ T: ABOUT UNITED STaTes 350 50:0,0,0,0
+GEOGRAPHY 360 C:mciné+i
+60 T: 370 JCHC<S): *LOOP
+29 T:@RE YOU READY? \ 380 E:
+8e a:
+90 T:GooD READY
+100@ T: a
+110 Pa:6e
+12@ T:WHICH OF THE FIFTY STATES Is
+13@ T:LOCATED FARTHEST TO THE
+ry WELCOME TO E-Z GEOGRAPHY
+15@ a:SSTATE I AM GOING TO 45K YOU & QUESTION ABOUT
+16@ M: ALasKa E HY.
+17@ TY:EXTRAORDINARY! YOUGOT IT! ET ee ee
+1806 UY:*DaHDAH ARE YOU READY? SURE
+190 JY: *THATSALL GOOD.
+si8 areaee Spaces ¢ 6° N WHICH OF THE FIFTY STATES IS LOCATED
+22@ T:alasKa FARTHEST TO THE EAST?
+230 TiALASKA EXTENDS 50 FAR WEST naxree
+THa NOPE, THE QNSWERIS.. . ALASKA,
+IeTERMAT SOME THE ALASKA EXTENDS 50 FAR WEST THAT IT
+SOT: DATE LINE INTO THE EAST. Sere THE ee nT SONAL DATE LINE
+260 T:
+27@ *THATSALL T: THAT'S ALL FOR NOH. SEE YOU AROUND
+280 T: THAT'S ALL FOR NOW. SEE You anne
+AROUND. 2
+290 E:
+Figure 5-4
+You may use either numbers or numeric variables to tell the computer which tones to play
+in a SO: command. Values greater than 31 are reduced to numbers between 0 and 31.
+Figure 5-5 shows how the SO: command can be used with a numeric variable to make
+sound effects for the shooting star program of Figure 4-26.
+4 GR:aQuIT
+1@ R: SHOOTING STAR WITH SOUND
+EFFECTS
+2@ *BEGIN
+3e c:sc=e
+40 GR:CLEAR
+Se T: SHOOTING STARS
+6@ GR:GOTO -75,40
+78 GR: TURNTO 120
+80 C:#S=?7\20+1
+9@ “LOOP
+100 C:#P=31-nc
+11@ SO:8P
+12@ GR: PEN YELLOW
+13@ U:*STAR
+140 GR: PEN ERASE
+150 U:*STAR
+16@ GR:GO5
+417@ C:mc=mc+s SHOOTING STARS
+180 JCHC<32):*LOOP
+190 Pa:240
+200 J:*BEGIN
+210 *STAR
+22@ GR:SCORAW HS; TURN 144)
+230 E:
+READY
+es Figure 5-5
+88 Sound and Pause—SO:
+
+===== PAGE 96 =====
+PA:
+s
+Se a 2 Se DE a VT
+4 Pause N Units
+Fa
+NAME 4
+FRED EW i
+-. , ae \ ~
+~S *
+Use the PA:N command when you want a program to PAUSE for any reason during the
+RUN of a program. For example, PA: may be used to freeze what is on the screen for a
+3 few moments before clearing the the screen. PA: also allows you to write text on the
+screen a little at a time or to pause for dramatic effect: “The correct answer is...
+(pause)...An Embarrassed Zebra.” The program in Figure 5-6 pauses for dramatic effect
+before announcing a lucky number in the PILOT Lucky Number Drawing.
+1@ R: LUCKY NUMBER WELCOME TO THE PILOT
+2@ T:WELCOME TO THE PILOT LUCKY NUMBER SWEEPSTAKES
+3@ T:LUCKY NUMBER SWEEPSTAKES
+40 T: NOW GET READY . . . HERE WE GO.
+5@ Pa:90
+6@ T:NWOWGET READY... .\ ROUND AND ROUND THE CPUGOES.. .
+7@ Pa:9e WHERE SHE STOPS, NOBODY KNOWS.
+60 T:HERE WE Go.
+9e T: AND THE PILOT LUCKY NUMBERIS...
+100 PAa:90
+11@ T:ROUND AND ROUND THE CPU GOES 26177
+i2@ T:WHERE SHE STOPS, NOBODY CONGRATULATIONS TO THE COMPUTER
+KNOWS. WHOSE SERIAL NUMBER IS 26177.
+130 T:
+140 Pa:9e READY
+15@ C:#R=?\ 30000 a
+160 T:AND THE PILOT LUCKY NUMBER
+176 T:
+180 PA:180
+190 T:8R
+200 T:
+21@ Pa:180
+22@ T: CONGRATULATIONS TO THE
+COMPUTER
+23@ T: WHOSE SERIAL NUMBER IS HR.
+240 E:
+S READY
+bas Figure 5-6
+Sound and Pause—PA: 89
+
+===== PAGE 97 =====
+The units in the PA:N command may either be a number or a numeric variable. Each unit
+is equal to 1/60th of a second. Thus PA:60 will pause for 1 second; PA:30 will pause for
+Y2 second; PA:300 will pause for 5 seconds, and so on.
+The PA: command is often used in combination with the SOUND command to tell the
+computer how long to sound one or more voices. For example, the program in Figure
+5-7 uses SO: and PA: to add a random three-chord polka to the Polka Dots program of
+Figure 4-25.
+10 R:DOTS POLKA
+2@ “BEGIN
+3@ C:mN=e
+40 GR:CLEAR
+Se T:
+60 T: DOTS POLKA
+7@ *POLKA
+8@ C:#x=?\150-75
+9@ C:#VY=7\62-31
+100 C:mC=?\3+1
+11@ GRCHC=1): PEN YELLOW
+12@ SOCHC=19:13,17,20
+13@ GRCNC=2): PEW RED
+140 50C#C=2):13,18,22
+150 GRCHC=3): PEN BLUE
+160 SOCHC=3):15,20,24
+170 GR:GOTO 8x ,HY
+180 U:*DOT
+19@ U:*UMPAH
+200 C:8N=HN+4
+210 JCBN<S@):*POLKA
+22@ U:*FINALE
+230 J:*BEGIN
+240 E:
+see *DOT
+310 GR: TURNTO 90
+32@ GR: 10CDRAW 1; TURN 18)
+33@ GR: 1OCFILL 13 TURN 18)
+340 E:
+400 *UMPAaH
+410 C:HR=HN\3
+420 Pacur=e):20
+430 50:0,0,0
+440 Pacuk=6):5
+4se E:
+S@@ *FINALE
+S10 50:13,17,20
+520 Pa:6e
+S30 50:13,16,22
+540 Pa;6e
+S50 50:15,20,24
+568 Pa:6e
+570 50:13,17,20,25
+58e Pa:126
+590 50:0,0,0
+600 Pa:4ée
+610 E:
+READY
+&
+Figure 5-7
+90 Sound and Pause—PA
+
+===== PAGE 98 =====
+S The SO: and PA: commands can be used together to make music. The table in Figure
+5-8 shows the PAUSE values for various musical notes.
+PAUSE VALUES FOR MUSICAL NOTES
+PA:16 — Sixteenth Note
+PA:32 Eighth Note
+PA:64 Quarter Note
+PA:128 Half Note
+PA:256 Whole Note
+Figure 5-8
+The program shown in Figure 5-9 uses SO: and PA: to play the the song “Mary Had a
+Little Lamb.”
+10 R:MARY HAD @ LITTLE Lams 390 50:15,13,8
+2@ R: ARRANGED IN 4 VOICES 400 Pa:32
+3@ R:FOR COMPUTER 410 50:17,13,8
+40 C:T=e 42@ Pa:32
+Se@ *CcoDA 430 50:17,13,8
+60 CimTontT+s 440 Pa:32
+70 50:17,13,8 450 50:17,13,8
+80 Pa:24 460 PAa:32
+9@ 50:15,13,8 47@ $0:15,12,8
+100 Pa:s6 4680 Pa:32
+= 110 50:13,8 490 50:15,12,8
+12@ Pa:32 See Pa:32
+130 50:15,13,8 510 50:17,13,8
+140 Pa:32 520 PAa:32
+150 50:17,13,8 S3@ 50:15,12,8
+160 Pa:32 540 Pa:32
+170 50:17,13,8 SS5@ 50:13,6,5,1
+180 Pa:32 560 PA:192
+190 50:17,13,8 57@ 50:0
+200 PAa:64 S60 JCHT<2>:*CODA
+21@ 50:15,12,8 590 E:
+220 Pa:32
+230 50:15,12,8 READY
+240 Pa:32 s
+25@ $0:15,12,8
+260 PA:64
+27@ $0:17,13,8
+280 Pa: 32
+290 50:20,17,13,8
+300 Pa: 32
+310 50:20,17,13,8
+320 Pa:64
+330 5P:17,13,8
+340 Pa:24
+350 50:15,13,8
+360 Pa:s
+370 50:13,8
+380 Pa:32 .
+Figure 5-9
+Sound and Pause—PA: 91
+
+===== PAGE 99 =====
+, 6 CONDITIONALS
+2
+S X
+4 ie. mo Sse.
+:
+
+===== PAGE 100 =====
+g
+F
+Pal
+
+sa.
+A condition is something about which a YES or NO decision can be made. For example,
+the weather could be a condition for deciding what to do today: Is it raining outside? If
+YES, go to the movies; if NO, go flying.
+In PILOT, there are two types of conditions:
+© String match conditions
+¢ Numeric conditions
+94 Conditionals
+
+===== PAGE 101 =====
+4 String Match Conditions
+A MATCH command always sets up a YES or NO condition: YES (Y) there was a
+match, or NO (N), there was not a match. For example, in the program shown in Figure
+6-1, any answer containing the name “GRANT” produces a YES condition; any answer
+not containing “GRANT” produces a NO condition.
+1@ R:GRANTS TOMB WHO WAS BURIED IN GRANT'S TOMB?
+2@ T:WHO WAS BURIED IN GRANT'S
+TOMB? & GRANT FROM THE TULIP CORPORATION
+30 Al sanvone YES THAT IS CORRECT. &A GRANT FROM
+S@ M: GRANT THE TULIP CORPORATION WAS BURIED IN
+6e@ T: GRANT'S TOMB.
+7@ TY: YES, THAT IS CORRECT. SEE YOU AROUND.
+SANYONE WAS BURIED IN GRANT'S
+TOMB. READY
+8@ TN:NO, SANYONE WAS NOT BURIED .
+IN GRANT'S TOMB; GRANT HAS.
+90 T:SEE You AROUND.
+100 E:
+READY
+2 s
+Figure 6-1
+You can make any PILOT command (T:, A:, M:, J:, C:, U:, E:, GR:, SO:, and PA:)
+conditional on a YES-match or NO-match by putting a Y or an N between the command
+and the colon (:). Here are some examples:
+TY:HELLO If there is a match, type “HELLO”; otherwise, skip this
+command.
+TN:WRONG If no match, type “wrong”; otherwise, skip this command.
+Ye If there is a match, end the program; otherwise, keep going.
+JN: # NEXT If no match, jump to %* NEXT; otherwise, skip this command.
+UY: # BOX If there is a match, use the module % BOX; otherwise skip this
+command.
+S SOY:13,17 If there is a match, sound notes 13 and 17; otherwise skip this
+command.
+Conditionals—Y OR N 95
+
+===== PAGE 102 =====
+Figure 6-2 shows a program that uses String Match Conditions. z
+1@ R: DRAGON FEED
+2@ T:CAN YOU NAME SOMETHING THAT
+3@ T:DRAGONS LIKE TO EAT? |
+4@ a:$FOoD
+S@ M: YES, YUP, OK, FINE .
+SURE, CaN, THIMK I GaN, THINK SO
+:
+7@ TY: PLEASE NAME SOMETHING THEN. |
+80 AY:SFOOD
+90 M: NO, NOT, CAN'T, DON'T,
+UNSURE
+10@ TY: SORRY TO HEAR THAT.
+110 JY: *YONDER
+12@ M:PEOPLE, PRIN, KNI, CAKE,
+PRETZ, FLOWER
+130 T?
+140 TV: ¥ES,DRAGONS SURE DO EAT
+15@ TN: VERY INTERESTING! I DIDN'T
+KNOW THAT DRAGONS ATE SFOOD. |
+160 *YONDER |
+170 T:
+160 T: THAT'S ALL FOR NOW. SEE You
+AROUND.
+190 E:
+READY
+a
+Figure 6-2
+You can see how this program works.-in Figures 6-3 and 6-4.
+CAN YOU NAME SOMETHING THAT DRAGONS
+LIKE TO Eat?
+WHAT A SILLY QUESTION! OF COURSE I Can
+PLEASE NAME SOMETHING THEN.
+BAGELS WITH CREAM CHEESE
+VERY INTERESTING! I DIDN'T KNOW THAT
+DRAGONS ATE BAGELS WITH CREAM CHEESE.
+THAT'S ALL FOR NOW. SEE YOU AROUND.
+READY
+a
+Figure 6-3
+96 Conditionals—Y OR N
+
+===== PAGE 103 =====
+CAN YOU NAME SOMETHING THAT DRAGONS
+LIKE TO Eat?
+LITTLE PRINCESSES
+YES, DRAGONS SURE DO EAT LITTLE
+PRINCESSES.
+THAT'S ALL FOR NOH. SEE YOU AROUND.
+READY
+te
+
+Figure 6-4
+
+Conditionals—Y OR N 97
+
+===== PAGE 104 =====
+Numeric Conditions
+A YES/NO decision based on comparing two numbers is called a numeric condition. For
+example, if the amount of money in my pocket is equal to, or more than, the price of a
+hot fudge sundae, I will order the sundae (YES condition); if it is less, I will order
+something less expensive (NO condition).
+There are six possible comparisons you can make between two numbers. In PILOT, you }
+express these comparisons using the following symbols:
+
+#A = #B #A equals #B
+
+#C < 20 #C is less then 20
+
+#G > #H #G is greater than #H
+
+#G<>3 #G is not equal to 3
+
+#L<=5 #L is less than or equal to 5
+
+#B>= AC #B is greater than or equal to #C
+
+You can make numeric comparisons between two numeric variables, or between a
+numeric variable and a constant, and you can make any PILOT command conditional on
+a numeric comparison. Enclose the comparison in parentheses and place it between the
+command and the colon (:), like the Y or N in a string match condition. Here are some
+examples:
+
+J (#G< 3): 4% AGAIN JUMP if the value is #G is less than 3 to * AGAIN;
+otherwise keep going.
+
+T (#A=#B): RIGHT! Type “Right!” if the value of #A equals the value of
+#B; otherwise, skip this command.
+
+A(#P< =5):SANS Accept input from the keyboard if #P is less than or
+equal to 5; otherwise skip this command and keep
+going.
+
+SO(#N<>#R): 3,7 Sound the tones 3 and 7 if the value of #N is not
+equal to the value of #R; otherwise, skip this
+command.
+
+98 Conditionals—COMPARISON
+
+===== PAGE 105 =====
+A common use of numeric conditions is setting up counting loops in programs. Figure 6-5
+shows a simple example of how a numeric condition is used to print something repeatedly
+for a desired number of times.
+o~
+1@ R:GOOD BEHAVIOR WHAT IS YOUR FULL NAME? JOHN SMILEY
+2@ T:WHAT IS YOUR FULL NAME? \ HOW MANY TIMES? 126
+3@ A: SNAME
+4@ T:HOW MANY TIMES? \
+S@ arnt
+60 T:3 CCLEARS THE SCREEN}
+70 Cimc=i
+80 *REPEAT
+90 TCHC<109: \
+100 T:mC. TWILL NOT TALK IN CLASS
+ANYMORE.
+110 CimC=nc+s
+120 JCnC<=nT):*REPEAT
+130 T:
+14@ T:SINCERELY,
+150 T:SNAME
+160 E:
+READY
+a
+J i. IWILL NOT TALK IN CLQS55 QNYMORE.
+2. IWILL NOT TALK IN CLASS ANYMORE.
+3. IWILL NOT TALK IN CLASS QNYMORE.
+4. IWILL NOT TALK IN CLASS QNYMORE.
+S. IWILL NOT TALK IN CLASS ANYMORE.
+6. IWILL NOT TALK IN CLASS ANYMORE.
+7. IWILL NOT TALK IN CLASS ANYMORE.
+8. IWILL NOT TALK IN CLASS ANYMORE.
+9. IWILL NOT TALK IN CLASS ANYMORE.
+1@. IWILL NOT TALK IN CLQA5S5 QNYMORE.
+41. IWILL NOT TALK IN CLASS ANYMORE.
+12. IWILL NOT TALK IW CLASS ANYMORE.
+SINCERELY,
+JOHN SMILEY
+READY
+w@
+Figure 6-5
+Conditionals—COMPARISON 99
+
+===== PAGE 106 =====
+Figure 6-6 shows how you can use a numeric condition to limit a person to three guesses
+in a guessing game.
+1@ R:WHAT AMI? WELCOME TO ''HWHAT AM I?"*
+2@ T:WELCOME TO ‘*WHAT aM I?'* I'Lt GIVE YOU 3 HINTS TO GUESS WHAT I
+3@ T:I'tt GIVE YOU SHINTS\ aM...
+oe A adelante hla ond oe ARE YOU READY? OK
+6e T:
+ze Tiare vou READY? \ TROLL ALONG, BUT I DO NOT HAVE
+: °
+9e T: WHAT aM I
+100 M: Y,SURE ,OK ,FINE,ALRIGHT TIN CaN
+1106 Ju: *G00DB¢E NOPE. GUESS AGAIN.
+12@ C:mG=1
+13@ *LooP I HAVE A MOUTH, BUT I CANNOT SPEAK.
+14@ TCHG=1) : TROLL ALONG, BUT IDO WHAT AM I?
+NOT HAVE WHEELS. RIVER
+pe HAVE & MOUTH, BUT I
+° THAT'S CORRECT! I AMRIVER.
+160 TCuG=3) : I HAVE 4 BED, BUT I ra
+NEVER SLEEP.
+170 T:WHAT AMI?
+180 T:
+3 ie
+210 JY¥:*RIGAT had
+22@ JCRG=3) :*NOMORE
+230 T: NOPE, GUESS AGAIN.
+24@ T:
+250 C:nG=nG+1
+260 J:*LOooP
+27@ *“NOMORE
+26e T:
+290 T: NOPE, THAT'S THREE GUESSES.
+300 T:I aMARIVER.
+310 J: *GOODBYE
+326 “RIGHT
+33e T:
+34@ T: THAT'S CORRECT! I am
+SANSHWER.
+35e@ “GOODBYE
+360e T:
+370 Pa:6e
+360 T:SEE YOULATER.
+390 E:
+REaDY
+a
+100 Conditionals—COMPARISON
+
+===== PAGE 107 =====
+-
+JM
+e Ju Match
+The JM: command causes the computer to jump, conditional on matching one of a list of
+match alternatives. It is a variable jump rather than a constant jump. In the simple
+J: # LABEL command, you always jump to a single % LABEL. This variable form of
+the JUMP command lets you jump to one of a variety of #* LABELS, depending on
+what matches in an M: command.
+The JM: command must be paired with an M: command as follows:
+A:
+M: String1, String2, String3, String4.....
+JM: %* LABEL1, % LABEL2, %* LABEL3, * LABEL4.....
+The JM: command should have the same number of labels as the M: has strings. The JM:
+command will jump to the %* LABEL in the same position as the first string that matches
+the accepted input. In other words, if STRING] is a match, JM: will jump to
+%* LABEL1; if STRING2 is a match, JM: will jump to * LABEL2, and so on. If there
+is no match, or if the position of a matched string does not correspond to the position of a
+* LABEL, then the JM: command will be skipped.
+4 Figure 6-7 is an example of the use of the JM: command. The program draws colored
+boxes on the screen in the size, color, and location of your choice.
+1@ R: BOXES IN COLOR 24@ *RED
+2@ T: CHOOSE @ SIZE, COLOR AND 250 GR:PEN RED
+LocaTrIon. 26@ J: *CONTINUE
+3@ T: THIS PROGRAM DRAWS BOXES 270 *BLU
+ACCORDING TO YOUR CHOICES. 280 GR: PEN BLUE
+40 T: 29@ J:*CONTINUE
+S@ T: PRESS RETURN TO BEGIN 3ee *YEL
+60 a: 310 GR: PEN YELLOW
+7@ GR:CLEAR 32@ J:*CONTINUE
+8e *LOoP 330 *BLa
+90 T: 340 GR: PEN ERASE
+10@ T:SIDE LENGTH? \ 35@ J:*CONTINUE
+110 ares 36@ *BOx
+12@ T:WHAT COLOR CRED, BLUE, 37@ GR:GOTO Hx, nv
+YELLOW, BLACK? \ 380 GR: TURNTO 50;3¢DRAW HS; TURN
+130 a:ScoLor 30)
+140 M: RE, BLU, YE, BLA 390 GR:FILL #s
+150 JM: "RED, *BLU,*TEL, *BLA 400 E:
+160 *CONTINiE
+170 T: READY
+180 T:X LOCATION? \ .
+198 a:ex
+20@ T:¥ LOCATION? \
+210 a:ny
+220 U:*BOx
+230 J:*LOOP
+Conditionals—JM: 101
+
+===== PAGE 108 =====
+,
+,
+CHOOSE @ SIZE, COLOR AND LOCATION; |
+THIS PROGRAM DRAWS BOXES ACCORDING TO
+YOUR CHOICES. :
+PRESS RETURN TO BEGIN. |
+®
+:
+% LOCATION? -30
+¥ LOCATION? ©
+SIDE LENGTH?®
+Figure 6-7
+102 Conditionals — JM:
+
+===== PAGE 109 =====
+e . s
+Special Function Keys
+and Screen Editing
+
+SPECIAL FUNCTION KEYS
+
+A number of keys on the ATARI 400/800™ Personal Computer System keyboards have
+
+a special function or purpose. These functions are described below.
+
+e Reverse (Inverse) Video Key, or ATARI Logo Key: Pressing this
+key causes the text to be reversed on the screen (dark text on light
+background). Press the key a second time to return to normal text.
+
+Lowercase Key: Pressing this key shifts the screen characters from
+uppercase (capitals) to lowercase. To restore the characters to up-
+percase, press the key and the key
+simultaneously.
+
+= Escape Key: Pressing this key causes a command to be entered
+into a program for later execution.
+Example: To clear the screen, you would enter:
+10 T:3
+This will cause a curved arrow to appear on your screen as
+follows:
+10T:
+
+Control Key: This key is used in conjunction with other keys to
+print special graphics control characters. See back cover or PILOT
+Reference Card for the specific keys and their screen-character
+representations.
+
+icrat pl Control 1: Holding down and pressing 1 temporarily stops
+whatever is happening on the screen (e.g., a program listing).
+Pressing 1 again restarts the screen action.
+
+Break Key: Pressing this key during program execution causes ex-
+ecution to stop. The line number and statement where the execu-
+
+= ; tion stopped are displayed on the screen followed by
+& eee READY eee ;
+Appendix A 103
+
+===== PAGE 110 =====
+System Reset Key: Similar to in that pressing this key 2
+stops program execution. Also returns the screen display to the
+Text mode, clears the screen, and returns margins and other
+variables to their default values.
+
+Tab Key: Press @{g9 and the keys simultaneously to
+set a tab. To clear a tab, press the {m1§ and GSSSuETTY keys
+simultaneously. Used alone, the advances the cursor
+to the next tab position. In Deferred mode, set and clear tabs by
+preceding the above with a line number, the command T:, a
+quotation mark, and pressing the Gj key.
+
+Examples: 100 7:53
+200 T= Gas
+Default tab settings are placed at columns 5, 14, 22, 30, and 38.
+
+Back Space Key: Pressing this key replaces the character to the
+left of the cursor with a space and moves cursor back one space.
+
+Clear Key: Pressing this key while holding down the GIB or
+GGG key blanks the screen and puts the cursor in the upper left
+corner.
+
+Return Key: Terminator to indicate an end of a line of PILOT.
+Pressing this key causes a numbered line to be interpreted and ad-
+ded to a PILOT program in RAM.
+
+An unnumbered line (in Immediate mode) is interpreted and ex-
+ecuted immediately. Any variables are placed in a variable table.
+
+SCREEN EDITING
+
+The keyboard and display are logically combined for a mode of operation known as
+
+screen editing. Each time a change is completed on the screen, the key must be
+
+pressed. Otherwise, the change is not made to the program in memory.
+Example: 10 T;:REMEMBER TO PRESS RETURN
+15 T:AFTER LINE EDIT
+20 T: THIS LINE IS GOING AWAY
+30 T:THIS WILL BE THE FIRST
+40 T:LINE ON THE SCREEN.
+50 E:
+104 Appendix A
+
+===== PAGE 111 =====
+= To delete line 20 from the program, type the line number and press the key.
+Merely deleting the line from the screen display does not delete it from the program.
+In addition to the special function keys described above, there are cursor control, insert,
+and delete keys that allow immediate editing capabilities. These keys are used in conjunc-
+tion with the Gq7¥ or GWE keys as follows:
+Cis & Moves cursor up one physical line without changing the program
+or display.
+Moves cursor one space to the right without disturbing the program
+or display.
+CTRL | Moves cursor down one physical line without changing the pro-
+gram or display.
+Moves cursor one space to the left without disturbing the program
+or display.
+Like the other keys on the ATARI keyboard, holding the cursor control keys for more
+than ¥/ second causes the keys to repeat.
+= Insert key: Press the and keys simultaneously
+to insert a line. To insert a single character, press the and
+keys simultaneously.
+Inserts one physical line.
+Inserts one character space.
+Delete key: Press the EQIER and GHGSGETEES keys simultaneously to
+delete a line. To delete a single character, press GUJ3
+GISELE simultaneously.
+Deletes one physical line.
+Deletes one character or space.
+Note: You should not use screen editing features other than Backspace/Delete in AUTO
+mode. Instead, return to the Immediate mode and LIST your program to use screen
+editing.
+Appendix A 105
+
+===== PAGE 112 =====
+APPENDIX B
+eee
+PILOT I/O Error Codes e
+
+This appendix lists the ATARI 400/800 Computer Systems’ I/O error codes within the
+context in which they will be seen in ATARI PILOT. Not all of the system codes are
+presented here, because some of them cannot occur within the PILOT environment.
+
+130 A nonexistent device was specified.
+
+131 A READ command followed a WRITE command with the same device
+
+specified.
+135 A WRITE command followed a READ command with the same device
+specified.
+
+136 End-of-file condition.
+
+138 Device timeout; device doesn’t respond. (See Note) ,
+
+139 Device NAK. (See Note) |
+
+140 Serial bus framing error. (See Note) gS
+
+141 Screen cursor out of range (READ from or WRITE to ‘S’). |
+
+142 Serial bus data from overrun. (See Note)
+
+143 Serial bus data from checksum error. (See Note)
+
+144 Device DONE error. (See Note)
+
+145 Disk read after write compare error. (See Note)
+
+146 Function not implemented for device (e.g., OUT:K).
+
+147 Insufficient RAM for operating the graphics screen.
+
+160 Disk drive number error.
+
+161 Too many concurrent disk files being accessed.
+
+162 Disk is full (no free sectors).
+
+163 Fatal system data I/O error.
+
+164 File number mismatch. (See Note)
+106 Appendix B
+
+===== PAGE 113 =====
+3 165 Disk file naming error.
+167 Disk file locked.
+169 Disk directory full (64 files).
+170 Disk file not found in directory.
+Note : These errors indicate problems over which the user has no direct control: they
+are due to hardware problems and should seldom be seen.
+Ors
+vi)
+oN
+ar
+; Pa 4
+Appendix B 107
+
+===== PAGE 114 =====
+LIMITED 90-DAY WARRANTY
+ON ATARI® PERSONAL COMPUTER PRODUCTS
+ATARI, INC. (“ATARI”) warrants to the original consumer purchaser that this ATARI Personal Computer Product (not including computer
+Programs) shall be free from any defects in material or workmanship for a period of 90 days from the date of purchase. If any such defect is
+discovered within the warranty period, ATART's sole obligation will be to repair or replace, at its election, the Computer Product free of
+charge on receipt of the unit (charges prepaid, if mailed or shipped) with proof of date of purchase satisfactory to ATARI at any authorized
+ATARI Service Center. For the location of an authorized ATARI Service Center nearest you, call toll-free:
+In California (800) 672-1430 or write to: Atari, Inc.
+Continental U.S. (800) 538-8547 Customer Service Department
+1340 Bordeaux Drive
+Sunnyvale, CA 94086
+YOU MUST RETURN DEFECTIVE COMPUTER PRODUCTS TO AN AUTHORIZED ATARI SERVICE CENTER FOR IN-WARRANTY
+REPAIR.
+This warranty shall not apply if the Computer Product: (i) has been misused or shows signs of excessive wear, (ii) has been damaged by be-
+ing used with any products not supplied by ATARI, or (iii) has been damaged by being serviced or modified by anyone other than an autho-
+rized ATARI Service Center.
+ANY APPLICABLE IMPLIED WARRANTIES, INCLUDING WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PAR-
+TICULAR PURPOSE, ARE HEREBY LIMITED TO NINETY DAYS FROM THE DATE OF PURCHASE. CONSEQUENTIAL OR IN-
+CIDENTAL DAMAGES RESULTING FROM A BREACH OF ANY APPLICABLE EXPRESS OR IMPLIED WARRANTIES ARE HEREBY
+EXCLUDED. Some states do not allow limitations on how long an implied warranty lasts or do not allow the exclusion or limitation of in-
+cidental or consequential damages, so the above limitations or exclusions may not apply to you.
+This warranty gives you specific legal rights and you may also have other rights which vary from state to state.
+DISCLAIMER OF WARRANTY
+ON ATARI COMPUTER PROGRAMS
+All ATARI computer programs are distributed on an “as is” basis without warranty of any kind. The entire risk as to the quality and
+performance of such programs is with the purchaser. Should the programs prove defective following their purchase, the purchaser and not
+the manufacturer, distributor, or retailer assumes the entire cost of all necessary servicing or repair.
+ATARI shall have no liability or responsibility to a purchaser, customer, or any other person or entity with respect to any liability, loss, or
+damage caused directly or indirectly by computer programs sold by ATARI. This disclaimer includes but is not limited to any interruption of
+service, loss of business or anticipatory profits or consequential damages resulting from the use or operation of such computer programs.
+REPAIR SERVICE
+Hf your ATARI Personal Computer Product requires repair other than under warranty, please contact your local authorized ATARI Service
+Center for repair information.
+IMPORTANT: If you ship your ATARI Personal Computer Product, package it securely and ship it, charges prepaid and insured, by parcel
+post or United Parcel Service.
+
+===== PAGE 115 =====
+m
+~ A
+o z A)
+¢ % > 5
+i > F |
+> 71 2
+rs
+N T ny <<
+r - ~4*
+r + dh
+on all”
+oo Oe
+Lk > oa
+I
+seria: ~~ wo 3
+<  )
+bed &, Dm &
+ed ; =
+ya
+z Nu
+! i
+= = ao ©
+i x =
+ry — ee
+wg?
+Gi
+a a
+Lg ag
+Nv i) >
+,a a -
+, =
+OF" _
+2 9
+> . e
+re? oe :
+PRINTED IN U.S.A. CO17811 REV.1
+1

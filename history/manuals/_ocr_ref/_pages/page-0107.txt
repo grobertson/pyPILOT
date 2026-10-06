@@ -1,0 +1,47 @@
+-
+JM
+e Ju Match
+The JM: command causes the computer to jump, conditional on matching one of a list of
+match alternatives. It is a variable jump rather than a constant jump. In the simple
+J: # LABEL command, you always jump to a single % LABEL. This variable form of
+the JUMP command lets you jump to one of a variety of #* LABELS, depending on
+what matches in an M: command.
+The JM: command must be paired with an M: command as follows:
+A:
+M: String1, String2, String3, String4.....
+JM: %* LABEL1, % LABEL2, %* LABEL3, * LABEL4.....
+The JM: command should have the same number of labels as the M: has strings. The JM:
+command will jump to the %* LABEL in the same position as the first string that matches
+the accepted input. In other words, if STRING] is a match, JM: will jump to
+%* LABEL1; if STRING2 is a match, JM: will jump to * LABEL2, and so on. If there
+is no match, or if the position of a matched string does not correspond to the position of a
+* LABEL, then the JM: command will be skipped.
+4 Figure 6-7 is an example of the use of the JM: command. The program draws colored
+boxes on the screen in the size, color, and location of your choice.
+1@ R: BOXES IN COLOR 24@ *RED
+2@ T: CHOOSE @ SIZE, COLOR AND 250 GR:PEN RED
+LocaTrIon. 26@ J: *CONTINUE
+3@ T: THIS PROGRAM DRAWS BOXES 270 *BLU
+ACCORDING TO YOUR CHOICES. 280 GR: PEN BLUE
+40 T: 29@ J:*CONTINUE
+S@ T: PRESS RETURN TO BEGIN 3ee *YEL
+60 a: 310 GR: PEN YELLOW
+7@ GR:CLEAR 32@ J:*CONTINUE
+8e *LOoP 330 *BLa
+90 T: 340 GR: PEN ERASE
+10@ T:SIDE LENGTH? \ 35@ J:*CONTINUE
+110 ares 36@ *BOx
+12@ T:WHAT COLOR CRED, BLUE, 37@ GR:GOTO Hx, nv
+YELLOW, BLACK? \ 380 GR: TURNTO 50;3¢DRAW HS; TURN
+130 a:ScoLor 30)
+140 M: RE, BLU, YE, BLA 390 GR:FILL #s
+150 JM: "RED, *BLU,*TEL, *BLA 400 E:
+160 *CONTINiE
+170 T: READY
+180 T:X LOCATION? \ .
+198 a:ex
+20@ T:¥ LOCATION? \
+210 a:ny
+220 U:*BOx
+230 J:*LOOP
+Conditionals—JM: 101

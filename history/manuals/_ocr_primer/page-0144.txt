@@ -1,0 +1,36 @@
+OP) SS
+J Examples:
+GR: TURN 45
+| GR: TURN - 60
+GR: TURN 45 turns the turtle 45 degrees to the right from whatever direction it is
+currently facing. If the turtle is positioned facing 60 degrees, GR: TURN 45 would
+q position the turtle facing 105 degrees ie ett 45).
+A
+7
+i : ‘
+=! oo, so
+aa TSo ‘es
+i rece os
+S RY)
+“ x
+oe
+| La
+| € Figure 10-13 Turning the Turtle 45 Degrees to the Right
+GR: TURN —60 turns the turtle 60 degrees to the left of its current direction.
+q ® t A
+- 7
+“se
+| % — 6 ~
+% Oe
+Si Se
+2 a
+| % Bo
+a
+| Figure 10-14 Turning the Turtle 60 Degrees to the Left
+Here is a short example:
+10 GR: GOTO 0,0
+| 20 GR: TURNTO 0
+30 GR: DRAW 30
+€ 40 GR: TURN 45
+L ' 50 GR: DRAW 40
+| Welcome to Graphics 127

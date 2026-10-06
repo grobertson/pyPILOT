@@ -1,0 +1,33 @@
+THE PARTS OF A module is: reusable
+A MODULE
+A module has: a label
+a task, e.g., getting input or displaying messages.
+an end. The END command (E:) placed at the last line of the
+module serves as an exit and returns program execution back to the
+statement following the call to the module.
+A module has the form shown in Figure 8-2.
+*LABEL NAME |
+MODULE END (E:)
+Figure 8-2 Module Structure
+Here is a sample module:
+500 *GETNAME |
+510, T: ENTER A NAME: \
+520, A: $NAME
+530, Es a |
+* GETNAME is the label of the module. Lines 510-520 perform the function of the
+module. The END command at line 530 is the module’s end. |
+The above module, *GETNAME, could be branched to whenever a name needs to
+be entered in the program. At the end of the module, program execution branches
+back into the main program. {
+CALLING A MODULE
+The USE Command, U: I
+The USE command calls, or branches to a module. It tells the computer to call a
+module into use. ;
+The format for the USE command is:
+U: module label
+where: module label is a label at the beginning of a module. )
+Examples:
+50 U: * INFO j
+75 U: *START
+@ The USE command is always part of the main program. It is not part of a module. i i
+96 Modules I

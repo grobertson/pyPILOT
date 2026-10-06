@@ -1,0 +1,20 @@
+The Graphics Subcommands GOTO, DRAWTO, and FILLTO use coordinates to tell the ES
+turtle where to go.
+WHAT DIRECTION AND HOW FAR TO GO
+The turtle is always at the center of an invisible circle which moves with him wherever he
+goes. This circle is divided into 360 one-degree angles, with the 0-degree angle pointing
+up.
+The turtle is always pointing in some direction within this circle, and can turn to the right
+(+) or left (-) in 360 different angles. Figure 4-3 shows some different headings. The
+Graphics Subcommands TURNTO and TURN, change the turtle’s direction.
+
+Figure 4-3
+Each step the turtle takes, either forward or backward, is called a turtle unit. The units
+are the same size as the individual units making up the invisible grid; therefore, if the tur-
+tle moved from the origin to the right edge of the screen, he would move 80 turtle units.
+The Graphics Subcommands GO, DRAW, and FILL tell the turtle to move forward or
+backwards in whatever direction he is facing.
+INITIAL LOCATION, HEADING, AND PEN COLOR
+When you first enter the Graphics mode, the turtle is located at 0,0 (the origin). He is fac-
+ing O degree (straight up) and the PEN color is yellow.
+58 Graphics—GR:

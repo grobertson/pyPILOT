@@ -1,0 +1,28 @@
+ae
+| The screen should display:
+GR:DRAWTO 20.20
+i
+| Figure 10-6 GR: DRAWTO 20,20
+To erase this line, type:
+| GR: PEN ERASE
+GR: GOTO 0,0
+GR: DRAWTO 20,20
+| € The first line changes the PEN color to the background color. The following two
+lines (which you won’t understand as of yet), draw over the yellow line. And guess
+what happens when you RUN the program; the line disappears!
+I There is one more type of PEN subcommand: the PEN UP subcommand. PEN UP
+tells the computer to lift the imaginary pen off the screen. This is different than PEN
+ERASE because PEN ERASE erases over other graphics, whereas PEN UP moves
+| over the graphics screen without erasing the display.
+@ The PEN subcommand does not draw anything. It simply selects a color or raises
+or lowers the imaginary pen. Therefore, when you issue a PEN subcommand, you
+| won't see any change in the screen display until you make the pen draw with one
+of the following subcommands. @
+After using the PEN UP subcommand, you must assign a PEN color with the PEN
+i subcommand before the PEN will show on the graphics screen again.
+q SUBCOMMANDS USING CARTESIAN COORDINATES
+The GOTO Subcommand
+The GOTO subcommand moves the turtle to a specifiéd pair of Cartesian coordi-
+] nates (X,Y) without drawing a line. The turtle draws a dot at that location.
+t Welcome to Graphics 121
+{

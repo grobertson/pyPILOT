@@ -1,0 +1,53 @@
+.
+GR:FILLTO
+a
+
+a . eae s ae =
+
+Fill to the Point X,Y
+The command GR:FILLTO X,Y tells the turtle to draw a line to the point with coordinates
+X and Y. As he moves, the black background between the turtle and any figure or line
+directly to his right is filled with the current pen color. Figure 4-13 shows how FILLTO is
+used to fill parts of a barn in red.
+1@ R:RED BARN |
+2@ GR: CLEAR |
+3@ GR: PEN RED
+4@ GR:GOTO -30,40 |
+i A
+6@ GR:DRAWTO 60,25
+7@ GR:DRANTO 65-5
+8@ GR: DRAWTO 65,5
+9@ GR: DRAWTO 65,-se
+10@ GR: DRAHTO -ie,-se
+110 GR:FILLTO -10)5
+12@ GR:FILLTO -15,25
+13@ GR:FILLTO -30,40
+140 GR: DRAWTO -45,25
+15@ GR:DRAWTO -5e,5
+160 GR:DRAWTO -Se,-3e
+17@ GR: DRAWTO -10,-30
+18@ GR:GOTO 65,5 READY
+190 GR: PEN ERASE a
+200 GR: DRAWTO -10,5
+210 GR: PEN RED
+22@ GR: DRAWTO -Se.5
+23@ GR:GOTO -35,36
+24@ GR:DRAWTO -25,30
+25@ GR: DRAWTO -25,15
+260 GR: DRAWTO -35,15
+27@ GR: FILLTO -35,30
+260 GR:GOTO -20,-%0
+29@ GR:DRAWTO -20,-10
+3@@ GR: DRAWTO-40.-10
+310 GR:FILLTO -40,-30
+320 E:
+READY
+a
+
+Figure 4-13
+
+If there is nothing to block the color filling in before it reaches the right edge of the screen,
+the filling “wraps around,” and color continues to fill in from the left edge until a barrier is
+reached. When there is nothing blocking the fill anywhere in its path, the line being filled
+from becomes its own barrier. This is shown in Figure 4-14.
+66 Graphics—GR:FILLTO

@@ -1,0 +1,39 @@
+SS.
+| @ The equals sign separates the variable name from the assigned string. Ml
+Examples:
+| C: $BLOOP = CAT assigns the string ‘CAT’ into the variable
+$BLOOP
+C: $NUM=ONE assigns the string ‘ONE’ into the
+| variable $NUM
+C: $ADDR= 1234 GEARY ST. assigns the string ‘1234 GEARY ST.’ into
+the variable $ADDR
+| C: $AGE= 10 assigns the string ‘10’ into the variable
+‘ $AGE
+String Concatenation
+| The COMPUTE command also enables you to put strings together. This is called
+concatenation.
+Growing Strings
+4 Following is an example of string concatenation. Type in the following two pro-
+gram statements:
+10 C: $NAME =
+i 20 C: $STAR = *
+RUN the program. You will see only a READY message and the cursor. Now, enter
+I & DUMP and press @SRENB. You should see:
+READY
+DUMP
+SNAME=""
+I SSTAR='*!
+$NAME="' means that the value of $NAME is an empty string, whereas $STAR has
+the value ‘*’.
+| Enter the remainder of the program:
+30 *GROW C: $NAME =$NAME$STAR
+I 40 , T: $NAME
+LIST and RUN the program:
+3
+10 C:SNAME-
+20 C:$STAaR=*
+$0 *GROW C: SNQAME=SNAMESSTAR
+40. T: SNAME
+| READY
+RUN
+I Variables 73

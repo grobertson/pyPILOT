@@ -1,0 +1,21 @@
+Enter the following program: |
+10 GR: PEN RED
+20 GR: TURN 50
+30 GR: DRAW 40
+To find the values of %X, %Y, %A, and %Z, enter a TYPE command for each
+variable:
+T: %X
+31
+T: %Y
+26
+GR: GOO
+T: %Z
+1
+The above values tell us that the turtle is located at the (31,26) coordinate. The
+THETA angle is 50 degrees. The turtle at the point is RED.
+MINI-QUIZ
+1. The variables %X, %Y, %A, %Z can be changed at any time by the user. TRUE
+or FALSE?
+2. To display one of the above variables, you must use the * |
+command.
+140 Welcome to Graphics :

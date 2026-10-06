@@ -1,0 +1,26 @@
+PILOT cannot draw anything unless it is in graphics mode. In graphics mode, the |
+screen looks like this:
+Figure 10-1 The GRAPHICS Screen |
+This is the graphics screen — all black except for a small strip of blue at the bottom
+of the screen.
+THE GRAPHICS The GRAPHICS command tells the computer to enter graphics mode and open the |
+COMMAN D, GR: _ 8raphics screen.
+The format for the GRAPHICS command is:
+GR: subcommand
+Because there are several different types of graphics capabilities, they can’t all be |
+handled under one command without the help of subcommands. The graphic sub-
+commands tell the computer what to do in graphics mode.
+Below are the subcommands available with the GRAPHICS command, GR: |
+CLEAR
+DRAW
+DRAWTO
+FILL
+FILLTO
+GO |
+GOTO
+PEN
+QUIT
+TURN |
+TURNTO
+Each subcommand is described in detail in this section. |
+116 Welcome to Graphics j

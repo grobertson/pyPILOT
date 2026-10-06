@@ -1,0 +1,39 @@
+se —W. Nao
+| SO: 15
+SO: 16
+SO: 17
+} SO: 18
+$0: 19
+SO: 20
+SO: 21
+| SO: 22
+SO: 23
+SO: 24
+
+i SO: 25
+@ Press the (ZLB key to stop the sound. The key is located in the upper
+right corner of your keyboard.
+
+i If you would like to, you can play a chromatic scale beginning on D by typing SO:
+14 for your first command, continuing to enter the succeeding commands and
+numeric values until you reach SO: 26. In fact, you can play a chromatic scale start-
+
+| ing with any numeric value between 1 and 19.
+
+A major scale is slightly different from a chromatic scale. You only use 8 numeric
+values instead of the 13 you used for the chromatic. For example, the C major scale
+consists of the tones C, D, E, F, G, A, B, and C. This type of scale uses both whole-
+step and half-step intervals. The illustration below shows the format of a major scale
+I « using the C scale as an example.
+8 NOTES, OR 1 OCTAVE
+4 W=WHOLESTEP H=HALFSTEP
+Wa Wi BW VC aiap H
+
+| C MAJOR SCALE 2 os ee ae
+
+| Cc D E F G A B &
+
+i Figure 2-4 C Major Scale
+
+Getting Started
+1 with Pilot 11

@@ -1,0 +1,9 @@
+Run a Pr ¢
+™~
+462° <7
+*
+> if
+ae” <f
+The RUN command tells the computer to execute the program currently in memory.
+Figure 3-4 shows a listed program and Screen 3-5 shows the program after RUN is typed.
+34 Executive Commands—RUN .

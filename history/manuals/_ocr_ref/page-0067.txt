@@ -1,0 +1,35 @@
+J SHORTCUTS FOR GRAPHICS PROGRAMMING
+You can program more than one GRAPHICS subcommand in the same program state-
+ment. Each subcommand MUST be separated by a semicolon (;). For example:
+GR:GOTO 0,0; DRAW 10; TURN 45; PEN RED; DRAW 5
+If you want a series of subcommands repeated a specific number of times, enclose the
+series of subcommands in parentheses and precede the left parenthesis by the number of
+times you want that series repeated. For example, the program in Figure 4-4 shows the
+long way to draw a box. The program in Figure 4-5 shows a short way to to draw the
+same box.
+10 R:LONG WAY BOX
+2@ GR:ICLEAR
+25 GR:GOTO -15,-5
+3@ GR: DRAW 30
+4@ GR: TURN 90
+S@ GR:DRAW 30
+6@ GR: TURN 90
+7@ GR:DRAW se
+8@ GR: TURN 90
+90 GR:DRAW Ze
+100 GR: TURN 90
+> 110 E:
+bg os
+a
+Figure 4-4
+1@ R: SHORT WAY BOX
+2@ GR:CLEAR
+3@ GR:GOTO -15,-5
+40 GR: 4(DRAW 36; TURN 90)
+Se E:
+READY
+| a
+REaDY
+Fy
+s Figure 4-5
+Graphics—GR: 59

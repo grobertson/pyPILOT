@@ -1,0 +1,47 @@
+JS ee.
+| Here are some examples:
+LOAD D: CHECKSUM Loads CHECKSUM from Drive#1
+| LOAD D: LETTER.1 Loads LETTER from disk Drive#1
+LOAD D4: K Loads K from disk Drive#4
+If the program is not on the diskette, the computer responds with a * * * I/O ERROR
+170 * * * error message.
+Unlike saving programs, partial programs cannot be loaded. The entire program
+| must be loaded.
+4. LIST, and/or RUN the program.
+| Following is an exercise to take you through the steps of loading a program.
+1. Turn on the computer and the disk drive if you have not done so.
+2. Insert the diskette containing the TEST program saved previously.
+| 3. Type: LOAD D: TEST Gag.
+4. When the READY message appears on the screen your program is loaded into
+memory.
+d 5. LIST and RUN the program.
+Merging Programs
+| & Programs can be merged when loading off a diskette and into memory. Merge
+means to blend together or combine. If you have a program in memory, and you
+load another program from a diskette into memory without clearing memory first,
+the two programs will merge. If both programs use the same line numbers, the
+| statements loaded off the diskette have priority and are remembered.
+Merging programs can be advantageous or disastrous. Used correctly, you can ex-
+| pand a current program by merging another program into it.
+Thus, if the following program is in memory,
+10 R: NAME PROGRAM
+| 20T:
+30 T: WHAT IS YOUR NAME? \
+40 A: $NAME
+| 50T: HELLO, $NAME! HOW ARE YOU TODAY? \
+60A:
+70M: GOOD, FINE,GREAT, HEALTHY, EXCELLENT
+80 TY: GREAT!
+90 TN: THAT’S TOO BAD:
+100 E:
+and you load this program from a diskette,
+i 100 R: ADDRESS PROGRAM
+110 T: WHAT IS YOUR STREET ADDRESS? \
+120 A: $STREET
+130 T: IN WHAT CITY AND STATE DO YOU RESIDE? \
+140 A: $CITYSTATE
+150 T: WHAT IS YOUR ZIP CODE? \
+160 A: $ZIP
+170 T: THANK YOU FOR THE INFORMATION.
+180 E:
+Appendix B 153

@@ -1,0 +1,36 @@
+. Disk Operating System
+
+When you want to work with your disk files for any reason, type DOS and press (50073.
+This will bring up the DOS Menu (Figure 3-23) to your television screen.
+
+o~
+
+DISK OPERATING SYSTEM II VERSION 2 -Os
+
+COPYRIGHT 1968 aTARI
+
+&. DISK DIRECTORY I. FORMAT DISK
+
+B. RUN CARTRIDGE J. DUPLICATE DISK
+
+Cc. COPY FILE K. BINARY SAVE
+
+O. DELETE FILECS) L. BINARYL oad
+
+E. RENAME FILE M. RUN AT ADDRESS
+
+F. LOCK FILE MN. CREATE MEM. Say
+
+G. UNLOCK FILE 0. DUPLICATE FILE
+
+HM. WRITE DOS FILES
+
+= SELECT ITEM OR CISD) For menu
+Figure 3-23
+Select the function you want to perform from the DOS Menu, type the letter for that func-
+tion, and press (7329. For example, if you want to see what files are in the Disk Direc-
+tory, you would type the letter A (see DOS Menu) and press twice. You will then
+see a listing of all the files in the directory (Figure 3-24). Our sample Disk Directory is
+listed on the following page; yours will have different filenames.
+Executive Commands—DOS 53
+:

@@ -1,0 +1,41 @@
+ee ks
+Examples: |
+GR: FILLTO - 10, — 20
+GR; FILLTO 5, L }
+The TURNTO subcommand sets THETA to a value in degrees and turns the turtle to
+the specified degree angle. The format for TURNTO is:
+GR: TURNTO degrees |
+Examples:
+GR: TURNTO 90
+GR: TURNTO - 60
+The TURN subcommand increments THETA by the number of degrees specified.
+The format for TURN is:
+GR: TURN increment
+Examples: |
+If THETA =45 then
+GR: TURN 45 ——®THETA=90
+GR: TURN - 60 ——» THETA= — 15
+The DRAW subcommand draws a line for the length specified, in the direction of
+THETA. The format for DRAW is:
+GR: DRAW line length 4
+Examples:
+GR: DRAW 20 |
+GR: DRAW #X
+The GO subcommand moves the turtle a specified length in the direction of
+THETA. The format for GO is:
+GR: GO number of units from starting point
+Examples: |
+GR: GO 20
+GR: GO #L
+GR: GO -5 j
+The FILL subcommand draws a line the length specified, in the direction of THETA,
+while filling in the blank regions to the right with the current pen color. The format
+for FILL is:
+GR: FILL line length
+Examples: {
+GR: FILL 30 ,
+GR: FILL#A
+GR: FILL -15 }
+In all the turtle geometry subcommands, if the line length is negative, the turtle =
+moves backward instead of forward.
+136 Welcome to Graphics

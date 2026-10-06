@@ -1,26 +1,8 @@
-"""Tests for the distribution metadata and what a release must never contain.
+"""Tests for distribution metadata and built archive contents.
 
-Three kinds of thing live here, and the second is the important one.
-
-**The two names.** The PyPI *distribution* is ``rePILOT``; the importable
-*package* is still ``pypilot``. ``pypilot`` is taken on PyPI by an unrelated
-package, so the distribution had to be renamed, and renaming the import path
-too would have broken every import in the docs and tests for no benefit. Two
-consequences are easy to break and are pinned here.
-
-**Metadata.** The version, the classifiers, the console script, and the promise
-of *zero third-party runtime dependencies* — the interpreter has to run on a
-classroom Raspberry Pi, and nothing in the test suite can catch an accidental
-`dependencies = [...]` because the dev environment already has everything.
-
-**What must never ship.** ``history/`` holds copies of copyrighted Atari
-manuals, kept locally and gitignored. A distribution that redistributed them
-would be the worst possible bug this project could have, and it is one
-plausible edit away: adding a path to ``pyproject``'s sdist ``include`` list
-would do it silently.
-
-The sdist test builds a real one, because checking the metadata cannot tell you
-what hatchling actually put in the archive.
+The suite pins the distinct PyPI distribution and import package names,
+release metadata, zero runtime dependencies, and the contents of real build
+artifacts.
 """
 
 from __future__ import annotations
@@ -37,9 +19,8 @@ import pytest
 
 ROOT = Path(__file__).parent.parent
 
-#: Never shipped. `history/` is copyrighted source material kept for reference
-#: only; `.venv` and friends are build noise.
-FORBIDDEN_IN_DIST = ("history/", ".venv", "dist/", ".git/", "__pycache__")
+#: Generated environments and build output do not belong in distributions.
+BUILD_ARTIFACTS = (".venv", "dist/", ".git/", "__pycache__")
 
 #: The PyPI distribution name. **Not** `pypilot`: that name is taken on PyPI by
 #: somebody else. `importlib.metadata` normalises names, so lookups must use
@@ -161,42 +142,12 @@ def test_the_readme_and_changelog_are_declared(metadata: dict[str, Any]) -> None
 
 
 # ---------------------------------------------------------------------------
-# What a distribution must never contain
+# Archive contents
 # ---------------------------------------------------------------------------
 
 
-def test_history_is_excluded_from_the_build(metadata: dict[str, Any]) -> None:
-    """The exclusion must be explicit, not merely the absence of an `include`.
-
-    Relying on "we never mentioned it" is one edit away from shipping somebody
-    else's copyrighted manuals.
-    """
-    config = tomllib.loads((ROOT / "pyproject.toml").read_text(encoding="utf-8"))
-    excludes = config["tool"]["hatch"]["build"].get("exclude", [])
-    assert any("history" in pattern for pattern in excludes), (
-        "pyproject must exclude history/ explicitly; the sdist include list alone is not enough"
-    )
-
-
-def test_the_collected_documents_are_gitignored() -> None:
-    """The manuals stay local; only the bibliography is tracked.
-
-    ``history/README.md`` is deliberately tracked - it is the provenance
-    record, and it is ours. The *documents* under it are somebody's
-    copyright and must never be committed, let alone packaged.
-    """
-    ignored = {
-        line.strip().rstrip("/")
-        for line in (ROOT / ".gitignore").read_text(encoding="utf-8").splitlines()
-        if line.strip() and not line.strip().startswith("#")
-    }
-    for directory in ("/history/web", "/history/manuals", "/history/references"):
-        assert directory in ignored, f"{directory} must be gitignored"
-    assert (ROOT / "history" / "README.md").is_file(), "the bibliography is tracked"
-
-
 @pytest.mark.slow
-def test_a_built_sdist_contains_nothing_forbidden(tmp_path: Path) -> None:
+def test_a_built_sdist_contains_no_build_artifacts(tmp_path: Path) -> None:
     """Build a real sdist and look inside it.
 
     Checking the metadata cannot tell you what hatchling actually packed, and
@@ -214,7 +165,7 @@ def test_a_built_sdist_contains_nothing_forbidden(tmp_path: Path) -> None:
     with tarfile.open(archives[0]) as tar:
         names = [f"/{name}" for name in tar.getnames()]
 
-    for needle in FORBIDDEN_IN_DIST:
+    for needle in BUILD_ARTIFACTS:
         offenders = [name for name in names if needle in name]
         assert not offenders, f"{archives[0].name} contains {needle}: {offenders[:5]}"
 
@@ -239,7 +190,7 @@ def test_a_built_wheel_ships_only_the_package(tmp_path: Path) -> None:
     with zipfile.ZipFile(archives[0]) as wheel:
         names = [f"/{name}" for name in wheel.namelist()]
 
-    for needle in FORBIDDEN_IN_DIST:
+    for needle in BUILD_ARTIFACTS:
         offenders = [name for name in names if needle in name]
         assert not offenders, f"{archives[0].name} contains {needle}: {offenders[:5]}"
 

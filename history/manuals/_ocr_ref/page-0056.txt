@@ -1,0 +1,16 @@
+Load a Pr 2
+ae =
+=) i. I
+) 1B _
+The LOAD command tells the computer to LOAD a program you have saved on cassette
+or diskette into the computer memory. Ee
+LOAD C:
+.
+Loading From Cassette
+In order to LOAD a program from cassette (indicated by C:), type LOAD C: and press
+the key.
+The computer will beep, signaling you to position the cassette tape and press the PLAY
+button on the cassette recorder. When you are ready, press Q]SU0 on the computer
+console to start the tape loading. If you tum up the volume control on your television set, &
+you will soon hear a series of beeps. This tells you that the cassette is loading properly.
+48 Executive Commands—LOAD, LOAD C:

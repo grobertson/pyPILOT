@@ -1,0 +1,20 @@
+ee
+TAPE SCALE
+CASSETTE TAPE
+WRITE-PROTECT NOTCH :
+Figure B-1_ Cassette Tape
+@©
+WRITE-PROTECT od] |
+PROTECTIVE JACKET {
+Figure B-2 Diskette
+When information from the computer's memory is recorded onto a cassette tape or J
+diskette, the computer can be turned off without losing the recorded information.
+Later, when the computer is turned on, you can tell the computer to get the infor-
+mation from the cassette tape or diskette and put it back in its memory. I
+Another alternative is to send information from memory to the printer. The printer
+is a device that will type on paper whatever you tell it to print. 4
+THE ATARI 810 The disk drive unit stores programs and data on diskettes. Each diskette can store
+DISK DRIVE many, many programs on it. A total of four ATARI 810 disk drives can be attached to
+the ATARI computer at one time, allowing you to store and retrieve a multitude of }
+programs.
+150 Appendix B ;

@@ -1,0 +1,17 @@
+'''RPilot''' (''Rob's PILOT Interpreter'') is an implementation of the [[PILOT]] programming language in [[C]]. The development halted around 2002 and an follow up project was announced called ''Sky Pilot'' but no work appears to have been done on that project.
+
+==Versions==
+* 1.0 (Apr 1998)
+* 1.01 (Jul 1998) [ftp://hobbes.nmsu.edu/pub/os2/dev/misc/rpos2101.zip rpos2101.zip]
+* 1.4 (Jul 2000)
+* 1.4.1 (Aug 2000)
+* 1.4.2 (Jun 2002)
+
+==License==
+*Open source released under the [[GPL v2]]
+*Author: Rob Linwood (aka auntfloyd)
+
+==Links==
+* http://sourceforge.net/projects/rpilot/
+
+[[Category:Open Source Software]][[Category:PILOT]][[Category:Software written in C]]

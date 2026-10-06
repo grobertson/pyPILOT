@@ -1,0 +1,57 @@
+You can tell the computer only to select random numbers from 0 through an upper limit. B
+Simply place a backslash (\ ) and the upper limit after the question mark (?). For exam-
+ple, C:#R =? \ 10 will choose a random number from 0 through 9. The COIN TOSS
+program in Figure 2-20 randomly generates only 0’s (HEADS) and 1’s (TAILS).
+-
+2@ *MORE HEADS
+3@ CrBR=7\2 TAILS
+40 TCHR=0): HEADS TAILS
+S@ TCHR=1): TAILS TAILS
+60 J: "MORE TAILS
+
+HEADS
+REaDY TAILS
+a HEADS
+
+HEADS
+
+TAILS
+
+TaAILs
+
+TAILS
+
+HEADS
+
+HEADS
+
+HEADS
+
+HEADS
+
+io
+A numeric variable can be used as the upper limit for selecting a random number. For ES
+example, the program in Figure 2-21 allows you to type in the maximum amount that a
+drunkard will turn at each step as he staggers for 200 paces.
+10 *DRUNKWALKER
+2@ GR: CLEAR
+3@ T:ENTER MAXIMUM TURN CO-360):\
+40 a:aR
+S@ T:> CCLEAR SCREEN}
+6@ T:DRUNKEN WALKER MAX. TURN =
+BR DEG.
+78 C:nc=0
+8@ “WALK
+90 GR:DRAWS
+100 Pa:s
+110 GR: TURN ?\HR
+12@ C:sC=nc+1
+13@ JCHC< 200) : *WALK
+140 E:
+ae
+a READY
+
+Ey
+Figure 2-21
+22 Compute—C:
+7

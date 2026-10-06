@@ -1,0 +1,17 @@
+a es ll
+Think of variables as compartments in the computer’s memory: |
+Figure 6-1 Concept of Variables |
+Because we may have more than one variable in memory, we must give each
+variable a variable name to distinguish it from all other variables.
+Figure 6-2 Assigning Variable Names |
+When assigning variable names, it is easier for you to identify a variable if each
+variable name represents the contents of the variable. The three variables above |
+are good examples. Variable WEATHER holds values such as sunny, cloudy, or
+rainy that describe the weather. Variable DATE holds a date, (12/03/80). Variable
+DAY holds the day of the week, Sunday. .. Saturday. If we had named the variables
+1,2,3 or A,B,C we might forget which variable holds what values. Variable names, |
+just like the variables themselves, are changeable.
+Let’s look at our variables in memory. |
+|
+Figure 6-3 Assigning Values to Variables s j
+68 Variables |

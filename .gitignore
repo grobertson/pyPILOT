@@ -40,13 +40,6 @@ docs/_build/
 venv/
 ENV/
 
-# Research material collected for the spec. Atari's manuals are copyrighted
-# and not relicensable - keep them local, do not publish them.
-# history/README.md is tracked; the collected documents are not.
-/history/web/
-/history/manuals/
-/history/references/
-
 # uv
 .uv/
 

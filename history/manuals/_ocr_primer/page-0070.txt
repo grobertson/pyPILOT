@@ -1,0 +1,18 @@
+SS...
+j ADVANCED SEPARATING MATCH STRINGS WITH VERTICAL BARS
+| N-
+et itr If a MATCH command specifies several strings to be matched, the strings must be
+| MAKI separated by commas or vertical bars ( | ). If vertical bars are used to separate the
+TECHNIQUES MATCH strings, then a vertical bar must follow the colon, preceding each string:
+M: 1 IS | ARE
+a M: 1 YELLOW | BLUE | RED
+@ To type a vertical bar, hold down the GUaB key and press the | \ key.
+} Vertical bars are especially useful when matching for punctuation marks such as
+commas, periods, semicolons, colons, and the like:
+Milo ote ee ey
+i M: 1 * I +
+(5°, a
+q ™@ Commas and vertical bars may not be used as separators in the same MATCH
+command. @
+Decision-Making
+| Programs 53

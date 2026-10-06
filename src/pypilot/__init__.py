@@ -9,8 +9,8 @@ distribution is ``rePILOT``, because ``pypilot`` is taken on PyPI by an
 unrelated package. So it is installed as ``repilot`` and imported as
 ``pypilot``.
 
-The implementation is being built in stages; see ``SPEC.md`` for the language
-specification and the implementation roadmap.
+The complete 1.0 implementation is documented in ``SPEC.md``, including the
+language specification and implementation history.
 """
 
 from __future__ import annotations

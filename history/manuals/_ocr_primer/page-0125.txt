@@ -1,0 +1,39 @@
+————
+Program Mode Sounds |
+Program mode allows you to play a series of SOUND commands in rapid succes-
+sion once the program is RUN. Type: {
+10 SO: 13
+20 SO: 15
+30 SO: 13
+40 SO: 14 |
+SOE:
+RUN the program. The program sounds like a short beep. The program executes so
+fast that you can’t hear each individual tone. The PAUSE command used in con-
+junction with the SOUND command helps to extend the length of tones so you can
+hear them.
+THE PAUSE COMMAND, PA:
+The PAUSE command tells the computer to pause, or delay program execution tem- |
+porarily. PAUSE does not affect the sound in progress; the sound continues playing
+while the computer pauses before executing the next statement. The length of the
+pause determines the length of the tone. |
+The format for the PAUSE command is:
+PA: numeric expression a |
+Examples:
+PA: 2 |
+PA: #K *5/2
+PA: 32
+Below is a chart showing you what PAUSE values to use to determine the length of {
+each note. The chart is based on a ‘Moderato’ tempo.
+Pee ae eee
+Note: Whole Half Quarter Eighth Six- Thirty-
+teenth second
+Figure 9-4 PAUSE Values for Moderato (Andante) Tempo i
+These values are not absolute. If you want to change the tempo faster or slower,
+change the PAUSE values. All PAUSE values are relative to each other. If you
+change the PAUSE value of a quarter note from 16 to 64 to change the tempo, then i
+you must change the PAUSE value of the whole, half, eighth, and sixteenth notes as :
+well. (The PAUSE values are calculated by powers of two: 2, 4, 8, 16, 32, 64, 128, -*~
+256...) Ai
+Many Voices,
+108 Many Sounds k
+.

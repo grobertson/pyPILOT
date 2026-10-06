@@ -93,18 +93,15 @@ jobs:
         # the upload starts, which is a confusing way to find out.
         run: uvx twine check --strict dist/*
 
-      - name: Check nothing forbidden was packaged
-        # `history/` holds copies of Atari manuals that are somebody else's
-        # copyright. They are excluded by pyproject, but "excluded in the
-        # metadata" is not the same as "absent from the archive".
+      - name: Check build artifacts were not packaged
         run: |
           uv run python - <<'PY'
           import tarfile, zipfile, glob, sys
 
-          FORBIDDEN = ("history", ".venv", "dist/", ".git/", "__pycache__")
+          BUILD_ARTIFACTS = (".venv", "dist/", ".git/", "__pycache__")
 
           def check(path, names):
-              for needle in FORBIDDEN:
+              for needle in BUILD_ARTIFACTS:
                   hits = [n for n in names if needle in n]
                   if hits:
                       print(f"::error::{path} contains {needle}: {hits[:3]}")

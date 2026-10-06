@@ -1,7 +1,7 @@
 # pyPILOT Completion Specification
 
-**Status:** Active — this document is the contract for finishing pyPILOT.
-**Target:** `pypilot` 1.0.0, a faithful implementation of **ATARI PILOT** as
+**Status:** Complete — pyPILOT 1.0.0 was released on 2026-09-26.
+**Target:** the `rePILOT` 1.0.0 distribution (imported as `pypilot`), a faithful implementation of **ATARI PILOT** as
 specified in the *Atari PILOT External Specification*, Revision E
 (27-Oct-1980).
 
@@ -34,10 +34,10 @@ This document specifies:
 
 1. **What the language is** — the normative semantics pyPILOT will implement
    (§4–§9), with every deliberate deviation from Core PILOT called out (§10).
-2. **What "finished" means** — the architecture, module boundaries, and
-   acceptance criteria for a 1.0 release (§2, §3, §12).
-3. **In what order to build it** — a staged roadmap where every stage leaves the
-   project in a working, tested state (§11).
+2. **What "finished" meant** — the architecture, module boundaries, and
+  acceptance criteria for the 1.0 release (§2, §3, §12).
+3. **How it was built** — a staged implementation history where every stage
+  left the project in a working, tested state (§11).
 
 ### 1.1 Scope: why ATARI, and what is excluded
 
@@ -70,8 +70,8 @@ they are **specified in the command table and raise
 naming the statement rather than an obscure parse error. They are not silently
 dropped, and they are not faked.
 
-A terminal emulator with turtle graphics is a plausible 2.0; the language
-surface is designed so it can be added without breaking 1.0 programs.
+A terminal emulator with turtle graphics is a possible future extension; the
+language surface is designed so it can be added without breaking 1.0 programs.
 
 Also out of scope:
 
@@ -90,7 +90,7 @@ noted.
 
 ---
 
-## 2. What exists today (2026-09-26)
+## 2. Project state (2026-10-05)
 
 The repository is a three-commit scaffold from April 2020 that never ran.
 
@@ -100,10 +100,10 @@ The repository is a three-commit scaffold from April 2020 that never ran.
 | `lang/core.py` | `PilotCore` with 10 `NotImplementedError` stubs, all declared **without `self`** | Moved to `src/pypilot/core.py`; methods are properly bound |
 | `lang/helpers.py` | `Os`/`Shell` statics, all `NotImplementedError` | `src/pypilot/helpers.py`; `Os.load`/`Os.save` **implemented** |
 | `lang/__init__.py` | `from .core import hmm` — **import error** | Removed |
-| `tests/` | nose-style stubs importing a nonexistent `sample` module | Real pytest suite, **55 tests, 98% coverage** |
+| `tests/` | nose-style stubs importing a nonexistent `sample` module | Real pytest suite, **898 collected tests, 95% branch coverage** |
 | `setup.py`, `requirements.txt`, `Makefile`, `MANIFEST.in` | setuptools + `nose` + `sphinx` | **Deleted** — replaced by `pyproject.toml` + `uv.lock` |
 | `docs/conf.py` | 2012 `sphinx-quickstart` boilerplate, `project = 'sample'` | Modern Sphinx config, zero-warning build |
-| `docs/` | Empty `index.rst` | `index.rst`, `language.rst`, `api.rst` |
+| `docs/` | Empty `index.rst` | `index.rst`, `language.rst`, `api.rst`; warning-free Sphinx build |
 | — | — | `pyproject.toml`, `uv.lock`, `.github/workflows/ci.yml`, `.python-version` |
 
 ### 2.1 The bug worth recording
@@ -266,19 +266,19 @@ against.
 
 | Module | Responsibility |
 |---|---|
-| `errors.py` | Exception hierarchy. **Done.** |
-| `syntax.py` | `Statement`, `Condition`, `Parser`, `Program`, `CommandName`. **Done (Stage 1).** |
-| `expressions.py` | `nexp` tokeniser and evaluator; `ExpressionError`. **Done (Stage 3).** |
-| `values.py` | `Numeric` (16-bit) / `Piece` model; `scan_text`, `expand_text`. **Done (Stage 2).** |
-| `io.py` | `OutputDevice`/`InputDevice` protocols; console, buffer, and scripted input. **Done (Stage 4).** |
-| `runtime.py` | `Interpreter`, dispatch loop, condition evaluation, trace hook. **Done (Stage 4).** |
-| `state.py` | `PilotState`: 26 numeric vars, string table, accept buffer, match ordinal, module call stack. **Done (Stage 2).** |
-| `runtime.py` | `Program`, `Interpreter`, statement dispatch loop, trace hook. |
-| `core.py` | `PilotCore`: the per-statement handlers. **T/R/C done (Stage 4).** |
-| `devices.py` | Atari device model — `READ`/`WRITE`/`CLOSE`/`LOAD`/`SAVE`. |
-| `io.py` | `InputDevice` / `OutputDevice` protocols + console and string-buffer impls. **Done (Stage 4).** |
-| `helpers.py` | `Os`, `Shell`. **Partially done.** |
-| `cli.py` | Argument parsing, `--check`/`--list`, `--trace`, program running. **Done (Stage 4).** |
+| `errors.py` | Exception hierarchy for syntax, runtime, undefined-label, and unsupported-command errors. |
+| `syntax.py` | `Statement`, `Condition`, `Parser`, `Program`, and the Atari command vocabulary. |
+| `expressions.py` | Numeric-expression tokenizer and evaluator. |
+| `values.py` | 16-bit `Numeric` model and text-expression scanning/expansion. |
+| `state.py` | Numeric and string stores, accept buffer, match results, and module call stack. |
+| `match.py` | Match-field parsing, accept-buffer search, and `JM:` label splitting. |
+| `io.py` | Input/output protocols and console, buffer, and scripted implementations. |
+| `devices.py` | Device-oriented `READ`/`WRITE`/`CLOSE`/`LOAD`/`SAVE` support. |
+| `core.py` | Implemented run-mode statement handlers and explicit refusal paths. |
+| `runtime.py` | Interpreter dispatch, conditions, execution limit, devices, and trace hooks. |
+| `helpers.py` | Host OS helpers and deferred-program editing operations. |
+| `repl.py` | Interactive immediate mode and its command loop. |
+| `cli.py` | Command-line parsing, checking/listing, program execution, and REPL entry. |
 
 ### 5.1 `Statement`
 
@@ -1083,10 +1083,10 @@ These are places pyPILOT knowingly differs, each with its reason.
 
 `D:` arrays, `SA:`/`SM:` string arrays, floating point, multi-target `C:`
 assignment, and `CS:`/`CN:` cursor control are **Common PILOT**, not ATARI PILOT
-(§1.1). They are a possible 2.0, gated on 1.0. `PCS:` is Atari's actual cursor
-command and is specified in §9.5.
+(§1.1). They remain outside the 1.0 scope; a future release could consider
+them. `PCS:` is Atari's actual cursor command and is specified in §9.5.
 
-### 10.4 `GR:` and `SO:` — specified, unimplemented
+### 10.4 `GR:` and `SO:` — specified and refused
 
 `GR:` (15 turtle-graphics subcommands) and `SO:` are real ATARI PILOT. They
 **MUST parse**, and **MUST** raise `PilotUnsupportedError` naming the
@@ -1095,7 +1095,8 @@ subcommand.
 They must not silently succeed, and they must not be a generic parse error: a
 learner running a 1981 cartridge program should learn that turtle graphics
 *exists* and is unavailable, not that their program has a syntax error at line
-40. A terminal turtle is a plausible 2.0; the language surface leaves room.
+40. A terminal turtle is a possible future extension; the language surface
+leaves room.
 
 ### 10.5 Hardware-dependent constructs
 
@@ -1136,9 +1137,10 @@ decision, not a missing feature.
 
 ATARI PILOT is an interpreter with an interactive immediate mode, and the
 `[I]`-marked commands in §9.1 exist only there (`RUN`, `LIST`, `NEW`, `AUTO`,
-`REN`, `SAVE`, `DOS`). pyPILOT's REPL (Stage 8) provides `run`, `list`,
-`clear`, `load`, and `quit`. `AUTO` and `REN` are not meaningful without an
-editor that assigns line numbers (§4.1), so they are not provided.
+`REN`, `SAVE`, `DOS`). pyPILOT's REPL implements `LIST`, `RUN`, `NEW`, `AUTO`,
+`REN`, `LOAD`, `SAVE`, `DUMP`, `VNEW`, `TRACE`, and `QUIT` (also `EXIT`).
+`AUTO` assigns line numbers as statements are entered; a full-screen editor is
+not provided.
 
 A command that is immediate-mode-only, used in a run-mode program, is a
 `PilotRuntimeError` naming the line — not a parse error, since the same text is
@@ -1146,7 +1148,7 @@ valid at the REPL.
 
 ---
 
-## 11. Roadmap
+## 11. Implementation history (all stages complete)
 
 Every stage ends with a green test suite and a runnable program. **No stage may
 merge with a red test.**
@@ -1308,10 +1310,10 @@ Two spec findings from this stage are recorded in §10.1:
 
 ### Stage 6 — Control flow `J U E JM` ✓ v0.7.0
 
-**Deliver** `_j`, `_u`, `_e`, `_jm`, the label table (first writer wins, **no**
+**Delivered** `_j`, `_u`, `_e`, `_jm`, the label table (first writer wins, **no**
 duplicate detection [4.2]), and the module call stack.
 
-**Accept when** recursive modules work to the configured depth limit, a
+**Acceptance criteria:** recursive modules work to the configured depth limit, a
 duplicate label resolves to the lowest line number, and an undefined label
 produces a clear error naming the line.
 
@@ -1479,23 +1481,18 @@ fails to parse, because a listing looks fine.
 that verifies the *built wheel* rather than just the source tree, and a
 packaging test suite that looks inside the distributions.
 
-**Four real defects this stage found**, none of which the test suite could see:
+**Three real defects this stage found**, none of which the test suite could see:
 
 - **The author email was `me@grandrobertson.com.com`** — a doubled suffix, in
   the metadata of every release up to and including 0.10.0.
-- **`history/README.md` was in the sdist.** Only the bibliography, not the
-  manuals — but relying on "we never mentioned that path" is one edit away
-  from redistributing somebody else's copyright. The exclusion is now explicit
-  and tested.
 - **A leftover `.venv-wheel` was packed into the sdist.** Found by the new test
   within one run of it being written.
 - **The classifier still said `3 - Alpha`** on a release that was about to be
   called stable.
 
-The `history/` exclusion is the one that mattered most. `tests/test_packaging.py`
-builds a *real* sdist and wheel and inspects the archives, because reading the
-metadata cannot tell you what hatchling actually packed — and that is the
-difference between "we meant to exclude it" and "it is not in there".
+`tests/test_packaging.py` builds a *real* sdist and wheel and inspects the
+archives, because reading the metadata cannot tell you what hatchling actually
+packed.
 
 The clean-environment wheel install that §12 has always required is now
 performed by CI on every matrix entry, and was run by hand here: the wheel
@@ -1589,8 +1586,8 @@ Every item is a test that exists, or a test that exists to prove a thing is
 ### CLI
 
 - [x] `pypilot prog.pilot` runs a program and exits 0.
-- [x] `pypilot` with no arguments starts a REPL; `run`, `list`, `clear`, `load`,
-      and `quit` work.
+- [x] `pypilot` with no arguments starts a REPL; `LIST`, `RUN`, `NEW`, `AUTO`,
+      `REN`, `LOAD`, `SAVE`, `DUMP`, `VNEW`, `TRACE`, and `QUIT` work.
 - [x] A runtime error reports the program line number and echoes the source
       line.
 - [x] `--trace` prints each statement as it executes.

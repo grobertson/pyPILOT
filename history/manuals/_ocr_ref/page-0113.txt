@@ -1,0 +1,12 @@
+3 165 Disk file naming error.
+167 Disk file locked.
+169 Disk directory full (64 files).
+170 Disk file not found in directory.
+Note : These errors indicate problems over which the user has no direct control: they
+are due to hardware problems and should seldom be seen.
+Ors
+vi)
+oN
+ar
+; Pa 4
+Appendix B 107

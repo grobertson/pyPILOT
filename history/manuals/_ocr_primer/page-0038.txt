@@ -1,0 +1,31 @@
+-
+a OS
+| Try it. Your screen should still have the example program displayed on it. Type:
+5 RUN and press €]3@08. Watch the computer display your programmed messages.
+i Your screen before and after the RUN command should look like this:
+‘ 1@ T:MY
+26 T: COMPUTER Has
+3@ T:Q NAME.
+I ae T $ Iris
+Press key RON
+| My
+COMPUTER HAS
+A NAME.
+ITis
+FRED. ‘i
+READY
+1e@ .
+| Figure 3-1 Program Run
+When the RUN command is issued (followed by a of course), the computer
+automatically clears the screen before executing the program. When program ex-
+i ecution is completed, the screen displays the READY message and the cursor.
+™ Because the computer can only remember one program at a time, every time
+you issue the RUN command the computer executes the program currently stored
+in memory. ©
+¢ THE LIST COMMAND
+The LIST command displays the program statements currently in the computer’s
+I memory.
+To display our example program clear the screen and on a new line, type:
+"had ust Em
+s Writing A
+I Pilot Program 21

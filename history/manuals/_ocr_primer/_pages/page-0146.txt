@@ -1,0 +1,23 @@
+>. __W
+| The program is one continuous loop. Line 20 repositions the turtle at the origin in
+each loop. Line 30 faces the turtle #X degrees. Line 40 draws a line from the origin
+facing #X degrees and 30 units long. Line 50 increments #X by 10 in each loop.
+| RUN the program. This is what you should see:
+a
+Figure 10-16 DRAW Subcommand: Program Run
+4 e DRAW lets you draw a line in a direction without having to specify exact Cartesian
+coordinates.
+7 The GO Subcommand
+The GO subcommand moves the turtle forward the number of units specified in
+the current THETA angle and plots a point.
+i The format for the GO subcommand is:
+GR: GO distance between points
+4 Examples:
+GR: GO 10
+| GR: GO #L
+The point is drawn in the current pen color.
+We can demonstrate the GO subcommand by changing a couple of lines from the
+previous example program. Replace lines 40 and 50 with:
+40 GR: GO 30
+] 50 C: #X=#X+1
+' Welcome to Graphics 129

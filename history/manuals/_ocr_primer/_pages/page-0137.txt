@@ -1,0 +1,45 @@
+Ss
+In turtle geometry, the turtle always moves a given distance relative to its current
+position and direction. Rather than moving to an (X,Y) location, the turtle can be
+told to turn and/or move a certain distance.
+
+The subcommands that use turtle geometry are:
+DRAW
+FILL
+GO
+TURN
+TURNTO
+‘ ®& Some important things to remember about the two systems are that the Cartesian
+coordinates X and Y specify an exact location on the graphics screen, whereas turtle
+geometry specifies direction and distance relative to the turtle. These two systems
+are interchangeable; they can be used on the graphics screen simultaneously. The
+turtle acts like a cursor in both systems, marking the current position on the screen.
+When graphics mode is initialized, the X and Y coordinate positions and the turtle’s
+directional angle THETA are all set to 0. In other words, when graphics mode is ini-
+tialized, the turtle is placed in the center of the screen, pointing straight up. @
+GRAPHICS THE PEN SUBCOMMAND
+OMMAND
+
+SUBC S All drawing is performed by the graphics pen. But this is one pen you will never
+
+see; it is invisible!
+The graphics pen has four colors. One of these colors is an uncolor, which is the >
+same as the background color. The other three colors are red, yellow, and blue.
+The PEN command assigns a color to your graphics pen. The format for the PEN
+command is:
+GR: PEN color
+Examples:
+GR: PEN RED
+GR: PEN YELLOW
+GR: PEN BLUE
+GR: PEN ERASE
+When the graphics screen is first opened, the color is automatically yellow. The |
+color remains set until another PEN graphics command is given or until the
+graphics screen is closed.
+The ERASE color is the background color. GR: PEN ERASE is useful for erasing |
+mistakes. If you draw an incorrect line, change the PEN color to ERASE and redraw
+the same line.
+This is how GR: PEN ERASE works. Type in the following command: |
+GR: DRAWTO 20,20 and press
+120 Welcome to Graphics I
+4

@@ -1,0 +1,34 @@
+R:
+s
+Remark 8
+The R: (REMARK) command lets you say something about the program. However, any
+REMARKS made will be ignored by the computer when you RUN the program. The only
+time you see them is when you LIST the program onto the television screen. For exam-
+ple, Figure 2-30 is a program made up almost entirely of REMARKS.
+LO Rf PP one rete te ne te ne se ne ne ne ne re ce ene ere eee TEE
+20 R:* ”
+se R:* *
+40 R:* THENOTHINGPROGRAM *
+se R:* -
+60 R:* ”
+ZO Rf PPE NE 08 te ne te ne oe ne tee ne oe ne ene EE ETE
+8@ T:CTHIS IS ALSO @ REMARKI
+90 T: THIS PROGRAM DOES NOTHING.
+10@ R: THAT'S FOR SURE!
+110 R: THIS IS THE END OF THE
+PROGRAM.
+120 E:
+READY
+m
+Figure 2-30
+Note: Square brackets [ ] are used to indicate a remark on the same line as a command &
+as shown in line 80 above.
+When you type RUN and press @132009, Figure 2-31 is all you will see on the screen.
+THIS PROGRAM DOES NOTHING.
+READY
+Pa
+|
+Figure 2-31
+REMARKS are particularly helpful when you write longer programs because they will re-
+mind you how the program works long after you have written it.
+30 Remark—R:

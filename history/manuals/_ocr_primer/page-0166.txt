@@ -1,0 +1,47 @@
+eS FF
+|
+CONCEPTS The ATARI 810 Disk Drive
+INTRODUCED Speaking to Your ATARI 810 Disk Drive
+| Saving a Program on a Diskette
+Write-Protecting a Diskette
+Loading a Program From a Diskette
+Merging Programs
+i The DOS Utility
+The Disk Directory
+Using the DOS Disk Directory
+Creating Your Own Disk Directory
+] Returning to PILOT From the DOS Utility
+Don’t Panic! (How To Handle Trouble With the Disk Drive)
+Screen Displays ‘‘Boot Error’’
+Busy Light on Disk Drive Does Not Go Off
+The Computer Does Not Respond
+The ATARI 410 Program Recorder
+Speaking to Your Program Recorder
+4 e Saving a Program on a Cassette Tape
+Write-Protecting a Cassette Tape
+Loading a Program From a Cassette Tape
+Merging Programs
+| A Method to Manage Programs on Cassette Tapes
+Saving the Cassette Directory
+Adding Programs to the Directory and the Tape
+The ATARI Printers
+5 Printing a Program
+The ATARI 400/800 Personal Computer System is made up of several devices that
+| transfer information from one to another. They include:
+© The keyboard
+© The disk drive
+¢ The program recorder
+¢ The printer
+Three of these devices handle information in program-size chunks. They are: the
+9 disk drive, the program recorder, and the printer.
+Because the computer is just a machine that is run by electricity, when it is turned
+off the electricity stops and it ‘forgets’ everything. This can be a problem if you
+| want the computer to remember something after it is turned off. To solve this prob-
+lem, a device such as a program recorder, disk drive, or printer may be attached to
+the computer to become part of the system. The program recorder, when in-
+structed to do so, records the information in the computer’s memory onto a
+I | Cassette tape (Figure B-1), just like music is recorded onto a cassette tape. Or, if you
+have a disk drive as part of your system, the disk drive, when instructed to do so,
+a records information from the computer’s memory onto a diskette (Figure B-2). A
+diskette is a flexible 5% inch magnetic diskette, much like a miniature record.
+; Appendix B 149

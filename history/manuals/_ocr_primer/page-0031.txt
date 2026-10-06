@@ -1,0 +1,16 @@
+i (a 2)
+Let’s try something using lost of color. To clear the graphics screen and remain in |
+graphics mode, type: GR: CLEAR and press (35009.
+Figure 2-8 Clearing the GRAPHICS Screen
+Here’s how easy it is to draw a box. Type this: |
+GR: 4(DRAW 20; TURN 90) @3S00T9
+@ The semicolon does not require the Gig key. @ a |
+GR: 4 CDRAW 20: TURN 90) |
+a
+Figure 2-9 Drawing a Box
+Now, type: GR: FILL 40 and press @]3273§. Look at the blue strip at the bottom to |
+see what you type in. Press the @]SgE9 key and watch the box and the top half of
+your screen fill up with YELLOW: |
+@ :
+Getting Started
+14 with Pilot 5

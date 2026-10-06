@@ -1,0 +1,38 @@
+a  «—«—i a
+MAJOR SCALE A musical pattern consisting of the following steps: whole, whole, |
+half, whole, whole, whole, half (see Figure 9-3).
+OCTAVE An interval of eight notes ranging from one note to the same note higher
+on the musical scale, e.g., middle C to the C above middle C is one octave. For
+example, C, D, E, F, G, A, B, and C.
+THE SOUND COMMAND, SO:
+The format for the SOUND command is:
+SO: voice
+SO: voice voice...
+SO: voice, voice, voice, voice
+@ Each voice must be separated by a space or a comma. Up to four voices can
+follow a SOUND command. &@
+Examples:
+SO: 1
+SOQr 1558
+sO: 0
+SO: 0 means no sound, or OFF.
+Below is a diagram showing the correlation between tones and their numerical nd |
+values. The diagram shows the musical scale and a piano keyboard like the one
+shown in Section 2.
+é r= ey ee | | ;
+| eT kh a aS |
+' 1 I ] | l
+1 We taie ieee pr ar ayeimee Leas eae Pig hy
+Weeal| ek eee 2a Se Bisa | | |
+habe Ceapicapa acai | bi Firs Paes | |
+Ea ae ee ieoeea faa deel Eoiaed Peabo)
+res eal iia \ (pare | | | | | free tliaen
+| | lee | rere | | ae | | | | yr
+bala lo tg le tay! Vela 1 [ase base 26 | 28 31
+oe’ on. He D E cRA B ote co Ba B :
+rd p* fe ry at Ging pf ol ice at ta po Pr Ce Nd
+1 3s £6) 2 8 ' 15 17 18 20 22 24 25 27 29 30 P
+MIDDLE C =
+Figure 9-2 Relation of Piano Keyboard to Musical Scale F
+Many Voices,
+106 Many Sounds §

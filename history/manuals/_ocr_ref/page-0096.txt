@@ -1,0 +1,44 @@
+PA:
+s
+Se a 2 Se DE a VT
+4 Pause N Units
+Fa
+NAME 4
+FRED EW i
+-. , ae \ ~
+~S *
+Use the PA:N command when you want a program to PAUSE for any reason during the
+RUN of a program. For example, PA: may be used to freeze what is on the screen for a
+3 few moments before clearing the the screen. PA: also allows you to write text on the
+screen a little at a time or to pause for dramatic effect: “The correct answer is...
+(pause)...An Embarrassed Zebra.” The program in Figure 5-6 pauses for dramatic effect
+before announcing a lucky number in the PILOT Lucky Number Drawing.
+1@ R: LUCKY NUMBER WELCOME TO THE PILOT
+2@ T:WELCOME TO THE PILOT LUCKY NUMBER SWEEPSTAKES
+3@ T:LUCKY NUMBER SWEEPSTAKES
+40 T: NOW GET READY . . . HERE WE GO.
+5@ Pa:90
+6@ T:NWOWGET READY... .\ ROUND AND ROUND THE CPUGOES.. .
+7@ Pa:9e WHERE SHE STOPS, NOBODY KNOWS.
+60 T:HERE WE Go.
+9e T: AND THE PILOT LUCKY NUMBERIS...
+100 PAa:90
+11@ T:ROUND AND ROUND THE CPU GOES 26177
+i2@ T:WHERE SHE STOPS, NOBODY CONGRATULATIONS TO THE COMPUTER
+KNOWS. WHOSE SERIAL NUMBER IS 26177.
+130 T:
+140 Pa:9e READY
+15@ C:#R=?\ 30000 a
+160 T:AND THE PILOT LUCKY NUMBER
+176 T:
+180 PA:180
+190 T:8R
+200 T:
+21@ Pa:180
+22@ T: CONGRATULATIONS TO THE
+COMPUTER
+23@ T: WHOSE SERIAL NUMBER IS HR.
+240 E:
+S READY
+bas Figure 5-6
+Sound and Pause—PA: 89

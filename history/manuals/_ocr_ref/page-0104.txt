@@ -1,0 +1,41 @@
+Numeric Conditions
+A YES/NO decision based on comparing two numbers is called a numeric condition. For
+example, if the amount of money in my pocket is equal to, or more than, the price of a
+hot fudge sundae, I will order the sundae (YES condition); if it is less, I will order
+something less expensive (NO condition).
+There are six possible comparisons you can make between two numbers. In PILOT, you }
+express these comparisons using the following symbols:
+
+#A = #B #A equals #B
+
+#C < 20 #C is less then 20
+
+#G > #H #G is greater than #H
+
+#G<>3 #G is not equal to 3
+
+#L<=5 #L is less than or equal to 5
+
+#B>= AC #B is greater than or equal to #C
+
+You can make numeric comparisons between two numeric variables, or between a
+numeric variable and a constant, and you can make any PILOT command conditional on
+a numeric comparison. Enclose the comparison in parentheses and place it between the
+command and the colon (:), like the Y or N in a string match condition. Here are some
+examples:
+
+J (#G< 3): 4% AGAIN JUMP if the value is #G is less than 3 to * AGAIN;
+otherwise keep going.
+
+T (#A=#B): RIGHT! Type “Right!” if the value of #A equals the value of
+#B; otherwise, skip this command.
+
+A(#P< =5):SANS Accept input from the keyboard if #P is less than or
+equal to 5; otherwise skip this command and keep
+going.
+
+SO(#N<>#R): 3,7 Sound the tones 3 and 7 if the value of #N is not
+equal to the value of #R; otherwise, skip this
+command.
+
+98 Conditionals—COMPARISON

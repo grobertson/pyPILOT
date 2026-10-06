@@ -1,0 +1,42 @@
+en
+Dump String Variables e
+If you want to see the contents of all the string variables in the computer's memory, type
+DUMP and press the key. The DUMP command does not clear the memory,
+and therefore is helpful when you want to find errors in your program.
+The program in Figure 3-17 is a listing of a program.
+10 R:AMADLIB
+2@_T: PLEASE ANSWER THESE
+QUESTIONS:
+3@ T:!NAME AN UGLY COLOR: \
+40 a:S$COLOR
+S@ T:NAME A CITY: \
+60 A:SCITY
+7@ T:!NAME & FAMOUS MOVIE STARLET? \
+80 A:SSTARLET
+9@ T:WHAT'S YOUR GREATEST FEAR?
+100 A:SFEAR
+110 T:} CCLEAR SCREEN
+120 T: NEWS FLASH
+130 T:
+140 T:LAST WEEK, THE Famous
+ACTRESS
+150 T:$S5TARLET, TRAVELED To $CITY
+16@ T:WEARING DARK SUNGLASSES AND A
+170 T:S$COLOR HAT 50 THAT NO ONE g
+18@ T:KNOW THAT SHE WAS AFRAID OF
+190 T:SFEaR.
+200 T: THE END
+210 E:
+READY
+5
+Figure 3-17
+Figure 3-18 is a RUN of that program.
+PLEASE ANSWER THESE QUESTIONS:
+NAME AN UGLY COLOR: LIME GREEN
+MAME ACITY: SUNNYVALE
+NAME & FAMOUS MOVIE STARLET? MS.
+FORTUNE
+WHAT'S YOUR GREATEST FEaR?
+BEING KISSED BY A GIANT FROGE
+&
+46 Executive Commands —DUMP

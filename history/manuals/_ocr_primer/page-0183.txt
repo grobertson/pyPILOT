@@ -1,0 +1,37 @@
+So  —
+PRINTING A PROGRAM
+1. Make sure the printer is attached to the computer and that both are turned on.
+
+2. Enter the program to be printed on the computer.
+
+3. To print the entire program, type:
+SAVE P:
+
+To print selected lines of a program, type:
+SAVE P: X,Y
+where: P: specifies the printer
+
+x is the first line of the program to be saved
+y is the last line of the program to be saved
+
+4. When you press the key, the printer starts printing the program on the
+paper.
+
+5. When the program is printed, the READY message is displayed on the screen.
+
+6. Press the yellow button or move the roller to advance the paper.
+
+The following exercise takes you through the steps of printing a program:
+
+1. Turn on the ATARI 400/800 computer and the printer, and the ATARI 830™ In-
+terface Module if you are using the ATARI 825 Printer.
+
+2. Enter or load the PRACTICE program.
+
+3. Type: a ]
+SAVE P:
+
+4. When the program has been printed, advance the paper and tear off the pro- |
+gram.
+
+166 Appendix B I

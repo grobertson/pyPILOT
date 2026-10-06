@@ -1,0 +1,42 @@
+——
+SECTION 10 In graphics mode, PILOT can draw lines and figures in red, yellow, or blue.
+SUMMARY Graphics mode is characterized by the graphics screen, which is all black except for
+four lines at the bottom of the screen. This blue strip is called the text window. It
+displays up to four lines of text at a time. |
+The command that controls all of the PILOT graphics capabilities is the GRAPHICS
+command, in the format:
+GR: subcommand
+Subcommands are commands that help the GRAPHICS command tell the com-
+puter what to do while in the graphics mode.
+To open the graphics screen, type: GR: followed by any subcommand except
+QUIT. To close the graphics screen and return to text mode, type: GR: QUIT and
+press (Em.
+The other subcommands available are:
+CLEAR
+DRAW
+DRAWTO
+FILL
+FILLTO
+GO
+GOTO
+PEN
+QUIT
+TURN
+TURNTO
+GR: CLEAR clears the graphics screen and the text window. GR: CLEAR is a good
+command to use to open the graphics screen.
+The subcommands may be divided into two categories: those that use Cartesian |
+coordinates and those that use turtle geometry.
+Subcommands using Cartesian coordinates specify exact point locations on the
+screen with the (X,Y) coordinates: X represents the distance from the point to the |
+origin (screen center) along the X (horizontal) axis; Y represents the distance from
+the point to the origin along the Y (vertical) axis.
+The subcommands that use Cartesian coordinates are: |
+DRAWTO
+FILLTO
+GOTO 1
+Subcommands using turtle geometry specify directions that the turtle will turn, and
+the distance it moves in that direction. The direction is a polar angle, called THETA.
+THETA can be a degree from 0 to 360. Figure 10-5 shows some of the angles of
+THETA.
+134 Welcome to Graphics |

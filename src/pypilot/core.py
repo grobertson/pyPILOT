@@ -4,16 +4,15 @@ Each statement is a single method: ``A`` for Accept, ``C`` for Compute, and so
 on. :class:`PilotCore` holds them; the
 :class:`~pypilot.runtime.Interpreter` dispatches into it as it walks a program.
 
-**Implemented** (through Stage 7): every Core statement - ``A`` ``C`` ``E``
+Every runnable Core statement - ``A`` ``C`` ``E``
 ``J`` ``M`` ``R`` ``T`` ``U`` - plus the Atari language extensions ``MS`` and
 ``JM``, the utility commands ``PA`` ``PCS`` ``VNEW`` ``DUMP`` ``TRACE``, and the
 I/O commands ``READ`` ``WRITE`` ``CLOSE`` ``LOAD`` ``SAVE``.
 
-**Still declared but not implemented**: nothing in the Core set. The remaining
-Atari commands are either the device-dependent ``GR:``/``SO:``, which
-:mod:`pypilot.syntax` parses and refuses with a clear
-:class:`~pypilot.errors.PilotUnsupportedError` (spec 10.4), or the
-immediate-mode-only ones that arrive with the REPL in Stage 8.
+The device-dependent Atari commands ``GR:``/``SO:`` are parsed and refused by
+:mod:`pypilot.syntax` with a clear
+:class:`~pypilot.errors.PilotUnsupportedError` (spec 10.4). Immediate-mode
+commands are handled by :mod:`pypilot.repl`.
 
 ``Y`` and ``N`` have no handlers because they are not commands: spec 6.1.1
 calls them abbreviations for ``TY`` and ``TN``, so the parser resolves them to
@@ -562,7 +561,7 @@ class PilotCore:
     #: The device-dependent ``GR:`` and ``SO:`` are **not**: those are refused
     #: with a :class:`~pypilot.errors.PilotUnsupportedError` before dispatch
     #: (spec 10.4), because they are real Atari PILOT that this host cannot
-    #: honour rather than something not yet written.
+    #: honour rather than something this host supports.
     DISPATCH: ClassVar[dict[str, str]] = {
         "A": "_a",
         "C": "_c",

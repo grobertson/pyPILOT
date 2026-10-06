@@ -1,0 +1,30 @@
+————————
+4 SECTION 10 1. The graphics screen is all black except for a strip of blue at the bottom of the
+QU IZ screen, called the ss a eee OE PIs bc Se eae
+i 2. The GRAPHICS command, followed by any subcommand except QUIT, puts
+the computer into graphics mode. TRUE or FALSE?
+3.-{To.close'the. graphics screen; type: <vcotma ee eminem ani
+| 4. Put the subcommands on the left under the coordinate system they respond to:
+Subcommands Cartesian Coordinates Turtle Geometry
+| DRAW
+DRAWTO
+FILL
+i FILLTO
+GO
+j GOTO
+TURN
+TURNTO
+| Sr ne ae ecomineee assigns the color of the graphics
+pen.
+€ 6. Match the subcommands with their functions:
+i] GOTO Turn turtle to THETA angle
+DRAWTO Move turtle specified length in THETA direction
+q FILLTO Draw line of specified length in THETA direction
+and fill space to right
+TURNTO Move turtle to point X,Y
+4 TURN Increment THETA angle by specified degrees
+GO Draw line of specified length in THETA direction
+j DRAW Draw line to point X,Y and fill space to right
+FILL Draw line to point X,Y
+| Welcome to Graphics 137
+x

@@ -1,0 +1,35 @@
+oS... |
+I The output at the bottom shows what statement was executing if you press the
+key in mid-execution of a program. As you can see, the program repeats cer-
+tain statements: it jumps from line 130 , J: * DOAGAIN to label * DOAGAIN at line
+4 90, and executes all the statements from 90 to 130 before it jumps to 90
+*DOAGAIN again. This repetition of a group of statements is called looping. The
+repeated group of statements is called a loop.
+i 90 * DOAGAIN 3
+} 130 , J:* DOAGAIN
+j THE JUMP IF YES AND JUMP IF NO COMMANDS, JY:;, JN:
+The JUMP command, in conjuction with the MATCH command, can use yes and
+no conditioners to make program decisions. The rules for using conditioners with
+the JUMP command are the same rules used for the TY:, TN:, EY:, and EN: com-
+mands.
+The formats for the JUMP IF YES and JUMP IF NO commands are:
+| JY: statement label
+JN: statement label
+d € where: statement label is the destination point of the jump
+JY: and JN: change the sequence of program execution upon a yes or ano match in
+the MATCH command. If a match is found and there is a JY: command, program
+execution will jump to the label specified in the JY: command (e.g., JY: *LOOP). Ifa
+match is not found and there is a JN: command, program execution will jump to
+the label specified in the JN: command (e.g., JN: *TIME). If both the JY: and JN:
+commands follow the same MATCH command, only one of the commands will be
+4 executed; the other command is bypassed.
+Here is a fragment of a program demonstrating the function of the JY: and JN: com-
+4 mands:
+20 * DOAGAIN
+i 60 A:
+70 M: Y,YES,OK
+80 JY: * DOAGAIN
+90 JN: * FINISH
+q 120 * FINISH -
+| ; 150 E:
+| Branching 57

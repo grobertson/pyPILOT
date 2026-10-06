@@ -1,0 +1,20 @@
+a ee ll
+ADVANCED THE PAUSE COMMAND: INCREMENTS OF 1/60ths |
+a RAM
+hoes EON In more technical terms, the PAUSE command delays program execution for 60ths
+of a second. Each increment of one indicates a 1/60th of a second delay. The |
+PAUSE command may be used to synchronize musical and graphical presenta-
+tions. PAUSE may also be used any place in a program where a delay in execution
+is required or desirable.
+Examples:
+PA: 20 (will pause 20/60 = ¥% of a second)
+PA: #K/5*2 (will pause (#K/5*2)/60 = #K/150 seconds)
+PA: 3600 (will pause 3600/60 = 60 seconds)
+The following chart should help you understand how to determine the length of a
+PAUSE in 1/60ths of a second:
+PAUSE
+VALUE LENGTH |
+Figure 9-6 PAUSE Values in 60ths of a Second
+Many Voices,
+114 Many Sounds P
+>.

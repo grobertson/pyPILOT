@@ -24,7 +24,7 @@ Program line structure
 A PILOT program is a sequence of lines. Each line is, in order:
 
 1. an optional label,
-2. a command name (one or two letters),
+2. a command name (one to five letters; names are matched case-insensitively),
 3. an optional condition (``Y``, ``N``, a parenthesised expression, or both),
 4. a colon,
 5. the parameters, to the end of the line.
@@ -215,11 +215,11 @@ Atari extensions
     and every variable, which is why ``VNEW:`` is how a program starts clean.
 
 ``GR:``
-    Turtle graphics — 15 subcommands. **Specified but unimplemented**; raises a
-    clear error naming the subcommand.
+    Turtle graphics — 15 subcommands. **Specified but refused**; raises a
+    clear error naming the subcommand because this host has no graphics device.
 
 ``SO:``
-    Sound. **Specified but unimplemented**, as with ``GR:``.
+    Sound. **Specified but refused**, as with ``GR:``.
 
 ``CALL:``, ``TAPE:``, ``TSYNC:``, ``DOS:``
     Hardware, cassette, and host-shell commands. Parse, then are refused. See
@@ -390,9 +390,8 @@ Matching
     M:|YES|YEAH|SURE    R:vertical-bar-separated fields
     M:$VERBLIST         R:fields from a string variable
 
-- Matching compares the **whole normalised buffer** against each field. It is
-  **not** a substring search — ``M:YE`` matches the input ``YE``, not
-  ``YEAH``.
+- Each field is searched as a **substring within the normalised accept buffer**:
+    ``M:YE`` matches ``YEAH``, and ``M:YES`` matches the padded input ``" YES "``.
 - The separator is a comma, or — if the operand begins with ``|`` — a vertical
   bar. Never both.
 - Fields are tried **in order**; the first match wins.

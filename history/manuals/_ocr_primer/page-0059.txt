@@ -1,0 +1,31 @@
+MATCHING The MATCH command functions like a detective. MATCH searches the keyboard
+FOR CLUES input received from an ACCEPT command for a specific pattern or patterns. If a
+matching pattern is found, PILOT remembers that there is a match. If no pattern is
+found, PILOT remembers that there isn’t a match. |
+THE FUNCTION OF THE ACCEPT COMMAND, A:
+The ACCEPT command has a special function: to retrieve and retain your input so it
+can be searched for a specific pattern by the MATCH command. Input from the
+keyboard is retrieved by the ACCEPT command in the format:
+A: your input |
+Your input is called a string.
+© Astring is a series of letters, numbers, or symbols. Words, sentences, and phrases [
+are all strings.
+HOW ARE YOU? is a string |
+KEITH is a string
+APRIL 1, 1981 is a string ©
+Anytime an ACCEPT command is executed, your input string is placed in a |
+specified area called the accept buffer. Think of the accept buffer as a compart-
+ment in memory that ‘holds’ your input string. a
+“YOUR |
+INPUT | :
+ACC {
+Figure 4-1 Concept of the Accept Buffer 4
+Any lowercase characters in your input string are converted to uppercase letters
+before they are searched by a MATCH command. ,
+THE MATCH COMMAND, M: i
+The MATCH command lists the pattern or patterns to be searched for and matched
+in the accept buffer. Each pattern is also called a string.
+The format for the MATCH command is: Ms: string l
+Decision-Making
+42 Programs i
+7

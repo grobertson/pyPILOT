@@ -1,0 +1,55 @@
+LOAD D: FILENAME
+=
+
+4 Loading From Diskette
+If you are loading a program saved on a diskette, you must know the name of the pro-
+gram. For example, if the name of the program you want to LOAD is COLORS.PLT,
+you would type LOAD D:COLORS.PLT and press the key. The D: tells the
+computer you are loading from the disk drive. Again, if the volume control is turned up
+on the television set, you will begin hearing a series of fast beeps telling you that a pro-
+gram is being loaded.
+The LOAD command does NOT clear out memory before loading a program. This allows
+you to merge two programs —that is, load one program into memory on top of another
+one. When you merge two programs, the program loaded last will write over and replace
+any statements having the same line numbers as the first program.
+Note: Unless you want to merge two programs, you should always type NEW to clear
+memory before loading a program.
+
+S Figures 3-20 and 3-21 show two different programs, Program One and Program Two.
+S_R: PROGRAM ONE 350 C:#Y=?7\Se+5
+10 R:CITYSCAPE 36@ GR:GOTO Hx, ny
+2@ GR: CLEAR 37@ GR: SCDRAW 4; TURN 144)
+3@ U:*BUILDINGS 360 C:aN=HN+4
+40 U:*SKY 390 JCHN< 20): *MORE
+set: THE CITY AT NIGHT 400 E:
+100 *BUILDINGS READY
+11@ GR:GOTO 75,-31;CLEaR i
+12@ C:sD-=e
+13@ CimL=1
+140 *NEXTBUILD
+15@ C:8C=?\3+1 CRANDOM COLOR}
+16@ JCHC=8L):*NEXT BUILD
+17@ GRC8C=1): PEN RED
+18@ GRCHC=2):PEN YELLOW
+190 GRC#C=3):PEN BLUE
+200 C:#X=?\15+5 CRANDOM BLDG
+WIDTH)
+210 C:#Y=?\30+S5 CRANDOM BLDG
+HEIGHT]
+22@ GR: TURNTO © ;DRAW BY; TURNTO
+180360 nY
+230 GR: TURNTO -90;G0 sx; TURNTO 0;
+FILL ay
+240 C:BD=ND+nK
+250 C:#L=nc
+:o a ‘hal
+27@ JCHD<150) : *NEXTBUILD
+see “SKY THE CITY AT NIGHT
+310 GR: PEN YELLOW
+32@ C:un=e READY
+330 *MORE a
+34@ C:#K=?\158-79
+
+> Figure 3-20
+
+Executive Commands—LOAD D: 49

@@ -1,0 +1,23 @@
+ss .o—aao __,_—
+: ™ we
+| auTo
+T:HAIL!
+T:HAIL!
+T: THE GANG'S ALL HERE!
+READY
+| a
+| Figure 3-3 Return to Text Mode From AUTO Mode
+Now you can enter any executive command or change the program as you wish.
+| LIST and RUN the program:
+Program in AUTO Mode ah a
+T : HAIL!
+T: THE GANG'S ALL HERE!
+READY
+| Program LIST. LIst
+10 T:HAIL!
+20 T:HAIL!
+30 T: THE GANG'S ALL HERE!
+READY
+| RUN
+Writing A
+| Pilot Program 25

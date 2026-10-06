@@ -28,7 +28,7 @@ and *not* Common PILOT, despite superficial similarity. See
 > you asked for, rather than being silently ignored.
 
 Zero third-party runtime dependencies, so it runs on a classroom Raspberry Pi
-with nothing but CPython. 895 tests, 95% branch coverage, mypy strict, and a
+with nothing but CPython. 896 tests, 95% branch coverage, mypy strict, and a
 3-OS × 2-Python CI matrix that installs the built wheel and runs a program from
 it.
 
@@ -51,7 +51,7 @@ and renaming the import path as well would have broken every import in the
 docs and tests for no benefit. PyPI normalises names, so `rePILOT` in the web
 UI is installed as `repilot`.
 
-The language specification and the implementation roadmap live in
+The language specification and implementation history live in
 [`SPEC.md`](SPEC.md); the release notes in [`CHANGELOG.md`](CHANGELOG.md). The
 language reference is in [`docs/language.rst`](docs/language.rst), and the API in
 [`docs/api.rst`](docs/api.rst).
@@ -93,10 +93,9 @@ Every one of those is a release gate, and CI runs all of them on Linux, Windows
 and macOS — plus a clean-environment install of the *built wheel*, because
 building a distribution and being able to install it are different claims.
 
-The packaging tests build a real sdist and wheel and look inside them, so that
-a change to `pyproject.toml` cannot quietly start shipping the copyrighted
-manuals kept in `history/`. `tools/scan_secrets.py` greps everything Git would
-stage for API tokens and the like; run it before any bulk `git add -A`.
+The packaging tests build real archives and inspect their contents.
+`tools/scan_secrets.py` greps everything Git would stage for API tokens and the
+like; run it before any bulk `git add -A`.
 
 ## Releasing
 

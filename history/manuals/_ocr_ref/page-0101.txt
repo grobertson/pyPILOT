@@ -1,0 +1,34 @@
+4 String Match Conditions
+A MATCH command always sets up a YES or NO condition: YES (Y) there was a
+match, or NO (N), there was not a match. For example, in the program shown in Figure
+6-1, any answer containing the name “GRANT” produces a YES condition; any answer
+not containing “GRANT” produces a NO condition.
+1@ R:GRANTS TOMB WHO WAS BURIED IN GRANT'S TOMB?
+2@ T:WHO WAS BURIED IN GRANT'S
+TOMB? & GRANT FROM THE TULIP CORPORATION
+30 Al sanvone YES THAT IS CORRECT. &A GRANT FROM
+S@ M: GRANT THE TULIP CORPORATION WAS BURIED IN
+6e@ T: GRANT'S TOMB.
+7@ TY: YES, THAT IS CORRECT. SEE YOU AROUND.
+SANYONE WAS BURIED IN GRANT'S
+TOMB. READY
+8@ TN:NO, SANYONE WAS NOT BURIED .
+IN GRANT'S TOMB; GRANT HAS.
+90 T:SEE You AROUND.
+100 E:
+READY
+2 s
+Figure 6-1
+You can make any PILOT command (T:, A:, M:, J:, C:, U:, E:, GR:, SO:, and PA:)
+conditional on a YES-match or NO-match by putting a Y or an N between the command
+and the colon (:). Here are some examples:
+TY:HELLO If there is a match, type “HELLO”; otherwise, skip this
+command.
+TN:WRONG If no match, type “wrong”; otherwise, skip this command.
+Ye If there is a match, end the program; otherwise, keep going.
+JN: # NEXT If no match, jump to %* NEXT; otherwise, skip this command.
+UY: # BOX If there is a match, use the module % BOX; otherwise skip this
+command.
+S SOY:13,17 If there is a match, sound notes 13 and 17; otherwise skip this
+command.
+Conditionals—Y OR N 95

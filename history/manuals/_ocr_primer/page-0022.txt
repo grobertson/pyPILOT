@@ -1,0 +1,41 @@
+o_o eee
+CONCEPTS What Is the ATAR! PILOT Cartridge?
+INTRODUCED Changing the Screen Display
+I Clearing the Screen
+Correcting Mistakes
+Some PILOT Commands
+What Is a Command?
+| The TYPE Command, T:
+The SOUND Command, SO:
+The GRAPHICS Command, GR:
+| Before getting started with the PILOT language you must turn on your system with
+your ATARI PILOT cartridge inserted . Instructions on how to insert the cartridge
+can be found in Appendix A, Inserting PILOT.
+I WHAT IS THE The ATARI PILOT cartridge is a small boxlike unit containing special instructions for
+ATARI PILOT your ATARI computer about the PILOT language. When the ATARI PILOT cartridge
+CARTRIDGE? is inserted into your computer it becomes part of the system, allowing you to com-
+| @ . municate with your computer in the PILOT language. If the cartridge is not inserted
+into your computer, the computer cannot understand the ATARI PILOT language,
+and is useful only as a memo-pad.
+1 Once the cartridge is inserted, your screen should look like this:
+ATARI PILOT (C3 COPYRIGHT ATARI 1966
+READY
+a
+The cursor should be positioned at the beginning of the line below R in READY. The
+| cursor marks your place.
+CHANGING THE Type: HELLO. As you type HELLO the cursor moves one position to the right,
+| SCREEN DISPLAY marking the place of the next character to be typed. The cursor should now be
+positioned after the ©, waiting for further input.
+ATARI PILOT €C} COPYRIGHT ATARI 1966
+| READY
+HELLOM
+Press the key. The computer responds immediately to your input as you
+press the key.
+ATARI PILOT CC) COPYRIGHT ATARI 1984
+| READY
+HELLO
+HELLO
+#3 WHAT'S THAT? 2
+a
+Getting Started
+| with Pilot 5

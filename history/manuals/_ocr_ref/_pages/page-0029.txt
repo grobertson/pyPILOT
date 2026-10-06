@@ -1,0 +1,30 @@
+e RANDOM NUMBERS
+dy
+(
+/ Ga
+_ On
+>
+Besides the examples above, the C: (COMPUTE) command will let the computer select
+numbers at random. For example, if all the numbers allowed by PILOT were mixed up in
+a large fish bowl, the computer would reach into the bowl and choose one by chance.
+3 The random number is expressed as a ? for the value of a numeric variable in a C: com-
+mand. For example,
+C:#R=?.
+The program in Figure 2-19 generates random numbers and types them out.
+10 R: RANDOM NUMBERS 7246
+20 *“aGaIn 7745
+3@ C:BR=? 16999
+40 T:aR 31260
+S@ J:*aGaIn 26265
+31203
+REaDY 19340
+|
+sO291
+41243
+20631
+iS334
+22315
+5
+= Figure 2-19
+Compute—C: 21
+Y
