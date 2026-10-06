@@ -1,0 +1,45 @@
+i ee lll
+Below is a sample program to demonstrate the M:, JY: and JN: commands:
+10 Riz > 2 > 2 RO OK KOK KOK KK KOK
+20 R: * WHAT I SAW AT THE ZOO *
+BOR: 2 2 2 OK ROK KOK KK KKK
+40 T: At the zoo there are LOTS of \
+50 T: animals.
+60T:
+70 T: The last time you were at the \
+80 T: zoo, did you see any animals? \
+90A:
+100 M: YES,Y |
+110 JN: * TRYAGAIN
+120 * DOAGAIN
+130T:
+140 T: What kinds of animals did you \
+150 T: see?
+160 T:
+170A:
+180 T: |
+190 T: GREAT! Did you see anything \
+200 T: else? \
+210A:
+220 M: YES,Y
+230 JY: *DOAGAIN
+240 JN: *END
+250 *TRYAGAIN a |
+260T:
+270T: Are you sure you didn’t see \
+280 T: any? \
+290A: |
+300 M: NO,N, NONE
+310 JY: * DOAGAIN
+320T:
+330 TN: OK, but | don’t think you \
+340 TN: looked very hard!
+350 EN:
+360 *END |
+370 T: You must have had a busy day at \
+380 T: the zoo!
+390 E: |
+As you can see, the program has three different statement labels: * DOAGAIN,
+*TRYAGAIN, *END. The program also uses both TY:, TN:, JY:, JN:, and EN: com-
+mands. A RUN of the program looks like this:
+58 Branching i

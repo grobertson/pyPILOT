@@ -1,0 +1,127 @@
+{{Short description|Simple high-level programming language developed in the 1960s}}
+{{About||information on payments in lieu of taxes|PILOT (finance)|PILOT Reports|PIREP}}
+{{Other uses|Pilot (disambiguation)}}
+'''Programmed Inquiry, Learning, or Teaching''' ('''PILOT''') is a simple [[high-level programming language]] developed in the 1960s.<ref name="rpilot">{{Cite web |title= PILOT Resource Center |author= Rob Linwood |work= Sourceforge project |url= https://rpilot.sourceforge.net/pilot.html |access-date= October 13, 2011 }}</ref> Like its sibling [[LOGO programming language|LOGO]], it was developed as an early foray into the technology of [[computer-assisted instruction]].
+
+PILOT is an [[Imperative programming|imperative]] language similar in structure to [[BASIC programming language|BASIC]] and [[FORTRAN]] in its basic layout and structure. Its keywords are single characters, <code>T</code> for "type" to print text, or <code>A</code> for "accept", to input values from the user.
+
+== History ==
+
+Starting in 1960, [[John Amsden Starkweather]] a psychology professor at the [[University of California, San Francisco]] (UCSF) medical center, developed a simple system for automating the construction of computer question-and-answer tests. Working with the [[Miller Creek Elementary School District|Dixie Elementary School District]] in [[Marin County]], by 1962 the system was functional on a [[IBM 1620]] and given the name COMPUTEST.<ref name=ieee>{{cite tech report |title=IEEE Standard for Programmed Inquiry, Learning, or Teaching (PILOT) |date=22 August 1991 |url=https://ieeexplore.ieee.org/document/689575 |doi=10.1109/IEEESTD.1991.108548 |publisher=IEEE |isbn= 978-0-7381-1184-1|url-access=subscription }}</ref>
+
+UCSF installed a [[IBM System/360]] Model 50, and Starkweather applied for a grant for further development by the [[U.S. Office of Education]] in 1965.<ref name=hist>{{cite web |url=http://www.edm2.com/index.php/PILOT#:~:text=Tutorials%20and%20Manuals-,History,implemented%20on%20an%20IBM%201620. |title=PILOT |website=EDM2 |date= 4 November 2022}}</ref> Using this funding, Starkweather began development of an expanded version of the system with more functionality. He gave this version the new name PILOT. Early versions were shown in 1966, and the almost-complete version was released in 1968. The next year it was released into the public domain.<ref>{{Cite web |title= Register of the John A. Starkweather Papers, 1965-1985 |author= Xiuzhi Zhou |year= 1998 |publisher= University of California, San Francisco library |url= http://oac.cdlib.org/view?docId=tf2d5nb1xg;style=oac4;doc.view=entire_text |access-date= October 13, 2011 }}</ref>
+
+PILOT was later adopted by [[H. Dean Brown]] at the [[Stanford Research Institute]] (SRI) Education Laboratory. Brown popularized PILOT as a language for use directly by children. Brown's efforts changed the language from one intended for use by teachers to write tests and instructional materials to one intended to be used to teach programming.<ref name=student>{{cite book |title=Student Pilot |publisher=Atari |date=1981 |url=https://atariwiki.org/wiki/attach/Pilot/Atari%20Student%20Pilot-Reference%20Guide.pdf}}</ref>
+
+PILOT was ported to a number of other systems, and various extensions and changes added at these sites. This led to a number of incompatible implementations with names like PYLON and NYLON.<ref name=ieee/> In 1973, Starkweather brought together a number of people interested in computer aided teaching to develop a machine-independent specification for the language, PILOT-73. A portable subset was also defined as Core PILOT. Core was then ported to the [[Datapoint 2200]], an [[Intel 8008]] powered terminal that would later be known as a [[personal computer]]. At $13,000, this was more expensive than many contemporary [[minicomputer]]s and did not see much use. However, this port proved very useful after the [[Intel 8080]] came to market and spawned many inexpensive [[microcomputer]]s.<ref name=hist/>
+
+Starting in the late 1970s, [[Western Washington University]] began expanding the language into Common PILOT. This formed the basis for a number of later microcomputer variants. [[Processor Technology]] developed a version for their [[Sol-20]], but the company went out of business before it was published. This nevertheless inspired several other versions during this era. Among these was Nevada PILOT for [[CP/M]] systems, based on Common, which in turn was the basis for Atari PILOT, which added a graphics system using [[turtle graphics]]<ref name=ieee/> and basic sound support.<ref name=ieee/> PILOT on the [[Apple II]] was written in [[UCSD Pascal]]. These versions led to a revival of the PILOT language for teaching, and led to an expanded version known as Super PILOT which added device control so programs could play [[videodisk]]s and similar tasks.<ref name=hist/>
+
+For a time there was an effort to make a single standard for the language as IEEE Standard 1154-1991, but this was abandoned in  2000.<ref name=hist/><ref>{{cite web |url=https://standards.ieee.org/ieee/1154/1738/ |title=IEEE 1154-1991: IEEE Standard for Programmed Inquiry, Learning, or Teaching (PILOT) |website=IEEE}}</ref>
+
+==Language syntax==
+
+A line of PILOT code contains (from left to right) the following [[syntax]] elements:
+
+* an optional [[Label (programming language)|label]]
+* a command letter
+* an optional Y (for yes) or N (for no)
+* an optional conditional expression in parentheses
+* a colon (":")
+* an [[operand]], or multiple operands [[delimited]] by commas.
+
+A label can also be alone in a line, not followed by other code.  The syntax for a label is an asterisk followed by an identifier (alphanumeric string with alphabetic initial character).
+
+===Command letters===
+
+The following commands are used in "core PILOT".  Lines beginning with "R:" indicate a remark (or a comment) explaining the code that follows.
+
+; A: Accept [[Input/output|input]] into "accept [[Buffer (computer science)|buffer]]". Examples:
+
+  R:Next line of input replaces current contents of accept buffer
+  A:
+  R:Next line of input replaces accept buffer, and [[string (computer science)|string]] [[variable (programming)|variable]] 'FREE'
+  A:$FREE
+  R:Next 3 lines of input assigned to string variables 'X', 'Y' and 'Z'
+  A:$X,$Y,$Z
+  R:Numeric input assigned to numeric variable "Q"
+  A:#Q
+
+; C: Compute and assign numeric value. Most PILOT implementations have only [[integer (computer science)|integer]] [[arithmetic]], and no [[Array data structure|arrays]].  Example:
+
+  R:Assign [[arithmetic mean]] of #X and #Y to #AM
+  C:#AM=(#X+#Y)/2
+
+; D: Dimension an array, on some implementations.
+
+; E: End (return from) [[subroutine]] or (if outside of a subroutine) abort program.  Always used without any operand.
+
+; J: Jump to a label. Example:
+<pre>
+  J:*RESTART
+</pre>
+
+; M: Match the accept buffer against string variables or [[string literal]]s. Example:
+<pre>
+  R:Search accept buffer for "TRUTH", the value of MEXICO and "YOUTH", in that order
+  M:TRUTH,$MEXICO,YOUTH
+</pre>
+
+The first match string (if any) that is a substring of the accept buffer is assigned to the special variable $MATCH.  The buffer [[character (computing)|character]]s left of the first match are assigned to $LEFT, and the characters on the right are assigned to $RIGHT.
+
+The match flag is set to 'yes' or 'no', depending on whether a match is made.  Any statement that has a Y following the command letter is processed only if the match flag is set.  Statements with N are processed only if the flag is not set.
+
+; N: Equivalent to TN:  (type if last match unsuccessful)
+
+; R: The operand of R: is a [[comment (computer programming)|comment]], and therefore has no effect.
+
+; T: 'Type' operand as output. Examples:
+<pre>
+  R:The next line prints a literal string
+  T:Thank you for your support.
+  R:The next line combines a literal string with a variable expression
+  T:Thank you, $NAME.
+</pre>
+
+; U: Use (call) a subroutine.  A subroutine starts with a label and ends with E: Example:
+<pre>
+  R:Call subroutine starting at label *INITIALIZE
+  U:*INITIALIZE
+</pre>
+
+; Y: Equivalent to TY: (type if last match successful)
+
+; Parentheses: If there is a parenthesized expression in a statement, it is a [[conditional (programming)|conditional]] expression, and the statement is processed only if the test has a value of 'true'. Example:
+<pre>
+  R:Type message if x>y+z
+  T(#X>#Y+#Z):Condition met
+</pre>
+
+==Derivatives==
+Extensions to core PILOT include [[Array data structure|arrays]] and [[floating point]] numbers in Apple PILOT for the [[Apple II]], and [[Logo programming language|LOGO]]-inspired [[turtle graphics]] in Atari PILOT for [[Atari 8-bit computers]].<ref>{{Cite book |title= Atari PILOT for beginners |author=Jim Conlan, Tracy Deliman |publisher= Reston Publishing |year= 1983 |isbn=9780835903028 |url= https://books.google.com/books?id=VujzAAAAMAAJ }}</ref>
+
+Between 1979 and 1983 the UK PILOT User Group was run by Alec Wood a teacher at Wirral Grammar School for Boys, Merseyside UK.  Several machine code versions of a mini PILOT were produced for the microcomputers of the time and a school in Scotland developed an interactive foreign language tutorial where pupils guided footprints around a town asking and answering questions in German, French, etc. An article in the December 1979 of ''Computer Age'' covered an early implementation called Tiny Pilot and gave a complete machine code listing.
+
+Versions of PILOT written using [[BASIC]] interpreters were released in the 1970s and early 1980s. The April 1973 edition of [[People's Computer Company]]'s newsletter included such a system written in [[HP Time-Shared BASIC]] for the [[HP 2100]] system.<ref>{{cite magazine |magazine=People's Computer Company |date=April 1973 |title=PILOT '73 |pages=11–17 |url=https://archive.org/details/1973-04-peoples-computer-company/page/11}}</ref>  PETPILOT (PILOT for the Commodore PET) was the first non-Commodore language for the PET and was written in Microsoft BASIC which shipped with the PET, with a little assistance from Bill Gates.  It was created in 1979 by Dave Gomberg and could run on a 4K PET (which was never shipped) and ran well on the 8K PETs that Commodore shipped.  It was written in Larry Tessler's living room on PET serial number 2. In 1978, [[Byte Magazine]] published a non-[[Turing complete]] derivative of PILOT known as Waduzitdo by Larry Kheriarty.<ref>{{Cite web |title= Waduzitdo 2001 |author= Brian Connors |date= April 6, 2001 |url= http://www.reocities.com/ResearchTriangle/Station/2266/tarpit/waduzitdo/wdzref.html |access-date= October 13, 2011 }}</ref><ref>{{Cite news |title= WADUZITDO: How To Write a Language in 256 Words or Less |work= Byte |author= Larry Kheriarty |date= September 1978 }}</ref>
+
+Atari PILOT, released in [[ROM cartridge]] form in 1981 for the Atari 8-bit computers, added [[turtle graphics]] and sound support.<ref>{{cite web |url=https://www.atarimania.com/pgesoft.awp?version=15785 |title=Atari PILOT |website=Atari Mania}}</ref> These instructions used two-letter commands. Atari used PILOT as one of their primary languages at the [[computer camp]]s they ran in the early 1980s.<ref>{{cite web |url=https://www.atarimania.com/documents/atari-computer-camps.pdf |title=Atari Computer Camps }}</ref> [[Clarkson College of Technology]] developed ZPILOT in 1983 for the [[Zenith Z-100]].<ref name="zimmerman1984marapr">{{Cite magazine |last=Zimmerman |first=Frederick |date=March–April 1984 |title=A Z100 on Every Desk: Clarkson College |url=https://archive.org/details/sextantissue9marchapril1984/page/n9/mode/1up |access-date=February 12, 2026 |magazine=Sextant |pages=8–14 |language=English |issue=9}}</ref>
+
+1983's Vanilla PILOT for the [[Commodore 64]] also added turtle graphics,<ref name="info">{{Cite news |title= Vanilla PILOT, PILOT that comes with turtle graphics |work= Infoworld |date= September 12, 1983 |pages= 67–69 |url= https://books.google.com/books?id=ry8EAAAAMBAJ&pg=PA67 |access-date= October 13, 2011 }}</ref> as did ''Super Turtle PILOT'' which was published as a type-in listing in the October 1987 issue of [[COMPUTE!]] magazine.<ref>[http://www.atarimagazines.com/compute/issue89/Super_Turtle_Pilot.php Atarimagazines.com - COMPUTE! Issue 89, October 1987, p74]</ref>
+
+In 1991 the [[Institute of Electrical and Electronics Engineers]] (IEEE) published a standard for Pilot as IEEE Std 1154-1991. It has since been withdrawn.<ref>{{Cite book |title= IEEE Standard 1154-1991 for Programmed Inquiry, Learning, or Teaching (PILOT) |year= 1991 |publisher= IEEE Standards Committee  |url= http://standards.ieee.org/reading/ieee/std_public/description/busarch/1154-1991_desc.html |archive-url= https://web.archive.org/web/20000311113026/http://www.standards.ieee.org/reading/ieee/std_public/description/busarch/1154-1991_desc.html |url-status= dead |archive-date= March 11, 2000 |doi= 10.1109/IEEESTD.1991.108548 |isbn= 0-7381-1184-8 }}</ref> A [[reference implementation]] based on this was implemented by [[Eric Raymond]], and maintained—-reluctantly—-for the next 15 years.<ref>{{cite web |title= Twenty years after | date=27 September 2016 |url= http://esr.ibiblio.org/?p=7244 }}</ref>
+
+In 1990 eSTeem PILOT for Atari ST computers was developed and programmed by Tom Nielsen, EdD. Based on the IEEE Standards for PILOT, it includes Atari-specific features such as control of Laserdisc and CDROM devices.<ref>{{Cite news |title= Press Release: eSTeem PILOT |url=http://www.atariarchives.org/cfn/06/08/03/0046.php }}</ref>
+
+A 2018 hobbyist implementation, psPILOT, based in part on the IEEE standard, was implemented using Microsoft's PowerShell scripting language.<ref>{{cite web |title= psPilot |website=[[GitHub]] |url=https://github.com/FreeTrav/psPILOT }}</ref>
+
+==References==
+{{Reflist}}
+
+==Further reading==
+* {{Cite book |author= John Starkweather |title= User's guide to Pilot |publisher= Prentice-Hall |year= 1985 |isbn= 978-0-13-937755-6 }}
+
+{{IEEE standards}}
+{{Authority control}}
+
+[[Category:Educational programming languages]]
+[[Category:IEEE standards]]

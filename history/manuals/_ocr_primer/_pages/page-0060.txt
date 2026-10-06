@@ -1,0 +1,40 @@
+Ss —-WH_aN
+{ If a MATCH command specifies several strings each string must be separated by a
+comma.
+5 M: string, string...
+Here are some examples:
+M: TABLE
+4 M: YELLOW,BLUE,RED
+M: 1,2,3,4
+| M: ALL CATS ARE FURRY, ALL DOGS HAVE TAILS
+M:,
+j The MATCH command followed by only a comma will match ANY input.
+@ Spaces are important characters in MATCH strings. For example:
+M: A
+4 matches any word in the input string beginning with the letter A. Because a space
+always precedes the beginning of a word in the accept buffer, the combination of a
+preceding space and the letter A tells the computer to match any word beginning
+i with the letter A.
+Examples:
+€ ATARI is a match
+j HOT AIR BALLOON is a match
+BAGEL is NOT a match
+q However, this MATCH command:
+M:A
+3 matches input that has the letter A anywhere in the string:
+EASY is a match
+JANUARY is a match
+j AIRPLANE is a match @
+™ Often you may want a MATCH command to search for a fragment of a word or
+string, or for the ending letter(s) of a word. For instance, to search an input string
+for a word that rhymes with moose, your MATCH command might look like this:
+MOOSE WCE —
+| The underscore character, __, also represents a space at the end of a string. @
+@ To type an underscore character, __ , hold down the key and press the
+| —-— key. @
+™ An underscore character placed at the end of a MATCH string means that a trail-
+ing space is part of the string and must be part of the string to produce a match. In
+i this way, you can match for the ending letter, word, or fragment of a word in an in-
+4 put string.
+Decision-Making
+I Programs 43

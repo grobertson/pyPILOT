@@ -1,0 +1,34 @@
+CS
+|
+CONCEPTS The Screen Editor
+The Screen Editing Keys
+I INTRODUCED The RETURN Key
+The SHIFT Key
+The CAPS/LOWER Key
+The TAB Key
+| TAB Set
+TAB Clear
+TAB
+The CTRL Key
+| The Inverse Video Key
+The CLEAR Key
+The Cursor Control Keys
+Cursor Up t
+i Cursor Down 4
+Cursor Right >
+Cursor Left —
+| € Editing the Current Display Line
+Backspacing
+Deleting
+Character Deletion
+| Line Deletion
+Inserting
+Character Insertion
+Line Insertion
+Deferred Cursor Movements
+4 THE SCREEN Anything displayed on the television screen may be edited and changed in im-
+EDITOR mediate mode, using the built-in screen editor. The screen editor is part of the
+computer (you can’t see it). It lets you double-check and correct your input before
+it goes into the computer’s memory. By learning to use the screen editor, you can
+| correct problems anywhere in your input.
+1 Appendix C 167

@@ -1,0 +1,19 @@
+= The end of a program is not necessarily the last line of the program. In Figure 2-24, the
+E: command is used to mark the END of the program at line 70, and it is also used to
+mark the END of the %# TRUMPETS module at line 120.
+1@ R:FANFARE PROGRAM WELCOME TO PILOT
+2@ T:WELCOME TO PILOT THE END
+3@ U:*TRUMPETS
+40 Pa:i1¢e READY
+S@ U:*TRUMPETS =
+6@ T: THE END
+7@ E:
+80 *TRUMPETS
+9@ 50:1,5,9,13
+100 PAa:i26
+110 50:6,0,0,0
+12@ E:
+READY
+s
+Figure 2-24
+End—E: 25

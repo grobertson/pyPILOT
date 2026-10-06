@@ -1,0 +1,48 @@
+8 ____
+| 100 *GAME
+| 500 E:
+600 * WORDS
+900 E:
+| Ifa “'y’”’ or “yes’’ response is entered, the program plays the game by calling the
+*GAME module. If the answer is not a match, the program calls the * WORDS
+I module.
+EXAMPLE: THE Following is a rather complex program. It is called CALCULATOR because it will
+CALCULATOR calculate the answer to most simple addition, subtraction, multiplication, and divi-
+I PROGRAM sion problems. This program demonstrates not only modules and nested modules,
+but also many decision-making commands such as MATCH, MATCH STRING,
+JUMP ON MATCH, and END IF NO commands. It’s a lengthy program, it’s but well
+| worth the effort to type it in and see how it works.
+10 *START
+20 U: *GETPROBLEM
+30 U: *COMPUTE
+{ € 40 U: *SHOWRESULT
+; 50 T: ANOTHER EQUATION? \
+60 A:
+70 M: Y,YES,YEAH,OK
+90 JY: * START
+100 E:
+200 *GETPROBLEM
+' Ba] UP T: PLEASE ENTER A MATH PROBLEM: \
+220, A: $PROBLEM
+230, a
+240, ee
+| 300 * COMPUTE
+310, U: *SEPARATE
+320, A: =$PROBLEM
+330, M: +,%*,-,/
+4 340, JM: *ADD, * MULT, * SUB, * DIV
+350, Ee
+400 *SHOWRESULT
+410, T: $PROBLEM = $RESULT
+420, iH
+500 *SEPARATE
+510, MS: +,%*,-,/
+| 520, EN:
+530, A: #1 = $LEFT
+540, A: #) = $RIGHT
+550, E:
+| 600 *ADD
+610, C: #R = #1+ #)
+e 620, C: $RESULT = #R
+| 630, E:
+i Modules 99

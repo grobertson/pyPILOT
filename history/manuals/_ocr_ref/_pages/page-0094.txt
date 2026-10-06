@@ -1,0 +1,50 @@
+A scale is a series of notes played one after another. Think of a ladder on which you take
+= one step at a time to go up or down. A scale is similar, only with musical notes being
+played in a specific order. This particular scale covers the octave between middle C and C
+above middle C. An octave is a range of notes from one note to another note of the
+same name (higher or lower).
+The program in Figure 5-3 repeatedly moves up and down the scale shown on page 86.
+When this program is RUN, the computer moves through the SOUND commands so
+quickly that all the tones blur together, and this scale sounds like a siren. The PA: com-
+mands in this program increase the length of time the tones are sounded. Without them,
+this scale sounds like rumbling static. The PA: command is explained later in this section.
+10 R: SIREN
+20 *BEGIN
+3@ 50:13
+35 Para
+40 50:15
+45 Pari
+S@ 50:17
+SS Para
+60 50:18
+65 Pa:t
+7 50:20
+75 Para
+80 50:22
+85 Part
+90 50:24
+95 Para
+100 50:25
+y 105 Pari
+110 50:24
+115 Pari
+12@ 50:22
+125 Para
+130 50:20
+135 Pari
+14@ 50:18
+145 Pari
+150 50:17
+155 Pari
+16@ 50:15
+165 Pari
+170 50:13
+188 50:0
+190 J:*BEGIN
+READY
+r
+Figure 5-3
+The SO: command lets you create sound effects and tunes in your PILOT programs.
+J Figure 5-4 shows how you might use SOUND to reward correct answers in a simple
+; geography quiz program.
+Sound and Pause—SO: 87

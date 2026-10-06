@@ -5,9 +5,9 @@ API Reference
 
 .. module:: pypilot
 
-The package exports its error hierarchy, the parser, the value model, and
-interpreter state. The *interpreter* is not yet written; see ``SPEC.md`` section
-11 for the implementation roadmap.
+The top-level package exports its error hierarchy, parser, value model, and
+state types. Runtime, device, helper, and REPL APIs are documented from their
+modules below. The completed 1.0 implementation is recorded in ``SPEC.md``.
 
 Quick start
 -----------

@@ -26,9 +26,7 @@ Retrieved **2026-09-26**.
   is the single most useful thing in this folder. Written by the implementer
   for Atari's own engineers, it is more precise than any secondary source
   about what ATARI PILOT actually did.
-- **Licence / copyright:** Atari, 1980. Held for personal study and
-  reference. Not relicensable. Do not redistribute or commit to a public
-  package; it is kept here for local consultation only.
+- **Licence / copyright:** Atari, 1980.
 
 **Sections that drove specific decisions in `SPEC.md`:**
 

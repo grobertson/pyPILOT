@@ -1,0 +1,29 @@
+Ooo ________
+i
+CONCEPTS What Is a Module?
+INTRODUCED The Parts of a Module
+| Calling a Module
+The USE Command, U:
+The Module End
+The END Command, E:
+Nested Modules
+Conditional Modules
+The USE IF YES and USE IF NO Commands, UY:, UN:
+Example: The Calculator Program
+Section 8 Summary
+Section 8 Quiz
+| WHAT IS As you become a more experienced PILOT programmer and start writing longer
+A MODULE? and more complicated programs, you will find that many program statements are
+often used repeatedly within the same program. You could repeat the statements
+| a each time they are needed, but this can become lengthy and tedious. Instead,
+group the statements to be used more than once, and branch to them as they are
+needed. This group of reusable statements is called a module. Modules are like
+i miniature programs within a big program.
+Modules are a powerful technique to streamline your PILOT programs. With
+modules you can:
+j * Make large PILOT programs easier to write, modify, and understand
+* Conveniently save and reuse sections of programs
+| * Make PILOT programs shorter
+A program with several modules may look like this:
+| Figure 8-1 Program With Several Modules
+1 Modules 95

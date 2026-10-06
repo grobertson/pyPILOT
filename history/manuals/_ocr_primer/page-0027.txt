@@ -1,0 +1,41 @@
+a 96 ee
+Each musical tone within the computer's range has been assigned a numerical {
+value from 0 to 31. The range of the computer contains all the tones between the C
+below middle C and the F# (F sharp) 18 tones above middle C. On the piano
+keyboard shown below you can see the keys, their names, and their numeric ’
+values.
+nee Ti 29At 14 16 19. 20.193 26 28 31 |
+pb” E Gc a” B° dD 3 So a’ B D E G A B°
+cH Pact cio ef actBa Hp Pe ed wo
+(SILENT)
+OFF
+meio caries Co Go ii
+SESE RES Se Na Ste Win GR ff Oe Snide Ree eS Ree
+ONE OCTAVE MIDDLE C ONE OCTAVE ONE-HALF
+OCTAVE
+Figure 2-2 Piano Keyboard
+Examine the keyboard illustration for a minute. You can see that it is made up of
+white keys and black keys. Each time you move from one key to another, you are
+moving an interval. The simplest interval is a half step. To play a half step, you move
+from one key to another without leaving any keys between them. C to C#, E to F,
+and Bb to B are each half-step intervals. A whole-step interval is almost as simple. A a |
+whole step is two half steps. To play a whole step, move from Eb to F or C# to D#;
+these are both whole-step intervals.
+14 16 19 21 |
+D ce 3 A”
+au 6 l
+pa is oer
+WHOLE HALF
+Stee. SVEe j
+Figure 2-3 Whole and Half Steps
+If you were to play the tones from middle C to the C above middle C on a piano us- |
+ing only half-step intervals, you would be playing a chromatic scale. Using the
+SOUND command and the numeric values for each of the keys, you can “‘play’’ a
+chromatic scale using your computer. ,
+Clear the screen. Type SO: 13 GERE9.
+Hear that? That is middle C. To play the next tone in the chromatic scale, type SO: 14 f
+GSM. Did you hear the tone change? Now, type in the following SO: commands
+to complete your chromatic scale. Be sure to press after you enter each a
+numeric value. i
+Getting Started
+10 with Pilot i

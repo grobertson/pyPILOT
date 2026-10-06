@@ -1,0 +1,35 @@
+:
+ie]
+Sound @
+The SO: command lets you create musical tones on your computer. You can program up
+to four tones to play at the same time. Each separate tone is then called a voice. When a
+group of people get together to sing, they divide into several voices: bass, baritone, alto,
+and soprano. When you program SO: commands, you can program several voices to
+play together. When different voices play a sound at the same time, it is called a chord.
+The tones you can play in PILOT range from 0 to 31. If you enter the command SO:13,
+you will hear a single tone equal to middle C on a piano. The command SO:1 produces
+a tone equal to the note C, one octave below middle C. The command $O:31 produces
+the note F sharp, one octave above middle C. SO:0 turns a tone OFF.
+Figure 5-1 shows a piano keyboard with the key numbers corresponding to the PILOT
+SOUND commands.
+7 123456789 2 GB 4156 17 18 19 20212223 24 25 262728 9 D3)
+° i i
+rE ak ice ie a4 A. E r* Boe Bar ‘ I. re B
+»> , ee em oe :
+"MIDDLE C"
+Figure 5-1
+Typing the commands in Figure 5-2 one at a time will produce a scale.
+WNEH
+READY
+so:is
+$0:15
+SO:17
+$0:18
+$0:2¢e
+$0:22
+$0:24
+$0:25
+$o0:8
+is
+Figure 5-2 2
+86 Sound and Pause—SO:

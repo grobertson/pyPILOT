@@ -1,0 +1,33 @@
+A:
+s
+i, a ae &
+The A: (ACCEPT) command tells the program to wait for information to be typed from
+the keyboard. Figure 2-8 is an example of a simple use of the A: command.
+, =
+1@ T:WHAT COLOR ARE YOUR SHOES? WHAT COLOR ARE YOUR SHOES?
+2@ a: BROWN
+3@ T:I DON'T WEAR SHOES. I DON'T WEAR SHOES.
+40 T: COMPUTERS DON'T HAVE FEET. COMPUTERS DON'T HQVE FEET.
+REaDY READY
+mt a
+Figure 2-8
+The A: command also lets you give a value to a string ($) or numeric (#) variable as
+shown in Figures 2-9 and 2-10.
+1@ R: COPY CaT PROGRAM HI, I'MA COPY Car.
+2@ T:HI, I'M a COPY Cat TYPE SOMETHING, AND IWILL SHOW YOU.
+te TiTvbE SOMETHING, AND I WILL HELLO
+SHOW You. HELLO
+4@ “aGaIn YOU'RE @ COPY CaT
+se a:scopy YOU'RE a COPY CaT
+6e@ T:$coPY SO ARE you
+7@ J:*aGaIn SO ARE You
+THIS IS SILLY
+READY THIS IS SILLY
+a stop
+sToPp
+HOW DO I GET OUT OF THIS
+HOW DO I GET OUT OF THIS
+a
+Figure 2-9
+12 Core Pilot—A:
+SS Pie,

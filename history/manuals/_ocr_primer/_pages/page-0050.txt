@@ -1,0 +1,51 @@
+~~ i
+| READY
+LIST 3@
+READY
+| =
+Nothing but a blank line appears! Line 30 is gone forever. If you execute the pro-
+gram, this is what you should get:
+| ROSES ARE RED,
+VIOLETS ARE BLUE.
+AND SO ARE YOU!
+| READY
+a
+| INSERT A LINE
+New lines can be inserted anywhere in a program by assigning a new line number
+to a statement. The new number must be given a number between the line number
+preceding and the line number following the place where the new line will be in-
+serted. LINE NUMBERS CANNOT BE INSERTED IN AUTO MODE.
+@ PILOT always rearranges program statements so that their line numbers are in
+| numerical order. @
+Clear the screen and LIST the program:
+LIST
+16T:ROSES ARE RED.
+26 T: VIOLETS ARE BLUE,
+406 T: AND SO ARE YOU!
+| READY
+a
+Now, let’s reinsert the line removed during the previous example. To insert the
+| statement T: SUGAR IS SWEET, between 20 T: VIOLETS ARE BLUE, and 40 T: AND
+SO ARE YOU!, we must pick a line number between 20 and 40. In other words, by
+assigning T: SUGAR IS SWEET, any line number from 21 to 39, the statement will be
+inserted between lines 20 and 40.
+| Type: 23 T: SUGAR IS SWEET, press @TSI9, and LIST the program again:
+READY
+23 T: SUGAR IS SWEET,
+q LIst
+16 T:ROSES ARE RED,
+26 T: VIOLETS ARE BLUE,
+23 T: SUGAR IS SWEET,
+46 T: AND 50 ARE you!
+READY
+a
+RUN the program:
+| ROSES ARE RED,
+VIOLETS ARE BLUE.
+SUGAR IS SWEET.
+| @ND SO ARE You!
+READY
+a
+q Voila! The program is back to its original order.
+Writing A
+i Pilot Program 33

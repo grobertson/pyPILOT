@@ -1,0 +1,27 @@
+oo
+Lines 10 through 30 draw a line from the origin straight up to point 0,40. Line 40
+adds 45 degrees to THETA (THETA =0+ 45). Line 50 draws a line 40 units long from
+point (0,40) in the direction of THETA.
+
+Your screen should look like this:
+|
+a
+Figure 10-15 TURN Subcommand: Program Run
+The DRAW Subcommand * |
+The DRAW subcommand draws a line the number of units specified in the direction
+of THETA in the current pen color.
+The format for the DRAW subcommand is:
+GR: DRAW line length |
+Examples:
+GR: DRAW 20
+GR: DRAW #X |
+The line is drawn in the current PEN color.
+The following program demonstrates the GOTO, TURNTO, and DRAW subcom- ;
+mands. Type:
+10 *START
+20 GR: GOTO 0,0
+30 GR: TURNTO #X
+40 GR: DRAW 30
+50 C: #X = #X+ 10
+60 J: *START
+128 Welcome to Graphics ;

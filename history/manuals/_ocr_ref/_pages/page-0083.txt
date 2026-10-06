@@ -1,0 +1,52 @@
+S The command GR:DRAW N tells the turtle to draw a line, N units long, moving in the
+direction he is currently facing. The line is drawn in the current pen color. The program in
+Figure 4-21 uses the DRAW and TURN commands to make a simple house.
+
+1@ R: SIMPLE HOUSE
+2@ GR: CLEAR
+3e T: HOUSE
+4@ GR:GOTO -15,10
+S@ GR: TURNTO 96
+6@ GR: DRAW 30; TURN 90
+7@ GR: DRAW 303 TURN 90
+8@ GR: DRAW 303; TURN 90
+20 GR: DRA ZO TURN 30
+10@ GR:DRAW 30; TURN 120
+11@ GR: DRAW 3e3;TURN 120
+12@ E:
+, ES
+a
+HOUSE
+READY
+a
+Figure 4-21
+The number of units, N, in the GR:DRAW N command can be either a number, a
+numeric variable, or a numeric expression. Figure 4-22 shows a program that draws
+= spirals at any angle you choose. Each time the turtle turns, the side of the spiral grows
+longer by the amount you type into the computer.
+1@ R:SQUTRAL
+2@ GR:CLEAR
+3@ “BEGIN
+40 T: saurraL
+Se T:
+6@ T: TURNING ANGLE €1-17997\
+78 a:na
+8@ T:SPEED OF GROWTH ¢1-1097 \
+90 a:ar
+10@ GR:CLEAR;GOTO ©,0;TURNTO @
+110 T: SQUTRAL
+120 T:
+125 T:ANGLE=sa GROWTH =r
+13@ C:us=0
+140 *MORE
+150 GR:DRAH mS ;TURN wa
+160 C:inSs=use+n SQuIrRat
+198 a
+200 M: Y,suRE OK ,ALRIGHT
+210 JY:*BEGIN
+22@ GR:aquIT
+230 E:
+READY
+a
+Figure 4-22
+Graphics—GR:DRAW 75

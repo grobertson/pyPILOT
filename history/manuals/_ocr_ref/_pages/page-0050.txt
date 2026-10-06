@@ -1,0 +1,48 @@
+The NEW command lets you erase the program in the computer memory. You must be &
+careful when you use this command. Make sure you do not want the program any more
+before typing NEW.
+Figure 3-12 shows the listing of a program before NEW is typed.
+
+List
+
+16 R: DISAPPEARING PROGRAM
+
+20 T: THIS PROGRAM IS ABOUT TO
+
+$@ 1T: BE CLEANED OuT oF
+
+40 T: THE COMPUTER'S MEMORY
+
+ee r : IF THERE IS QNYTHING VALUABLE
+
+76 T:HERE., IT SHOULD FIRST BE
+
+80 T: SAVED TO CASSETTE OR DISK
+
+90 T:BEFORE THE COMMAND, ''NEW'*
+
+100 T:IS TYPED.
+
+11@ €
+
+READY
+
+at
+
+Figure 3-12
+
+Figure 3-13 shows the attempted listing of a program after NEW is typed. =
+
+NEW
+
+READY
+
+LIsT
+
+READY
+
+8
+
+Figure 3-13
+
+42 Executive Commands—NEW

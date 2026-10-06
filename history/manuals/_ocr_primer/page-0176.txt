@@ -1,0 +1,41 @@
+a. ee
+i Remedy: Turn off the power switch on the computer. DO NOT TURN THE DISK
+DRIVE OFF FIRST. Within 20 seconds, the BUSY light will go off. Open the disk
+drive door, insert the diskette properly, and turn it on again. If the BOOT ERROR
+| message is displayed again, consult the section entitled “Boot Errors’ in the ATARI
+400/800™ Disk Operating System Reference Manual.
+BUSY Light on Disk Drive Does Not Go Off. The BUSY light on the disk drive goes
+| on when you start up or when the disk drive is busy sending information to or get-
+ting information from the computer. If the BUSY light remains on when the disk
+drive is not in use, something is wrong.
+| Remedy: See the remedy described for a BOOT ERROR problem.
+The Computer Does Not Respond. This may have several causes.
+| Remedy: Turn the power switch on your computer to off and then to ON again.
+You may need to repeat this several times until you see the READY message on the
+| screen.
+THE ATARI 410 The ATARI 410 Program Recorder stores programs on cassette tape. Ordinarily,
+| PROGRAM One program is stored on each side of the cassette tape, however more than one
+rogram can be stored sequentially on each side if desired.
+RECORDER oe ore
+| € SPEAKING TO YOUR PROGRAM RECORDER
+A program in the computer’s memory can be saved on a cassette tape and loaded
+from the tape at a later time.
+i Saving a Program on a Cassette Tape
+1. Make sure all cables are securely attached to their connectors. Turn on the
+| computer,
+2. Open the program recorder lid by pressing the STOP EJECT key.
+3. Insert a cassette tape as shown in the ATARI 410™ Program Recorder Operator’s
+| Manual.
+4. Use the REWIND or ADVANCE button to rewind the tape or move to the desired
+location on the tape counter.
+| 5. If the tape has been rewound, set the tape counter (located below the lid) to
+000 by pressing the tape counter button.
+@ If you are saving more than one program on the tape, advance the tape a few
+| counts past the end of the last program when saving a new program. Always write
+down the first and last counter numbers so you can find the starting point of each
+program. @
+| 5. Enter a program into the computer.
+6. The SAVE command saves the program currently in memory on a Cassette tape.
+1 Programs saved on cassette cannot be given names.
+,
+Appendix B 159

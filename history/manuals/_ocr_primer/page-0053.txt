@@ -1,0 +1,47 @@
+Ko a
+Type: 25 T: SIMPLE and press @J30§. LIST the program again. You should see:
+READY
+25 7: SIMPLE
+LIST
+16 T:WHAT
+20T:A
+25 T: SIMPLE
+30 T: PROGRAM
+READY
+a
+Fancy Renumbering With REN
+The following format for the REN command allows you to choose the starting line
+number of the program. It also allows you to renumber a program with an incre-
+ment other than 10. |
+REN starting line number
+REN starting line number, increment
+To renumber the program so that it begins with line number 100, type:
+REN 100
+A program LIST displays: |
+REN 160
+READY
+LIst
+100 T: WHAT
+116T:A
+126T: SIMPLE
+130 T: PROGRAM |
+READY
+a
+To renumber a program with an increment other than 10, follow the starting line |
+number with a comma and the increment value. To renumber the program by 2,
+type:
+REN 100,2 |
+A program LIST displays:
+REN 100,2 {
+READY
+LIst
+100 T: WHAT
+102T:a
+164 T:SIMPLE
+166 T: PROGRAM
+READY 4
+a
+Beware of choosing too high a starting line number or too large an increment. REN
+will produce an error if a line number tries to exceed 9999.
+Writing A
+36 Pilot Program ‘

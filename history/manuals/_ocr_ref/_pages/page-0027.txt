@@ -1,0 +1,27 @@
+C:
+s
+4 Comput
+Any time you want to do arithmetic in PILOT, you must use the C: (COMPUTE) com-
+mand with numeric variables. As an example, the program in Figure 2-16 lets you input
+two numbers, and then it computes their average (#A).
+1@ R: AVERAGE PROGRAM THIS PROGRAM COMPUTES THE AVERAGE
+2@ *DOAaGAaIN OF THO NUMBERS.
+3@ T: THIS PROGRAM COMPUTES THE
+AVERAGE FIRST NUMBER? 10
+a FEOF THO MUNBERS SECOND NUMBER? 20
+mi alae mene N THE AVERAGE OF 10 AND 2015 15.
+3
+8@ T: SECOND NUMBER? \ THIS PROGRAM COMPUTES THE AVERAGE
+98 arias OF THO NUMBERS.
+100 C:sa=ur+nss2
+41@ T: FIRST NUMBER? 2
+a TITHE AVERAGE OF BF AND #5 15 SECOND NUMBER? 5S
+130 tT: THE AVERAGE OF 2 AND 5153.
+148 J:*"DOAGAIN oe
+REaDY
+s
+Figure 2-16
+> Note: PILOT will evaluate arithmetic expresions from left to right unless you have
+used parentheses to show a different grouping.
+Compute—C: 19
+4

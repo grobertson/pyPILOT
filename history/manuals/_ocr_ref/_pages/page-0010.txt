@@ -1,0 +1,47 @@
+This section contains general information about PILOT. It includes explanations of terms
+often used in this guide, PILOT operating modes, variables, arithmetic and relational ,
+operators, and error messages.
+
+TERMS
+
+COMMANDS Commands tell the computer what to do. There are two kinds of
+commands: Program Commands and Executive Commands.
+Program Commands are the building blocks of the PILOT
+language. They are composed of one or two letters followed by a
+colon (:). When placed in a logical sequence, these commands
+make up a program.
+
+Executive Commands tell the computer what to do with a program
+as a whole. Executive commands are either a short word such as
+RUN or an abbreviation such as DOS.
+
+CONSTANT A constant is a value expressed as a number rather than
+
+represented by a variable name. For example, in the statement: s
+C:#X = 100
+#X is a variable, and 100 is a constant.
+
+CURSOR The white square that moves across the television screen showing
+your location on the screen as you type.
+
+EXPRESSION An expression is any combination of variables, constants, and
+arithmetic or relational operators used together to compute a
+value. For example, #A + #B\ 2 is an expression; so is
+#A<=#B.
+
+INPUT Any information put into the computer from the keyboard, cassette
+tape, disk, and so on.
+
+LABEL Code name or symbols given to a statement in a program to iden-
+tify that statement for reference by a J: or U: command. PILOT
+labels may be any combination up to 254 characters. Labels must
+start with an asterisk ( %* ) and a letter; for example, %# HERE or
+%* M35PDQ.
+
+MEMORY The part of the computer where information is stored. This infor-
+mation is both program statements and data (constants and &
+variables) that the program uses when it is run.
+
+2 Pilot Information
+
+ie a

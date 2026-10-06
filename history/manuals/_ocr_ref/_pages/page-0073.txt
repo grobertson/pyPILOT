@@ -1,0 +1,63 @@
+a and the turtle ends up at point X,Y. For example, the program in Figure 4-11 uses
+DRAWTO to make the outline of a barn.
+10 R:BaRN
+2@ GR:CLEAR
+3@ GR:PEN RED
+4@ GR:GOTO -30,40
+S@ GR:DRAWTO 45,40
+6@ GR:DRANTO 60,25
+7@ GR:DRANTO 65,5
+8@ GR: DRANTO 65°5
+9@ GR: DRAWTO 65,-30
+108 GR:DRAWTO -ie,-3e
+11@ GR: DRAWTO -10°5
+12@ GR:DRAWTO -15,25
+13@ GR: DRAWTO -30540
+14@ GR: DRAW TO -45,25
+15@ GR:DRANTO -se,'s
+16@ GR: DRAWTO -Se,-3e
+17@ GR: DRANTO -10,-30
+180 GR:GOTO 65,5
+19@ GR:DRANTO -se,s
+20@ GR:GOTO -35,36
+210 GR:DRAWTO -25,30
+22@ GR: DRAWTO -25,15
+23@ GR: DRANTO -35,15
+24@ GR: DRANTO -35.30
+25@ GR:GOTO -40,-%e
+26@ GR: DRAWTO -40,-10
+27@ GR: DRAWTO -20,-10
+26@ GR: DRAWTO -20,-30
+290 E:
+READY
+a
+= Figure 4-11
+The X and Y coordinates in the GOTO command may either be numbers, numeric
+variables, or numeric expressions. The “Modern Art 1” program in Figure 4-12 uses
+numeric variables #X and #Y as coordinates. These variables are given random values
+so the lines are drawn at random. The colors of the lines are also chosen at random.
+10 R: MODERN ART I
+20 *BEGIN
+3@ GR:CLEAR
+40 T:
+se T: MODERN ART
+60 C:#L=?\200+7
+7@ C:ss=e
+80 *MORE
+90 C:#k=?\158-79
+108 C:8¥=?7\94-47
+110 C:mc=?7\4
+12@ GRCHC=6) : PEN UP
+13@ GRCBC=1) :PEN RED
+140 GRC#C=2) : PEN BLUE
+15@ GRCHC=3) :PEN YELLOW
+160 GR:DRANTO Bx ,nY
+170 CrmS=as+4
+160 JCHS<mL> :*MORE
+19@ Pa:1000
+200 J:*BEGIN
+READY
+s
+3 Figure 4-12
+Graphics—GR:DRAWTO 65
+;

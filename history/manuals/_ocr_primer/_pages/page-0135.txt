@@ -1,0 +1,19 @@
+a a
+The subcommands that use the Cartesian coordinates are:
+DRAWTO
+FILLTO ]
+GOTO
+TURTLE GEOMETRY ]
+Turtle geometry is a graphics system developed by Dr. Seymour Papert and the
+LOGO group at the Massachusetts Institute of Technology. In turtle geometry, the
+graphics display screen becomes the playfield of a tiny invisible turtle. The turtle is
+always at the “‘center pole’ of an invisible circle that moves with him wherever he
+goes. This circle is divided into 360 one degree angles with 0 and 360 degrees point-
+ing toward the top of the screen. No matter where the turtle is located, it will
+always be pointing in a directional angle measured in degrees, called THETA.
+Figure 10-3. The GRAPHICS Turtle
+If the turtle walks straight forward from the origin (center of the screen) to the top of I
+the screen, its path is the 0 degree or 360 degree angle (the beginning and ending
+of the circle). As the turtle moves on the screen, he carries this reference circle with e
+him. The turtle is always at the center of the circle. A
+118 Welcome to Graphics i

@@ -1,0 +1,12 @@
+a —
+j ANSWERS
+1. Module
+{ 2. (b)
+3. TRUE
+4. FALSE
+j Bae tb)
+6. TRUE
+| 7. Amodule called by another module
+8. (d)
+| 9. USE IF YES command, UY:, USE IF NO command, UN:
+a Modules 103

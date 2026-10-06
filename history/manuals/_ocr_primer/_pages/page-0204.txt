@@ -1,0 +1,33 @@
+rere cage
+g Plug the joystick into controller jack #1.
+RUN the program. Move the control handle around. As it moves you should see its
+position value displayed every second. To sense the joystick more frequently,
+change the PAUSE command (PA:).
+| SENSING THE JOYSTICK’S TRIGGER
+The value of the joystick trigger sensing variables, %T8, %T9, %T10, and %T11
+depends upon whether or not the trigger is pressed:
+| 0 if trigger is up
+1 if trigger is pressed
+| If pressure on the trigger is not sensed within 5/60 of a second after it was last pressed,
+the trigger variable value becomes 0.
+Below is an example of how the four trigger sensing variables work. The value in
+the box is the sensing variable’s value:
+| JOYSTICK #1 JOYSTICK #2 JOYSTICK #3 JOYSTICK #4
+TRIGGER TRIGGER TRIGGER TRIGGER
+| e pressed not pressed not pressed pressed
+A
+% T8 % TOKE % 110K % 111
+| Figure D-3 Sample Joystick Trigger Sensing
+| Example: Sensing a joystick trigger
+100 J(%T8): *SHOOT
+200 *SHOOT
+? (Branches to *SHOOT if the joystick #1 trigger is pressed.)
+Following is a short program that demonstrates how the joystick trigger sensing
+variables work. It is the same program used to sense the joystick variables except
+4 for the changes in lines 10 and 30.
+10 R: JOYSTICK TRIGGER SENSING
+4 20 *START
+q 30 T: JOYSTICK #1 TRIGGER = %T8
+40 PA: 60
+; 1 50J: *START
+Appendix D 187

@@ -1,0 +1,13 @@
+i  -§ ae
+ANSWERS
+1. String variables, numeric variables
+2. (d) ;
+3. TRUE
+4. (a)
+5. Avvalue is input with the ACCEPT command.
+6. DUMP
+7. Assigns the value of a variable to the accept buffer.
+A: = $NAME
+8. 30C: $S=S
+40 C: $ANIMALS= $ANIMAL$S
+80 Variables i

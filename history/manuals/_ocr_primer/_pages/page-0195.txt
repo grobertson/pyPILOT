@@ -1,0 +1,18 @@
+<< a lhl
+Figure C-15 Multiple-Character Deletion ‘
+Great! The N is deleted and the characters OT EASY move one space to the left. ‘ |
+To delete the OT and a space, hold down the key and press the
+key three times. I
+‘ r
+Figure C-16 Character Deletion Completed a
+Wasn't that easy? To exit the line, press GRE. oa
+Line Deletion. The line deletion function erases one line from the screen, but not a
+from memory. To delete a line, move the cursor to any space on that line. Hold ig
+down the key and press the key once. The line disappears, :
+moving all the lines below the deleted line up one line. This leaves a blank line at 3
+the bottom of the screen. ag
+Enter the following lines: Ee 4
+10 T: SCREEN EDITING IS EASY 3
+20 T: ON MY ATARI COMPUTER. ft '
+30 T: DON’T YOU AGREE? P wee
+178 Appendix C 4

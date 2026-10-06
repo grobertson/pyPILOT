@@ -1,0 +1,44 @@
+System Reset Key: Similar to in that pressing this key 2
+stops program execution. Also returns the screen display to the
+Text mode, clears the screen, and returns margins and other
+variables to their default values.
+
+Tab Key: Press @{g9 and the keys simultaneously to
+set a tab. To clear a tab, press the {m1§ and GSSSuETTY keys
+simultaneously. Used alone, the advances the cursor
+to the next tab position. In Deferred mode, set and clear tabs by
+preceding the above with a line number, the command T:, a
+quotation mark, and pressing the Gj key.
+
+Examples: 100 7:53
+200 T= Gas
+Default tab settings are placed at columns 5, 14, 22, 30, and 38.
+
+Back Space Key: Pressing this key replaces the character to the
+left of the cursor with a space and moves cursor back one space.
+
+Clear Key: Pressing this key while holding down the GIB or
+GGG key blanks the screen and puts the cursor in the upper left
+corner.
+
+Return Key: Terminator to indicate an end of a line of PILOT.
+Pressing this key causes a numbered line to be interpreted and ad-
+ded to a PILOT program in RAM.
+
+An unnumbered line (in Immediate mode) is interpreted and ex-
+ecuted immediately. Any variables are placed in a variable table.
+
+SCREEN EDITING
+
+The keyboard and display are logically combined for a mode of operation known as
+
+screen editing. Each time a change is completed on the screen, the key must be
+
+pressed. Otherwise, the change is not made to the program in memory.
+Example: 10 T;:REMEMBER TO PRESS RETURN
+15 T:AFTER LINE EDIT
+20 T: THIS LINE IS GOING AWAY
+30 T:THIS WILL BE THE FIRST
+40 T:LINE ON THE SCREEN.
+50 E:
+104 Appendix A

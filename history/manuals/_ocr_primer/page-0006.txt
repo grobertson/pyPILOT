@@ -1,0 +1,50 @@
+| PREFACE iii
+What Is PILOT? iii
+
+Purpose of This Manual iii
+
+How To Use This Manual iii
+
+Cast of Colors iv
+
+i 1 INTRODUCTION 1
+| Getting To Know Your Computer 1
+Getting To Know the Keyboard 2
+
+| 2 GETTING STARTED WITH PILOT 5
+Concepts Introduced 5
+
+| & What Is the ATARI PILOT Cartridge? 5
+Changing the Screen Display 5
+
+Clearing the Screen 6
+
+| Correcting Mistakes 7
+Some PILOT Commands 8
+
+What Is aCommand? 8
+
+i The TYPE Command, T: 9
+The SOUND Command, SO: 9
+
+The GRAPHICS Command, GR: 13
+
+| Section 2 Summary 16
+Section 2 Quiz 4 Wg
+
+4 3. WRITING A PILOT PROGRAM 19
+Concepts Introduced 19
+
+Immediate and Deferred Commands 19
+
+What Is a Program? 19
+
+Executive Commands 20
+
+q The RUN Command 20
+The LIST Command 21
+
+The NEW Command 23
+
+| The AUTO Command 23
+a Contents v

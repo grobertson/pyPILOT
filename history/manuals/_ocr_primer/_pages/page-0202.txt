@@ -1,0 +1,34 @@
+e. a ee eee
+i 4 CONTROLLERS
+i
+CONCEPTS Sensing
+INTRODUCED Sensing the Position of the Joystick
+| Sensing the Joystick’s Trigger
+Sensing the Position of the Paddle
+Sensing the Paddle Trigger
+| The ATARI joysticks and paddles are called controllers. Controllers send informa-
+tion to the computer. To use this information, a program must be able to sense it.
+| SENSING A controller sends its position to the computer. A joystick has 8 positions and the
+paddle has 227 positions. When a program senses the information from a con-
+troller, it receives a value corresponding to the position of the controller, This infor-
+mation is stored in read-only sensing variables. (Read-only variables can only be
+read; their values cannot be changed by the user.)
+The value of a sensing variable is a number. A sensing variable is usable anywhere a
+| e numeric variable can be used.
+| SENSING THE POSITION OF THE JOYSTICK
+Up to 4 joysticks can be attached at one time. There are 8 sensing variables in
+ATARI PILOT; 4 for the joysticks and 4 for the joystick’s triggers.
+| They are:
+4 joystick sensing variables:
+i %3O, %J1, %J2, %)3
+4 joystick trigger sensing variables:
+%T8, %T9, %T10, %T11
+2 The value of %JO, %J1, %J2, and %J3 depends upon the position of the joystick, as
+shown below:
+1
+r
+j ‘aus
+q 6 10
+€ 2
+Figure D-1 Joystick Positions
+Appendix D 185

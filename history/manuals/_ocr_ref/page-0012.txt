@@ -1,0 +1,33 @@
+Programming Modes
+AUTO The mode in which the statements will automatically be numbered
+when writing a program.
+IMMEDIATE The Immediate mode is used when you want your commands to
+respond right away after pressing the key.
+RUN In Run mode, PILOT is executing (carrying out) the program cur-
+rently stored in memory.
+Screen Modes
+GRAPHICS The Graphics mode is used when you want to draw a picture of
+any kind.
+TEXT The Text mode displays only text (letters, numbers, punctuation)
+and graphics (CTRL) characters.
+VARIABLES
+PILOT has two main kinds of variables: string variables and numeric variables.
+String Variables can store strings of up to 254 characters. They are named with a $ sym-
+bol, followed by any combination of letters and numbers. For example, $NAME,
+$M29ABD, $FOOD9 are acceptable string variable names. String variables cannot be
+used in arithmetic expressions. A program can contain any number of string variables up
+to the limits of memory.
+Numeric Variables can store numbers from -32768 through 32767. They are named
+with a # symbol, followed by a single letter; #A, #B, #C, and so on up to #2Z are the
+acceptable numeric variable names. A program can have up to 26 numeric variables.
+They can be used in arithmetic and relational expressions.
+Note: PILOT has two other kinds of variables that are not discussed in this guide. Pointer
+variables, named with an @ symbol followed by a decimal memory location, are used to
+examine or change the contents of a specific memory location (equivalent to PEEK and
+POKE in the BASIC language). Special variables, named with a % symbol followed by a
+letter or a letter and a number, are used to sense the values of the various ATARI con-
+trollers (joysticks, paddles, and light pen) and to read other special values maintained by
+the PILOT system.
+The use of controllers and special graphics variables is explained in The PILOT Primer,
+An Instruction Manual for the PILOT PROGRAMMING LANGUAGE.
+4 Pilot Information

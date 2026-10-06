@@ -1,0 +1,40 @@
+3
+SS ___=
+I
+CONCEPTS Immediate and Deferred Commands
+INTRODUCED What Is a Program?
+| Executive Commands
+The RUN Command
+The LIST Command
+The NEW Command
+j The AUTO Command
+More Commands
+The TYPE Command, T:
+The ACCEPT Command, A:
+The REMARK Command, R:
+The END Command, E:
+Correcting and Changing Your Programs
+4 Erase a Line
+Insert a Line
+Replace a Line
+Line Renumbering
+j a The RENUMBER Command, REN
+Fancy Renumbering With REN
+q IMMEDIATE When the computer receives a command, one of two things happen:
+AND DEFERRED © It is obeyed immediately.
+| COMMANDS © It is remembered and obeyed at a later time.
+Commands obeyed instantaneously when you press the key are called
+(immediate commands). The examples of the T:, SO:, and GR: commands in Sec-
+tion 2 are immediate commands. Commands stored in memory to be obeyed later
+| are called deferred commands.
+j WHAT IS A program is a sequence of instructions that directs a computer to perform a
+A PROGRAM desired operation. A program is composed of statements. A statement is a com-
+mand, or set of commands, that is preceded by a line number.
+| Line numbers help the computer differentiate between immediate and deferred
+statements. Line numbers also keep the statements in numerical order. A statement
+without a line number is an immediate statement. A statement with a line number is
+| a deferred statement, and is part of a program. f
+@ A line number must be an integer between 0 and 9999. Duplicate line numbers
+i are not allowed. @
+Writing A
+] Pilot Program 19

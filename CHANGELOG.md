@@ -60,7 +60,7 @@ rather than being silently ignored.
 
 - Python ≥ 3.12, **zero third-party runtime dependencies** — it has to run on a
   classroom Raspberry Pi.
-- 884 tests, 95% branch coverage, `mypy` strict, `ruff` lint and format, Sphinx
+- 895 tests at release, 95% branch coverage, `mypy` strict, `ruff` lint and format, Sphinx
   docs that build with zero warnings, and a 3-OS × 2-Python CI matrix.
 - Typed (`py.typed`, PEP 561).
 - The corpus in `examples/` is **executed** by the test suite, not merely

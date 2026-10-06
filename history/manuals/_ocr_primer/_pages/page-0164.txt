@@ -1,0 +1,45 @@
+| INSERTING To insert the ATARI PILOT cartridge into your ATARI 400™/800™ Personal
+PILOT Computer System:
+
+1. Pull the lever on the top of your computer marked PULL OPEN. The top of the
+computer will spring open, and if the television is turned on, the screen will fill
+with static. Don’t panic; screen static is normal whenever the top of the com-
+puter is open.
+
+i 2. Hold the ATARI PILOT cartridge with the label toward you and the opening at
+the bottom. Insert the cartridge into the proper slot of either the ATARI 400 or
+ATARI 800 Personal Computer. Make sure the cartridge is all the way in and
+| secure. (Use the left cartridge slot on the ATARI 800.)
+
+3. Close the computer top all the way. When you turn on the computer, the com-
+puter won't operate if the top is even slightly open. The television screen will
+display this message:
+
+| ATARI PILOT CC) COPYRIGHT ATARI 1980
+READY
+| : a
+TURNING ON PILOT IN YOUR ATARI COMPUTER WITHOUT A DISK DRIVE
+i Follow the steps below to turn your computer on correctly.
+1. Make sure that your television switch box is connected properly. It should be
+switched to the GAME or COMPUTER position. Turn on and tune your televi-
+q sion set to channel 2 or 3 and set your channel switch to the same number.
+Be sure the PILOT cartridge is inserted.
+2. Push the power switch on the right side of the computer forward to the ON
+| position.
+3. The television screen should display:
+| ATARI PILOT (C} COPYRIGHT ATARI 19890
+READY
+|
+| The system is now turned on.
+@ If the screen is full of static instead of the blue screen display, check all connec-
+9 tions and make sure the top lid of the computer is closed securely.
+TURNING ON PILOT IN YOUR ATARI COMPUTER WITH AN ATARI 810 DISK
+j DRIVE
+1. Make sure that the television switch box is connected properly. Make sure that
+both the television and computer are tuned to channel 2 or 3 and that the
+i PILOT cartridge is inserted.
+2. Make sure that the cords from the computer and the ATARI 810 Disk Drive
+are properly and securely connected.
+gg 3. The computer should be turned OFF and there should NOT be a diskette in the
+@ disk drive .
+5 Appendix A 147

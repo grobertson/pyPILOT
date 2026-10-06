@@ -1,0 +1,41 @@
+ERROR MESSAGES 3
+If you make an error, PILOT responds by showing the command or statement in error. It
+highlights the source of the error or the first character it does not understand. It also types
+out a message explaining the error.
+
+The are two kinds of errors: Syntax errors result from incorrectly typing in a command.
+
+Syntax errors are found by PILOT as you are typing commands or program statements in-
+
+to the computer.
+
+The second type of error is a Run-time error which results from mistakes in the logic of
+
+your program - for example, trying to jump to a statement that you have not labeled.
+
+Run-time errors are only found when you type RUN and PILOT tries to execute your
+
+program.
+
+The following are some common PILOT error messages:
+
+WHAT'S THAT? Indicates that PILOT could not understand your command or what
+you wanted it to do. This message is often the result of typing or
+spelling errors.
+
+1/O ERROR xxx In the course of performing an I/O operation the I/O subsystem
+detected an error and returned the status indicated. See Appendix
+B for a list of I/O error codes. 2
+
+NO ROOM Indicates that the requested operation could not be performed
+because there was not enough free memory.
+
+WHERE? Indicates that the %* LABEL named in a U: (USE) or J: (JUMP)
+command does not exist in the program storage area.
+
+U: TOO DEEP The program has exceeded eight levels of nested USE commands.
+
+DIVIDE BY 0 A COMPUTE command has just attempted to perform a division
+by zero.
+
+6 Pilot Information

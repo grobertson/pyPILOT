@@ -1,0 +1,47 @@
+ea ee
+Using the M: OOSE __,UCE __ example, any input string that ends with OOSE or
+UCE produces a match:
+GOOSE is a match
+LOOSE is a match
+CABOOSE is a match
+DUCE is a match
+TRUCE isa match @
+CONDITIONAL COMMANDS
+The MATCH command searches the input string received from an ACCEPT com-
+mand for a matching string. The computer remembers if there is a match or no
+match. PILOT uses the MATCH command followed by conditional commands to
+perform specific instructions conditional upon a match or no match. A MATCH
+command must be preceeded by a conditional command.
+Here are some of PILOT’s conditional commands:
+TYeory: TYPE IF YES command
+TN: or N: TYPE IF NO command
+EY: END IF YES command
+EN: END IF NO command
+The TYPE IF YES and TYPE IF NO Commands TY:, TN: > |
+The TYPE command can be used with yes or no conditioners in the following formats:
+TY: message
+Y: message
+TN: message
+N: message
+If a match is found and there is acommand with a Y conditioner, it will be executed
+(e.g., TY : message). If a match is NOT found and there is a command with a N con-
+ditioner it will be executed (e.g., TN: message). Both the Y and N conditioners may |
+be used for a single MATCH command as long as they are not in the same state-
+ment. But, if both the Y and N conditioners follow a single MATCH command, only
+one of the commands will be executed; the other one is bypassed. {
+Here is a sample program to demonstrate the interaction of the M:, TY: and TN:
+commands:
+1 R: HISTORY PROGRAM
+10T:
+201:
+30 T: Who was the first president of \
+40 T: the United States? \
+50A:
+60 M: GEORGE WASHINGTON
+70K:
+80 TY: That's right!! F
+90 TN: No. The first president of the \
+100 TN: United States was GEORGE \ *
+110 TN: WASHINGTON. )
+Decision-Making
+44 Programs y

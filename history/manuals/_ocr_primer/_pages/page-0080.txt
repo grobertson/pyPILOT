@@ -1,0 +1,13 @@
+__ i“
+| ANSWERS
+1. Statement label, or label name, or label
+| 2. (b)
+3. Statement label, or label name, or label
+4. Lower
+| 5. FALSE
+6. Direct program execution to a specified statement label
+1 7. FALSE
+8. Debugging a program
+j 9:- TRUE
+| Branching 63
+3

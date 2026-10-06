@@ -1,0 +1,15 @@
+Inserting
+Character Insertion. Pressing the key while holding the key inserts a
+space beneath the cursor. The cursor remains on the space so that a new character ]
+may be entered. All characters to the right of the cursor move one space to the
+right, making the line longer.
+Enter the following line: |
+10 T: THIS IS EASY
+Using the and keys, move the cursor on top of the E in EASY. |
+Figure C-19 Character Insertion: Positioning the Cursor .
+oe ; a
+Let’s insert the characters VERY between the IS and EASY to make the message a |
+read THIS IS VERY EASY. To insert enough space between the IS and EASY to fit ae:
+VERY , press the and keys five times. ey.
+Figure C-20 Character Insertion: Creating a Space a
+180 Appendix C 3

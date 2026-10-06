@@ -1,0 +1,32 @@
+> =...
+| When the USE command tells the computer to branch to a module at a specified
+label, it is telling the computer to jump to the line containing that label. The dif-
+ference between a USE and a JUMP command is that when the USE command is
+| executed, the computer remembers the line number of the statement immediately
+following the USE. When the module is finished, program execution automatically
+continues with the line number following the USE command.
+| This is how it works:
+50 U: *GOGETIT
+| 6 ire
+i 200 *GOGETIT
+| 270, E:
+® Modules can be placed following the program END command, E:, because pro-
+| é& gram execution will jump around the END command to branch to a module.
+However, its usually best to place modules at the beginning of a program because
+the computer can find them faster. ™
+| THE MODULE END
+The END Command, E:
+| @ Every module must end with the END command. r |
+The format for the END command is:
+| E:
+Section 3 stated that the END command ends the program. The same END com-
+mand used in a module ends that module, and signals to the computer to return to
+the main program. END within a module does not end the entire program. Your
+ATARI computer is smart: it knows the difference between a module END and a
+| program END.
+NESTED Modules can be nested. Nesting means that a module can call another module,
+MODULES which in turn can call a third module, and so forth. PILOT allows up to eight nested
+] modules in one program. There is nothing new to worry about when nesting
+modules. PILOT remembers the correct line number to return to after each module
+exit.
+i Modules 97

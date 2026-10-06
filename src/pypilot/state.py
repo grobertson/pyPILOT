@@ -12,9 +12,8 @@ This module implements ``SPEC.md`` sections 6.1, 6.5, 6.6 and 7.1:
 * the accept buffer and its normalisation (spec 7.1, 7.2.2)
 * the match ordinal (spec 6.6)
 
-Deliberately **not** here: expression evaluation (Stage 3), the ``A`` and
-``M`` statements (Stage 5), and file devices (Stage 7). Those arrive as methods
-on this class or in sibling modules.
+Expression evaluation is delegated to :mod:`pypilot.expressions`; statement
+execution and file devices are owned by the runtime and device modules.
 """
 
 from __future__ import annotations
@@ -304,8 +303,7 @@ class PilotState:
         if piece.kind is Kind.NUMERIC:
             # Only #A-#Z exist, so a single letter is a numeric variable.
             return str(self.get_number(name).value)
-        # Special and controller-sense variables; Stage 5 supplies the real
-        # values, and until then they read as 0 (spec 10.5).
+        # Controller sense has no host input; unsupported hardware values read as 0.
         return "0"
 
     def expand(self, text: str, *, limit: int = MAX_STRING_LENGTH) -> str:

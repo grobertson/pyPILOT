@@ -1,0 +1,32 @@
+4. Turn the disk drive power switch on the front of the disk drive to ON. Both red
+lights on the front should turn on. The sounds you now hear are normal and
+will stop shortly. Wait until the BUSY light (top light) goes off before proceed-
+ing to step 5. NEVER interrupt the disk drive when the BUSY light is on. |
+5. Hold the diskette with the label facing up and the notch on the left side. DO
+NOT TOUCH THE SHINY SURFACE OF THE DISKETTE that shows through the
+opening in the protective jacket. If you touch the shiny surface, you may
+damage the diskette.
+6. Push in the door release lever located beneath the disk drive door. Insert the
+diskette, held as described above, until you hear it click securely into place.
+7. Close the disk drive door.
+8. Turn on the power switch on the right side of the computer. The disk drive
+should start making noises, which indicates that the computer is reading in
+parts of the Disk Operating System (DOS). The DOS is required in order for the
+computer to store and retrieve programs on the diskette.
+9. This message will be displayed: |
+ATARI PILOT CC) COPYRIGHT ATARI 1986
+READY
+.
+The system is now turned on.
+If you encounter any problems turning on your system with the disk drive, read the * |
+section called Don’t Panic! in Appendix B, Speaking To Devices.
+TURNING OFF To turn off your computer system, turn the switch on the right side of your
+y p
+YOUR ATARI computer to OFF. Turn your television set to OFF.
+COMPUTER If you have an ATARI 810 Disk Drive, you should first: |
+SYSTEM 1. Open the disk drive door by pressing the door release lever beneath the door.
+2. Remove the diskette by pulling it straight out. Return the diskette to its
+envelope. ]
+3. Turn the disk drive power switch to the OFF position.
+Your system is now turned off. 1
+148 Appendix A |

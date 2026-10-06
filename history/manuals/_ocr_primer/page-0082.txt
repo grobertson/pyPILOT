@@ -1,0 +1,24 @@
+oO
+| Below is a fragment of a program to further demonstrate how JM: works (all pro-
+gram statements unnecessary to the demonstration of this example have been
+omitted):
+| 30A:
+40 M: CAT, DOG, MOUSE
+| 50 JM: * RUN, * CHASE, * RUN
+{ 100 * a ie
+l 200 *CHASE
+If the input string at line 30 is either CAT or MOUSE, the JM: command directs pro-
+gram execution to the label *RUN at line 100. If the input string is DOG, the JM:
+command directs program execution to the label *CHASE at line 200. If the input
+i € string is neither CAT, DOG, or MOUSE, the JM: command is bypassed.
+MINI-QUIZ
+q 1. The JUMP command may be issued in immediate mode to start program exe-
+cution at the specified statement label. TRUE or FALSE?
+2: If there is no match, the JM: command is ;
+i 3. In a JM: command, if the input string matches the fourth string of the MATCH
+command: (M:), ‘the program 20s 5.55. ee
+| (a) Executes a JY: command
+(b) Jumps to the first label specified in the JM: command
+(c) Jumps to the first through fourth label specified in the JM: command.
+6 (d) Jumps to the fourth label specified in the JM: command
+i Branching 65

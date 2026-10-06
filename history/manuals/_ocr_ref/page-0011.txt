@@ -1,0 +1,44 @@
+= OUTPUT Information put out from the computer memory to external
+devices.
+
+PILOT PILOT stands for Programmed Inquiry, Learning Or Teaching.
+
+PROGRAM A set of statements in a logical sequence that tells the computer
+what to do. The computer follows the program statements in
+order, from beginning to end, unless a J: JUMP or U: USE com-
+mand breaks the sequence.
+
+SCREEN DISPLAY What you see on the television screen.
+
+STATEMENT A statement is one line of a program. All PILOT statements begin
+with line numbers (used for editing and sequencing). A PILOT
+statement may be labeled with a % LABEL between the line
+number and the command.
+
+STRING A group of characters—letters, numbers, punctuation, or ATARI
+Graphics (CTRL) characters. The following are all
+strings:
+
+ABCXYZZZ
+“Quotes Too”
+O02BAK9
+= JN\INININININ/
+5+2=
+Note that quotation marks are not used to identify a string. Any
+group of characters, including quotation marks, is a
+string in PILOT.
+A string is like a constant, in that it may be stored in a
+string variable.
+
+VARIABLE A variable is the name of a place in memory to store a string or
+numeric value that is used by a program. This value may (or may
+not) change as the program is executed. (See the following page
+for an explanation of the different types of PILOT variables.)
+
+OPERATING MODES
+
+PILOT has two kinds of modes: Programming Modes which determine how PILOT com-
+
+= mands are used by the computer; and Screen Modes which determine the layout of the
+display screen.
+Pilot Information 3

@@ -1,0 +1,9 @@
+The command LIST 50 tells the computer to LIST only line 50, as you see in Figure 3-8. #
+List se
+S@ “aGcaiIn
+READY
+a
+Figure 3-8
+Note: To get a printed listing of your program on paper, you must SAVE your program
+to the printer (see the SAVE command).
+38 Executive Commands—LIST

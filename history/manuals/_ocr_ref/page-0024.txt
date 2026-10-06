@@ -1,0 +1,18 @@
+The computer will look to see if any of the choices in a match list are contained, exactly, =
+in any part of an answer. The program in Figure 2-13 below will match on SAL or SAM
+as any part of the answer. This means that all of the following will create a match: SAL-
+LY, SALT, SALAD, SALUTE, SALAMI, SAMMY, SAMUEL, and SAME.
+10 R:S5AQM'S & SALLY'S PROGRAM HI, WHAT'S YOUR NAME?
+2@ T:HI, WHAT'S YOUR NAME? GERTRUDE
+3e *“acain a: SNAME I ONLY TALK TO PEOPLE NAMED
+40 M:5AQM,SaL SAMOR SALLY...
+S@ TN:I ONLY TALK TO PEOPLE NAMED PLEASE TELL ME YOUR NAME AGAIN:
+6@ TN:SAMORSALLY... SALAD DRESSING
+Ze THIPLEASE TELL ME YOUR NAME MICE TO MEET YOU, SALAD DRESSING.
+60 JN: "AGAIN READY
+9@ TY: NICE TO MEET YOU, SNAME. ra
+10@ E:
+READY
+a
+Figure 2-13
+16 Match—M:

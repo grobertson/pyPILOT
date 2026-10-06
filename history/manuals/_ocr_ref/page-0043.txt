@@ -1,0 +1,20 @@
+: LIST
+1@ R: SPINNING RECTANGLE
+2@ GR:CLEAR
+3@ C:sc=e
+4@ GR:GOTO -15,-S;TURNTO -6e
+S@ *AGaAIn
+60 GR: 2CDRAW 25; TURN 90 ;DRAH 10;
+TURN 90>
+7@ GR: TURN 20;0RAW 7
+60 CimC=mCc+t
+90 JCHCC16) :*AGaIN
+100 E:
+READY
+ca
+Figure 3-4
+READY
+a
+Figure 3-5
+Executive Commands—RUN 35
+;

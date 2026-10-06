@@ -1,0 +1,32 @@
+3 The GR:PEN COLOR command tells the turtle to choose a pen color — yellow, red, or
+blue. For example, the program shown in Figure 4-25 draws polka dots in yellow, red,
+and blue in random positions on the screen.
+
+e ogee
+20 *BEGIN
+3@ C:mN=e
+4@ GR:CLEAR
+Se T: POLKa DOTS
+6@ *POLKA
+7@ C:#x=?\150-75
+80 C:#Y=?\62-31
+90 C:mC=?\3+4
+100 GRCHC=1): PEN YELLOW
+11@ GRC#C=2): PEN RED
+120 GRCHC=3):PEN BLUE
+13@ GR:GOTO #k,nY
+140 U:*DOT
+150 CiaN=um+s
+160 JCHN<5@>:*POLKA
+17@ Pa:i2e
+160 J:*BEGIN POLKA DOTS
+190 E:
+200 “DoT
+21@ GR: TURNTO 90
+22@ GR: 1@C DRAW 1; TURN 16)
+23@ GR:1@CFILL 1; TURN 18)
+240 E:
+READY
+a
+> Figure 4-25
+Graphics—GR:PEN 79

@@ -1,0 +1,25 @@
+ADVANCED THE JUMP COMMAND IN IMMEDIATE MODE, J: |
+BRANCHIN
+TECHNI we When the JUMP command is issued in immediate mode, it causes PILOT to
+Q automatically start program execution at the label name specified in the JUMP com- |
+mand. WARNING: Errors may result if you do not start program execution from the
+beginning.
+THE JUMP ON MATCH COMMAND, JM:
+The JUMP ON MATCH command is similar to the JUMP command, except that it
+jumps to one of several labeled statements, depending upon which MATCH string
+in the MATCH command produces a successful match.
+The format for the JUMP ON MATCH command is:
+JM: label label label
+JM: label, label, label...
+The label names may be separated by either a space or a comma.
+Each label corresponds to a string in the MATCH string. If the third match string
+produces a match, then the program jumps to the third label specified in the JM: |
+command:
+20A:
+30 M: FIRST, SECOND, THIRD ] |
+40 JM: *ONE, * TWO, * THREE
+100 o
+200 *TWO
+300 * THREE
+64 Branching i
+bes

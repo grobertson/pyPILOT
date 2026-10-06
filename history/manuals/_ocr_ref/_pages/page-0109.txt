@@ -1,0 +1,42 @@
+e . s
+Special Function Keys
+and Screen Editing
+
+SPECIAL FUNCTION KEYS
+
+A number of keys on the ATARI 400/800™ Personal Computer System keyboards have
+
+a special function or purpose. These functions are described below.
+
+e Reverse (Inverse) Video Key, or ATARI Logo Key: Pressing this
+key causes the text to be reversed on the screen (dark text on light
+background). Press the key a second time to return to normal text.
+
+Lowercase Key: Pressing this key shifts the screen characters from
+uppercase (capitals) to lowercase. To restore the characters to up-
+percase, press the key and the key
+simultaneously.
+
+= Escape Key: Pressing this key causes a command to be entered
+into a program for later execution.
+Example: To clear the screen, you would enter:
+10 T:3
+This will cause a curved arrow to appear on your screen as
+follows:
+10T:
+
+Control Key: This key is used in conjunction with other keys to
+print special graphics control characters. See back cover or PILOT
+Reference Card for the specific keys and their screen-character
+representations.
+
+icrat pl Control 1: Holding down and pressing 1 temporarily stops
+whatever is happening on the screen (e.g., a program listing).
+Pressing 1 again restarts the screen action.
+
+Break Key: Pressing this key during program execution causes ex-
+ecution to stop. The line number and statement where the execu-
+
+= ; tion stopped are displayed on the screen followed by
+& eee READY eee ;
+Appendix A 103

@@ -1,0 +1,19 @@
+ATARI PILOT owes a great deal to three outstanding computer
+
+educators:
+
+Dr. John Starkweather (University of California Medical Center, San
+
+Francisco), who originated the first PILOT language for computer-based
+
+education.
+
+Dr. Dean Brown, whose pioneering work at the Stanford Research In-
+
+stitute Education Laboratory between 1967 and 1974 showed PILOT to a |
+be a language for children’s programs, as well as for teachers.
+
+Dr. Seymour Papert, at the LOGO Project at Massachusetts Institute of
+
+Technology, for the development of “Turtle Geometry” and ‘Turtle |
+Graphics,” which ATARI PILOT uses.

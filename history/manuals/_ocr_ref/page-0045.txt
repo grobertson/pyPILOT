@@ -1,0 +1,30 @@
+= LIST tells the computer to display the program currently stored in memory. Use this com-
+mand anytime you need to see the entire program, a few lines of the program, or just
+one line of the program. For example, Figure 3-6 shows the listing of an entire program.
+LIsT
+1@ R: DRAGON'S TAIL
+2@ GR:CLEaR
+3@ GR:GOTO ~80,-—36;TURNTO 90
+40 C:us=1
+S@ *aGaAIN
+6@ GR:S( DRAW BSS TURN -72)
+7@ GR: DRAW 9; TURN —-uS/3
+68@ Cimso-ms+s
+9@ JCBS<36) :*aGaIn
+100 E:
+READY
+8
+Figure 3-6
+The command LIST 40,80 tells the computer to start listing at line 40 and end at line 80,
+as you see in Figure 3-7.
+LIST 46,606
+40 C:ms-1
+S@ *“aGaIn
+60 GR: SCDRAW BS; TURN -72)
+7@ GR: DRAW 9; TURN -HS5/3
+8@ Ciuso=mse+s
+REaDY
+5
+= Figure 3-7
+Executive Commands—LIST 37
+,

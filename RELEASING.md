@@ -42,6 +42,10 @@ publishing to be a deliberate act rather than a side effect of tagging.
 
 ## Cutting a release
 
+Version `1.0.0` is already released. Replace `X.Y.Z` below with the new version
+declared in `pyproject.toml`, and release from an up-to-date `master` after the
+release changes have been merged.
+
 ```console
 # 1. Set the version. pyproject.toml is the single source of truth;
 #    pypilot.__version__ reads it, so never edit the version by hand.
@@ -59,10 +63,10 @@ uv tool run twine check --strict dist/*
 # 3. Commit, then tag. The tag MUST match the declared version, or the
 #    workflow refuses to publish.
 git add -A
-git commit -m "Release 1.1.0"
-git tag -a v1.1.0 -m "1.1.0"
+git commit -m "Release X.Y.Z"
+git tag -a vX.Y.Z -m "X.Y.Z"
 git push origin master
-git push origin v1.1.0
+git push origin vX.Y.Z
 ```
 
 The tag push is what triggers the publish. The workflow then:
@@ -70,20 +74,16 @@ The tag push is what triggers the publish. The workflow then:
 1. checks the tag matches `pyproject.toml`
 2. runs ruff, mypy and pytest
 3. builds and runs `twine check --strict`
-4. **opens the archives and refuses to continue if `history/` is in them** —
-   those are somebody else's copyright
-5. uploads, with PEP 740 attestations
+4. uploads, with PEP 740 attestations
 
-Steps 1 and 4 exist because they are the two ways a release can go quietly
-wrong: publishing a version that does not match its tag, and shipping
-copyrighted manuals.
+The tag check prevents publishing a version that does not match its tag.
 
 ## If a publish fails
 
 - **The version is already on PyPI.** PyPI is immutable; you cannot replace a
   file. Bump the version and cut a new tag.
 - **A tag fired but the version mismatched.** Fix `pyproject.toml`, commit, and
-  move the tag: `git tag -f v1.1.0 && git push -f origin v1.1.0`. Force-pushing
+  move the tag: `git tag -f vX.Y.Z && git push -f origin vX.Y.Z`. Force-pushing
   a tag is acceptable here *only* because the release did not happen.
 - **The publisher was not configured yet.** The job fails at the upload step
   with a 403 from PyPI. Add the publisher, then re-run the failed job from the
@@ -92,7 +92,7 @@ copyrighted manuals.
 ## Verifying a release
 
 ```console
-uv pip install --python .venv-check repilot==1.1.0
+uv pip install --python .venv-check repilot==X.Y.Z
 .venv-check/bin/pypilot --version
 ```
 
@@ -106,6 +106,4 @@ uv run python tools/scan_secrets.py
 ```
 
 It greps everything Git would stage for PyPI tokens, GitHub PATs, AWS keys,
-private key blocks and similar, and fails the operation. The collected Atari
-manuals in `history/` are skipped by design — they are another project's
-copyright and are never committed.
+private key blocks and similar, and fails the operation.

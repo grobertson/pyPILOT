@@ -1,0 +1,21 @@
+M:
+r)
+Match €
+ZS ~
+A &
+—— ., ee ro i ‘
+TO et jr TU
+The M: command matches the answer entered by a user (during an A: command) with
+one or more answers expected by the program. Also, M: automatically creates a YES or
+NO condition —Yes (Y) there was a match, or NO (N) there was no match. Figure 2-11
+shows how this works.
+1@ R:WEATHER TO DO HOW'S THE WEATHER OUTSIDE?
+2@ T:HOW'S THE WEATHER OUTSIDE? Goop
+se a: GOTO THE PARK AND PLayY.
+4@ M:NICE,GOOD,HOT,GREAT
+S@ TY:GOTO THE PaRK aNd PLay. READY
+6@ TN:STAY HOME AND READ A BOOK. a
+7@ E:
+READY
+4
+14 Match—M:

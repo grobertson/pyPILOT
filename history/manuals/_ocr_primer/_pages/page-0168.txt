@@ -1,0 +1,41 @@
+|. Ee
+| SPEAKING TO YOUR ATARI 810 DISK DRIVE
+The program (also called a file) currently in the computer’s memory can be saved
+| on a diskette and loaded or retrieved at a later time,
+Saving a Program on a Diskette
+| 1. The disk drive and computer should be turned on following the steps listed in
+Appendix A, Turning On Your ATARI Computer With a Disk Drive.
+2. Make sure a diskette is inserted into the disk drive,
+| 3. Enter a program into the computer.
+4. Think of a name for your program. A program name, or file name, must begin
+with a letter, optionally followed by either letters, numbers, or a combination
+| of both. The computer remembers only the first eight characters of the program
+name unless it is followed by a period; it will also remember up to three
+characters following the period. Embedded spaces are not allowed. Graphic
+characters are ignored. Anything following a punctuation mark other than a
+| period is ignored.
+Here are some examples of correct and incorrect program names:
+4 Correct Incorrect
+PROGNAME PROG NAME
+CAP.81 81.CAP
+q é& ATARI ATARICOMPUTERS
+If you choose an incorrect program name, the computer will respond with a * * *
+1/0 ERROR 165 * * * error message when the command described below is given.
+| 5. The SAVE command saves the program currently in memory on a diskette.
+Type:
+§ SAVE Dn: Program name
+where: D is the disk drive
+n specifies which disk drive (1-4). Because up to four disk drives may be attached,
+| the computer must know now which one to use. /f nis not specified, it defaults
+to 1.
+Program name is the complete program name.
+| Here are some examples:
+SAVE D: CHECKSUM Save CHECKSUM on Drive#1
+| SAVE D1: LETTER.1 Save LETTER.1 on Drive#1
+SAVE D4: K Save K on Drive#4
+If only part of a program is to be saved, the program lines to be saved must be
+A specified following the program name:
+SAVE Dn: Program name x,y
+where: x is the first program line to be saved
+; y is the last program line to be saved
+Appendix B 151

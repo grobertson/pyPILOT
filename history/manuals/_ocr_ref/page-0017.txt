@@ -1,0 +1,20 @@
+e Figures 2-3 and 2-4 are examples of programs using the T: command. Notice that Figure
+2-4 uses graphics characters that are created by holding down the key while typing
+the letters.
+40 T:THISIS THIS 15
+2@ T:@ VERY SHORT &@ VERY SHORT
+3@ T:PROGRAM PROGRAM
+|
+P|
+Figure 2-3
+1@ T: THIS PROGRAM MAKES & DESIGN THIS PROGRAM MAKES A DESIGN
+2@ T: USING GRAPHICS (CTRL? USING GRAPHICS CCTRL) CHARACTERS
+— i
+37:8 eae
+z Ba
+Figure 2-4
+The backslash (\ ) has a special meaning to the T: command. Rather than printing the
+= next output on a separate line, the backslash tells the computer to continue on the same
+line (see Figures 2-5 and 2-6).
+Core Pilot—T: 9
+. -

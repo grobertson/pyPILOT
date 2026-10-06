@@ -1,0 +1,42 @@
+es a
+T: THIS IS MY FURST TIME |
+THIS IS MY FURST TIME
+T: THIS ISMY FIRST TIME
+THIS IS MY FIRST TIME
+a
+Your line is now correct.
+@ To create more space between input and output lines press the key to |
+drop the cursor down one line. Or, if the screen below the cursor is blank, you can
+easily move the cursor down the left side of the screen by pressing the key
+several times. Ml |
+2. Backspace to the Mistake and Retype the Rest of the Line
+To begin this activity, clear the screen by pressing the key, with the |
+key. Type: T: THIS IS MY FURST TIME (Do not press the key yet.)
+T: THIS IS MY FURST TIMES
+This following exercise erases all the letters to the right of the F (URST TIME) and
+retypes them correctly.
+To backspace the cursor and erase the letters, press the key (top row) |
+for each letter to be erased. Each time the key is pressed, the cursor
+will move over and erase the character to the immediate left. If we press the
+key nine times, or hold the key down for nine repeating key * |
+movements, the screen will change from this:
+T: THIS IS MY FURST TIME
+to this: » |
+T: THIS IS MY Fm
+Once the cursor has erased the mistake, retype the rest of the line correctly. j
+T: THIS IS MY FIRST TIME@
+If you've made no further mistakes, press the key. Look at your screen.
+Your sentence is perfect! (And no one will ever know you made a mistake!)
+T: THIS ISMY FIRST TIME
+THIS IS MY FIRST TIME
+a
+SOME PILOT WHAT IS A COMMAND? [
+COMMANDS
+A command is an instruction to the computer to carry out a specified task. In PILOT
+there are about ten principal commands that instruct the computer to respond in
+different ways. Each command is made up of two parts: the command label and the
+action of the instruction. The command label is usually one to two letters in length,
+followed by a colon (:). i
+\
+Getting Started
+8 with Pilot |

@@ -1,0 +1,37 @@
+WHAT IS THE WEATHER LIKE TODAY?
+ee
+READY |
+a
+Figure 4-3 Sample Runs of the TO GO OR NOT TO GO Program
+The MATCH command matched the ‘“CLEAR” in RAINY, CLEARING TOMOR- |
+ROW. However, it doesn’t know that the CLEAR is referring to tomorrow's
+weather, while today’s weather is RAINY. You must be very careful about what strings
+you specify in the MATCH command and the messages you use in the TY: and TN:
+commands, or else you may get the wrong type of match.
+Here is another fun program: a RIDDLE program. Type it in and give it a RUN:
+10 T: RIDDLE a |
+20 T: WHAT IS THE LONGEST WORD IN ENGLISH?
+30A:
+40 M: SMILES
+50 TY: YOU ARE ABSOLUTELY CORRECT!!
+60 TN: SORRY, THE WORD IS ‘SMILES’!
+70 T: THERE IS A MILE BETWEEN THE S’s.
+The END IF YES and END IF NO Commands, EY:, EN: {
+These commands allow the program to be conditionally terminated before the end
+of a program. |
+The formats for the END IF YES and END IF NO commands are:
+EY:
+EN: q
+Notice that nothing follows the colon in the E:, EY:, and EN: commands.
+If a match is found and there is an EY: conditional command, the program will ter- {
+minate. If a match is NOT found and there is an EN: conditional command, the pro- ,
+gram will terminate.
+@ Remember that both an EY: and EN: command may follow a single MATCH q
+command if they are in different program statements.
+The following program demonstrates the use of the END IF NO command. If the in- 4
+put does not match the match string, the program displays a TN: message and ter- a
+minates the program with the EN: command. If the input matches, the program
+continues. The only way to complete the entire program is to answer the three
+questions correctly: ‘
+Decision-Making q
+48 Programs sg

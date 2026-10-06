@@ -1,0 +1,18 @@
+SS
+
+4
+
+: ATARI?
+
+| © A Warner Communications Company
+ATARI wishes to acknowledge that the original manuscript for the PILOT PRIMER was written by Dorothy Kunkin and Keith Vann
+
+j Every effort has been made to ensure that this manual accurately documents this product of the ATARI Computer Division. However,
+because of the ongoing improvement and update of the computer software and hardware, ATARI, INC. cannot guarantee the accuracy of
+printed material after the date of publication and cannot accept responsibility for errors or omissions.
+
+| Reproduction is forbidden without the specific written permission of ATARI, INC., Sunnyvale, CA 94086. No right to reproduce this docu-
+ment, nor the subject matter thereof, is granted unless by written agreement with, or written permission from the Corporation.
+
+a
+| & PRINTED IN U.S.A. PROGRAM CONTENTS © 1980 ATARI, INC. MANUAL © 1980 DYMAX

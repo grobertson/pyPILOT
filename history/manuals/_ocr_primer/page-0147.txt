@@ -1,0 +1,29 @@
+ah: ee
+LIST and RUN the program. The program draws a point 30 units from the origin
+every degree for 360 degrees (a circle). Your screen should look like this:
+|
+4
+Figure 10-17 GO Subcommand: Program Run
+The FILL Subcommand
+The FILL subcommand draws a line while it moves the turtle the number of units
+specified in the current THETA angle. As FILL draws a line it also fills any blank
+regions to the right of the line with the current pen color. }@
+The format for the FILL subcommand is:
+GR: FILL line length
+Examples:
+GR: FILL 30
+GR: FILL #F {
+If the pen is UP, then no line or fill color is drawn. Following is an example of the
+FILL subcommand: Enter: |
+GR: GOTO 0,0
+GR: TURNTO 0
+GR: DRAW 40
+GR: TURN 90
+GR: DRAW 40
+GR: TURN 90
+GR: DRAW 40 |
+GR: TURN 90
+GR: DRAW 40
+GR: TURN 90 |
+(This draws a square.)
+130 Welcome to Graphics ]

@@ -1,0 +1,28 @@
+Note: Figure 2-14 is an example of a never-ending loop. To stop it, press the [ BREAK |
+key.
+% LABELS can stand alone as in line 20 of Figure 2-14, or they can be placed in front
+of another command, as in lines 70 and 130 in Figure 2-15. This screen also shows you
+how the J: command is used conditionally following an M: command. That is, JY:
+(JUMP only if there is a match), or JN: (JUMP if there is no match).
+1@ R: RIDDLE PROGRAM DO YOU LIKE RIDDLES? SURE
+2@ T:D0 YOU LIKE RIDDLES? \ OK, HERE'S @ RIDDLE FOR You:
+3e@ a: WHAT'S BLACK AND WHITE AND RED ALL
+40 M: YES, YUP, YEAH, SURE,OK, OVER?
+o.K. aceicut @ NEWSPAPER WITH KETCHUP ALL OVER
+se Jk: *BYE NOPE , GUESS AGAIN:
+6@ T:0K, HERE'S & RIDDLE For vou: WHAT'S BLACK AND WHITE AND RED ALL
+7@ “AGAIN T: WHAT'S BLACK AND OVER?
+WHITE AND RED ALL OVER? @ BLUSHING ZEBRA
+6e@ a: NOPE, GUESS AGAIN:
+90 M: SUNBURNED PENGUIN WHAT'S BLACK AND WHITE AND RED ALL
+10@ TN: NOPE, GUESS AGAIN OVER?
+11e JM: *aGain & SUNBURNED PENGUIN
+12@ T: TERRIFIC; YOu GOT IT! TERRIFIC; YOU GOT IT!
+13@ “BYE T:SEE You AROUND. SEE YOU AROUND.
+140 E:
+READY
+READY cS
+a ES
+Figure 2-15 g
+bE
+18 Jump:—J:

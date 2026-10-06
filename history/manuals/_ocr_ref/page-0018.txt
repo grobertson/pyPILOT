@@ -1,0 +1,16 @@
+Note: The computer will automatically move to the next line when it runs out of room. ES
+1@ T:THISWILL \ THIS WILL ALL PRINT OM OWE LIWE.
+2@ T:@LL PRINT \
+3@ T:ON OWE LINE. READY
+RuN :
+| fess.
+Figure 2-5
+= ,
+2@ a: Gooo
+3@ T:GooD
+a READY
+Ey
+Figure 2-6
+When a T: command sees a string ($) or numeric (#) variable, it automatically replaces
+those variable names with their contents if they have been given a value (see Figure 2-7).
+10 Core Pilot—T:

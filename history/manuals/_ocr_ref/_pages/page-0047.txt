@@ -1,0 +1,39 @@
+4 ber a Pr
+The REN command renumbers the program statements, beginning with the first line of the
+program. It renumbers the lines by 10’s, starting at 10, so you can add more lines of pro-
+gram if necessary. Figure 3-9 shows a program before renumbering.
+List
+1 R: SILLY RIDDLE PROGRAM
+2T3
+3S T:WHY Q@RE GLL BIRDS IN DEBT?
+47:
+iS a:
+16 T:
+17 M: BILLS
+26 TM: NOPE.
+29 TH: BIRDS ARE IN DEBT
+63 TN: BECAUSE THEY ALL HavVE BILLS.
+77 TY: THAT'S RIGHT!
+214 E:
+S READY
+Figure 3-9
+Figure 3-10 shows the same program renumbered by 10’s starting with 10.
+REN
+READY
+LIsT
+1@ R: SILLY RIDDLE PROGRAM
+2@ T:
+30 T:WHY Q@RE ALL BIRDS IN DEBT?
+40 T:
+S@ a:
+6e@ T:
+70 M: BILLS
+680 TN: NOPE.
+390 TN: BIRDS GRE IN DEBT
+100 TN: BECAUSE THEY ALL HAVE BILLS.
+4110 TY: THAT'S RIGHT!
+i2@ E:
+READY
+"
+: Figure 3-10
+Executive Commands—REN 39

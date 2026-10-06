@@ -1,0 +1,34 @@
+lll lO Ul
+If the turtle is positioned at the origin facing 0 degree, the command GR: TURNTO
+90 turns the turtle 90 degrees to the right. THETA now equals 90:
+t
+! |
+W
+z
+g 3 |
+= END AT THETA=909
+a
+Figure 10-11 Turning the Turtle Toward 90 Degrees
+With the turtle facing 0 degree, the command GR: TURNTO — 45 turns the turtle 45
+degrees to the left. THETA now equals — 45:
+t @ |
+LS D
+> T
+<
+é =
+;
+oa =
+‘%y Ce =
+Me
+%e je)
+c)
+l
+Figure 10-12 Turning the Turtle Toward — 45 Degrees |
+The TURNTO subcommand, like the PEN subcommand, shows no visible effect
+until a line is drawn with another subcommand. |
+The TURN Subcommand
+This subcommand increments the angle THETA by the number of specified degrees
+(THETA= THETA + increment). |
+The format of the TURN subcommand is: . 3
+GR: TURN increment J
+126 Welcome to Graphics 3

@@ -1,0 +1,31 @@
+SS .
+é | SECTION 2 1. Ifa cartridge isn’t inserted into the computer, the computer can be used only as
+QUIZ a . (Hint: try it and see. Make sure the computer's
+| cover is closed.)
+2. An input line is ended by pressing the ___ key.
+(a) SYSTEM RESET
+4 (b) CLEAR
+(c) RETURN
+(d) ESCAPE (ESC)
+| 3.: Torcleakthe Screen: you should <=. <= seven igniter fait koe elas ee
+(a) Turn off the television screen
+| (b) Turn off the computer
+(c) Press the key
+(d) Press the and (a9 keys.
+| (e) Press the GEZER key
+(f) Press the (gag and keys.
+| 4. The unshifted QEWSEEEIRy keyisusedto.
+5. What's a:commeand? 28 a ee
+q @ 6. Match the commands with their command labels:
+SO: GRAPHICS
+i T: SOUND
+GR: TYPE
+7. The SOUND command generates musical SS _,. Each
+| is. assigned a number from —22 2 ss toe
+8. To turn on and clear the graphics screen, type: ——‘C—~—SCS:S
+| To turn off the graphics screen and return to text mode, type:
+AER RN NMSA CIDE NATE ee
+9. The _____=—§__ ss command displays a message on the screen.
+q ROc What iseacursore 2. oho eer ee el ec eee
+i Getting Started
+| with Pilot 17

@@ -1,0 +1,28 @@
+| ae a oe
+1 The MATCH command searched for only the first four letters of COMPUTER. This
+is advantageous because it allows for spelling mistakes (computor, compater). @
+j Putting It All Together
+You now possess enough information to understand how to make a program out of
+the TO GO OR NOT TO GO sketch to decide whether or not to go to the ballpark.
+i Type in the following program:
+10 T: WHAT IS THE WEATHER LIKE TODAY?
+20A:
+30 M: SUNNY,CLEAR, WARM, HOT, BEAUTIFUL, NICE,GREAT
+40 TY: YOU SHOULD GO TO THE BALLPARK
+50 TN: YOU SHOULD GO TO THE MOVIES
+| RUN the program with the following ACCEPT inputs:
+SUNNY AND BRIGHT
+CLEAR AND WARM
+GREAT DAY
+COOL AND BREEZY
+RAINY, CLEARING TOMORROW
+WINDY
+i NOT VERY GOOD
+WHAT IS THE WEATHER LIKE TODAY? ¥
+READY
+o
+Input: RAINY, CLEARING Ee
+i READY
+a
+Decision-Making
+Fy Programs 47

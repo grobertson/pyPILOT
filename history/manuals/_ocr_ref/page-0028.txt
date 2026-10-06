@@ -1,0 +1,49 @@
+The C: command is often used to count things in a program. For example, you might g
+want to give a person three chances at answering a riddle. A numeric variable such as
+#G is used to keep track of the number of guesses made so far. A numeric condition is
+used to find out whether or not #G has reached the limit (three in this case). Figure 2-17
+below shows you how this looks in a program.
+1@ R: THREE GUESSES HERE'S A RIDDLE. |
+2@ C:sG=1 YOU GET 3 GUESSES:
+3@ TIHERE'S @ RIDDLE. ; WHAT KIND OF PERSON LOVES COCOAa?
+4@ T: YOU GET 3 GUESSES: @ COCOA LOVER
+S@ “AGAIN T: WHAT KIND OF PERSON NOPE, GUESS QGQIN.. .
+LOVES Cocoa? WHAT KIND OF PERSON LOVES COCOA?
+6e@ a: acocoatoco
+7@ M: COCONUT , COCOANUT , Cocoa NOPE, GUESS AGAIN...
+nuT WHAT KIND OF PERSON LOVES COCOA?
+8@ TY: VERY GOOD; YOU'RE SMART! @ COCOA MONSTER
+90 JY: "BYE SORRY. THAT'S 3 GUESSES.
+1006 JCBG=3): “NOMORE THE ANSWER TIS... ACOCOA NUT.**
+110 T:NOPE, GUESS AGAIN BYE BYE.
+12@ C:mG=nG+1
+13@ J:*aAGaIn READY
+140 *NOMORE T:SORRY, THAT'S 3 ia
+se T:7He answer xs i :
+160 PAa:90 ened f
+17@ T:**a cocoa NUT.** — |
+160 *BYE T:BYE BYE
+19@ E:
+aseev Figure 2-17
+a
+Note: The numeric conditional in the J: command in line 100 is explained in Section 6.
+You may also use the C: (COMPUTE) command to give a value to a string ($) variable
+within a program. For example, the program in Figure 2-18 keeps adding one more star
+( % ) to the value of the string variable $GROW until the value reaches 21 stars.
+10 R:GROWING STARS .
+2@ C:$GROW- Ciel
+3se@ C:$SsTaR=* ; “nem /
+40 C:sc=0 seen ese i
+S@ *LOOP vee se-ese
+6@ Cimc=uc+s epevevetors
+7@ C:$GROW=$GROWSSTAR seer
+8@ T:$GROW vee e-oe-oeo0 e808
+9@ JCHC<219: "LOOP ve-e 0-00-0008 008-08
+100 E: jepovenenenepenerens
+READY epepererenereneneneten
+e osseatsessentesboeiasssasess
+
+(es Sannmannenannnnen
+
+Figure 2-18 s
+20 Compute—C:

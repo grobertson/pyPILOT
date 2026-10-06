@@ -1,0 +1,41 @@
+i ILLUSTRATIONS
+j 1-1 ATARI Personal Computer System 1
+1-2 The ATARI Keyboard 2
+1-3 The ATARI Keyboard: Graphics Keys 2
+| 1-4 The ATARI Keyboard: Cursor Control Keys 3
+2-1 Clearing the Screen 7
+i 2-2 Piano Keyboard 10
+2-3 Whole and Half Steps 10
+2-4 C Major Scale 11
+2-5 C Major Triad 12
+| 2-6 C Major Chord 13
+2-7 GR: DRAW 10 13
+2-8 Clearing the GRAPHICS Screen 14
+| 2-9 Drawing a Box 14
+2-10 — Fill With Yellow 15
+2-11 Return to Text Mode From Graphics Mode 15
+| @ 3-1 Program Run 21
+3-2 AUTO Mode 24
+3-3 Return to Text Mode From AUTO Mode 25
+| 3-4 Program List and Run 26
+3-5 NAME Program Run 28
+3-6 CLOTHES Program Run 29
+| 3-7 TYPE and ACCEPT Commands: Program Run 30
+4-1 Concept of the Accept Buffer 42
+4-2 MATCH Command: Sample Runs 46
+
+| 4-3 Sample Runs of the TO GO OR NOT TOGO
+Program 48
+| 6-1 Concept of Variables 68
+. 6-2 Assigning Variable Names 68
+6-3 Assigning Values to Variables 68
+6-4 Changing a Variable’s Value 69
+| 6-5 Defining a Variable With Input 70
+6-6 String Variables: Program Run 70
+6-7 Growing Strings: Program List and Run 74
+
+| 6-8 Growing Strings With a Second
+
+DUMP Command 75
+i 6-9 ACCEPT Without Input: Program Run 77
+| iustrations xiii

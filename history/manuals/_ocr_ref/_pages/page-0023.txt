@@ -1,0 +1,28 @@
+e HOW'S THE WEATHER OUTSIDE?
+COLD AND RAINY
+STAY HOME AND READ 4 BOOK.
+READY
+EB
+Figure 2-11
+In Figure 2-11, if the answer matches nice, good, hot, or great, the program types “Go to
+the park and play” (line 50). If the answer does not match, the Program types “Stay
+home and read a book” (line 60).
+In the list of match choices, if you put a space followed by a single letter, the computer
+3 will match anything starting with that letter. For example, in Figure 2-12 below, the
+M:(space)Y will match any word that starts with the letter Y; this would include YES,
+YUP, YEAH, YOU BET, or even YUK!
+10 R:WAVES PPPPPPPAPPPPPPPOYG
+Se ts AAAAARRROA Pose igh SA ica den rw.
+$e sument eves \ RRRRRARRRRRA RES
+80 M: ¥,OK,0.K. ALRIGHT, SURE MORE WAVES? YOU BET
+9e@ JY: “WATER Np pp ppp pi pi pip pipe, ,
+soo'es RRRRRRARRARRRESY |
+READY MORE WAVES? YUK
+5 RARRRARA RAIA OSV
+ARRRRRARRAPEIESS |
+MORE WAVES? NO MORE
+READY
+Figure 2-12
+Note: The JY: command in line 80 of Figure 2-12 is a conditional JUMP command. See
+J: (JUMP) or Section 6, Conditionals, for an explanation.
+Match—M: 15

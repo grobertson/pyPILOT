@@ -1,0 +1,29 @@
+—  —_,_ _
+| At the Zoo there are LOTS of animals.
+The last time youwere at the zoo,
+| did you see any animals? YES
+What Kinds of animals did you see?
+ELEPHANTS
+i GREAT! Did you see anything else? YES
+What Kinds of animals did you see?
+| LIONS
+GREAT! Did you see anything else? YES
+GREAT! Did you see anything else? NO
+i You must have had a busy day at the zoo!
+READY
+i a
+THE TRACE The TRACE command lets you follow the execution of your program step-by-step
+a €: COMMAND while the program is running. Often, when a program contains several JUMPs, it be-
+comes difficult to follow the path of execution since the path no longer goes from
+lowest to highest line number. TRACE can help you to ‘‘debug’’ your programs
+(find and solve problems and mistakes) by letting you see exactly what your pro-
+i gram is doing, each step of the way.
+The TRACE command can be issued in either immediate or programmed mode.
+| The format for the TRACE command is:
+TRACE: ON
+q TRACE: OFF
+To demonstrate the TRACE command, issue the TRACE: ON command in im-
+mediate mode prior to execution of THE COLOR WHEEL program:
+5 TRACE: ON
+RUN
+i Branching 59

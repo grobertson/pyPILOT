@@ -1,0 +1,39 @@
+UT oO
+| 100, a
+110; T: ENTER ANOTHER COLOR: \
+120, A:
+| 130, J: *DOAGAIN
+140 E:
+@ If the TRACE command is not ‘‘turned off’’ within the program, you must issue
+| TRACE: OFF and press in immediate mode following program execution.
+|
+1 SECTION 5 A label is a way of naming a PILOT statement line — a way to say it is special. The
+SUMMARY format for a statement label is:
+| line number */abe! name
+The label name must begin with a letter and cannot contain any embedded spaces
+or a space between the asterisk, *, and label name.
+i Examples:
+15 *RIGHTON
+i 55 *ANDA123
+The JUMP command tells the computer to break sequential program execution and
+jump to a specified label. The format for the JUMP command is:
+I € J: *label name
+A JUMP in immediate mode starts program execution at the specified label. The
+a JUMP command always jumps to the label with the lowest line number if two or
+more statements have the same label. A jump to a nonexistent label causes an error.
+The JUMP IF YES and JUMP IF NO commands direct program execution to a speci-
+a fied label conditional upon the success of a match. Both commands may follow a
+single MATCH command, but they are mutually exclusive and only one will be exe-
+cuted per MATCH.
+q The formats for the JUMP IF YES and JUMP IF NO commands are:
+JY: label name
+4 JN: label name
+The TRACE command allows you to follow the path of execution of a program step
+by step while it is running. The TRACE command is particularly useful in “debugging’’
+| programs.
+The format for the TRACE command is:
+i TRACE: ON
+TRACE: OFF
+TRACE: ON and TRACE: OFF can be issued in immediate mode or programmed
+g mode (with line numbers).
+| Branching 61

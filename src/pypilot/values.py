@@ -11,9 +11,8 @@ Two things live here, both from ``SPEC.md`` section 6:
   **single-pass** (spec 6.5).
 
 The scanner is a state machine over the *raw operand text* preserved by
-:mod:`pypilot.syntax`. It deliberately does not know about the accept buffer
-or the match flag - that is Stage 5's business, and it arrives through
-:class:`pypilot.state.PilotState`.
+:mod:`pypilot.syntax`. State-dependent references, including the accept buffer
+and match flag, are resolved through :class:`pypilot.state.PilotState`.
 """
 
 from __future__ import annotations
@@ -280,7 +279,7 @@ def scan_text(text: str) -> tuple[Piece, ...]:
             # Memory pointers are a *numeric* construct: spec 5.1.6 places them
             # in `nexp` ("a pointer may be used anywhere a numeric variable is
             # allowed"). They are never a text element, so they stay literal
-            # here and are handled by the expression evaluator in Stage 3.
+            # here and are handled only in numeric expressions.
             # Without this, `5*6` would scan as the number 5 and a reference to
             # 6, and silently lose the multiplication sign.
             buffer.append(char)

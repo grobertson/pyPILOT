@@ -1,0 +1,15 @@
+T:
+e
+T @
+The T: (TYPE) command tells the computer to display what you type. You must type T:
+first, then your message. For instance, T: HELLO will cause the computer to respond
+HELLO as you see in Figure 2-1.
+o~
+TIHELLO
+HELLO
+a
+Figure 2-1
+The T: command will display anything you can type from the keyboard literally. That is,
+the T: command will not add 2 + 2; it will display it as 2 + 2 (see Figure 2-2).
+Figure 2-2
+8 Core Pilot—T: :

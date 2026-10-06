@@ -1,0 +1,37 @@
+Information on the use of pointer variables and other special variables may be obtained by
+phoning ATARI, INC., Customer Support:
+(800) 538-8547 (Outside California)
+(800) 672-1430 (Within California)
+ARITHMETIC OPERATORS
+The ATARI PILOT language uses five arithmetic operators:
++ addition
+- subtraction (also denotes a negative numbers; e.g., -5)
+% multiplication
+/ division
+\ modulo (the remainder after a division)
+Note: PILOT only performs integer (whole numbers) arithmetic.
+
+J Parentheses () can be used to change the order in which arthmetic is performed. For ex-
+ample C:#A=5+6 % 2 puts the number 22 in variable #A; on the other hand,
+C:#A=5+(6 % 2) puts the number 17 in variable #A.
+
+RELATIONAL OPERATORS
+PILOT allows the result of the comparison between two variables or constants to be used
+as a condition for executing a command. The comparison is made with the use of the
+following relational operators:
+
+#A< #B #A is less than #B
+
+#A> #B #A is greater than #B
+
+#A = #B #A equals #B
+
+#A<=#B #A is less than or equal to #B
+
+#A>=#B #A is greater than or equal to #B
+
+#A <>#B #A is not equal to #B
+
+S (See Section 6, Conditionals.)
+
+Pilot Information 5

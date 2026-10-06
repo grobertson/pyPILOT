@@ -1,0 +1,29 @@
+> TURTLE GRAPHICS
+The method by which you draw is called turtle graphics. Imagine that the screen is the
+playground of an invisible turtle who draws on the screen with a tiny pen. The
+GRAPHICS commands tell the turtle where to go and what to do with the pen.
+The GR: command does not draw anything by itself; it must be used with Graphics Sub-
+commands. For example, the PEN Subcommand tells the turtle either to lift the PEN or to
+draw in one of four colors. The Graphics Subcommands are explained in more detail on
+the pages to follow.
+Commanding the turtle to move is like giving someone directions to the nearest gas sta-
+tion: either you give directions where (go to Fourth and Main St.), or you give specific
+directions which way and how far (go 3 blocks to Fourth, take a right and go 4 blocks to
+Main St.).
+WHERE TO GO - X AND Y COORDINATES
+The Graphics screen is really an invisible grid of numbered lines which looks like a piece
+= of graph paper. The center of the screen is a point (called the origin) where the X and Y
+axes cross.
+The X axis goes horizontally from the left (-79) to right (+79). The Y axis goes vertically
+from the bottom of the screen (-47) to the top of the screen (+47). The bottom of the
+screen includes the text window.
+Every point on the screen is named by two numbers (X,Y). These two numbers are called
+the X and Y coordinates of the point. They tell the distance horizontally and vertically
+from the point to the origin. Figure 4-2 shows the screen layout with some labeled points.
+47
+40,40
+-79 +79
+| oameeetel
+3!
+= Figure 4-2
+Graphics—GR: 57 .

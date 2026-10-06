@@ -1,0 +1,23 @@
+SAVE D:FILENAME
+ian nl a
+Save to Diskette <
+If you are saving to a diskette, you must give the program a name of up to seven
+characters. You can extend the program name by adding a period and three more
+characters. This is helpful if you have more than one version of a program. For example,
+if Version 3 of your COLOR program was in memory and you wanted to SAVE it on a
+diskette, you might type:
+SAVE D:COLORS.V03
+The disk drive will start humming, and if your television volume control is turned up
+slightly, you will hear the beeps telling you that the program is being saved.
+If you are saving only part of the program to diskette, you need to type in the lines you
+want saved after the program name. For example, typing SAVE D:MODULE1 10,50 will
+SAVE only lines 10 through 50 on the diskette under the program name, “MODULE1.”
+4
+SAVE P
+a eee
+save to Printer
+To get a listing of part or all of your program printed on paper instead of the television
+screen, you must SAVE your program to the printer. To get a listing of your whole pro-
+gram, turn on the printer, and type SAVE P:. If you only want a listing of lines 20
+through 50, type SAVE P:20,50.
+52 Executive Commands—SAVE D:, SAVE P:

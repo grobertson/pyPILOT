@@ -1,0 +1,15 @@
+QOH, _
+| The cursor control keys move the cursor in any direction to change, or edit, the
+screen display. The cursor is the square that marks your place on the screen. The
+I cursor control keys are shown below:
+SCH8BBB8B8888EE8S
+5 ? < > Bh esces RESET
+i WooOoKRKTDeoess @
+, aococccsc0eesas
+epooocooooses0E
+| Figure 1-4 The ATARI Keyboard: Cursor Control Keys
+This keyboard has a special feature: repeating keys. If you hold down a key for one
+second or longer, it will continue typing until you release the key. Each time a
+| character is typed repeatedly, the computer makes a beeping noise. Repeating
+keys is a convenient feature, but be careful: it’s fast!
+| introduction 3

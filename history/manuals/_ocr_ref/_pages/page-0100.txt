@@ -1,0 +1,12 @@
+g
+F
+Pal
+
+sa.
+A condition is something about which a YES or NO decision can be made. For example,
+the weather could be a condition for deciding what to do today: Is it raining outside? If
+YES, go to the movies; if NO, go flying.
+In PILOT, there are two types of conditions:
+© String match conditions
+¢ Numeric conditions
+94 Conditionals

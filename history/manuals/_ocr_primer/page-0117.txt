@@ -1,0 +1,42 @@
+Se
+640 *MULT
+650, C: #R = #1 *#)J
+660, C: $RESULT =#R
+670, ES
+680 *SUB
+690, C: #R = #1-#)
+
+700, C: $RESULT = #R
+
+710, E:
+
+720 *DIV
+
+730, C: #R = #1/#)
+
+740, C: $RESULT = #R
+
+750, C: #Q = #1\#) [get remainder]
+
+760, C (4Q>0): $RESULT = #R rem #Q
+
+770, Es
+
+LIST and RUN the program. A sample RUN should look something like this:
+
+PLEASE ENTER A MATH PROBLEM: 5+7
+
+St+7 = 52
+
+ANOTHER ONE? ¥ |
+
+PLEASE ENTER A&A MATH PROBLEM: 106/206
+
+166/26=5
+
+ANOTHER ONE? N
+
+READY
+
+:
+100 Modules F

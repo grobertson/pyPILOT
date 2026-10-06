@@ -1,0 +1,22 @@
+a
+SECTION 9 1. The SOUND command generates musical =, |
+IZ
+QU 2. A total of tones can be played at one time.
+3. vOnesmUSUDe played Inthe Tange Of 22 ee
+(a) 0-99
+(b) 0-30
+(c) 0-31 where 0= OFF
+(d) 1-31 where 1=OFF
+4. Each voice ina SOUND command must be separated by either a
+eee eee rie eee eae, Ofer Ra EN pg i
+5. Match the following:
+half step interval of two half steps
+whole step half steps played sequentially
+octave interval of a tone |
+chromatic scale 8 notes in a major scale
+6. - The PAUSE conimand tells the computer to ee
+7. The PAUSE command must precede the SOUND command. TRUE or FALSE?
+8. To generate random music, the is used to compute a
+the SOUND and PAUSE values.
+Many Voices,
+112 Many Sounds I

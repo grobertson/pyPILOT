@@ -1,0 +1,31 @@
+FSS
+i
+CONCEPTS Matching for Clues
+INT E The Function of the ACCEPT Command, A:
+| RODUCED The MATCH Command, M:
+Conditional Commands
+The TYPE IF YES and TYPE IF NO Commands, TY:, TN:
+The END IF YES and END IF NO Commands, EY:, EN:
+i Section 4 Summary
++ Section 4 Quiz
+Advanced Decision-Making Techniques
+| Separating MATCH Strings With Vertical Bars
+PILOT programs can use keyboard input to make decisions. Decisions are made in
+PILOT in much the same way the person in the following sketch made a decision to
+{ go to the ballpark.
+| & TO GO OR NOT TO GO
+IDEA: YOU WANT TO GO TO THE BALLPARK
+TOMORROW. YOU MUST MAKE YOUR
+PLANS TODAY. YOUR DECISION DEPENDS
+ON THE WEATHER FORECAST.
+| WARM _ BREEZY
+| GO TO THE BALLPARK GO TO THE MOVIES
+| The advantage of using the PILOT language over other programming languages lies
+in the ease with which it allows you to perform complex pattern-matching on user
+input and then to make decisions relative to the presence or absence of a ‘match.’
+With just three commands (TYPE, ACCEPT, and MATCH) you can create a
+reasonably sophisticated, interactive dialogue program. This section shows you
+how to write educational, instructional, and just plain fun PILOT programs using
+I pattern-matching decisions.
+Decision-Making
+é Programs 41

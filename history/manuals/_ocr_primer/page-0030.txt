@@ -1,0 +1,26 @@
+i.
+2526 2(8025)
+SG (50-20)
+<— E (50:17)
+Fy C (80:13)
+| Figure 2-6 C Major Chord
+Go ahead and experiment with creating your own single and multiple voices by in-
+serting any combination of voices between 1 and 31. For further information on the
+SOUND command, refer to Section 9, Many Sounds, Many Voices.
+| THE GRAPHICS COMMAND, GR:
+The GRAPHICS command, tells the computer to enter the graphics mode and open
+the graphics screen. Once in graphics mode, you can draw points and lines, or fill
+| spaces in three colors: red, blue, and yellow.
+Clear the screen and enter the following command: GR: DRAW 10. Press the
+i & GENT key and watch what happens:
+| Figure 2-7 GR: DRAW 10
+Did the screen turn black except for a blue strip at the bottom? Did a yellow (or
+| white) line appear in the middle of the screen? (Both answers should be yes.)
+The GR: command tells the computer to enter graphics mode by displaying a black
+screen. The blue strip at the bottom allows you to display up to four lines of text
+i without destroying the graphics.
+4 The vertical line appeared on the screen when the DRAW 10 told the computer to
+e draw that line. Section 10, Welcome to Graphics, explains exactly how to draw
+| that line or any other figure in graphics mode.
+Getting Started
+| with Pilot 13

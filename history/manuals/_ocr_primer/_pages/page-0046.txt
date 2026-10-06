@@ -1,0 +1,24 @@
+oo — i 2002_aAARe
+. You enter input WHAT COLOR ARE YOUR SHOES?
+| Computer's response borney MATCH YOUR SHIRT?
+Cursor waits for input
+| WHAT COLOR ARE YOUR SHOES?
+BROWN
+You enter input Peleg MATCH YOUR SHIRT?
+| Computer's response a’
+| Figure 3-6 CLOTHES Program Run
+1 Do you understand how the TYPE and ACCEPT commands work together?
+@ Always precede the ACCEPT command with a TYPE command to give the user a
+hint about what should be input. &
+| Let’s write a new program. Type:
+10 T: MY NAME IS FRED.
+20 T: WHAT IS YOUR NAME?
+30A:
+40 T: |AMA COMPUTER.
+50 T: WHAT ARE YOU?
+| 60 A:
+70 T: |AMGLAD TO MEET YOU!
+80 T: HAVE A NICE DAY!
+| Enter RUN and press to execute the program.
+Writing A
+i Pilot Program 29

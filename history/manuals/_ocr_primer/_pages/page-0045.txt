@@ -1,0 +1,16 @@
+You enter input WHAT 15 YOUR NAME?
+THAT TS 0 NICE NAME! ‘
+Computer's response: READY
+Figure 3-5 NAME Program Run Pa
+A RUN of the second program looks like this: |
+eB |
+308 T:DO THEY MATCH YOUR SHIRT?
+40 a: aed
+RUN : ae
+f
+Program RUN
+: COLOR ARE YOUR SHOES?
+Cursor waits for your input a
+4
+Writing A 7
+28 Pilot Program a

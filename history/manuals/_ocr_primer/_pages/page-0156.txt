@@ -1,0 +1,35 @@
+» —WaoTO_dJO_——
+i ADVANCED GRAPHICS VARIABLES
+PROGRAMMIN
+rie eS PILOT has four variables that display information about the graphics turtle. These
+i variables can not be assigned or changed by the user. They can be displayed or used
+in computations of numeric expressions.
+' %X
+3 The variable % X returns the current value of the X coordinate of the graphics turtle.
+Example:
+} T: %X
+25
+%Y
+i The variable %Y returns the current value of the Y coordinate of the graphics turtle.
+Example:
+| T: %Y
+20
+%A
+ij The variable %A returns the current value of THETA.
+Example:
+& T:%A
+90
+%Z
+] The variable %Z returns the current number equivalent of the screen color at the
+current turtle location.
+0 = ERASE (background)
+1 = RED
+2 = YELLOW
+3 = BLUE
+j Example:
+GR: GOO
+T: %Z
+| 2
+@ Always precede the T: %Z command with a GR: GO 0 command.
+| Welcome to Graphics 139
+.

@@ -1,0 +1,32 @@
+Program ee
+HAIL!
+THE GANG'S ALL HERE!
+READY {
+a
+Figure 3-4 Program List and Run
+MORE THE TYPE COMMAND, T:
+COMMANDS
+Section 2 explained how to use the TYPE command (T:) in immediate mode. The
+TYPE command may also be used as a deferred command within a program by
+assigning a line number to it:
+10 T: THIS IS AN EXAMPLE OF THE TYPE COMMAND »
+® Continuation of the T: Command: When typing the T: command several times
+in a row, a solitary colon, :, can be used in place of the command label. The colon
+inherits the command label from the previous line. @
+Thus, type the program:
+10 T: HAIL! |
+20 T: HAIL!
+30 T: THE GANG’S ALL HERE!
+It can also be written as: |
+10 T: HAIL!
+20: HAIL!
+30: THE GANG’S ALL HERE!
+with the same results.
+THE ACCEPT COMMAND, A: 1
+The ACCEPT command accepts input from the keyboard during program execution.
+When the computer encounters the ACCEPT command it will stop and wait for in-
+put from the keyboard. The cursor will reappear and wait for the input. Until the
+computer receives input, nothing will happen.
+The format for a simple ACCEPT command is A:. 4
+Writing A
+26 Pilot Program 1

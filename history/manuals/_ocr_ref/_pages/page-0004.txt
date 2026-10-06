@@ -1,0 +1,14 @@
+PILOT is a simple, easy-to-understand programming language. It stands for Programmed
+Inquiry, Learning Or Teaching, and was originally developed by Dr. John Starkweather at
+the University of California, San Francisco. PILOT was designed to enable teachers to
+write programs for their students. However, due to the pioneering work of Dr. Dean
+Brown at Stanford Research Institute’s Education Laboratory (1967-1974), PILOT proved
+to be a good language for teaching computer programming to children. PILOT was con-
+ceived as a tool to make writing conversational programs easy. It was originally designed
+for text output only. However, we have incorporated Turtle Graphics, a concept
+developed by Dr. Seymour Papert and the LOGO group at the Massachusetts Institute of
+Technology. The Turtle Graphics concept enables the user to draw pictures when pro-
+gramming in PILOT. These capabilities, along with the ability to generate sounds, make
+ATARI® PILOT a very versatile language.
+
+Preface iii

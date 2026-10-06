@@ -1,0 +1,39 @@
+SS | a eee
+| ® The directory program is designed to remain the same size no matter how many
+programs you save! If you save the directory program starting at the same location
+on the tape every time, it will be resaved right over the old directory. @
+| Adding Programs to the Directory and the Tape. To add a new program name to
+the directory and to the tape, follow these instructions:
+1. LOAD the directory. RUN the directory to see the ending number of the last
+program saved.
+2. Position the tape to the last program’s ending number plus 10. If the last pro-
+gram ended at 090, position the tape to at least 100.
+| 3. Type: NEW GiGi.
+4. Enter the program to be saved.
+i 5. Save the program:
+Type SAVE C: @Sany.
+6. Remember the beginning and ending points of the program.
+| 7. Type NEW @Gmie.
+8. Rewind the tape and LOAD the program directory.
+| 9. Type:
+LIST 200,500
+| @ Replace the first available J: line after 200 with a T: command, followed by the
+program name and its beginning and ending tape numbers.
+LIST 200,500
+| 200 T: CASSETTE GUIDE 010071
+210): PROGRAM. 1 080 100
+220): *AAAABAAAABAAAABAAAABAAAAB
+230 J: *AAAABAAAABAAAABAAAABAAAAB
+| 240 J: *AAAABAAAABAAAABAAAABAAAAB
+250 J: *AAAABAAAABAAAABAAAABAAAAB
+I 490 J: *AAAABAAAABAAAABAAAABAAAAB
+10. Since you have changed the directory again, you must reSAVE the directory by
+| repeating steps 1-3 of ‘Saving the Cassette Directory.’”’
+THE ATARI The ATARI printers type program statements or program outputs on paper, similar
+PRINTERS to a LIST or RUN on the screen. The ATARI 820™ 40-Column Printer uses standard
+adding machine paper. The ATARI 822™ Thermal Printer is a 40-column printer
+that uses heat-sensitive paper. The ATARI 825™ 80-Column Printer uses roll or fan-
+fold paper. The printer is a slow device compared to the computer, disk drive, or
+program recorder and may often seem to rest while printing. The printer is unable
+to print cursor control, escape, or graphic characters.
+Appendix B 165

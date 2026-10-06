@@ -1,0 +1,28 @@
+J:
+s
+eS ———s ian.
+OPW
+“<'z,
+> Pe, ey ea
+» ace) Mite? hie ’ 4
+> The J: (JUMP) command lets you jump from one spot in a program to another. The J: is
+ALWAYS followed by a %* LABEL indicating to which statement you want to jump. The
+destination of your J: command must also be labeled with the same % LABEL.
+Figure 2-14 shows how the J: command can be used to make a simple loop. The pro-
+gram keeps looping (repeating), filling the screen with ROUND ROBIN.
+1@ R: LOOPING PROGRAM ROUND ROBIN ROUND ROBIN ROUND ROBIN
+2@ “OVER ROUND ROBIN ROUND ROBIN ROUND ROBIN
+3@ T:ROUND ROBIN \ ROUND ROBIN ROUND ROBIN ROUND ROBIN
+40 J: “OVER ROUND ROBIN ROUND ROBIN ROUND ROBIN
+ROUND ROBIN ROUND ROBIN ROUND ROBIN
+REaDY ROUND ROBIN ROUND ROBIN ROUND ROBIN
+= ROUND ROBIN ROUND ROBIN ROUND ROBIN
+ROUND ROBIN ROUND ROBIN ROUND ROBIN
+ROUND ROBIN ROUND ROBIN ROUND ROBIN
+ROUND ROBIN ROUND ROBIN ROUND ROBIN
+ROUND ROBIN ROUND ROBIW ROUND ROBIN
+ROUND ROBIN ROUND ROBIN ROUND ROBIN
+eee READY HHH
+m
+= Figure 2-14
+dump—J: 17

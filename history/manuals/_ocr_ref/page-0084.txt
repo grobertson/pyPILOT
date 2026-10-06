@@ -1,0 +1,44 @@
+GR:FILL
+=
+Fill N Units e
+The GR:FILL N command tells the turtle to draw a line, N units long, moving in the
+direction he is currently facing. As he moves, the black background between the turtle and
+any figure or line directly to his right is filled in with the current pen color. Figure 4-23
+shows how FILL can be used to draw a solid triangle, square, or circle.
+1@ R:SOLIDS
+2@ GR: CLEAR
+3@ T: TRIANGLE SQUARE CIRCLE
+40 GR:GOTO -S0,0;TURNTO 150;PEN
+S@ U:*TRIANGLE
+6@ GR:GOTO -15,10;TURNTO 90;PEN
+BLUE
+70 U:*SQUuAaRE
+8@ GR:GOTO 40,10; TURNTO 90;PEN
+YELLOW
+90 U:*CIRCLE
+100 E:
+200 *TRIANGLE
+21@ GR: 2(DRAW 20; TURN 120)
+22@ GR: FILL 19
+23@ E: TRIGQNGLE SQUARE CIRCLE
+see *sauareE as aos &
+31@ GR: 3(DRAW 20; TURN 90> Hs
+32@ GR:FILL 20
+33e@ E:
+400 “CIRCLE
+410 GR: 16CDRAW 2; TURN 10)
+420 GR:18CFILL 23 TURN 10)
+READY
+zs
+Figure 4-23
+Note: To color in a polygon (such as a triangle, square, or circle) using the FILL com-
+mand, you must first DRAW the right half of the polygon and then FILL the left half.
+Sometimes, the filled side must be shorter than the drawn side so that the color will be
+completely contained within the figure. For example, in Figure 4-23, the two drawn sides
+of the triangle are 20 units long, whereas the filled side is only 19 units long.
+If there is nothing to block the color filling in before it reaches the right edge of the screen,
+the filling “wraps around,” and color continues to fill in from the left edge until a barrier is
+reached. When there is nothing blocking the fill anywhere in its path, the line from which
+the filling takes place becomes its own barrier. The “Sunset” program in Figure 4-24
+shows how FILL can be used to fill large areas of the screen with color.
+76 Graphics—GR:FILL

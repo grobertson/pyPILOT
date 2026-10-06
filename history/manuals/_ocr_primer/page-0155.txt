@@ -1,0 +1,22 @@
+e
+ANSWERS |
+1. Text window
+2 eRe |
+3. GR: QUIT
+4. Cartesian Coordinates Turtle Geometry
+DRAWTO DRAW |
+GOTO GO
+FILLTO FILL
+TURN
+TURNTO
+5. =PEN
+6. GOTO Turn turtle to THETA angle
+DRAWTO Move turtle specified length in THETA direction
+FILLTO Draw line of specified length in THETA direction
+and fill space to right |
+TURNTO Move turtle to point X,Y
+TURN Increment THETA angle by specified degrees
+GO Draw line of specified length in THETA direction
+DRAW, Draw line to point X,Y and fill space to right
+FILL Draw line to point X,Y *
+138 Welcome to Graphics I

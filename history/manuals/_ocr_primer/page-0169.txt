@@ -1,0 +1,41 @@
+This allows you to save sections and modules out of an entire program.
+Examples:
+SAVE D2: LUCKY 13,99 Saves lines 13-99 of LUCKY on Drive#2 |
+SAVE D: MDYF 100,200 Saves lines 100-200 of MDYF on Drive#1
+Be careful to include a space between the program name and the first line
+number.
+6. When you press the (]S2EN3 key the BUSY light will turn on and the disk drive
+will start making noises as it saves the program. When the program has been
+saved, the READY message and the cursor will appear on the screen.
+Following is an exercise to take you through the steps of saving a program:
+1, Turn on the computer and the disk drive if you have not done so already (make
+sure a diskette has been inserted).
+2. Type in the program below:
+10 R: TEST PROGRAM
+20T:
+30 T: THIS PROGRAM TESTS \
+40 T: YOUR ABILITY TO
+50 T: SAVE AND LOAD A PROGRAM \
+60 T: ON A DISKETTE
+70 E: * |
+3. Type: SAVE D: TEST @S0E09.
+4. When the READY message and cursor are displayed on the screen, you have suc-
+cessfully saved it on the diskette. If an error message appears, refer to Appendix |
+E, Error Codes, to determine the cause of the error. Then repeat step 3.
+Write-Protecting a Diskette
+Write-protecting a diskette prevents any programs or data from being saved on the |
+diskette. To write-protect a diskette, place an adhesive tab or a piece of cellophane
+tape over the write-protect notch (shown in Figure A-2 in Appendix A.) If you try to
+save a program on a diskette that is write-protected, the computer responds with 1
+an * * * I/O ERROR 144 * * * message.
+If at anytime you wish to “‘unwrite-protect’’ a diskette, simply remove the tape
+from the write-protect notch.
+Loading a Program From a Diskette
+1. The disk drive and the computer should be turned on following the steps in Ap- {
+pendix A. Turn on your system with the diskette containing the desired program.
+2. Type: NEW and press to clear memory. I
+3. Type: LOAD Dn: program name
+where: D specifies the disk drive
+n specifies which disk drive (1-4). If n is not specified, n defaults to 1. :
+program name is the saved program's name. ws
+152 Appendix B 3

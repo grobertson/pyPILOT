@@ -1,0 +1,30 @@
+ee eet | ie
+4 New Variables
+The VNEW: command clears the numeric and/or string variables by using the command
+as follows:
+VNEW:$ (clears the string variables)
+VNEW:# (clears the numeric variables)
+VNEW: (clears both string and numeric variables)
+The VNEW: command does not erase the program from memory.
+Figure 3-14 shows a program with string and numeric variables.
+> on
+LIsT
+10 R: INFORMATION
+2@ T:WHAT IS YOUR NAME? \
+30 A: SNAME
+40 T: HOW OLD ARE YoU? \
+S@ a:na
+66 T:DO YOU READ COMIC BOOKS? \
+78 a:SCOMICS
+60 M: Y, SURE, OF COURSE, SOME, OCC
+3908 TY: WHO IS YOUR SUPER HERO? \
+9S TN: SORRY ABOUT THAT, PRESS RET
+URN
+100 A: SHERO
+4110 T: THANK you
+i2@ €
+READY
+a
+Figure 3-14
+Executive Commands—VNEW 43
+i

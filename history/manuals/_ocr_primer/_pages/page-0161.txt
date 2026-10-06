@@ -1,0 +1,28 @@
+er A
+The first step in getting started is to learn how to assemble your computer system. |
+This is easy if you read this section carefully.
+
+To hook up the computer with one or more devices, start by reading the introduction, |
+unpacking, system requirements, set-up and start-up instructions of the manuals
+that apply to your system. Skip the sections referring to the BASIC language.
+BASIC language commands will not work when the PILOT cartridge is inserted.
+Read: |
+© ATARI 400™ Operator’s Manual or ATARI 800™ Operator’s Manual
+© ATARI 810™ Disk Drive Operator’s Manual |
+© ATARI 410™ Program Recorder Operator’s Manual
+© ATARI 820™ Printer Operator’s Manual
+© ATARI 822™ Thermal Printer Operator’s Manual
+© ATARI 825™ 80-Column Printer Operator’s Manual
+Following are several diagrams showing you different ways to connect your system:
+System with ATARI 400/800 and ATARI 410 Program Recorder
+RE Mt PERIPHERAL JACK a |
+(ia \ }
+4
+ATARI 400 OR 800
+DATA CORD |
+ae
+4] i
+|__|
+ATARI 410 PROGRAM RECORDER r
+Figure A-4 ATARI 400/800 Computer With Program Recorder
+144 Appendix A :

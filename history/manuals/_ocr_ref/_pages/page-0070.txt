@@ -1,0 +1,4 @@
+__GRGOTO.
+Go to the Point X.Y S
+e
+GR: GOTO 30,30

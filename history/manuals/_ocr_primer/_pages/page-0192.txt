@@ -1,0 +1,11 @@
+EDITING THE CURRENT DISPLAY LINE
+Backspacing
+The key moves the cursor back one space at a time. Backspacing the
+cursor erases any character it moves over. The key is located on the
+F top row of the keyboard.
+Enter the following line (do not press the key):
+10 T:THIS IS EASY#
+| To erase the EASY, backspace the cursor to the space following the IS by pressing
+a the key five times.
+:
+| Appendix C 175.

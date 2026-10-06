@@ -1,0 +1,47 @@
+a) Figure 3-2 shows a program entered in the AUTO mode.
+Figure 3-2
+
+READY
+
+LIsT
+
+1@ R: RIDDLE PROGRAM
+
+20 T:HI. WHAT'S YOUR NAME?
+
+3@ A: SNAME
+
+40 T:0K, SNAME, HERE'S @ QUESTION
+
+FoR you
+
+S@ *GUESSAGAIN
+
+6@ T:WHAT KIND OF OF INSECT LIVES ON
+
+THE MOON?
+
+7@ a:
+
+6@ M:LUNATIC, LUNE-a TIC, LOONATIC,
+
+LOON-— a-TIC
+
+390 TN:NOPE. GUESS AGAIN.
+
+100 JN: *GUESSAGAIN
+
+4110 TY: CONGRATULATIONS. You GOT IT!
+
+12@ T:SEE YOU AROUND.
+
+i3s@ E:
+
+a
+
+Figure 3-3
+You can tell the AUTO command where to start numbering and by how much to increase
+each new line number. For example, AUTO 100,20 tells the computer to begin number-
+ing at 100 and increase each line by 20 (if you leave off the second number, it will
+automatically increase by 10's).
+Executive Commands—AUTO 33

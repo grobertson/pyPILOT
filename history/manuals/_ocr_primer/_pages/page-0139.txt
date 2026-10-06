@@ -1,0 +1,30 @@
+a (a
+The format for the GOTO subcommand is:
+GR: GOTO X,Y
+where: X is the X-axis coordinate
+Y is the Y-axis coordinate
+For example, type in:
+GR: GOTO 20,20 and press
+If you look closely at your screen, you should see a small dot in the upper right part
+of the screen.
+Following is a program that really demonstrates the GOTO subcommand. This pro-
+gram plots random units on the screen with the GR: GOTO command. Type:
+10 *START
+20 C: #X = 2\75
+30 C: #Y =2\45
+40 C: #N=#N+1
+50 C(#N = 2): #Y = — (#Y)
+60 C(#N = 3): #X = — (#X)
+70 C(#N = 3): #Y¥ = — (#Y)
+80 C(#N = 4): #X = — (#X)
+90 GR: GOTO #X, #Y
+100 C(#N = 4): #N=0
+110 J: *START
+Look at the diagram below. The screen is divided into four quadrants showing
+when X and Y must be positive or negative. |
+x<6 x>p
+y>p * y>p |
+x<@ + x>6
+y<6 y<@ |
+Figure 10-7 The Four Quadrants of the GRAPHICS Screen =
+122 Welcome to Graphics J

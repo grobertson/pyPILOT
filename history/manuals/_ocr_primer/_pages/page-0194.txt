@@ -1,0 +1,16 @@
+| Figure C-13 Backspacing the Cursor Using the DELETE BACK S Key
+Deleting
+
+i Character Deletion. Pressing the key while holding the key
+erases the character under the cursor. The characters to the right of the cursor
+move one space to the left, making the line shorter.
+
+I & Enter the following line (do not press the key):
+
+10 T:THIS IS NOT EASY#
+| Using the and key move the cursor on top of the N in NOT.
+|
+Figure C-14 Single-Character Deletion
+We want to delete the characters NOT. To delete the N press the and
+key once.
+\ Appendix C 177

@@ -1,0 +1,40 @@
+ee ll
+This format works with any major scale whether you begin on C or F#. But, for the |
+moment, let’s stick to the C major scale. To ‘‘play’’ a C major scale using your com-
+puter, type in the following SOUND commands with their attached numeric
+values. Don’t forget to press the (SRE key after each line:
+
+SO: 13
+SO: 15
+SO: 17
+SO: 18
+SO: 20
+SO: 22
+SO: 24
+SO: 25
+Press to stop the sound. Or, you can type $O: 0 to stop the sound. A
+value of 0 does not have a tone associated with it.
+Up to now, you have been using only one tone for each SOUND command.
+However, you can use the SOUND command to play more than one tone. Ona
+piece of sheet music, you have different notes for soprano, alto, tenor, and bass
+voices. Using the SOUND command and the numeric values of notes, you can
+create your own voices and harmony. The format for using multiple voices with
+one SOUND command is: |
+SO: voice, voice2, voice3, voice4
+Now you can play chords that consist of three or more tones. *
+Type:
+SO: 13,17,20 and press
+SO: 0 and press |
+This is a simple C major chord. i
+<«=—_ G (S0:20) |
+<—— E (S0:17)
+eo C8013) |
+Figure 2-5 C Major Triad l
+Now clear the screen and type: J
+SO: 13,17,20,25 and press
+SO: 0 and press
+@ When using multiple voices, each voice must be separated by a comma or a
+space. @
+You have now added an extra C to your C major chord.
+Getting Started
+12. with Pilot t

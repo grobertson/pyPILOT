@@ -1,0 +1,10 @@
+> ____1_ PILOTINFORMATION |
+> INPUT
+= OUTPUT
+
+7 Z) “§ _-VARIABLEs -
+STRING
+NUMERIC.
+
+a
+a

@@ -1,0 +1,30 @@
+¥
+, a ee
+a Let’s delete line 20 from the screen but not from memory. Move the cursor up to
+4 line 20:
+“a 16 T: SCREEN EDITING IS EASY
+f Ge T:0N YOUR ATARI COMPUTER.
+‘at. Ta 36 T:DON'T YOU AGREE?
+A
+{
+% Figure C-17_ Line Deletion: Positioning the Cursor
+.° Press the and key once. The screen displays:
+ao
+{ 10 T: SCREEN EDITING IS EASY
+a iN Hie T:DON'T YoU AGREE?
+E
+ak
+a Figure C-18 Line Deletion Completed
+It’s that easy! Line 20 is erased from the screen. Now, LIST the program for a surprise!
+16T: SCREEN EDITING ISEASY
+i 36 T:DON' T YOU AGREE?
+é eos
+16 T: SCREEN EDITING ISEASY
+2@T: ONMY ATARI COMPUTER.
+36 T:DON'T YOU AGREE?
+4 READY
+a
+Line 20 is still in memory!
+3
+7 Appendix C 179
+q

@@ -1,7 +1,7 @@
 """Input and output devices for the pyPILOT interpreter.
 
-``SPEC.md`` section 11 Stage 4 requires an I/O abstraction so that output is
-capturable in tests: a program that types text must be able to run with its
+The I/O abstraction makes output capturable in tests: a program that types text
+must be able to run with its
 output going to a string buffer, not only to a terminal.
 
 Two protocols and four implementations:
@@ -9,9 +9,8 @@ Two protocols and four implementations:
 * :class:`OutputDevice` - :class:`ConsoleOutput` and :class:`BufferOutput`
 * :class:`InputDevice` - :class:`StringInput` and :class:`NullInput`
 
-The Atari device model proper - ``READ``/``WRITE``/``CLOSE`` over ``C``/``D``/
-``S``/``K`` - is Stage 7's job, in ``devices.py``. What lives here is the
-primitive the rest of the interpreter is written against.
+The Atari device model proper - ``READ``/``WRITE``/``CLOSE`` over device names -
+lives in ``devices.py``. This module provides the primitives it uses.
 """
 
 from __future__ import annotations

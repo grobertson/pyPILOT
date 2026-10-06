@@ -1,0 +1,26 @@
+D Save a Pr
+30T: 1S
+40T: FRED
+SAVE C:
+&. yy) ae wt
+"Dela aaa nets tg
+Secdineateetentiedh ieee
+The SAVE command lets you save all or any part of a program you have written. In
+order to SAVE a program, you must have either-a cassette or disk drive attached to your
+a computer. You can get a printout by saving your program to the printer.
+SAVE C:
+=
+Save to Cassett
+To SAVE a program to cassette, type SAVE C:. The computer will beep twice, which
+tells you to position the cassette type, and press the PLAY and RECORD buttons (at the
+same time). Then press the key on the computer console to begin saving your
+program. As this occurs, you will hear a high-pitched hum and a series of low beeps.
+When you SAVE to cassette in PILOT, you cannot give the program a name. You must
+make a note as to the location of the program on the tape by the numbers shown in the
+counter window on the recorder. Then when you want to LOAD the program back into
+memory, you must first move the tape until that number shows in the counter window.
+If you want to SAVE only part of your program, you need to type the line numbers you
+= want saved. For example, typing SAVE C:10,50 will SAVE lines 10 through 50 to the
+cassette.
+Executive Commands—SAVE, SAVE C: 51
+f

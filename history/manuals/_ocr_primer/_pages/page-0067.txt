@@ -1,0 +1,35 @@
+Sie. ee
+As soon as the input did not match the MATCH string, the EN: command ter-
+minated the program.
+
+SECTION 4 The beauty of the PILOT language lies in its ability to perform complex pattern-
+
+SUMMARY matching on user input and then to make decisions relative to the presence or
+absence of a “match.”
+The MATCH command searches the keyboard input from an ACCEPT command
+for a specific pattern. If a matching pattern is found, PILOT remembers that there is
+a match. If no pattern is found, PILOT remembers that there is no match.
+The format for the MATCH command is:
+
+M: string
+M: string, string...
+If more than one string is specified in the MATCH command, the strings must be
+separated by commas.
+M:, will match upon any input.
+The MATCH command is followed by a conditional command or commands. The
+TYPE and END commands, combined with a yes or no conditioner, help PILOT
+decide what action to take depending upon a match or no match. If a match is
+found and there is a command with a Y conditioner, it will be executed. If a match
+is not found and there is a command with a N conditioner, it will be executed. »
+The TYPE IF YES command (TY:) or (Y:) and TYPE IF NO command (TN:) or (N:)
+display a message depending upon the success of the match.
+TY: message
+Y: message
+TN: message |
+N: message
+The END IF YES command (EY:) and the END IF NO command (EN:) terminate pro-
+gram execution depending upon the success of the match:
+EY:
+EN: |
+Decision-Making
+50 Programs i

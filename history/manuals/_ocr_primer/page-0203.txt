@@ -1,0 +1,29 @@
+Se oer a
+This is how it works. Below are four diagrams, each representing a joystick. In each |
+diagram is an arrow showing the direction the joystick is pointing. Enclosed in a
+box beneath the diagram is the value of that joystick’s sensing variable.
+
+JOYSTICK #1 JOYSTICK #2
+1 1 |
+5 9 5 9
+4 8 4 Ve 8 :
+6 10 6 10
+2 2
+% JO %*y1 ‘
+JOYSTICK #3 JOYSTICK #4 I
+1 |
+5 9 5 9 a |
+4 Se 4) 8 4 a 8
+6 10 6 10 i
+2 2
+%)\2 8 %)j3 i
+Figure D-2 Sample Joystick Sensing }
+Following is a short program that demonstrates how the joystick sensing variable
+works:
+Type in: t
+10 R: JOYSTICK SENSING
+20 *START
+30 T: JOYSTICK #1 POSITION = %JO
+40 PA: 60 :
+50J: *START I
+186 Appendix D I

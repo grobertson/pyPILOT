@@ -1,0 +1,45 @@
+SS
+Here is an example program:
+10 T:THIS PROGRAM ADDS TWO NUMBERS
+20T:
+30 T: ENTER A NUMBER: \
+40 A: #A
+60 T: ENTER ANOTHER NUMBER: \
+70 A: #B
+80 T:
+90 C: #Z=#A+#B
+100 T: THE SUM IS #Z
+In this program, two numbers are entered with the ACCEPT command and assigned
+to numeric variables. Line 90 calculates the sum of #A and #B and assigns the sum
+to #Z. Line 100 prints the answer. A RUN of the program looks like this:
+THIS PROGRAM ADDS THO NUMBERS
+ENTER ANUMBER: 16
+ENTER ANOTHER NUMBER: 5
+THE SUM IS 15
+READY
+;
+This example program uses the COMPUTE command to assign the product of two
+variables into a numeric variable: a ]
+10 T: THIS ISA MULTIPLICATION PROGRAM
+20 T: ENTER TWO NUMBERS: \,
+30T:
+40 T: FIRST NUMBER: \
+50 A: #A
+70 T: SECOND NUMBER: \
+80 A: #B
+90 C: #X=#A*#B
+100 T:
+1IOT#HAx #B = #X ;
+120 E:
+The COMPUTE statement on line 90 calculates the product of #A and #B, and
+assigns the product into numeric variable #X. Execute the program with RUN and i
+press GE0Ri3.
+THIS IS AMULTIPLICATION PROGRAM
+ENTER TWO NUMBERS: {
+FIRST NUMBER: 26
+SECOND NUMBER: 6
+20x6=120 i
+READY
+a
+See how the COMPUTE command assigns value to variables? i
+88 Using Numbers i

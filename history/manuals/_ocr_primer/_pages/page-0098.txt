@@ -1,0 +1,36 @@
+5 JM _—
+| ADVANCED ASSIGNING VARIABLES INTO OTHER VARIABLES
+PROGRAMMING The value of variables can be assigned into other variables with the COMPUTE
+| WITH command in the format:
+VARIABLES C: $variable name = variable name
+| Examples:
+C: $HERMAN = $GEORGE
+C: $NUM=$ONE
+| C: $GEO = $BOX
+I STRING INDIRECTION
+Values of string variables can themselves be other string variable names. The dollar
+sign ($) is both a string variable indicator and an indirection operator.
+| String indirection can best be explained by example:
+C: $LADDER= JANE assigns $LADDER the value ‘JANE’
+i C: $JANE= ATARI assigns $JANE the value ‘ATARI’
+C: $ATARI = LUNCH assigns $ATARI the value ‘LUNCH’
+T: $LADDER produces ‘JANE’
+4 & T: $$LADDER produces ‘ATARI’
+T: $$$LADDER produces ‘LUNCH’
+q T: $$$$LADDER produces ‘$LUNCH’
+As many $’s as desired may precede the variable name portion. String indirection is
+4 allowed anywhere a simple string variable is allowed.
+THE MATCH STRING COMMAND, MS:
+j The MATCH STRING command acts exactly like the MATCH command, except
+that it produces three pre-named string variables upon a successful match.
+The format for the MATCH STRING command is:
+5 MS: string
+MS: string,string...
+| MS: variable name
+where: string can be any character, number, word, symbol, phrase, or a com-
+bination of these.
+I Like MATCH, if MATCH STRING specifies several strings, the strings must be
+separated by commas or vertical bars.
+j If MATCH STRING specifies a variable name, the value of the variable is the match
+string.
+| Variables 81

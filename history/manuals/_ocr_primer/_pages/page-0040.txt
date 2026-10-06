@@ -1,0 +1,35 @@
+<_< s—(“‘“‘s~s
+| Are you beginning to understand how this works?
+Clear the screen. Type: LIST 15
+I LIsT15
+READY
+a
+I Because there is not a line number 15 in the program, a blank line is displayed.
+i THE NEW COMMAND
+The NEW command erases the current program from the computer’s memory, but
+not from the screen. Be VERY CAREFUL when using the NEW commang; it is easy
+| to lose your program accidentally, and there is no way to recover it.
+To erase a program from memory, type:
+| NEW
+Let’s test the NEW command on the example program.
+| Type: NEW
+NEW
+READY
+a
+Try to LIST the example program again.
+| NEW
+READY
+LIst
+| READY
+a
+| Wow! It works! We have erased the program from memory!
+@ Always erase an old program with the NEW command before entering a new
+| program. Otherwise, you'll end up with a mixture of both.
+THE AUTO COMMAND
+| The AUTO command automatically assigns line numbers to program statements as
+they are entered. This convenient command replaces the task of sequential line
+numbering as long as you enter the statements in the proper order.
+4 To enter AUTO mode, type AUTO and press @SR09. The screen will turn gold and
+retain any display currently on the screen.
+Writing A
+I Pilot Program 23

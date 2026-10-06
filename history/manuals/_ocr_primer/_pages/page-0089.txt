@@ -1,0 +1,73 @@
+rea i se
+
+250 > \ C SENTENCE PROMPT
+
+260 A: $IMDOING3
+
+270T: (press RETURN to see the letter)
+
+280 A:
+
+290 T:
+
+300 T: $DATE
+
+310T: $CITY
+
+320T:
+
+330T:
+
+340 T: Dear $TO,
+
+3507:
+
+360 T: How are you doing? Fine I\ |
+
+370T: hope. $IMDOING1 $IMDOING2 $IMDOING3
+
+380 T: Anyway, | just wanted you to know\
+
+390 T: | was thinking of you. Bye now.
+
+400 T:
+
+410T: Yours,
+
+420T:
+
+430T:
+
+440T:
+
+450T:
+
+460 T: P.S. Please write soon. |
+WHAT ARE THE VALUES OF YOUR STRING VARIABLES? * |
+The DUMP Command
+After you've executed a program using string variables, you can find the values of
+the string variables by typing the executive command, DUMP. As the command
+label implies, DUMP dumps or displays the string variable names and their values
+on the screen. |
+A DUMP command following the execution of our example program might display
+something like this: |
+
+READY
+
+DUMP
+
+SNAME = 'CHRIS'
+
+SFUNNY = 'NICE' |
+
+a
+@ The value of each string variable is enclosed in single quotation marks. Notice |
+that ‘CHRIS’ and ‘NICE’ are the values entered in the example program.
+
+The COMPUTE Command C:
+The COMPUTE command assigns strings into string variables. :
+To assign a string into a string variable, use the following format:
+C: variable name =string fi
+where: variable name is the variable name receiving the string -
+string is the assigned value i
+72 Variables y

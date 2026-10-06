@@ -84,17 +84,9 @@ include = [
 [tool.hatch.build.targets.wheel]
 packages = ["src/pypilot"]
 
-# `history/` holds copies of copyrighted Atari manuals, kept locally and
-# gitignored, plus a tracked `README.md` of provenance. None of it belongs in a
-# distribution. `exclude` is applied in addition to `include` rather than
-# instead of it, so adding a broad path to `include` later cannot quietly pull
-# the manuals back in.
 [tool.hatch.build]
 exclude = [
-    "/history",
-    "/history/**",
-    # Scratch virtualenvs and bytecode, for the same reason: a contributor who
-    # leaves a `.venv-wheel` behind must not publish it.
+    # Keep generated environments and bytecode out of source archives.
     "/.venv*",
     "**/__pycache__",
 ]

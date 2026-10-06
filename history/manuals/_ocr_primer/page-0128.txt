@@ -1,0 +1,42 @@
+ed
+| SECTION 9 The SOUND command lets you play musical tones on your ATARI computer. The
+SUMMARY SOUND command generates tones.
+| A tone is a musical note from low C to high F#. Each tone has a corresponding
+number from 0 to 31.
+A voice represents one tone in a musical chord. Up to four voices may be played at
+i once in a single SOUND command.
+A half step is the smallest interval between two tones.
+i A whole step is an interval of two half steps between two tones.
+A major scale is a musical pattern consisting of the following steps: whole, whole,
+i half, whole, whole, whole, half (see Figure 9-3).
+An octave is an interval of 8 notes in a major scale beginning with any note and
+i ranging to the same note 12 half steps higher on the musical scale.
+The format for the SOUND command is:
+SO: voice
+q SO: voice voice...
+SO: voice,voice ...
+4 € Each voice in a SOUND command must be separated by a space or a comma.
+When SOUND commands are played in immediate mode the tone lasts until the
+j next SOUND command is issued, or the (E09 key is pressed.
+The SOUND commands in programmed mode play very rapidly unless used in
+conjunction with PAUSE commands. PAUSE commands always follow SOUND
+4 commands.
+The PAUSE command tells the computer to delay program execution temporarily.
+Everything is delayed except the SOUND command. The PAUSE command has the
+i format:
+PA: number or numeric expression
+5 Because PAUSE doesn’t affect the SOUND command, it is effective for determining
+the length of tones. The length of the pause determines the length of the preceding
+tone. Example:
+| SO: 15
+PA: 16
+For convenience, the whole, half, quarter, eighth, and sixteenth notes for various
+| tempos have been assigned a PAUSE value. These values can be referred to in
+Figure 9-5.
+PILOT generates random music with the random number operator (?). Used within
+a numeric expression in the SOUND and/or PAUSE command, ? generates random
+€ tones or pauses.
+SO: ?\5*6
+PA: ?\5+ 20
+Many Voices,
+| Many Sounds 111

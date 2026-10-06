@@ -1,0 +1,36 @@
+®o —_ OOOO,
+| If the correct answer (GEORGE WASHINGTON) is entered when the program is
+executed, the program executes the TY: command to display:
+Who was the first president of the
+United States? GEORGE WASHINGTON
+That'sright!!
+| READY
+a
+If an incorrect answer is entered, the program executes the TN: command to
+display:
+Who Was the first president of the
+| United States? UNCLE SAM
+No. the first president of the United
+States was GEORGE WASHINGTON.
+READY
+|
+| Try another one. Type NEW and enter the following program:
+10 T: WHICH WORD DOESN’T BELONG:
+20 T: CAT DOG COMPUTER CHIMP
+| e 30T:2\
+40 A:
+50M: DOG
+60 TY: YES, THE OTHERS BEGIN WITH ‘C’.
+| 70 M: COMP
+80 TY: YES, THE OTHERS ARE ANIMALS.
+90 M: COMP,DOG
+i 100 TN: ARE YOU SURE ABOUT THAT?
+Run the program with each of the four words in line 20 as input.
+| Here are three RUNS of the same program:
+| WHICH WORD DOESN'T BELONG:
+s CaT DOG COMPUTER CHIMP
+ves, THE OTHERS BEGIN WITH 'C*.
+READY
+| F
+Decision-Making
+1 Programs 45

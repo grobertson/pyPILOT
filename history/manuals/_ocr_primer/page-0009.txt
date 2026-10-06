@@ -1,0 +1,41 @@
+8 MODULES 95 @ |
+Concepts Introduced 95
+What Is a Module? 95
+The Parts of a Module 96 ,
+Calling a Module 96
+The USE Command, U: 96 ,
+The Module End 97 |
+The END Command, E: 97 2
+Nested Modules 97
+Conditional Modules 98 |
+The USE IF YES and USE IF NO Commanas, }
+UY:, UN: 98 ,
+Example: The Calculator Program 99 |
+Section 8 Summary 101
+Section 8 Quiz 102 |
+9 MANY VOICES, MANY SOUNDS 105
+Concepts Introduced 105 |
+Definition List 105
+The SOUND Command, SO: 106
+Immediate Mode Sounds 107 @ |
+Program Mode Sounds 108
+The PAUSE Command, PA: 108
+Random Music 109 |
+A Special Song 110
+Section 9 Summary 111
+Section 9 Quiz 112 |
+Advanced Programming With Sound 114
+The PAUSE Command: Increments of 1/60ths 114 |
+10 WELCOME TO GRAPHICS 115
+Concepts Introduced 115
+The GRAPHICS Command, GR: 116
+The Graphics Screen 117
+Cartesian Coordinates 117
+Turtle Geometry 118
+GRAPHICS Subcommands 120
+The PEN Subcommand 120
+Subcommands Using Cartesian Coordinates 121
+; The GOTO Subcommand 121 |
+The DRAWTO Subcommand 123
+The FILLTO Subcommand 124 @
+viii. Contents j

@@ -1,0 +1,40 @@
+SS  S)4yloo
+| The following diagram shows several musical scales:
+WER ee aa ae
+i Giscale <i, (C.22'D EM VE eG eA BC
+epee ewer seid be sedate oily Sie eee
+Discale Dre (Ee teyGacAe Bo cr iD
+| ' ' \ '
+' | | 1
+i F scale Fo Goa BoC D i i
+Lace ea meus ee |
+G scale GaAs Be D E ERA -G
+' ' 1 i 1
+J | A stag oust (es ' !
+Wie Wee Wee Ww
+4 a
+8 NOTES, OR 1 OCTAVE
+i é& W=WHOLESTEP H=HALFSTEP
+Figure 9-3 Musical Scales
+Keep these diagrams as a handy reference when using the SOUND command.
+When you determine what note, or tone, you want to play (C,D,F#,A...), look up
+4 the note and its corresponding numerical value on one of the charts and plug it into
+the SOUND command.
+| You can use the SOUND command in both immediate and program mode.
+Immediate Mode Sounds
+Section 2 explained how to use the SOUND command in immediate mode. Like all
+j other immediate mode commands as soon as you press the key, the com-
+puter responds. In this case, the computer responds by generating a tone. The
+sound continues to play until you either type another SOUND command, stop the
+sound with a SO: 0 command, or press the key. However, you can’t make
+f sounds in rapid succession unless you are a very fast typist!
+Enter the following SOUND commands: (make sure the volume is turned up on
+I your television set).
+SO: 13
+SO: 15 GSQID
+SO: 13
+| SO: 14 GST
+& Depending upon how fast you can type, it may take a long time to type in each
+q tone. To speed up the tone changes, put the SOUND commands in a program,
+Many Voices,
+| Many Sounds 107

@@ -1,0 +1,33 @@
+1@ R: SUNSET
+415 GR:CLEAR
+2@ U:*SUN
+3@ U:*REDCLOUDS
+40 U:*SKY
+45 U:*SUNBATH
+S@ E:
+100 *SUNBATH
+11@ GR:GOTO ©,-13,TURNTO 180;PEN
+YELLOW
+120 GR:FILL 26
+13@ E:
+200 *SKY
+21@ GR:GOTO @,10;TURNTO @;PEN
+BLUE
+22@ GR: FILL 37
+230 E:
+see *SUN READY
+31@ GR:GOTO @,10;TURNTO 90 a
+32@ GR: 36CDRAW 13 TURN 5S)
+33@ GR: 36CFILL 13 TURN 5)
+340 E:
+400 *REDCLOUDS
+410 GR: GOTO 0,10; TURNTO 90;PEN
+42@ GR: 36CFILL 1; TURNS)
+430 E:
+READY
+a
+Figure 4-24
+3 The number of units, N, in the GR:FILL N command can be either a number, a numeric
+variable, or a numeric expression.
+Graphics—GR:FILL 77
+’

@@ -1,0 +1,58 @@
+— a ~~
+The Disk Directory
+Using the DOS Disk Directory. The disk directory is similar to a table of contents. It
+tells you what files are on the disk and the length of each program file. Below is a
+sample directory: |
+
+DIRECTORY-—-—SEARCH SPEC, LIST FILE?
+pos sY¥S O39
+DuP SYS 042
+PILTDEM Tia 658
+VINCE PLT ees
+PILTDEM T1iB O32
+PILTDEM T2A 656
+PILTDEM 126 046
+256 FREE SECTORS
+SELECT ITEM OR [iae FOR MENU
+:
+Figure B-4_ Sample Directory
+
+The number on the right of each program name is the program length in sectors. A
+
+sector is a length of measurement for the diskette in computer jargon. Underneath * |
+
+the list of program names is the number of unused sectors. A full diskette has 0 free
+
+sectors.
+
+To get a diskette directory: |
+
+1. Type DOS and press to get the DOS utility program.
+
+2. At the bottom of the screen display, the DOS utility asks:
+
+SELECT ITEM
+Enter:
+A |
+
+3. The computer responds with:
+
+DIRECTORY SEARCH SPEC LIST FILE? 1
+
+You can enter two responses:
+
+1. To list the entire directory, press the key.
+
+2. To search the directory for a specific file name, enter the file name. The com- ;
+puter displays the file name and its sector length, followed by the number of :
+free sectors. If the file is not found, only the number of free sectors is displayed. :
+
+Anything entered other than a letter or file name results in no action or an “ '
+
+ERROR-165 message. oe
+
+Creating Your Own Disk Directory. Instead of leaving PILOT to enter the DOS . Cau
+
+utility to display a diskette directory, you can create your own directory. ‘ i
+
+156 Appendix B e

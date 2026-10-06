@@ -1,0 +1,51 @@
+Se...
+q There are two string variables in the program: $NAME and $FUNNY. RUN the pro-
+gram. Enter your own name when prompted.
+WHAT IS YOUR NAME?
+| CHRIS
+YOU, CHRIS, ARE A VERY SFUNNY PERSON!
+READY
+| a
+$NAME is defined by your input to the ACCEPT command on line 20. In line 30 the
+string variable name $NAME is replaced with your name. The string variable name
+I $FUNNY is not replaced because it was not defined before line 30. To fix the pro-
+gram to define $FUNNY before line 30, insert the following lines:
+23 T: WHAT KIND OF PERSON ARE YOU?
+i 26 A: $FUNNY
+RUN the program again.
+WHAT IS YOUR NAME?
+I CHRIS
+WHAT KIND OF PERSON ARE YOU?
+NICE
+YOU, CHRIS, ARE A VERY NICE PERSON!
+i READY
+|
+| & See how easy it is to use variables?
+Following is an Automatic Letter Writer. You can use this program to create a letter
+choosing the date, the city you live in, who the letter is addressed to, and how
+q you're feeling when you write the letter.
+10 T: AUTOMATIC LETTER WRITER
+2045
+q 30 T: (please answer the following questions)
+40 T:
+50 T: What is your name? \
+60 A: $NAME
+| 70 T: Where do you live, $NAME?
+80 T:in\
+90 A: $CITY
+100 T: What is today’s date? \
+‘ 110 A: $DATE
+120 T: Who do you want to send this letter to?
+130 T: (complete the following)
+140 T: Dear \
+150 A: $TO
+160 T: (Now type one to three sentences about
+170 T: out how you’ re feeling and what you
+180 T: are doing. Remember the periods!)
+190 T: (press RETURN after each sentence or
+200 T: if you are finished with sentences)
+210T: >\ E SENTENCE PROMPT
+d 220 A: $IMDOING1
+2301; >\ EC SENTENCE PROMPT
+« 240 A: $IMDOING2
+il Variables 71

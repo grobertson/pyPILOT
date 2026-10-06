@@ -1,0 +1,7 @@
+GR:PEN UP
+5
+Lift the Pen
+The PEN UP command tells the turtle to pick up the pen off the screen. While the pen is
+up, all movement by the turtle will be invisible. To put the pen back “down,” you choose
+a pen color.
+Graphics—GR:PEN UP 81

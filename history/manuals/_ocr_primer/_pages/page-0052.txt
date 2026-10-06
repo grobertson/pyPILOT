@@ -1,0 +1,43 @@
+—
+| LINE RENUMBERING
+PILOT has a renumber command that automatically renumbers the line numbers of
+| an entire program. This is useful when you need to insert a statement between two
+statements with consecutive line numbers.
+Type: NEW and press to clear the computer’s memory . Enter the following
+| program:
+5T: WHAT
+6T:A
+| 7 T: PROGRAM
+A program RUN displays:
+WHAT
+a
+PROGRAM
+READY
+| +
+Now consider changing the above program to display this instead:
+WHAT
+a
+SIMPLE
+PROGRAM
+| a READY
+L
+How would you make the change? You could change the last half of the program
+| by line deletion and replacement to make enough room to enter a T: SIMPLE, or
+you could renumber the program with the renumber command.
+The RENUMBER Command, REN
+The format for a simple REN command is: REN
+REN by itself automatically renumbers the entire program starting with line number
+| 10, and then counting by tens for as many lines as are in the program. This creates
+enough space to insert extra lines.
+Type: REN and press @319. Now, LIST the program. You should see:
+| REN
+READY
+LIst
+| 16 T:WHAT
+2O0T:A
+3@ T: PROGRAM
+READY
+a
+I You now have room to insert an extra line.
+Writing A
+I Pilot Program 35

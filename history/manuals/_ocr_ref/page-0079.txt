@@ -1,0 +1,25 @@
+= The directional angle N, in the TURN (N degrees) command can be either a number, a
+numeric variable, or a numeric expression. The program in Figure 4-18 draws first a
+triangle, then a square, then a pentagon, and so on, all on top of each other. The
+amount the turtle turns in line 90 is 360 degrees divided by the number of sides in the
+polygon he is currently drawing.
+10 R: EUCLID
+20 C:#s=3
+3@ GR:CLEAR
+40 “BEGIN
+S® C:"C=e
+6@ GR:GOTO 10,-30
+7@ GR: TURNTO -98
+8e *LOOP
+9@ GR: DRAW 20; TURN 360785
+10@ C:sc=nc+i
+110 JCuC<H5>:*LOOoP
+12@ Cimssus+4
+430 J€8S<(21): "BEGIN
+1408 E:
+READY
+s READY
+a
+Figure 4-18
+Graphics—GR:TURN 71
+j

@@ -1,0 +1,40 @@
+Ste 6 i
+The computer responded with a * ** WHAT’S THAT? * ** message because it
+didn’t understand your input. When the computer doesn’t understand your input,
+it displays your input followed by a *** WHAT'S THAT? * ** message.
+
+@ Asa rule, you must always press the key at the end of a line. Pressing the ;
+key tells the computer that you have finished typing and that it’s the com-
+puter’s turn to respond.
+Let’s input something the computer understands. Type: T: HELLO. (Don’t press
+the key yet!)
+@ To type a colon(:) hold down the E@iag key and then press the ;/: key.
+The computer understands commands. The T: is a TYPE command, This particular
+command tells the computer to type HELLO. Press the key for the com- |
+puter’s response. The screen should display:
+ATARI PILOT CC) COPYRIGHT ATARI 1980
+READY |
+HELLO
+MELLO
+**#* WHAT'S THAT? *%
+T:HELLO
+HELLO
+r :
+Because the computer understands the command it responds correctly by typing >
+HELLO. Commands will be discussed at the end of this section and in the following
+two sections.
+CLEARING THE SCREEN
+Before proceeding, let’s erase, or clear the screen. Clearing the screen is simple; |
+hold down the key, and at the same time press the key (top row).
+Clear the screen. POOF! Look what happens! |
+ATARI PILOT (C) COPYRIGHT ATARI 1980
+READY
+HELLO
+MELLO
+wee WHAT'S THAT? HH
+T:; HELLO
+a LLO |
+Press @iillag and (429 keys
+~
+Getting Started
+6 with Pilot I

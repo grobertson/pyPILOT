@@ -1,0 +1,28 @@
+————..
+Figure 2-1 Clearing the Screen
+| Your screen is now a blank screen except for the cursor waiting in the upper left
+corner for more input.
+| @ Always start each new activity by clearing the screen.
+NEVER press the key to clear the screen.
+i € CORRECTING MISTAKES
+There are three methods to correct spelling or typing mistakes when talking to your
+computer on the keyboard. They are:
+1. Retype the entire line.
+2. Backspace to the mistake and retype the rest of the line.
+3. Use cursor control keys to correct the mistake. This method is for advanced
+programmers and is discussed in Appendix C.
+i 1. Retype the Entire Line :
+Type: T: THIS IS MY FURST TIME (Do not press the key.) Does your screen
+look like this?:
+| T: THIS IS MY FURST TIMER
+OOPS! We misspelled FIRST as FURST! To correct this mistake you must first move
+| the cursor to a blank line by pressing the key. Because this is a TYPE com-
+mand, when you press the key the cursor first drops down to the following
+line to display the message before waiting on a blank line below:
+| T: THIS I5 MY FURST TIME
+THIS I5 MY FURST TIME
+a
+I Now, retype the entire line, spelling FIRST correctly. When it is typed, press the
+e key.
+Getting Started
+I with Pilot 7

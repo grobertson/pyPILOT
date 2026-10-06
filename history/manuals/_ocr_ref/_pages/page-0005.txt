@@ -1,0 +1,39 @@
+bce re A ln nat cel lh alli
+(
+PREFACE iii
+INTRODUCTION vii
+1 PILOT INFORMATION 1
+Terms 2
+Operating Modes 3
+Variables 4
+Arithmetic Operators 5
+Relational Operators 5
+Error Messages 6
+2 CORE PILOT 7
+7: Type 8
+A: Accept 12
+M: Match 14
+J: Jump 17 g
+OF Compute 19
+Random Numbers 21
+Es End 24
+U: Use 26
+R: Remark 30
+3 EXECUTIVE COMMANDS 31
+AUTO Automatic Line Numbering 32
+RUN Run a Program 34
+LIST List a Program 36
+REN Renumber a Program 39
+NEW New Program 41
+VNEW New Variables 43
+DUMP Dump String Variables 46
+LOAD Load a Program 48
+LOAD C: Loading From Cassette 48
+LOAD D: Loading From Diskette 49
+Merging Programs 49
+SAVE Save a Program 51
+SAVE C: Save to Cassette 51
+SAVE D: Save to Diskette 52
+SAVE P: Save to Printer 52 3
+DOS Disk Operating System 53
+iv Table of Contents

@@ -1,0 +1,22 @@
+y
+a s
+THE CURSOR CONTROL KEYS i
+The black keys shown on the diagram below show the cursor control keys. 1
+2 ’ % , @ CLEAR I mserr PM ocuere sySTEM
+WOUGHBH0GCGsee® & ]
+Qococscooacessade&
+Cc a ?
+ER_GCoOCTCOOOSseOE ]
+Figure C-3_ The ATARI Keyboard: The Cursor Control Keys ;
+The cursor control functions, ; ' , and
+move the cursor in the direction shown by the arrows on the keytops. The 7
+key MUST be held down while pressing the cursor control keys. When the cursor
+moves over a character, that character is displayed in “inverse video.’’ ;
+MOVING [JHE CURSOR OVER A CHARACTER ; - j
+ee?
+=
+Figure C-4_ Moving the Cursor Over a Character F
+The character remains unchanged unless you type another character on top of it.
+: ai
+a
+170 Appendix C E

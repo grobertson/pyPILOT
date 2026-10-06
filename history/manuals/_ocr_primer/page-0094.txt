@@ -1,0 +1,32 @@
+eS
+| Line 30 concatenates an asterisk onto the end of the value of $NAME. Line 50
+places the value of $NAME into the accept buffer. Line 60 searches for the value of
+$NAME in the accept buffer for a match. If there are less than seven asterisks at-
+I tached to the value of $NAME, the program jumps up to *GROW. When seven
+asterisks are added to $NAME, the program stops.
+:
+*
+i Figure 6-9 ACCEPT Without Input: Program Run
+Using the A: = form of the ACCEPT command can save you from repeatedly input-
+1 & ting the same value.
+THE COMPUTE IF YES AND COMPUTE IF NO COMMANDS, CY:, CN:
+| The COMPUTE command may be used with yes or no conditioners to make COM-
+PUTE conditional upon a match or no match.
+| The formats for the COMPUTE IF YES and COMPUTE IF NO commands are:
+CY: variable name = value
+| CN: variable name =value
+A MATCH command must precede the CY: or CN: command. If the match is suc-
+cessful, the CY: command is executed (e.g., CY: $VAR=CAT). If the match is un-
+successful, the CN: command is executed (CN: $VAR= DOG). If both commands
+follow the same MATCH command, only one will be executed. The other com-
+mand is bypassed.
+# ™® The CY: and CN: commands are applicable to computing numeric strings, which
+is discussed in Section 7. @
+q CLEARING YOUR VARIABLES
+The NEW VARIABLES command, VNEW:, allows you to clear string variables
+within a program. Clearing a string variable means to undefine the string variable.
+j The NEW VARIABLES command can be issued in either immediate or program
+mode.
+& The format for the NEW VARIABLES command is:
+] VNEW:$ clear all string variables only
+I Variables 77

@@ -1,0 +1,36 @@
+GR:CLEAR
+a
+—. $$$ eee
+Clear the Graphics Screen
++ 2
+4 A.
+GR: CLEAR
+GR:CLEAR erases what is on the screen. When you enter a new GR: command the pic-
+ture begins at the point you left off with the last drawing.
+Figures 4-6 through 4-8 show you how GR:CLEAR can be used in a program. The pro-
+gram draws a pentagon, pauses for you to look at it, then clears the screen and draws a
+star. The program continues to go back and forth between the pentagon and the star, giv-
+ing you a flashing effect.
+1@ R: THE PENTAGON AND THE STAR
+2@ GR:CLEAR
+3@ *LOoP
+40 U:*PENTAGON
+S@ Pa:s
+6@ GR:CLEAR
+7@ U:*STAR
+8@ Pa:s
+9@ GR:CLEAR
+10@ J:*LOOP
+110 *PENTAGON
+12@ GR:GOTO -15,¢
+13@ GR: TURNTO -is
+14@ GR:S5(DRAW 20; TURN 72)
+150 E:
+168 *STaR
+17@ GR:GOTO -15,¢
+180 GR: TURNTO 15
+19@ GR:SCDRAW 31; TURN 144)
+200 E:
+READY
+Z
+60 Graphics—GR:CLEAR

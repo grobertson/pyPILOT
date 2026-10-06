@@ -1,0 +1,43 @@
+@ i emcee eae
+i APPENDICES
+eee
+| A CONNECTING YOUR ATARI
+COMPUTER SYSTEM 143
+a
+| Concepts Introduced 143
+Connecting Your ATARI Computer System 143
+Inserting PILOT 147
+| Turning On PILOT in Your ATARI Computer
+Without a Disk Drive 147
+Turning On PILOT in Your ATARI Computer
+I With an ATARI 810 Disk Drive 147
+Turning Off Your ATARI Computer System 148
+eee
+| B SPEAKING TO DEVICES 149
+Concepts Introduced 149
+| @ The ATARI 810 Disk Drive 150
+Speaking to Your ATARI 810 Disk Drive 151
+Saving a Program on a Diskette 151
+| Write-Protecting a Diskette 152
+Loading a Program From a Diskette 152
+Merging Programs 153
+| The DOS Utility 155
+The Disk Directory 156
+Using the DOS Disk Directory 156
+| Creating Your Own Disk Directory 156
+Returning to PILOT From the DOS Utility 158
+DON’T PANIC! (How to Handle Trouble
+| With the Disk Drive) 158
+Screen Displays ‘‘Boot Error’ 158
+BUSY Light on Disk Drive Does Not Go Off 159
+| The Computer Does Not Respond 159
+The ATARI 410 Program Recorder 159
+Speaking to Your Program Recorder 159
+| Saving a Program on a Cassette Tape 159
+Write-Protecting a Cassette Tape 161
+Loading a Program From a Cassette Tape 161
+| Merging Programs 162
+A Method to Manage Programs on Cassette Tapes 162
+@ Saving the Cassette Directory 162
+| Adding Programs to the Directory and the Tape 165
+1 Appendices xi

@@ -1,0 +1,37 @@
+SS
+| Because variables have changeable values, the values may be changed at any time
+and any number of times. When a new value is assigned, the new value pushes the
+old value out; this is the concept of variables.
+Sen ia. Ter ae THURSDAY
+Rainy —~ / Pry > / NURS / MARCH /
+/ p 0 / ‘ / 17 /
+| / } 198, —/ / - \FAIR
+I Figure 6-4 Changing a Variable’s Value
+In PILOT there are two types of variables: string variables and numeric variables.
+i Numeric variables will not be discussed until Section 7, Using Numbers.
+STRING WHAT IS A STRING VARIABLE?
+VARIABLES
+q & Do you remember the definition of a string? A string is any combination of letters,
+numbers, symbols, words, or phrases. A string variable is a type of variable whose
+value is a string.
+| String variables have string variable names. The variable name can be any com-
+bination of letters, numbers, or symbols up to 254 characters in length, preceded
+by a dollar sign, $:
+| $NAME is a string variable name
+$DATE is a string variable name
+$REPLY2ME is a string variable name
+$12 is a string variable name
+$A is a string variable name
+| DEFINING STRING VARIABLES
+The computer’s memory makes space (in the imaginary compartments for string
+variables at the time the string variable is defined. A string variable is defined when
+it is given a value. An undefined string variable has no value, like an empty com-
+partment.
+$FARAWAY is an undefined string variable
+] An ACCEPT command (A:) can be used to define a string variable with keyboard
+input.
+| 30 A: $FARAWAY
+The keyboard input becomes the value of the string variable. If you enter CHINA in
+& response to the above ACCEPT command, $FARAWAY will be defined with a value
+| of CHINA.
+| Variables 69

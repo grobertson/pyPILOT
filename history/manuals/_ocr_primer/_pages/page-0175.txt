@@ -1,0 +1,48 @@
+ej ose
+520 LOAD: $FILENAME ]
+530 E:
+540 R:
+550 R: FORMAT FILENAME FOR PRINTING.
+560 R:
+570 *FILELIST
+580 C: $LEFT =
+590A: =$FILE! { ANCHOR FILE SIZE. ]
+600 * FLOOP
+610 MS: 0!,1!,2!,3!,4!,5!,6!,7!,81,9!
+620 AY: =$LEFT! [ STRIP OFF # SECTORS.
+630 JY: * FLOOP
+640 POS: #C,#R [ PRINT FILE NAME.
+650T: $LEFT\
+660 C: #C = #C +13
+670C: #N=#N+1
+680 POS: #C,#R [ PRINT FILE #
+690T: (#N)\
+700 A: =$LEFT [ CONVERT NAME TO... |
+710MS: > , [...1/O0 FORM.
+720 C: $FILENAME = $LEFT.$RIGHT
+730 U: * ITEMNAME
+740 C: $$1TEM = $FILENAME
+750 E:
+760 R:
+770 R: CREATE STRING ARRAY NAME. a
+780 R:
+790 * ITEMNAME
+800 C: #X = 100 - #N [ INVERT FOR SPEED.
+810 C: $ITEM = Z#X[ ’Z’ KEEPS STRINGS ABOVE $LEFT, $MATCH & $RIGHT |
+FOR SPEED.
+820 E:
+Returning to PILOT From the DOS Utility |
+To leave the DOS utility and return to PILOT, choose option B from the DOS direc-
+tory, or press the key. ]
+When you return to the PILOT language, your screen displays:
+ATARI PILOT CC) COPYRIGHT ATARI 1980 J
+READY
+a
+and you are ready to go! !
+DON’T PANIC! (How To Handle Trouble With the Disk Drive)
+There are three main types of problems that can occur while you are using your I
+disk drive. These are described below with the suggested remedies. Keep in mind
+that switching the computer to OFF clears its memory.
+Screen Displays ‘‘BOOT ERROR.” Either you turned on the system without insert- I
+ing a diskette, or the diskette was inserted upside down or backwards. i
+158 Appendix B i

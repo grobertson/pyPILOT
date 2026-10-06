@@ -1,0 +1,48 @@
+i.  -.-—«“‘(<“‘ iz er:
+REPLACE A LINE i
+Replacing a line is a short-cut method of deleting a line and inserting another in its
+place. |
+Clear the screen and LIST the example program again. Let’s change the rhyme by
+replacing line 23; T: SUGAR IS SWEET, to; T: DAFFODILS ARE PRETTY,. This can
+be done in two ways. |
+First, you can delete line 23 by typing 23 and pressing GS—E9. Next, you type
+in the new line: 23 T:DAFFODILS ARE PRETTY, and press @@gE9. Then LIST the
+program:
+
+23
+23 T: DAFFODILS ARE PRETTY,
+1 5-3
+16T:ROSES ARE RED,
+26 T: VIOLETS ARE BLUE,
+23 T: DAFFODILS ARE PRETTY,
+40 T: AND SO ARE YOU!
+READY
+a
+You have replaced the old line 23 with a new line 23. |
+The second method of line replacement is to type the new line 23 on a new line,
+without first deleting the old line 23. When the computer receives the new line 23, a |
+it will automatically push the old line 23 out of memory and replace it with the new
+line 23. The old line 23 is pushed out of memory because the computer doesn’t
+allow duplicate line numbers. |
+Let’s change line 23; T: DAFFODILS ARE PRETTY, back to the original line 23;
+T: SUGAR IS SWEET,.
+Clear the screen and LIST the program. Type: 23 T: SUGAR IS SWEET, press :
+and LIST the program again:
+LIst
+16 T:ROSES ARE RED,
+26 T: VIOLETS ARE BLUE,
+23 T: DAFFODILS ARE PRETTY,
+40 T: AND SO ARE YOU!
+READY i
+23 T: SUGAR IS SWEET,
+LIST
+16 T:ROSES ARE RED,
+20 T: VIOLETS ARE BLUE,
+23 T: SUGAR IS SWEET,
+4@ T: AND SO ARE You!
+READY
+a
+@ Remember that the line change is not displayed on the screen until the program
+is LISTed again. @ i
+Writing A
+34 Pilot Program h
