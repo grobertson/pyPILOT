@@ -14,7 +14,7 @@ from collections import deque
 from typing import Any, cast
 
 from pypilot.errors import PilotUnsupportedError
-from pypilot.interactive import InteractiveCancelledError, KeyboardController
+from pypilot.interactive import ControllerKeyMap, InteractiveCancelledError, KeyboardController
 from pypilot.io import ConsoleInput, ConsoleOutput, InputDevice, OutputDevice
 
 __all__ = ["PygameInteractiveDevice"]
@@ -68,6 +68,7 @@ class PygameInteractiveDevice:
         fallback_input: InputDevice | None = None,
         *,
         title: str = "rePILOT Interactive",
+        controller_keymap: ControllerKeyMap | None = None,
     ) -> None:
         self._fallback_output = fallback_output if fallback_output is not None else ConsoleOutput()
         self._fallback_input = fallback_input if fallback_input is not None else ConsoleInput()
@@ -80,7 +81,7 @@ class PygameInteractiveDevice:
         self._graphics_active = False
         self._text_only = False
         self._cancelled = False
-        self._controller = KeyboardController()
+        self._controller = KeyboardController(keymap=controller_keymap)
         self._last_update = time.monotonic()
         self._text_lines: deque[str] = deque([""], maxlen=10)
         self._input_buffer: str | None = None

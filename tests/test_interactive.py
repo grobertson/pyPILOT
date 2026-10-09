@@ -1,4 +1,4 @@
-from pypilot.interactive import KeyboardController
+from pypilot.interactive import ControllerKeyMap, KeyboardController
 
 
 def test_keyboard_controller_maps_joystick_directions_and_diagonals() -> None:
@@ -16,6 +16,26 @@ def test_keyboard_controller_maps_joystick_directions_and_diagonals() -> None:
     controller.set_key("w", False)
     assert controller.read("J", "0") == 1
     assert controller.read("J", "1") == 8
+
+
+def test_keyboard_controller_accepts_injected_keymap_without_changing_sense_values() -> None:
+    controller = KeyboardController(
+        keymap=ControllerKeyMap(
+            joysticks={2: {"up": "i", "left": "j"}},
+            triggers={10: "k"},
+            paddles={3: ("n", "m")},
+        )
+    )
+    controller.set_key("i", True)
+    controller.set_key("j", True)
+    controller.set_key("k", True)
+    controller.set_key("m", True)
+    controller.update(1.0)
+
+    assert controller.read("J", "2") == 5
+    assert controller.read("T", "10") == 1
+    assert controller.read("P", "3") == 227
+    assert controller.read("J", "0") == 0
 
 
 def test_keyboard_controller_paddles_move_clamp_and_retain_position() -> None:

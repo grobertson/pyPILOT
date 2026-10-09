@@ -110,6 +110,21 @@ def test_graphics_errors_include_the_pilot_source_location() -> None:
         raise AssertionError("malformed coordinates should fail")
 
 
+@pytest.mark.parametrize(
+    ("operand", "command"),
+    (("DRAW invalid", "DRAW"), ("TURN", "TURN"), ("DRAWTO invalid,1", "DRAWTO")),
+)
+def test_graphics_numeric_operand_errors_name_subcommand_and_source(
+    operand: str, command: str
+) -> None:
+    with pytest.raises(PilotRuntimeError) as error:
+        engine(PilotState(), RecordingHost()).execute(operand, line=23, source=f"GR:{operand}")
+
+    assert command in str(error.value)
+    assert error.value.line == 23
+    assert error.value.source == f"GR:{operand}"
+
+
 def test_graphics_repeat_nesting_is_bounded() -> None:
     from pypilot.graphics import MAX_GRAPHICS_REPEAT_DEPTH
 

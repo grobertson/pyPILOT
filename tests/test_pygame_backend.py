@@ -4,6 +4,8 @@ import importlib.util
 
 import pytest
 
+from pypilot import pygame_backend
+from pypilot.interactive import ControllerKeyMap
 from pypilot.io import BufferOutput, StringInput
 from pypilot.pygame_backend import PygameInteractiveDevice
 
@@ -24,6 +26,22 @@ def test_accept_input_uses_console_until_the_graphics_window_is_open() -> None:
 
     assert device.read_line() == "answer"
     assert device._pygame is None
+
+
+def test_pygame_backend_passes_injected_controller_keymap(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    keymap = ControllerKeyMap(joysticks={3: {"right": "l"}})
+    received: list[ControllerKeyMap | None] = []
+
+    class ControllerCapture:
+        def __init__(self, *, keymap: ControllerKeyMap | None = None) -> None:
+            received.append(keymap)
+
+    monkeypatch.setattr(pygame_backend, "KeyboardController", ControllerCapture)
+    PygameInteractiveDevice(controller_keymap=keymap)
+
+    assert received == [keymap]
 
 
 def test_pygame_backend_smoke_with_sdl_dummy_devices(monkeypatch: pytest.MonkeyPatch) -> None:

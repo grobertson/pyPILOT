@@ -1,0 +1,5 @@
+R:Draw an equilateral triangle with a red turtle pen.
+GR:CLEAR
+GR:PEN RED;GOTO 0,0;TURNTO 0;3(DRAW 30;TURN 120)
+T:TRIANGLE COMPLETE AT (%X,%Y).
+E:

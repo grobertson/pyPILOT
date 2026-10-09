@@ -1,0 +1,10 @@
+R:Grow a square spiral by lengthening each stroke.
+C:#A=2
+GR:CLEAR
+GR:PEN BLUE;GOTO 0,0;TURNTO 0
+*SPIRAL
+GR:DRAW #A;TURN 91
+C:#A=#A+2
+J(#A<30):*SPIRAL
+T:SPIRAL COMPLETE AT (%X,%Y).
+E:

@@ -1,9 +1,9 @@
 """Tests for the example programs referenced by ``SPEC.md`` section 13.
 
-These do not execute the programs; they assert that every example named in the
-spec exists, is non-empty, and sticks to the ATARI PILOT rules that are easiest
-to get wrong from Core PILOT intuition. Behavioural coverage of the examples
-lives in ``tests/test_accept_match.py`` and ``tests/test_runtime.py``.
+These assert that every example named in the spec exists, is non-empty, and
+sticks to ATARI PILOT rules that are easy to get wrong from Core PILOT intuition.
+Runnable console examples execute with scripted input, and interactive examples
+execute against a fake host so the suite stays headless.
 
 Each rule enforced here links back to its section of the spec, so a future
 implementer changing the corpus finds out why.
@@ -16,6 +16,7 @@ from pathlib import Path
 
 import pytest
 
+from conftest import FakeInteractive
 from pypilot.match import CURSOR_RIGHT
 
 ROOT = Path(__file__).parent.parent
@@ -31,6 +32,9 @@ EXPECTED = [
     "graphics.pilot",
     "controls.pilot",
     "sound.pilot",
+    "turtle-triangle.pilot",
+    "turtle-spiral.pilot",
+    "turtle-star.pilot",
     "summary.pilot",
 ]
 
@@ -220,6 +224,33 @@ def test_graphics_example_runs_with_an_injected_host(interactive_host) -> None: 
 
     assert any(operation[0] == "line" for operation in interactive_host.operations)
     assert "SQUARE COMPLETE AT (0,0)" in interactive_host.text.text
+
+
+@pytest.mark.parametrize(
+    ("name", "stroke_count", "completion"),
+    (
+        ("turtle-triangle.pilot", 3, "TRIANGLE COMPLETE AT (0,0)"),
+        ("turtle-spiral.pilot", 14, "SPIRAL COMPLETE AT ("),
+        ("turtle-star.pilot", 5, "STAR COMPLETE AT (0,0)"),
+    ),
+)
+def test_turtle_examples_run_and_draw_expected_strokes(
+    name: str, stroke_count: int, completion: str, interactive_host: FakeInteractive
+) -> None:
+    from pypilot.runtime import Interpreter
+    from pypilot.syntax import parse
+
+    interpreter = Interpreter(
+        parse(read(name)),
+        output=interactive_host,
+        source=interactive_host,
+        interactive=interactive_host,
+    )
+    interpreter.run()
+
+    strokes = [op for op in interactive_host.operations if op[0] == "line"]
+    assert len(strokes) == stroke_count
+    assert completion in interactive_host.text.text
 
 
 def test_controller_example_reads_virtual_joystick_and_trigger(interactive_host) -> None:  # type: ignore[no-untyped-def]

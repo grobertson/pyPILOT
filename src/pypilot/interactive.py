@@ -2,11 +2,17 @@
 
 from __future__ import annotations
 
-from collections.abc import Callable
+from collections.abc import Callable, Mapping
 from dataclasses import dataclass, field
 from typing import Final, Protocol
 
-__all__ = ["GraphicsState", "InteractiveCancelledError", "InteractiveDevice", "KeyboardController"]
+__all__ = [
+    "ControllerKeyMap",
+    "GraphicsState",
+    "InteractiveCancelledError",
+    "InteractiveDevice",
+    "KeyboardController",
+]
 
 _DIRECTIONS: Final[dict[str, int]] = {"up": 1, "down": 2, "left": 4, "right": 8}
 _JOYSTICK_KEYS: Final[dict[int, dict[str, str]]] = {
@@ -18,6 +24,17 @@ _PADDLE_KEYS: Final[dict[int, tuple[str, str]]] = {
     0: ("q", "e"),
     1: ("u", "o"),
 }
+
+
+@dataclass(frozen=True, slots=True)
+class ControllerKeyMap:
+    """Host key names assigned to Atari joystick, trigger, and paddle senses."""
+
+    joysticks: Mapping[int, Mapping[str, str]] = field(
+        default_factory=lambda: {number: dict(keys) for number, keys in _JOYSTICK_KEYS.items()}
+    )
+    triggers: Mapping[int, str] = field(default_factory=lambda: dict(_TRIGGER_KEYS))
+    paddles: Mapping[int, tuple[str, str]] = field(default_factory=lambda: dict(_PADDLE_KEYS))
 
 
 @dataclass(slots=True)
@@ -94,9 +111,37 @@ class InteractiveDevice(Protocol):
 class KeyboardController:
     """Emulate two Atari joysticks, their triggers, and two paddles."""
 
-    __slots__ = ("_paddle_rate", "_paddles", "_pressed")
+    __slots__ = (
+        "_joystick_keys",
+        "_paddle_keys",
+        "_paddle_rate",
+        "_paddles",
+        "_pressed",
+        "_trigger_keys",
+    )
 
-    def __init__(self, *, paddle_rate: float = 120.0) -> None:
+    def __init__(
+        self,
+        *,
+        paddle_rate: float = 120.0,
+        keymap: ControllerKeyMap | None = None,
+    ) -> None:
+        mapping = keymap if keymap is not None else ControllerKeyMap()
+        if any(
+            direction not in _DIRECTIONS
+            for directions in mapping.joysticks.values()
+            for direction in directions
+        ):
+            raise ValueError("joystick key maps may only use up, down, left, and right")
+        self._joystick_keys = {
+            number: {direction: key.lower() for direction, key in directions.items()}
+            for number, directions in mapping.joysticks.items()
+        }
+        self._trigger_keys = {number: key.lower() for number, key in mapping.triggers.items()}
+        self._paddle_keys = {
+            number: (decrease.lower(), increase.lower())
+            for number, (decrease, increase) in mapping.paddles.items()
+        }
         self._pressed: set[str] = set()
         self._paddles = [115.0] * 8
         self._paddle_rate = paddle_rate
@@ -117,7 +162,9 @@ class KeyboardController:
         """Advance held paddle controls by elapsed wall-clock time."""
         if seconds <= 0:
             return
-        for index, (decrease, increase) in _PADDLE_KEYS.items():
+        for index, (decrease, increase) in self._paddle_keys.items():
+            if not 0 <= index < len(self._paddles):
+                continue
             direction = int(increase in self._pressed) - int(decrease in self._pressed)
             self._paddles[index] = min(
                 227.0,
@@ -133,7 +180,7 @@ class KeyboardController:
 
         kind = prefix.upper()
         if kind == "J":
-            keys = _JOYSTICK_KEYS.get(number)
+            keys = self._joystick_keys.get(number)
             if keys is None:
                 return 0
             return sum(
@@ -142,6 +189,6 @@ class KeyboardController:
         if kind == "P" and 0 <= number < len(self._paddles):
             return int(self._paddles[number])
         if kind == "T":
-            key = _TRIGGER_KEYS.get(number)
+            key = self._trigger_keys.get(number)
             return int(key in self._pressed) if key is not None else 0
         return 0

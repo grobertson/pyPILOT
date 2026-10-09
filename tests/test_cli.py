@@ -79,6 +79,9 @@ def test_check_without_a_file_is_an_error(capsys: pytest.CaptureFixture[str]) ->
         "msplit.pilot",
         "recurse.pilot",
         "graphics.pilot",
+        "turtle-triangle.pilot",
+        "turtle-spiral.pilot",
+        "turtle-star.pilot",
     ],
 )
 def test_check_succeeds_for_every_example(name: str) -> None:

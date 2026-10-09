@@ -1,0 +1,5 @@
+R:Trace a five-point star in yellow.
+GR:CLEAR
+GR:PEN YELLOW;GOTO 0,0;TURNTO 0;5(DRAW 35;TURN 144)
+T:STAR COMPLETE AT (%X,%Y).
+E:

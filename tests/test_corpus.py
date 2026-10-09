@@ -32,6 +32,9 @@ EXAMPLE_NAMES = [
     "graphics.pilot",
     "controls.pilot",
     "sound.pilot",
+    "turtle-triangle.pilot",
+    "turtle-spiral.pilot",
+    "turtle-star.pilot",
 ]
 
 

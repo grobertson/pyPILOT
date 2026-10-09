@@ -97,6 +97,9 @@ State
 Interactive devices
 -------------------
 
+.. autoclass:: pypilot.interactive.ControllerKeyMap
+   :members:
+
 .. autoclass:: pypilot.interactive.GraphicsState
    :members:
 

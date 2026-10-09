@@ -41,8 +41,8 @@ def metadata() -> dict[str, Any]:
 # ---------------------------------------------------------------------------
 
 
-def test_the_version_is_one_one_zero(metadata: dict[str, Any]) -> None:
-    assert metadata["version"] == "1.1.0"
+def test_the_version_is_one_two_zero(metadata: dict[str, Any]) -> None:
+    assert metadata["version"] == "1.2.0"
 
 
 def test_the_version_is_not_hardcoded_in_the_package() -> None:

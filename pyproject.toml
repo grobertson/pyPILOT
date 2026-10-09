@@ -12,7 +12,7 @@ build-backend = "hatchling.build"
 # `from pypilot...` in the docs, the tests and the console script for no gain,
 # and the distribution name is the only thing PyPI ever sees.
 name = "rePILOT"
-version = "1.1.0"
+version = "1.2.0"
 description = "An implementation of the ATARI PILOT (Programmed Instruction Learning Or Teaching) language."
 readme = "README.md"
 requires-python = ">=3.12"

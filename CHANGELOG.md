@@ -8,6 +8,20 @@ with a twist that matters here: **the language is pinned to ATARI PILOT**, so a
 "patch" that changes a semantic rule is not a patch. Anything touching
 `SPEC.md` §6–§9 is a minor bump at minimum.
 
+## 1.2.0 — 2026-10-09
+
+### Added
+
+- Injectable `ControllerKeyMap` for customizing keyboard-backed Atari device
+  mappings without changing joystick sense values.
+- Three additional turtle graphics examples: a triangle, variable-length
+  spiral, and five-point star.
+
+### Fixed
+
+- Graphics numeric-operand errors identify the `GR:` subcommand and preserve
+  source location details.
+
 ## 1.1.0 — 2026-10-06
 
 ### Added

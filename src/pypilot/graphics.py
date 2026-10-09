@@ -287,7 +287,7 @@ class GraphicsEngine:
                 )
             self.state.pen = color
         elif name in {"GOTO", "DRAWTO", "FILLTO"}:
-            end_x, end_y = self._coordinates(operand)
+            end_x, end_y = self._coordinates(operand, name)
             start_x, start_y = self.state.x, self.state.y
             if name == "GOTO":
                 if self.state.pen != "UP":
@@ -297,10 +297,10 @@ class GraphicsEngine:
                 draw(start_x, start_y, end_x, end_y, self.state.pen)
             self.state.x, self.state.y = end_x, end_y
         elif name in {"TURNTO", "TURN"}:
-            angle = self._number(operand)
+            angle = self._number(operand, name)
             self.state.angle = (angle if name == "TURNTO" else self.state.angle + angle) % 360
         elif name in {"GO", "DRAW", "FILL"}:
-            units = self._number(operand)
+            units = self._number(operand, name)
             radians = math.radians(self.state.angle)
             end_x = _limit(self.state.x + units * math.sin(radians))
             end_y = _limit(self.state.y + units * math.cos(radians))
@@ -315,33 +315,40 @@ class GraphicsEngine:
         else:
             raise PilotRuntimeError(f"GR: unsupported sub-command {name}")
 
-    def _number(self, operand: str) -> int:
+    def _number(self, operand: str, command: str) -> int:
         if not operand:
-            raise PilotRuntimeError("GR: numeric sub-command operand is empty")
+            raise PilotRuntimeError(f"GR:{command} numeric operand is empty")
         try:
             return self.evaluate(operand)
         except PilotRuntimeError as exc:
-            raise PilotRuntimeError(f"GR: invalid numeric operand {operand!r}: {exc}") from exc
+            raise PilotRuntimeError(
+                f"GR:{command} invalid numeric operand {operand!r}: {exc}"
+            ) from exc
 
-    def _coordinates(self, operand: str) -> tuple[float, float]:
+    def _coordinates(self, operand: str, command: str) -> tuple[float, float]:
         if "," in operand:
             parts = operand.split(",")
             if len(parts) != 2:
-                raise PilotRuntimeError(f"GR: expected x,y coordinates, not {operand!r}")
-            return _limit(float(self._number(parts[0]))), _limit(float(self._number(parts[1])))
+                raise PilotRuntimeError(f"GR:{command} expected x,y coordinates, not {operand!r}")
+            return (
+                _limit(float(self._number(parts[0], command))),
+                _limit(float(self._number(parts[1], command))),
+            )
 
         last_error: PilotRuntimeError | None = None
         for match in re.finditer(r"\s+", operand):
             try:
                 return (
-                    _limit(float(self._number(operand[: match.start()]))),
-                    _limit(float(self._number(operand[match.end() :]))),
+                    _limit(float(self._number(operand[: match.start()], command))),
+                    _limit(float(self._number(operand[match.end() :], command))),
                 )
             except PilotRuntimeError as exc:
                 last_error = exc
         if last_error is not None:
-            raise PilotRuntimeError(f"GR: expected x,y coordinates: {last_error}") from last_error
-        raise PilotRuntimeError(f"GR: expected x,y coordinates, not {operand!r}")
+            raise PilotRuntimeError(
+                f"GR:{command} expected x,y coordinates: {last_error}"
+            ) from last_error
+        raise PilotRuntimeError(f"GR:{command} expected x,y coordinates, not {operand!r}")
 
     @staticmethod
     def _require_empty(name: str, operand: str) -> None:

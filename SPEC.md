@@ -1143,7 +1143,9 @@ down 2, left 4, right 8, and diagonals 5/9/6/10. Space and left Ctrl drive
 U/O adjust `%P1`, from 3 through 227 at a fixed rate. The paddles start at 115
 and retain their values when no key is held. Focus loss releases held keys.
 Other device indices and all lightpen values remain neutral (0). The mapping is
-injectable and does not change PILOT syntax.
+injectable through `ControllerKeyMap` on `KeyboardController` and
+`PygameInteractiveDevice`; remapping host keys does not change Atari sense
+values or PILOT syntax.
 
 ### 10.6 Core PILOT commands that do not exist here
 
@@ -1896,6 +1898,21 @@ AN UNDEFINED STRING PRINTS ITS OWN NAME:
 ```
 
 ---
+
+### 13.10 `examples/turtle-triangle.pilot` — colored polygon
+
+Draws a red equilateral triangle with a three-iteration `DRAW`/`TURN` group.
+The turtle returns to its starting point and reports `%X`/`%Y`.
+
+### 13.11 `examples/turtle-spiral.pilot` — variable-length spiral
+
+Uses a labeled `J:` loop to increase the `DRAW` distance between turns, making
+the relationship between PILOT control flow and live turtle movement visible.
+
+### 13.12 `examples/turtle-star.pilot` — repeated heading changes
+
+Traces a yellow five-point star with five equal strokes and a 144-degree turn
+after each stroke.
 
 ## 14. Risks
 
